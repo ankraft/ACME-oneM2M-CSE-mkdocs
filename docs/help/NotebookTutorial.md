@@ -1,8 +1,15 @@
-# Jupyter Notebook Tutorial
+# Jupyter Notebooks Tutorial
 
 A oneM2M tutorial is available as a Jupyter Notebook. This tutorial is a good starting point for learning how to use oneM2M. It uses the ACME CSE[^1] to demonstrate the basic concepts of oneM2M.
 
 [^1]: See also the article on how to integrate the ACME CSE in a [Jupyter Notebook](../development//Integrating_ACME.md#jupyter-notebooks).
+
+
+
+<figure markdown="1">
+[![oneM2M Recipes](../images/oneM2M_notebooks.png){width="80%"}](https://mybinder.org/v2/gh/oneM2M/onem2m-jupyter-notebooks/master?urlpath=lab/tree/__START__.ipynb){target=_new}
+<figcaption>oneM2M Jupyter Notebooks</figcaption>
+</figure>
 
 It covers the following topics:
 
@@ -17,4 +24,8 @@ It covers the following topics:
 - [Episode 8 - FlexContainers](https://wiki.onem2m.org/index.php?title=OneM2M_Tutorials_using_Jupyter_Notebooks#Episode_8_-_FlexContainers){target=_new}
 
 
-The oneM2M Jupyter Notebook tutorial is available on the [oneM2M Wiki](https://wiki.onem2m.org/index.php?title=OneM2M_Tutorials_using_Jupyter_Notebooks){target=_new} or on GitHub at [https://github.com/oneM2M/onem2m-jupyter-notebooks](https://github.com/oneM2M/onem2m-jupyter-notebooks){target=_new}.
+The oneM2M Jupyter Notebook tutorial is available
+
+- on the [oneM2M Wiki](https://wiki.onem2m.org/index.php?title=OneM2M_Tutorials_using_Jupyter_Notebooks){target=_new},
+- on GitHub at [https://github.com/oneM2M/onem2m-jupyter-notebooks](https://github.com/oneM2M/onem2m-jupyter-notebooks){target=_new}, or
+- directly on MyBinder at [https://mybinder.org/v2/gh/oneM2M/onem2m-jupyter-notebooks/master?urlpath=lab/tree/\_\_START__.ipynb](https://mybinder.org/v2/gh/oneM2M/onem2m-jupyter-notebooks/master?urlpath=lab/tree/__START__.ipynb).
