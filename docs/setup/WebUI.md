@@ -14,7 +14,7 @@ The Web UI by default is enabled and reachable under the (configurable) web path
 The web UI also provides a REST UI where you can send REST requests directed at resources on the CSE.
 
 <figure markdown="1">
-![ACME CSE Web UI with REST Interface](../images/webui-REST.png)
+![ACME CSE Web UI with REST Interface](../images/webui-REST.png){width="80%"}
 <figcaption>ACME CSE Web UI with REST Interface</figcaption>
 </figure>
 

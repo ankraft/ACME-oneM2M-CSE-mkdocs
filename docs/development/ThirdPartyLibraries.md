@@ -1,4 +1,4 @@
-# Third Party Libraries
+# Third Party Components
 
 The following third-party components are used by the ACME CSE.
 

@@ -5,8 +5,8 @@ The Text UI is a text-based terminal UI that is enabled by default. It offers a 
 Depending on the terminal it can be operated with the mouse or with the keyboard.
 
 <figure markdown="1">
-![Text UI of the ACME CSE](../images/textUI.png#only-light){data-gallery="light"}
-![Text UI of the ACME CSE](../images/textUI-dark.png#only-dark){data-gallery="dark"}
+![Text UI of the ACME CSE](../images/textUI.png#only-light){data-gallery="light", width="80%"}
+![Text UI of the ACME CSE](../images/textUI-dark.png#only-dark){data-gallery="dark", width="80%"}
 <figcaption>Text UI of the ACME CSE</figcaption>
 </figure>
 
