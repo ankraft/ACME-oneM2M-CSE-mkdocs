@@ -71,6 +71,7 @@ The ACME CSE provides a number of command line arguments that will override the 
 | -h, --help                                               | Show a help message and exit.                                                                                                                                           |
 | --config &lt;filename>                                   | Specify a configuration file that is used instead of the default (*acme.ini*) one.                                                                                      |
 | --base-directory &lt;directory>,<br/>-dir &lt;directory> | Specify the root directory for runtime data such as data, logs, and temporary files.                                                                                    |
+| --dark, --light                                          | Enable *dark* or *light* theme for the console and text UI.                                                                                                             |
 | --db-directory &lt;directory>                            | Specify the directory where the CSE's data base files are stored.                                                                                                       |
 | --db-reset                                               | Reset and clear the database when starting the CSE.                                                                                                                     |
 | --db-type {memory, tinydb, postgresql}                   | Specify the DB's storage type.<br />This overrides the [database.type](../setup/Configuration-database.md#general-settings) configuration setting.                      |
@@ -81,12 +82,12 @@ The ACME CSE provides a number of command line arguments that will override the 
 | --http-port &lt;http port>                               | Specify the CSE's http server port.<br />This overrides the [address](../setup/Configuration-http.md#general-settings) configuration setting.                           |
 | --init-directory &lt;directory>                          | Specify the import directory.<br />This overrides the [resourcesPath](../setup/Configuration-cse.md#general-settings) configuration setting.                            |
 | --network-interface &lt;ip address                       | Specify the network interface/IP address to bind to.<br />This overrides the [listenIF](../setup/Configuration-http.md#general-settings) configuration setting.         |
-| --log-level {info, error, warn, debug, off}              | Set the log level, or turn logging off.<br />This overrides the [level](../setup/Configuration-logging.md#general-settings) configuration setting.               |
+| --log-level {info, error, warn, debug, off}              | Set the log level, or turn logging off.<br />This overrides the [level](../setup/Configuration-logging.md#general-settings) configuration setting.                      |
 | --mqtt, --no-mqtt                                        | Enable or disable the MQTT binding.<br />This overrides the [mqtt.enable](../setup/Configuration-mqtt.md#general-settings) configuration setting.                       |
 | --remote-cse, --no-remote-cse                            | Enable or disable remote CSE connections and checking.<br />This overrides the [enableRemoteCSE](../setup/Configuration-cse.md#general-settings) configuration setting. |
-| --statistics, --no-statistics                            | Enable or disable collecting CSE statistics.<br />This overrides the [enable](../setup/Configuration-cse.md#statistics) configuration setting.                                       |
+| --statistics, --no-statistics                            | Enable or disable collecting CSE statistics.<br />This overrides the [enable](../setup/Configuration-cse.md#statistics) configuration setting.                          |
 | --textui                                                 | Run the CSE's text UI after startup.                                                                                                                                    |
-| --ws, --no-ws                                            | Enable or disable the WebSocket binding.<br />This overrides the [websocket.enable](../setup//Configuration-ws.md#general-settings) configuration setting.                                  |
+| --ws, --no-ws                                            | Enable or disable the WebSocket binding.<br />This overrides the [websocket.enable](../setup//Configuration-ws.md#general-settings) configuration setting.              |
 
 
 
