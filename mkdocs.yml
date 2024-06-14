@@ -178,7 +178,7 @@ nav:
         - 'Upper Tester Integration': 'development/ACMEScript-uppertester.md'
       - 'Integrating ACME CSE': 'development/Integrating_ACME.md'
       - 'Debug Mode': 'development/DebugMode.md'
-      - 'Third Party Libraries': 'development/ThirdPartyLibraries.md'
+      - 'Third Party Components': 'development/ThirdPartyLibraries.md'
   - 'HowTos':
       - 'Overview': 'howtos/HowTos.md'
       - 'Docker': 'howtos/Docker.md'

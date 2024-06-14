@@ -1879,7 +1879,7 @@ The `tui-visual-bell` function shortly flashes the script's entry in the scripts
 
 ### http
 
-`(http <operation:quoted symbol> <url:string> [<headers:JSON or nil>] [<body:string or JSON>])`
+`(http <operation:quoted symbol> <url:string> [<headers:JSON | quoted list | nil>] [<body:string | JSON | nil >])`
 
 The `http` function sends an http request to an http server.
 
@@ -1887,8 +1887,13 @@ The function has the following arguments:
 
 - *operation* of the request. This is one of the following supported quoted symbols: get, post, put, delete, patch
 - The target server's *url*. This is a string with a valid URL.
-- Optional: A JSON structure of header fields. Each header field is a JSON attribute with the name of the header field and its value. If the optional *body* argument is present then this argument must be present as well, ie. with at least an empty JSON structure or the *nil* symbol.
-- Optional: The http request's body, which could be a string or a JSON structure. 
+- Optional: header fields, either:
+	- A JSON structure of header fields. Each header field is a JSON attribute with the name of the header field and its value. 
+	- A quoted list of header fields. Each header field is a list with two elements: the header field name and its value. The header field name is a string or a quoted symbol. The header field value is a string or number. 
+  
+	If the optional *body* argument is present then this argument must be present as well, ie. with at least an empty header structure or the *nil* symbol.
+
+- Optional: The http request's *body*, which could be a string or a JSON structure. 
 
 The function returns a list:
 
@@ -1904,11 +1909,22 @@ The function returns a list:
 
 ;; Send a oneM2M CREATE request manually
 (http 'post "http://localhost:8080/cse-in"   ;; Operation and URL
-	{ "X-M2M-RI":"1234",                     ;; Header fields
+	{ "X-M2M-RI":"1234",                     ;; Header fields using a JSON structure
 		"X-M2M-RVI": "4",
 		"X-M2M-Origin": "CAdmin",
 		"Content-type": "application/json;ty=3" }
 	{ "m2m:cnt": {                           ;; Body
+		"rn": "myCnt"
+		...
+	}})
+
+;; same as above but with a quoted list for the headers
+(http 'post "http://localhost:8080/cse-in"      ;; Operation and URL
+	'(("X-M2M-RI" "1234")                       ;; Header fields using a quoted list
+	  ("X-M2M-RVI" "4")                         ;; using a string for the header field name
+	  ('X-M2M-Origin "CAdmin")                  ;; using a quoted symbol for the header field name
+	  ('Content-type "application/json;ty=3"))
+	{ "m2m:cnt": {                              ;; Body
 		"rn": "myCnt"
 		...
 	}})
