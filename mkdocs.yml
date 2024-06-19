@@ -176,7 +176,7 @@ nav:
         - 'Variables': 'development/ACMEScript-variables.md'
         - 'Meta Tags': 'development/ACMEScript-metatags.md'
         - 'Upper Tester Integration': 'development/ACMEScript-uppertester.md'
-      - 'Integrating ACME CSE': 'development/Integrating_ACME.md'
+      - 'Embedding ACME CSE': 'development/Embedding_ACME.md'
       - 'Debug Mode': 'development/DebugMode.md'
       - 'Third Party Components': 'development/ThirdPartyLibraries.md'
   - 'HowTos':

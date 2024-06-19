@@ -2,7 +2,7 @@
 
 A oneM2M tutorial is available as a Jupyter Notebook. This tutorial is a good starting point for learning how to use oneM2M. It uses the ACME CSE[^1] to demonstrate the basic concepts of oneM2M.
 
-[^1]: See also the article on how to integrate the ACME CSE in a [Jupyter Notebook](../development//Integrating_ACME.md#jupyter-notebooks).
+[^1]: See also the article on how to embed the ACME CSE in a [Jupyter Notebook](../development/Embedding_ACME.md#jupyter-notebooks).
 
 
 

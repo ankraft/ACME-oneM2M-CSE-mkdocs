@@ -1,6 +1,6 @@
-# Integrating Into Other Projects
+# Embeddeding Into Other Projects
 
-This article describes how to integrate the CSE into other applications and how to run it in a Jupyter Notebook.
+This article describes how to embed the CSE into other applications and how to run it in a Jupyter Notebook.
 
 ## Introduction
 
