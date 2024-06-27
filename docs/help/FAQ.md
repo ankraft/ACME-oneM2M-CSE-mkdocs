@@ -94,16 +94,16 @@
 ## Performance
 
 1. **How to increase the performance of ACME CSE?**  
-   The log output provides useful information to analyze the flows of requests inside the CSE. However, it reduces the performance of the CSE by a lot. So, reducing the log level to *info* or *warning* already helps. This can be done in the *[logging]* section of the configuration file, or by pressing *L* on the console to change the logging level to the desired value.  
+   The log output provides useful information to analyze the flows of requests inside the CSE. However, it reduces the performance of the CSE by a lot. Reducing the log level to *info* or *warning* already helps. This can be done in the *[logging]* section of the configuration file, or by pressing `shift-L` on the console to change the logging level to the desired value. Also, [disabline writing the log to a file](../setup/Configuration-logging.md) will increase the performance.  
    Another option is to change the database to *memory* mode. This means that all database access happens in memory and not on disk. But please be aware that this also means that all data will be lost when the CSE terminates!  
    Lastly, the ACME CSE can be run with Python 3.11, which is way faster than previous versions of Python.
 
 1. **Increase database performance with *disk* mode**  
-   When running the CSE with the database mode set to *disk* (ie. store the database on disk rather then in memory) one can improve the performance by increasing the time before data is actually written to disk. The default is 1 second, but it can be increased as necessary.  
+   When running the CSE with the database mode set to *tinydb* (ie. store the database on disk rather then in memory) one can improve the performance by [increasing the time before data is actually written to disk](../setup/Configuration-database.md#tinydb). The default is 1 second, but it can be increased as necessary.  
    Be aware, though, that the risk of losing data increases with higher delays in case of a crash or when the CSE shutdown is interrupted.
 
 	```ini title="Example to set the write delay to 10 seconds"
-	[database]
+	[database.tinydb]
 	writeDelay=10
 	```
 

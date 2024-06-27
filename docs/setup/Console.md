@@ -9,29 +9,29 @@ running.
 The following commands are available:
 
 
-| Key   | Description                                        |
-|-------|----------------------------------------------------|
-| =     | Print a separator line to the log                  |
-| A     | About                                              |
-| c     | Show configuration                                 |
-| C     | Clear the console screen                           |
-| D     | Delete resource                                    |
-| E     | Export resource tree to *data* directory           |
-| G, ^G | Plot graph once / continously (only for container) |
-| h, ?  | This help                                          |
-| I     | Inspect resource and child resources               |
-| i, ^K | Inspect resource once / continously                |
-| k,    | Catalog of scripts                                 |
-| l     | Toggle screen logging on/off                       |
-| L     | Toggle through log levels                          |
-| Q, ^C | Shutdown CSE                                       |
-| r     | Show CSE registrations                             |
-| s. ^S | Show statistics once / continously                 |
-| t     | Show resource tree                                 |
-| T, ^T | Show child resource tree once / continously        |
-| u     | Open web UI                                        |
-| w     | Show workers and threads status                    |
-| Z     | Reset and restart the CSE                          |
+| Key           | Description                                        |
+|---------------|----------------------------------------------------|
+| `=`           | Print a separator line to the log                  |
+| `A`           | About                                              |
+| `c`           | Show configuration                                 |
+| `C`           | Clear the console screen                           |
+| `D`           | Delete resource                                    |
+| `E`           | Export resource tree to *data* directory           |
+| `G`, `CTRL-G` | Plot graph once / continously (only for container) |
+| `h`, `?`      | This help                                          |
+| `I`           | Inspect resource and child resources               |
+| `i`, `CTRL-K` | Inspect resource once / continously                |
+| `k`,          | Catalog of scripts                                 |
+| `l`           | Toggle screen logging on/off                       |
+| `L`           | Toggle through log levels                          |
+| `Q`, `CTRL-C` | Shutdown CSE                                       |
+| `r`           | Show CSE registrations                             |
+| `s`, `CTRLS`  | Show statistics once / continously                 |
+| `t`           | Show resource tree                                 |
+| `T`, `CTRL-T` | Show child resource tree once / continously        |
+| `u`           | Open web UI                                        |
+| `w`           | Show workers and threads status                    |
+| `Z`           | Reset and restart the CSE                          |
 
 
 **Example**  
@@ -79,14 +79,27 @@ hideResources=acp*
 The consoles and their emulations of different operating systems support different sets of function key bindings. The following
 table lists the names that can be used, e.g. in scripts.
 
-| POSIX (Linux, Mac OS)                                                                                  | MS Windows                                               |
-|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
-| CTRL_A - CTRL_Z                                                                                        | CTRL_A - CTRL_Z                                          |
-| F1 - F12<br>Modifiers: SHIFT                                                                           | F1 - F12<br>Modifiers: SHIFT, CTRL, ALT                  |
-| UP, DOWN, LEFT, RIGHT, HOME, END<br>Modifiers: SHIFT, CTRL, ALT, SHIFT_ALT, SHIFT_CTRL, SHIFT_CTRL_ALT | UP, DOWN, LEFT, RIGHT, HOME, END<br>Modifiers: CTRL, ALT |
-| PAGE_UP, PAGE_DOWN<br>Modifiers: ALT                                                                   | PAGE_UP, PAGE_DOWN<br>Modifiers: CTRL, ALT               |
-| INSERT, DEL, BACKSPACE, LF, CR, SPACE                                                                  | INSERT, DEL, LF, CR, SPACE                               |
-| TAB<br>Modifiers: SHIFT                                                                                | BACKSPACE, TAB<br>Modifiers: CTRL                        |
+=== "POSIX (Linux, Mac OS)"
+
+	| Supported (Function) Keys                           | Modifiers                                                           |
+	|---------------------------------------------------|---------------------------------------------------------------------|
+	| `A` - `Z`                               |   `CTRL`, `SHIFT`                                                                  |
+	| `F1` - `F12`                                      | `SHIFT`                                                             |
+	| `UP`, `DOWN`, `LEFT`, `RIGHT`, `HOME`, `END`      | `SHIFT`, `CTRL`, `ALT`, `SHIFT_ALT`, `SHIFT_CTRL`, `SHIFT_CTRL_ALT` |
+	| `PAGE_UP`, `PAGE_DOWN`                            | `ALT`                                                               |
+	| `INSERT`, `DEL`, `BACKSPACE`, `LF`, `CR`, `SPACE` |                                                                     |
+	| `TAB`                                             | `SHIFT`                                                             |
+
+=== "MS Windows"
+
+	| Supported (Function) Keys                    | Modifiers              |
+	|----------------------------------------------|------------------------|
+	| `A` - `Z`                                    | `CTRL`, `SHIFT`        |
+	| `F1` - `F12`                                 | `SHIFT`, `CTRL`, `ALT` |
+	| `UP`, `DOWN`, `LEFT`, `RIGHT`, `HOME`, `END` | `CTRL`, `ALT`          |
+	| `PAGE_UP`, `PAGE_DOWN`                       | `CTRL`, `ALT`          |
+	| `INSERT`, `DEL`, `LF`, `CR`, `SPACE`         |                        |
+	| `BACKSPACE`, `TAB`                           | `CTRL`                 |
 
 Note, that modifiers are prepend to key names with an underline, e.g. `SHIFT_CTRL_UP`.
 
