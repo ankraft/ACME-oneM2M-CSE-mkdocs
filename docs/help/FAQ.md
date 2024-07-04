@@ -62,8 +62,8 @@
    All resources and specializations are validated by the CSE. You can add your own specializations and validation policies by providing them in one or more separate files in the *import* directory. Those files must have the file extension ".ap". These files are read during the startup of the CSE.
    See [the documentation about defining FlexContainer spezializations](../development/FlexContainerPolicies.md) for further details.
 
-## CSE Registrations
 
+## CSE Registrations
 
 1. **Why are there regular checks for remote CSEs?**  
 	When a CSE is configured as an MN-CSE or ASN-CSE it can register to a remote CSE, respectively an IN-CSE and MN-CSE can receive connection requests from those CSE types. A &lt;remoteCSE> resource is created in case of a successful registration. A CSE checks regularly the connection to other remote CSEs and removes the *remoteCSE* if the connection could not been established. This is done to keep the CSE's resource tree clean and up-to-date.  
@@ -91,6 +91,17 @@
 	```
   
 
+## Subscriptions & Notifications
+
+1. **Why does creating a &lt;subscription> resource sometimes throw an error?**  
+   When an AE creates a &lt;subscription> resource a CSE may send a *verification notification* to the configured *notificationURI* address(es) to verify that these endpoints exist and that they can receive notifications. If the verification request fails, for example if there is (yet) no server that can receive the notifications, the whole CREATE request of the &lt;subscription> resource fails.  
+   By default, this *verification notification* procedure is enabled in ACME, but it can be disabled by setting the following [configuration](../setup/Configuration-cse.md#general-settings) in the *acme.ini* file:
+   ```ini title="Disable verification notification requests"
+   	[cse]
+	enableSubscriptionVerificationRequests=false
+   ```
+   With this, the CSE will not verify the notification endpoints and the &lt;subscription> resource creation will succeed (if there are no other problems, of course).
+   
 ## Performance
 
 1. **How to increase the performance of ACME CSE?**  
