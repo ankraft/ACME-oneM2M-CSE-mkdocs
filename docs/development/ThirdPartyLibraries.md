@@ -27,6 +27,7 @@ The following third-party components are used by the ACME CSE.
 
 ## Text UI
 - [Textual](https://github.com/textualize/textual){target=_new} is a Rapid Application Development framework for to build textual user interfaces in Python. MIT License.
+- [pyperclip](https://github.com/asweigart/pyperclip){target=_new} is a cross-platform Python module for copying and pasting text to the clipboard. BSD-3-Clause License.
 
 
 ## Web UI

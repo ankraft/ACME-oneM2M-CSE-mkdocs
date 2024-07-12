@@ -136,7 +136,7 @@ nav:
     - 'Installation': 'setup/Installation.md'
     - 'Running': 'setup/Running.md'
     - 'Database Setup': 'setup/Database.md'
-    - 'Certificates': 'setup/Certificates.md'
+    - 'Certificates, Tokens & Authentication': 'setup/Certificates.md'
     - 'Configuration':
       - 'Introduction': 'setup/Configuration-introduction.md'
       - 'Basic Configuration': 'setup/Configuration-basic.md'
