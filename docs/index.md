@@ -16,7 +16,7 @@ v2024.06
 ### **An open source CSE Middleware for Education**
 </div>
 <p style="text-align: center;" markdown>
-The ACME CSE is a compliant subset implementation of the [oneM2M IoT standard](http://www.onem2m.org).<br>
+The ACME CSE is a compliant subset implementation of the [oneM2M IoT standard](http://www.onem2m.org){target=_new}.<br>
 It is an easy to install, run and extensible oneM2M CSE for educational purposes and small trials.<br>&nbsp; </p>
 
 

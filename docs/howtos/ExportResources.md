@@ -1,22 +1,22 @@
 # How to Export Resources
 
-Sometimes it is necessary to export resource, for example to backup a part of the resource tree or to save the state of the resource tree for demonstration and experiments.
+Sometimes it could be useful to export resources, for example to backup a part of the resource tree or to save the state of the resource tree for demonstration and experiments.
 
-## Export Resources
+## Exporting Resources
 
 The ACME CSE offers a simple and portable way to export single resources or a whole part of the resource tree. In the text UI when clicking on a resource a tab *Services* contains the service "Export Resource". When clicking on the "Export" button a resource and (depending on the "child resource" checkbox) its child resources are exported to a directory as a shell script with the current date and time. The directory is the *tmp* directory under the CSE's root directory.
 
 <figure markdown="1">
-![Text UI - Export Resources](../images/export_resource.png#only-light){data-gallery="light"}
-![Text UI - Export Resources](../images/export_resource-dark.png#only-dark){data-gallery="dark"}
-<figcaption>Text UI - Export Resources</figcaption>
+![Text UI - Export Resources](../images/export_resource.png#only-light){width=800 data-gallery="light"}
+![Text UI - Export Resources](../images/export_resource-dark.png#only-dark){width=800 data-gallery="dark"}
+<figcaption>Text UI - Exporting Resources</figcaption>
 </figure>
 
 The generated script contains the necessary commands to send Mca CREATE requests using *curl* commands over http for the exported resources.
 
 One is free to make modifications to the exported resources as necessary, or to combine various resource scripts into a single script.
 
-## Import Resources Again
+### Importing Resources
 
 The generated shell script contains three sections:
 
@@ -34,7 +34,7 @@ To import the resources in an export script just run the script in a (bash) shel
 $ sh export-20240316T131612.sh
 ```
 
-## Example Script
+### Example Script
 
 The following is an example of an export script that exports a container with two content instances and a subscription:
 
@@ -74,3 +74,15 @@ createResource CDemoLightswitch 4 '{"m2m:cin": {"con": "off", "rn": "cin_MQ5AK9W
 2.	This function generates a unique number that is used for various identifiers. 
 3.	This function creates a resource in the CSE using the *curl* command line tool. The function takes four arguments: the originator, the resource type, the resource representation, and the parent resource's URL.
 4.	From here on the script creates the resources. The `createResource` function is called with the originator, the resource type, the resource representation, and the parent resource's URL.
+
+
+## Exporting ContentInstances
+
+Similar to exporting other resources, content instances from &lt;container> and &lt;timeSeries> resources can be exported via the text UI as a CSV[^1] file or copied as CSV data to the clipboard. This may be useful for backing up content or exporting data for further analysis. 
+
+[^1]: Comma-separated values
+
+!!! Note
+	Exporting data from &lt;flexContainerInstances> is not supported at the moment.
+
+When selecting a &lt;container> or &lt;timeSeries> resource in the text UI the tab *Services* offers the service "Export Instances". When clicking on the "Export CSV" button a CSV file with the content and other information is exported to a file in the *tmp* directory under the CSE's root directory. When clicking on the "Copy CSV" button the CSV data is copied to the clipboard.

@@ -126,6 +126,7 @@ extra:
 nav:
   - Home:
     - 'Home': 'index.md'
+    - 'What is oneM2M?': 'home/oneM2M-introduction.md'
     - 'Supported Features': 'home/Supported.md'
     - 'Roadmap': 'home/Roadmap.md'
     - 'LICENSE': 'home/License.md'
@@ -183,7 +184,7 @@ nav:
       - 'Overview': 'howtos/HowTos.md'
       - 'Docker': 'howtos/Docker.md'
       - 'Experimental WebSocket Binding': 'howtos/ExperimentalWebSocketBinding.md'
-      - 'Export Resources': 'howtos/ExportResources.md'
+      - 'Exporting Resources & Data': 'howtos/ExportResources.md'
       - 'Pyenv Setup': 'howtos/HowTo-pyenv.md'
       - 'Raspberry Pi': 'howtos/RaspberryPi.md'
       - 'Stand-alone Web UI': 'howtos/StandAloneWebUI.md'

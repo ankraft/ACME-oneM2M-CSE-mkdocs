@@ -26,6 +26,16 @@
    but doesn't have enough privileges to do so. This usually happens when an http port < 1024 is configured (e.g. 80) and 
    the CSE is run with normal user privileges. Either run the CSE with admin / superuser rights (NOT recommended), 
    or choose another TCP/IP port, larger than 1024.
+1. **Can the ACME CSE be accessed when the installation requires a URL path prefix?**  
+	The ACME CSE does support URL path prefixes. For example, if the CSE is configured to listen on port 8080 and the path prefix is ```/acme```, then the CSE and its resources can be accessed via the URL `http://hostname:8080/acme/&lt;oneM2M resource path>`.  
+	To set the path prefix, use the configuration setting *[http].root* in the *acme.ini* file:
+
+	```ini title="Example to set the HTTP URL path prefix to '/acme'"
+	[http]
+	root=/acme
+	```
+
+
 1. **Is there a work-around for the missing DELETE method in http/1.0?**  
    Many constraint devices only support version 1.0 of the http protocol. This version of http, though, does not specify the
    DELETE method, which means that those devices cannot invoke oneM2M's DELETE operation.  
