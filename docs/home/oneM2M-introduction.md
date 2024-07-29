@@ -1,14 +1,14 @@
 # A Short Introduction to oneM2M
 
-oneM2M is a global standard for IoT systems that defines a *Common Service Layer* for IoT systems. It is designed to be used in IoT scenarios, including smart cities, smart agriculture, smart homes, and many more.
+oneM2M is a global standard that defines a *Common Service Layer* for IoT systems. It is designed to be used in IoT scenarios, including smart cities, smart agriculture, smart homes, and many more.
 
-oneM2M is developed by the [oneM2M Partnership Project](https://onem2m.org){target=_new}, which is a global partnership project that was formed by seven of the world's leading ICT standards development organizations (SDOs) and organizations representing ICT service providers. This partnership project defines and publishes the specifications that form the oneM2M standard.
+oneM2M is developed by the [oneM2M Partnership Project](https://onem2m.org){target=_new}, which was formed by seven of the world's leading ICT standards development organizations (SDOs) and organizations representing ICT service providers. This partnership project defines and publishes the specifications that form the oneM2M standard.
 
 This article can only provide a short overview about oneM2M. Further introductions and examples can be found at the [oneM2M Recipes site](https://recipes.onem2m.org){target=_new}.
 
 ## Common Service Functions
 
-The oneM2M architecture is based on the concept of *Common Service Functions* (CSF) for IoT applications that are provided by a *Common Service Entity* (CSE). A CSE can be implemented in many different ways, for example as a cloud service, on a gateway device, or on a capable IoT device. The *ACME CSE* provides a conformant implementation of these common service functions.
+The oneM2M architecture is based on the concept of *Common Service Functions* (CSF) for IoT applications that are provided by a *Common Service Entity* (CSE). A CSE can be implemented in many different ways, for example as a cloud service, on a gateway device, or on a capable IoT device. The *ACME CSE* provides a conformant subset implementation of these common service functions.
 
 
 <figure markdown="1">
@@ -17,8 +17,8 @@ The oneM2M architecture is based on the concept of *Common Service Functions* (C
 <figcaption>Figure 1: oneM2M Common Service Functions (source: oneM2M)</figcaption>
 </figure>
 
-As the name suggests, the Common service Functions provide a useful function set which can be used by an IoT application. An application may use any of the service functions in order to implement its own specific application functionality.
-It is important to note that it doesn't matter whether these IoT applications run on a small device, an edge gateway, or in the cloud. But especially for constrained IoT devices it is important to move some of the IoT-specific application logic from the device to a more capable entity.
+As the name suggests, the Common Service Functions provide a useful function set which can be used by an IoT application. An application may use any of the service functions in order to implement its own specific application functionality.
+It is important to note that it doesn't matter whether these IoT applications run on a small device, an edge gateway, or in the cloud. But especially for constrained IoT devices it may be important to move some of the IoT-specific application logic to a more capable entity in order to save resources.
 
 Examples for some of the common services are:
 
@@ -34,7 +34,7 @@ and many more.
 
 The following figure shows the basic architecture of oneM2M.
 
-The middle layer (in red) represents the *Common Service Entities* (CSE) and its*Common Service Functions* (CSF). The CSE provides the common services for IoT applications called *Application Entities* (AE, in blue). 
+The middle layer (in red) represents the *Common Service Entities* (CSE) and its *Common Service Functions* (CSF). The CSE provides the common services for IoT applications called *Application Entities* (AE, in blue). 
 
 At the bottom the Network Service Entity (NSE, in grey) provides network services for the CSEs. The details of the NSE are not part of the oneM2M standard, but it is an important part of the oneM2M architecture. The NSE provides the connectivity services for the CSEs. This includes services for connecting CSEs and IoT devices to each other, and also provides services to manage network resources and connected devices as well as to provide network security.
 
@@ -62,18 +62,14 @@ The following table lists the abbreviations used in the oneM2M architecture.
 
 The oneM2M architecture defines a set of reference points that are used to describe the RESTful interfaces between the different components of a oneM2M system. Figure 2 shows the reference points of the oneM2M architecture. They start with the letters *Mc* and are followed by a letter that indicates the direction of the interface. 
 
-An application developer will always use the *Mca* reference point to communicate with a CSE. Here, protocols like HTTP, CoAP, MQTT or Websockets can be used to communicate with the CSE and to use the common service functions.
+!!! Note
+	An application developer will always use the *Mca* reference point to communicate with a CSE. Here, protocols like HTTP, CoAP, MQTT or Websockets can be used to communicate with the CSE and to use the common service functions.
 
 The following table lists the reference points and their meaning.
 
-| Reference Point | Meaning                                                |
-| --------------- | ------------------------------------------------------ |
-| Mca: CSE - AE   | Interface between a CSE and an Application Entity      |
-| Mcc: CSE – CSE  | Interface between two CSEs                             |
-| Mcn: CSE - NSE  | Interface between a CSE and the Network Service Entity |
-| Mcc’            | Interface between two service providers.<br />This reference point is used to connect multiple servide provider domains or oneM2M systems.               |
-
-
----
-
-<span style="color:grey">*
+| Reference Point | Meaning                                                                                                                                    |
+|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| Mca: CSE - AE   | Interface between a CSE and an Application Entity                                                                                          |
+| Mcc: CSE – CSE  | Interface between two CSEs                                                                                                                 |
+| Mcn: CSE - NSE  | Interface between a CSE and the Network Service Entity                                                                                     |
+| Mcc’            | Interface between two service providers.<br />This reference point is used to connect multiple servide provider domains or oneM2M systems. |
