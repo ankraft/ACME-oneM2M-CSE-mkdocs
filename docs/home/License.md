@@ -1,11 +1,11 @@
 # License
 
-The ACME oneM2M CSE is available under the BSD 3-Clause License for the CSE and its native components and modules. Please see the individual licenses of the used [third-party components](../development/ThirdPartyLibraries.md).
+The ACME oneM2M CSE is available under the 3-Clause BSD License for the CSE and its native components and modules. Please see the individual licenses of the used [third-party components](../development/ThirdPartyLibraries.md).
 
 
-## BSD 3-Clause License
+## 3-Clause BSD License
 
-Copyright (c) 2020, Andreas Kraft
+Copyright (c) 2020, Andreas Kraft  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

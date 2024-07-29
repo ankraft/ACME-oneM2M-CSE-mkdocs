@@ -1,6 +1,6 @@
 site_name: ACME oneM2M CSE
 
-copyright: This work is licensed under the <a href="https://opensource.org/license/bsd-3-clause" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">3-Clause BSD License</a>.
+copyright: <a href="/home/License" rel="license noopener noreferrer" style="display:inline-block;">(c) 2024 by Andreas Kraft</a>
 
 repo_url: https://github.com/ankraft/ACME-oneM2M-CSE
 repo_name: ACME-oneM2M-CSE

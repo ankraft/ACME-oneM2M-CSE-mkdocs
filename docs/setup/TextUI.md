@@ -51,5 +51,13 @@ The different sections of the text UI are described below. They can be selected 
 
 
 ## Usage
-- You can navigate the text UI with your mouse or with the keyboard.
-- The clock in the top right corner shows the time and date. It is UTC-based in order to help when comparing oneM2M timestamps.
+
+Most of the functions in the text UI should be self-explanatory. Here are some tips and tricks to help you get started.
+
+**General**
+:	- You can navigate the text UI with your mouse or with the keyboard.
+	- The clock in the top right corner shows the time and date. It is UTC-based in order to help when comparing oneM2M timestamps.
+
+**Resource View**
+:	- When clicking on a resource representation in the resource view, then the resource is copied to the clipboard.
+	- When clicking on a section at the top or bottom of the resource view, then the resource name, resource type, structured or unstructured resource ID are copied to the clipboard, respectively.
