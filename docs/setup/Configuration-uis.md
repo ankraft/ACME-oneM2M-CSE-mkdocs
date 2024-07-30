@@ -19,6 +19,22 @@ These are the settings for the console.
 | treeMode                    | Set the mode how resources and their content are presented in the console's and structure endpoint's tree view.<br/>Allowed values: `normal`, `compact`, `content`, `contentOnly' | normal      | console.treeMode                    |
 
 
+## Text UI
+
+**Section: `[textui]`**
+
+These are the settings for the text UI.
+
+| Setting             | Description                                                                                                                    | Default          | Configuration Name         |
+|:--------------------|:-------------------------------------------------------------------------------------------------------------------------------|------------------|:---------------------------|
+| maxRequestSize      | Max size of a request or response in bytes to display. Requests or responses larger than this threshold will not be displayed. | 10.000           | textui.maxRequestSize      |
+| notificationTimeout | Timeout for text UI notifications in seconds.                                                                                  | 2.0              | textui.notificationTimeout |
+| refreshInterval     | Interval for refreshing various views in the text UI.                                                                          | 2.0              | textui.refreshInterval     |
+| startWithTUI        | Show the text UI after startup.<br />See also command line argument [–-textui](../setup/Running.md#command-line-arguments).    | False            | textui.startWithTUI        |
+| theme               | Set the color theme for the text UI. Allowed values are `dark` and `light`.                                                    | ${console:theme} | textui.theme               |
+
+
+
 ## Web UI
 
 **Section: `[webui]`**
@@ -28,19 +44,3 @@ These are the settings for the web UI.
 | Setting | Description                                 |Default | Configuration Name |
 |:--------|:--------------------------------------------|:-------|:-------------------|
 | root    | Root path of the web UI.                    | /webui | webui.root         |
-
-
-## Text UI
-
-**Section: `[textui]`**
-
-These are the settings for the text UI.
-
-| Setting         | Description                                                                                                                                       |Default | Configuration Name     |
-|:----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|-|:-----------------------|
-| startWithTUI    | Show the text UI after startup.<br />See also command line argument [–-textui](../setup/Running.md#command-line-arguments).                                 |False | textui.startWithTUI    |
-| theme           | Set the color theme for the text UI. Allowed values are `dark` and `light`.                                 | ${console:theme} | textui.theme           |
-| refreshInterval | Interval for refreshing various views in the text UI.                                                                           |2.0 | textui.refreshInterval |
-| maxRequestSize  | Max size of a request or response in bytes to display. Requests or responses larger than this threshold will not be displayed.| 10.000| textui.maxRequestSize  |
-
-
