@@ -76,7 +76,7 @@ Environment variables can be used in the configuration file to provide sensitive
 
 Another useful application is to provide the IP address of a Docker host to the CSE. This can be done, for example, by setting the environment variable `DOCKER_HOST_IP` and using it in the configuration file.
 
-```ini title="Use Environment Variable to set Host IP"
+```ini title="Use Environment Variable to set the Host IP"
 [basic.config]
 cseHost=${DOCKER_HOST_IP}
 ```

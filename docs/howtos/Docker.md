@@ -48,7 +48,7 @@ One example is to provide the Docker host's IP address to the CSE as the *cseHos
 
 The setting for *cseHost* in the *acme.ini* file should should be changed to the following:
 
-```ini title="Use Environment Variable to set Host IP"
+```ini title="Use Environment Variable to set the Host IP"
 [basic.config]
 ...
 cseHost=${DOCKER_HOST_IP}

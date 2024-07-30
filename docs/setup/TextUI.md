@@ -61,3 +61,6 @@ Most of the functions in the text UI should be self-explanatory. Here are some t
 **Resource View**
 :	- When clicking on a resource representation in the resource view, then the resource is copied to the clipboard.
 	- When clicking on a section at the top or bottom of the resource view, then the resource name, resource type, structured or unstructured resource ID are copied to the clipboard, respectively.
+
+**Requests View**
+:	- When clicking on a request or response in the requests view then the request or response is copied to the clipboard.
