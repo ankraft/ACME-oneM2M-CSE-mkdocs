@@ -3,6 +3,7 @@
 The following third-party components are used by the ACME CSE.
 
 ## Core CSE
+- The [cachetools](https://github.com/tkem/cachetools/){target=_new} package provides caching utilities. MIT License.
 - The [cbor2](https://github.com/agronholm/cbor2){target=_new} package is used to parse and create CBOR serializations. MIT License.
 - [InquirerPy](https://github.com/kazhala/InquirerPy/){target=_new} is a collection of common interactive command-line interfaces. MIT License.
 - The [isodate](https://github.com/gweis/isodate){target=_new} package is used to parse and handle ISO 8601 time, date, and duration. BSD License.
@@ -13,6 +14,8 @@ The following third-party components are used by the ACME CSE.
 
 
 ## Connectivity
+- For the CoAP protocol binding implementation the ACME CSE uses a fork of the [coapthon3](https://github.com/Tanganelli/CoAPthon3){target=_new} library. MIT Licsense.  
+The fork is available on GitHub as [CoAPthon3-ACME-CSE](https://github.com/ankraft/CoAPthon3-ACME-CSE){target=_new} and on PyPi as [coapthon3-acme-cse](https://pypi.org/project/CoAPthon3-ACME-CSE/){target=_new}.
 - The CSE uses the [Flask](https://flask.palletsprojects.com/){target=_new} web framework to service http(s) requests. BSD 3-Clause License.
 - [flask-cors](https://github.com/corydolphin/flask-cors/){target=_new} is a *Flask* extension for handling Cross Origin Resource Sharing (CORS), making cross-origin AJAX possible.
 - The [paho-mqtt](https://www.eclipse.org/paho/){target=_new} library provides a client class which enables applications to connect to an MQTT broker. Eclipse Public License 1.0 .

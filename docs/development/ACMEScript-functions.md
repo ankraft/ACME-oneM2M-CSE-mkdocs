@@ -1308,10 +1308,12 @@ The return value is one of the following strings:
 
 `(get-config <key:string>)`
 
-The `get-config` function retrieves a setting from the CSE's internal configuration. The *key* is a configuration name as defined in the [configuration documentation](../setup/Configuration-basic.md).
+The `get-config` function retrieves a configuration setting from the CSE's internal configuration.  The *key* is a configuration setting's name in [Dot Notation](../setup/Configuration-introduction.md#dot-notation).
 
 !!! see-also "See also"
-	[has-config](#has-config), [set-config](#set-config)
+	[has-config](#has-config), [set-config](#set-config)  
+	[Configuration's Dot Notation](../setup/Configuration-introduction.md#dot-notation)
+
 
 ```lisp title="Examples"
 (get-config "cse.type")    ;; Returns, for example, 1
@@ -1357,10 +1359,11 @@ The `get-storage` function retrieves a value from the CSE's internal script-data
 
 `(has-config <key:string>)`
 
-The `has-config` function determines whether a setting from the CSE's internal configuration exists. The *key* is a configuration name as defined in the [configuration documentation](../setup/Configuration-basic.md).
+The `has-config` function determines whether a configuration setting from the CSE's internal configuration exists. The *key* is a configuration setting's name in [Dot Notation](../setup/Configuration-introduction.md#dot-notation).
 
 !!! see-also "See also"
-	[get-config](#get-config), [set-config](#set-config)
+	[get-config](#get-config), [set-config](#set-config)  
+	[Configuration's Dot Notation](../setup/Configuration-introduction.md#dot-notation)
 
 ```lisp title="Examples"
 (has-config "cse.cseID")     ;; Returns true
@@ -1526,12 +1529,13 @@ This is different from [include-script](#include-script) and [run-script](#run-s
 
 `(set-config <key:string> <value:any>)`
 
-The `set-config` function updates a setting from the CSE's internal configuration. The *key* is a configuration name as defined in the [configuration documentation](../setup/Configuration-basic.md).
+The `set-config` function updates a configuration setting from the CSE's internal configuration.  The *key* is a configuration setting's name in [Dot Notation](../setup/Configuration-introduction.md#dot-notation).
 
 It is only possible to update an existing setting, but not to create a new one. The *value* type must be equivalent to the setting's type.
 
 !!! see-also "See also"
-	[get-config](#get-config), [has-config](#has-config)
+	[get-config](#get-config), [has-config](#has-config)  
+	[Configuration's Dot Notation](../setup/Configuration-introduction.md#dot-notation)
 
 ```lisp title="Example"
 (set-config "cse.checkExpirationsInterval" 1.5)  ;; Set the configuration to 1.5

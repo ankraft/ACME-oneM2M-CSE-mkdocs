@@ -7,6 +7,9 @@ repo_name: ACME-oneM2M-CSE
 extra_css:
   - stylesheets/extra.css
 
+watch:
+  - includes
+
 theme:
   name: material
   logo: 'images/acme_sm.png'
@@ -41,6 +44,7 @@ theme:
     - content.code.copy
     #- navigation.footer
     - content.footnote.tooltips
+    - content.tooltips
     - navigation.indexes
     - navigation.instant
     - navigation.instant.progress
@@ -78,18 +82,25 @@ plugins:
 
 
 markdown_extensions:
+  - abbr
   - admonition
   - attr_list
   - def_list
   - footnotes
   - md_in_html
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+#  - pymdownx.snippets:
+#      auto_append:
+#        - includes/abbreviations.md
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -98,9 +109,6 @@ markdown_extensions:
   - pymdownx.tabbed:
      alternate_style: true
   - tables
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 
 ##############################################################################
@@ -128,7 +136,9 @@ nav:
     - 'Home': 'index.md'
     - 'What is the ACME CSE?': 'home/ACME-CSE-introduction.md'
     - 'What is oneM2M?': 'home/oneM2M-introduction.md'
-    - 'Supported Features': 'home/Supported.md'
+    - 'Supported Features': 
+      - 'oneM2M': 'home/Supported.md'
+      - 'CSE Runtime': 'home/SupportedRuntime.md'
     - 'Roadmap': 'home/Roadmap.md'
     - 'LICENSE': 'home/License.md'
     - 'Acknowledgements': 'home/Acknowledgements.md'
@@ -145,9 +155,10 @@ nav:
       - 'CSE General Settings': 'setup/Configuration-cse.md'
       - 'Databases': 'setup/Configuration-database.md'
       - 'Logging': 'setup/Configuration-logging.md'
-      - 'HTTP Binding': 'setup/Configuration-http.md'
-      - 'MQTT Binding': 'setup/Configuration-mqtt.md'
-      - 'WebSocket Binding': 'setup/Configuration-ws.md'
+      - 'Protocol Binding - CoAP <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span>': 'setup/Configuration-coap.md'
+      - 'Protocol Binding - HTTP': 'setup/Configuration-http.md'
+      - 'Protocol Binding - MQTT': 'setup/Configuration-mqtt.md'
+      - 'Protocol Binding - WebSocket': 'setup/Configuration-ws.md'
       - 'Scripting': 'setup/Configuration-scripting.md'
       - 'User Interfaces': 'setup/Configuration-uis.md'
       - 'oneM2M Resources': 'setup/Configuration-resources.md'

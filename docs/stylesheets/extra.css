@@ -54,12 +54,12 @@ div.md-sidebar.md-sidebar--secondary {
 
 
 /* Make tables always full width */
-.md-typeset__table {
+/* .md-typeset__table {
 	min-width: 100%;
 }
 .md-typeset table:not([class]) {
     display: table;
-}
+} */
 
 
 [data-md-color-scheme="acmecse-light"] {

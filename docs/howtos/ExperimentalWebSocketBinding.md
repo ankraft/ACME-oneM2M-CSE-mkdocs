@@ -6,7 +6,7 @@ This binding is especially useful for CSE-to-CSE connections when two CSEs are c
 
 ## WebSocket and Originators
 
-The technical specification is published in oneM2M's TS-0020 and available [on the specification page](https://onem2m.org/technical/published-specifications) . Unfortunately, there is a small issue in the specification when it comes to send notifications from, for example, a CSE to a connected AE or CSE. 
+The technical specification is published in oneM2M's TS-0020 and available [on the specification page](https://onem2m.org/technical/published-specifications) . Unfortunately, there is a small issue in the specification when it comes to send notifications from, for example, a CSE to a connected AE or another CSE. 
 
 The specification states that an established WebSocket connection must be used when sending notifications to a client (an AE or CSE). In normal cases, this is not a problem. However, there could be a situation that a client establishes a WebSocket connection but doesn't send a request immediately. This is normal behavior, but without a oneM2M request the CSE cannot associate that specific WebSocket connection with an originator. If in this case the CSE needs to send a notification to a client (ie. an originator) it does not know whether there is an established WebSocket connection, even if, technically, there is one.
 
@@ -22,7 +22,7 @@ The only exception is when registering an AE. In this case, again similar to the
 
 ## Establishing WebSocket Connections
 
-Another experimental feature is that WebSockets may be established from AEs as well as CSE's (or *registrees* and *registrars* in oneM2M terms). The original (current) specification states that WebSockets must only be established by a *registree*, but this is very limiting and may force small ADN devices to implement multiple oneM2M bindings technologies when they want to be able to receive notifications even when no WebSocket connection has been established. Also, it is not clearly specified how to store requests from a *registrar* to a *registree* in case a connection is not available at the moment.
+Another experimental feature is that WebSockets may be established from AEs as well as CSEs (or *registrees* and *registrars* in oneM2M terms). The original (current) specification states that WebSockets must only be established by a *registree*, but this is very limiting and may force small ADN devices to implement multiple oneM2M bindings technologies when they want to be able to receive notifications even when no WebSocket connection has been established. Also, it is not clearly specified how to store requests from a *registrar* to a *registree* in case a connection is not available at the moment.
 
 The implemented experimental feature now adds the following procedure and a special URL schema for the *poa* (point of access) attribute for WebSocket connections:
 

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
   <help_text/>
-  <zoom_level>8</zoom_level>
+  <zoom_level>5</zoom_level>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1016</x>
-      <y>392</y>
-      <w>128</w>
-      <h>64</h>
+      <x>425</x>
+      <y>245</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>HTTP Server
 REST
@@ -24,10 +24,10 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1064</x>
-      <y>304</y>
-      <w>24</w>
-      <h>104</h>
+      <x>455</x>
+      <y>190</y>
+      <w>15</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=()-
 </panel_attributes>
@@ -36,10 +36,10 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1024</x>
-      <y>448</y>
-      <w>56</w>
-      <h>56</h>
+      <x>430</x>
+      <y>280</y>
+      <w>35</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 fontsize=8
@@ -50,10 +50,10 @@ requests</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1096</x>
-      <y>520</y>
-      <w>72</w>
-      <h>56</h>
+      <x>475</x>
+      <y>325</y>
+      <w>45</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 handle resource
@@ -65,10 +65,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1016</x>
-      <y>560</y>
-      <w>128</w>
-      <h>64</h>
+      <x>425</x>
+      <y>350</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Dispatcher
 symbol=component
@@ -79,10 +79,10 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1016</x>
-      <y>680</y>
-      <w>128</w>
-      <h>64</h>
+      <x>425</x>
+      <y>425</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Resource Storage
 symbol=component
@@ -97,10 +97,10 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1072</x>
-      <y>648</y>
-      <w>40</w>
-      <h>48</h>
+      <x>460</x>
+      <y>405</y>
+      <w>25</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=()-
 BREAD
@@ -111,10 +111,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1064</x>
-      <y>616</y>
-      <w>40</w>
-      <h>48</h>
+      <x>455</x>
+      <y>385</y>
+      <w>25</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=)-</panel_attributes>
     <additional_attributes>20.0;30.0;20.0;10.0</additional_attributes>
@@ -122,10 +122,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1176</x>
-      <y>680</y>
-      <w>128</w>
-      <h>64</h>
+      <x>525</x>
+      <y>425</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>oneM2M
 Resource Classes
@@ -137,10 +137,10 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>856</x>
-      <y>680</y>
-      <w>128</w>
-      <h>64</h>
+      <x>325</x>
+      <y>425</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Importer
 symbol=component
@@ -151,10 +151,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>904</x>
-      <y>640</y>
-      <w>64</w>
-      <h>56</h>
+      <x>355</x>
+      <y>400</y>
+      <w>40</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 add
@@ -166,10 +166,10 @@ fontsize=8
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>696</x>
-      <y>680</y>
-      <w>128</w>
-      <h>64</h>
+      <x>225</x>
+      <y>425</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Configuration
 symbol=component
@@ -180,10 +180,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>752</x>
-      <y>648</y>
-      <w>48</w>
-      <h>48</h>
+      <x>260</x>
+      <y>405</y>
+      <w>30</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=()-
 set/get
@@ -193,10 +193,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>992</x>
-      <y>424</y>
-      <w>48</w>
-      <h>24</h>
+      <x>410</x>
+      <y>265</y>
+      <w>30</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Flask
 Requests
@@ -211,10 +211,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>536</x>
-      <y>680</y>
-      <w>128</w>
-      <h>64</h>
+      <x>125</x>
+      <y>425</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Logging
 symbol=component
@@ -225,10 +225,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>592</x>
-      <y>640</y>
-      <w>64</w>
-      <h>56</h>
+      <x>160</x>
+      <y>400</y>
+      <w>40</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 info/debug
@@ -239,10 +239,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1024</x>
-      <y>904</y>
-      <w>112</w>
-      <h>24</h>
+      <x>430</x>
+      <y>565</y>
+      <w>70</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Resources
 symbol=artifact
@@ -255,10 +255,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1024</x>
-      <y>936</y>
-      <w>112</w>
-      <h>24</h>
+      <x>430</x>
+      <y>585</y>
+      <w>70</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Identifiers
 symbol=artifact
@@ -271,10 +271,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1008</x>
-      <y>880</y>
-      <w>272</w>
-      <h>184</h>
+      <x>420</x>
+      <y>550</y>
+      <w>170</w>
+      <h>115</h>
     </coordinates>
     <panel_attributes>DB Tables
 transparency=0</panel_attributes>
@@ -283,10 +283,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1072</x>
-      <y>736</y>
-      <w>24</w>
-      <h>56</h>
+      <x>460</x>
+      <y>460</y>
+      <w>15</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=-
 fontsize=8</panel_attributes>
@@ -295,10 +295,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>856</x>
-      <y>832</y>
-      <w>128</w>
-      <h>24</h>
+      <x>325</x>
+      <y>520</y>
+      <w>80</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Scripts
 symbol=artifact
@@ -311,10 +311,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>912</x>
-      <y>736</y>
-      <w>24</w>
-      <h>56</h>
+      <x>360</x>
+      <y>460</y>
+      <w>15</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=-
 fontsize=8</panel_attributes>
@@ -323,10 +323,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>544</x>
-      <y>784</y>
-      <w>112</w>
-      <h>24</h>
+      <x>130</x>
+      <y>490</y>
+      <w>70</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Rotating Logs
 symbol=artifact
@@ -339,10 +339,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>600</x>
-      <y>760</y>
-      <w>16</w>
-      <h>16</h>
+      <x>165</x>
+      <y>475</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=12
@@ -352,10 +352,10 @@ fontsize=12
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>592</x>
-      <y>736</y>
-      <w>24</w>
-      <h>56</h>
+      <x>160</x>
+      <y>460</y>
+      <w>15</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=-
 fontsize=8</panel_attributes>
@@ -364,10 +364,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1072</x>
-      <y>328</y>
-      <w>40</w>
-      <h>24</h>
+      <x>460</x>
+      <y>205</y>
+      <w>25</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=8
@@ -379,10 +379,10 @@ via http</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>696</x>
-      <y>784</y>
-      <w>128</w>
-      <h>24</h>
+      <x>225</x>
+      <y>490</y>
+      <w>80</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Configuration File
 symbol=artifact
@@ -395,10 +395,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>752</x>
-      <y>736</y>
-      <w>24</w>
-      <h>64</h>
+      <x>260</x>
+      <y>460</y>
+      <w>15</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=-
 fontsize=8</panel_attributes>
@@ -407,10 +407,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1240</x>
-      <y>640</y>
-      <w>80</w>
-      <h>56</h>
+      <x>565</x>
+      <y>400</y>
+      <w>50</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 access resources
@@ -421,10 +421,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>512</x>
-      <y>352</y>
-      <w>1984</w>
-      <h>776</h>
+      <x>100</x>
+      <y>220</y>
+      <w>1250</w>
+      <h>485</h>
     </coordinates>
     <panel_attributes>ACME CSE
 --
@@ -436,10 +436,10 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>544</x>
-      <y>816</y>
-      <w>112</w>
-      <h>24</h>
+      <x>130</x>
+      <y>510</y>
+      <w>70</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Console
 symbol=artifact
@@ -452,10 +452,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>536</x>
-      <y>776</y>
-      <w>128</w>
-      <h>72</h>
+      <x>125</x>
+      <y>485</y>
+      <w>80</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>transparency=0</panel_attributes>
     <additional_attributes/>
@@ -463,10 +463,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>856</x>
-      <y>560</y>
-      <w>128</w>
-      <h>64</h>
+      <x>325</x>
+      <y>350</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Security Manager
 symbol=component
@@ -477,10 +477,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>888</x>
-      <y>512</y>
-      <w>64</w>
-      <h>64</h>
+      <x>345</x>
+      <y>320</y>
+      <w>40</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=()-
 check
@@ -491,10 +491,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1232</x>
-      <y>520</y>
-      <w>56</w>
-      <h>56</h>
+      <x>560</x>
+      <y>325</y>
+      <w>35</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 handle
@@ -508,10 +508,10 @@ fontsize=8
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>760</x>
-      <y>768</y>
-      <w>16</w>
-      <h>16</h>
+      <x>265</x>
+      <y>480</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=12
@@ -521,10 +521,10 @@ fontsize=12
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>920</x>
-      <y>760</y>
-      <w>16</w>
-      <h>16</h>
+      <x>365</x>
+      <y>475</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=12
@@ -534,10 +534,10 @@ fontsize=12
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1080</x>
-      <y>760</y>
-      <w>16</w>
-      <h>16</h>
+      <x>465</x>
+      <y>475</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=12
@@ -547,10 +547,10 @@ fontsize=12
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1136</x>
-      <y>688</y>
-      <w>56</w>
-      <h>32</h>
+      <x>500</x>
+      <y>430</y>
+      <w>35</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>lt=-
 stores
@@ -561,10 +561,10 @@ fontsize=8
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1160</x>
-      <y>704</y>
-      <w>16</w>
-      <h>16</h>
+      <x>515</x>
+      <y>440</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=12
@@ -574,10 +574,10 @@ fontsize=12
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1168</x>
-      <y>1048</y>
-      <w>104</w>
-      <h>24</h>
+      <x>520</x>
+      <y>655</y>
+      <w>65</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>In PostgreSQL, memory
 or file system
@@ -592,10 +592,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>944</x>
-      <y>520</y>
-      <w>64</w>
-      <h>56</h>
+      <x>380</x>
+      <y>325</y>
+      <w>40</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 fontsize=8
@@ -606,10 +606,10 @@ resources</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>696</x>
-      <y>560</y>
-      <w>128</w>
-      <h>64</h>
+      <x>225</x>
+      <y>350</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Notification Manager
 symbol=component
@@ -624,10 +624,10 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1096</x>
-      <y>304</y>
-      <w>40</w>
-      <h>104</h>
+      <x>475</x>
+      <y>190</y>
+      <w>25</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=)-</panel_attributes>
     <additional_attributes>20.0;20.0;20.0;110.0</additional_attributes>
@@ -635,10 +635,10 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1112</x>
-      <y>328</y>
-      <w>48</w>
-      <h>24</h>
+      <x>485</x>
+      <y>205</y>
+      <w>30</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=8
@@ -650,10 +650,10 @@ via http</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>760</x>
-      <y>512</y>
-      <w>48</w>
-      <h>64</h>
+      <x>265</x>
+      <y>320</y>
+      <w>30</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=()-
 add/del
@@ -664,10 +664,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>800</x>
-      <y>520</y>
-      <w>64</w>
-      <h>56</h>
+      <x>290</x>
+      <y>325</y>
+      <w>40</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 fontsize=8
@@ -678,10 +678,10 @@ resources</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1336</x>
-      <y>560</y>
-      <w>128</w>
-      <h>64</h>
+      <x>625</x>
+      <y>350</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>remoteCSE Manager
 symbol=component
@@ -696,10 +696,10 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1024</x>
-      <y>968</y>
-      <w>112</w>
-      <h>24</h>
+      <x>430</x>
+      <y>605</y>
+      <w>70</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Subscriptions
 symbol=artifact
@@ -712,10 +712,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1208</x>
-      <y>640</y>
-      <w>48</w>
-      <h>56</h>
+      <x>545</x>
+      <y>400</y>
+      <w>30</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 fontsize=8
@@ -727,10 +727,10 @@ set/get
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1184</x>
-      <y>640</y>
-      <w>40</w>
-      <h>24</h>
+      <x>530</x>
+      <y>400</y>
+      <w>25</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=..&gt;
 fontsize=8</panel_attributes>
@@ -739,10 +739,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1008</x>
-      <y>304</y>
-      <w>40</w>
-      <h>104</h>
+      <x>420</x>
+      <y>190</y>
+      <w>25</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=)-</panel_attributes>
     <additional_attributes>20.0;20.0;20.0;110.0</additional_attributes>
@@ -750,10 +750,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1024</x>
-      <y>328</y>
-      <w>32</w>
-      <h>24</h>
+      <x>430</x>
+      <y>205</y>
+      <w>20</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=8
@@ -765,10 +765,10 @@ via http</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1112</x>
-      <y>448</y>
-      <w>48</w>
-      <h>56</h>
+      <x>485</x>
+      <y>280</y>
+      <w>30</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 send
@@ -779,10 +779,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>704</x>
-      <y>520</y>
-      <w>72</w>
-      <h>56</h>
+      <x>230</x>
+      <y>325</y>
+      <w>45</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 fontsize=8
@@ -792,10 +792,10 @@ send NOTIFY</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1200</x>
-      <y>216</y>
-      <w>128</w>
-      <h>64</h>
+      <x>540</x>
+      <y>135</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>WebUI
 symbol=component
@@ -806,10 +806,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1128</x>
-      <y>232</y>
-      <w>88</w>
-      <h>40</h>
+      <x>495</x>
+      <y>145</y>
+      <w>55</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>lt=)-</panel_attributes>
     <additional_attributes>20.0;20.0;90.0;20.0</additional_attributes>
@@ -817,10 +817,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1136</x>
-      <y>272</y>
-      <w>160</w>
-      <h>168</h>
+      <x>500</x>
+      <y>170</y>
+      <w>100</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=-
 serves
@@ -831,10 +831,10 @@ fontsize=8
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1136</x>
-      <y>216</y>
-      <w>40</w>
-      <h>24</h>
+      <x>500</x>
+      <y>135</y>
+      <w>25</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=8
@@ -846,10 +846,10 @@ via http</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1656</x>
-      <y>560</y>
-      <w>128</w>
-      <h>64</h>
+      <x>825</x>
+      <y>350</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Announcement
 Manager
@@ -865,10 +865,10 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1496</x>
-      <y>560</y>
-      <w>128</w>
-      <h>64</h>
+      <x>725</x>
+      <y>350</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Group
 Manager
@@ -880,10 +880,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1576</x>
-      <y>512</y>
-      <w>56</w>
-      <h>64</h>
+      <x>775</x>
+      <y>320</y>
+      <w>35</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>handle
 group
@@ -895,10 +895,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1512</x>
-      <y>520</y>
-      <w>64</w>
-      <h>56</h>
+      <x>735</x>
+      <y>325</y>
+      <w>40</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 access
@@ -909,10 +909,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1496</x>
-      <y>680</y>
-      <w>128</w>
-      <h>64</h>
+      <x>725</x>
+      <y>425</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Statistics
 symbol=component
@@ -923,10 +923,10 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1024</x>
-      <y>1000</y>
-      <w>112</w>
-      <h>24</h>
+      <x>430</x>
+      <y>625</y>
+      <w>70</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>CSE Statistics
 symbol=artifact
@@ -939,10 +939,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1544</x>
-      <y>632</y>
-      <w>48</w>
-      <h>64</h>
+      <x>755</x>
+      <y>395</y>
+      <w>30</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=)-
 store
@@ -953,10 +953,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1504</x>
-      <y>640</y>
-      <w>40</w>
-      <h>56</h>
+      <x>730</x>
+      <y>400</y>
+      <w>25</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 recv
@@ -967,10 +967,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1336</x>
-      <y>680</y>
-      <w>128</w>
-      <h>64</h>
+      <x>625</x>
+      <y>425</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Event Manager
 symbol=component
@@ -985,10 +985,10 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1400</x>
-      <y>640</y>
-      <w>40</w>
-      <h>56</h>
+      <x>665</x>
+      <y>400</y>
+      <w>25</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 recv
@@ -999,10 +999,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1344</x>
-      <y>640</y>
-      <w>64</w>
-      <h>56</h>
+      <x>630</x>
+      <y>400</y>
+      <w>40</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 manage
@@ -1014,10 +1014,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1424</x>
-      <y>640</y>
-      <w>48</w>
-      <h>56</h>
+      <x>680</x>
+      <y>400</y>
+      <w>30</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 fwd
@@ -1028,10 +1028,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1584</x>
-      <y>640</y>
-      <w>48</w>
-      <h>56</h>
+      <x>780</x>
+      <y>400</y>
+      <w>30</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 statistics
@@ -1041,10 +1041,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>536</x>
-      <y>560</y>
-      <w>128</w>
-      <h>64</h>
+      <x>125</x>
+      <y>350</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Registration Manager
 symbol=component
@@ -1059,10 +1059,10 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>520</y>
-      <w>48</w>
-      <h>56</h>
+      <x>140</x>
+      <y>325</y>
+      <w>30</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 register
@@ -1072,10 +1072,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>608</x>
-      <y>520</y>
-      <w>64</w>
-      <h>56</h>
+      <x>170</x>
+      <y>325</y>
+      <w>40</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 fontsize=8
@@ -1086,10 +1086,10 @@ resources</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1656</x>
-      <y>680</y>
-      <w>128</w>
-      <h>64</h>
+      <x>825</x>
+      <y>425</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Validation
 Manager
@@ -1101,10 +1101,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1712</x>
-      <y>640</y>
-      <w>56</w>
-      <h>56</h>
+      <x>860</x>
+      <y>400</y>
+      <w>35</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 handle
@@ -1115,10 +1115,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1176</x>
-      <y>560</y>
-      <w>128</w>
-      <h>64</h>
+      <x>525</x>
+      <y>350</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Request
 Manager
@@ -1130,10 +1130,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1176</x>
-      <y>512</y>
-      <w>72</w>
-      <h>64</h>
+      <x>525</x>
+      <y>320</y>
+      <w>45</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=()-
 handle 
@@ -1146,10 +1146,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1664</x>
-      <y>512</y>
-      <w>72</w>
-      <h>64</h>
+      <x>830</x>
+      <y>320</y>
+      <w>45</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>handle
 resource
@@ -1161,10 +1161,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1360</x>
-      <y>512</y>
-      <w>72</w>
-      <h>64</h>
+      <x>640</x>
+      <y>320</y>
+      <w>45</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=()-
 handle
@@ -1176,10 +1176,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1720</x>
-      <y>504</y>
-      <w>80</w>
-      <h>72</h>
+      <x>865</x>
+      <y>315</y>
+      <w>50</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>remote
 resource
@@ -1191,10 +1191,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1016</x>
-      <y>520</y>
-      <w>64</w>
-      <h>56</h>
+      <x>425</x>
+      <y>325</y>
+      <w>40</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 security &amp;
@@ -1206,10 +1206,10 @@ fontsize=8
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>544</x>
-      <y>608</y>
-      <w>112</w>
-      <h>16</h>
+      <x>130</x>
+      <y>380</y>
+      <w>70</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>incl. resource expirations
 transparency=0
@@ -1223,10 +1223,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1176</x>
-      <y>88</y>
-      <w>176</w>
-      <h>216</h>
+      <x>525</x>
+      <y>55</y>
+      <w>110</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>Web UI
 transparency=0
@@ -1236,10 +1236,10 @@ layer=-2</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1200</x>
-      <y>128</y>
-      <w>128</w>
-      <h>64</h>
+      <x>540</x>
+      <y>80</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>HTTP Server
 REST
@@ -1255,10 +1255,10 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1224</x>
-      <y>184</y>
-      <w>40</w>
-      <h>48</h>
+      <x>555</x>
+      <y>115</y>
+      <w>25</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=-
 serves
@@ -1268,10 +1268,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1128</x>
-      <y>144</y>
-      <w>88</w>
-      <h>40</h>
+      <x>495</x>
+      <y>90</y>
+      <w>55</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>lt=)-</panel_attributes>
     <additional_attributes>20.0;20.0;90.0;20.0</additional_attributes>
@@ -1279,10 +1279,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1136</x>
-      <y>128</y>
-      <w>40</w>
-      <h>24</h>
+      <x>500</x>
+      <y>80</y>
+      <w>25</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=8
@@ -1294,10 +1294,10 @@ Mca</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1280</x>
-      <y>184</y>
-      <w>64</w>
-      <h>48</h>
+      <x>590</x>
+      <y>115</y>
+      <w>40</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=-
 Mca via proxy
@@ -1307,10 +1307,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1024</x>
-      <y>1032</y>
-      <w>112</w>
-      <h>24</h>
+      <x>430</x>
+      <y>645</y>
+      <w>70</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Batch Notifications
 symbol=artifact
@@ -1323,10 +1323,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1272</x>
-      <y>512</y>
-      <w>64</w>
-      <h>64</h>
+      <x>585</x>
+      <y>320</y>
+      <w>40</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=)-
 send
@@ -1338,10 +1338,10 @@ fontsize=8
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1416</x>
-      <y>520</y>
-      <w>64</w>
-      <h>56</h>
+      <x>675</x>
+      <y>325</y>
+      <w>40</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 fontsize=8
@@ -1352,10 +1352,10 @@ resources</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>496</x>
-      <y>72</y>
-      <w>2016</w>
-      <h>1080</h>
+      <x>90</x>
+      <y>45</y>
+      <w>1270</w>
+      <h>675</h>
     </coordinates>
     <panel_attributes>lw=0
 bg=white
@@ -1366,10 +1366,10 @@ layer=-2</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>632</x>
-      <y>728</y>
-      <w>48</w>
-      <h>24</h>
+      <x>185</x>
+      <y>455</y>
+      <w>30</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>rich
 transparency=0
@@ -1383,10 +1383,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1816</x>
-      <y>560</y>
-      <w>128</w>
-      <h>64</h>
+      <x>925</x>
+      <y>350</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>TimeSeries
 Manager
@@ -1398,10 +1398,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1824</x>
-      <y>512</y>
-      <w>56</w>
-      <h>64</h>
+      <x>930</x>
+      <y>320</y>
+      <w>35</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=()-
 handle new
@@ -1413,10 +1413,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1336</x>
-      <y>392</y>
-      <w>128</w>
-      <h>64</h>
+      <x>625</x>
+      <y>245</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Console
 symbol=component
@@ -1427,10 +1427,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1392</x>
-      <y>312</y>
-      <w>56</w>
-      <h>96</h>
+      <x>660</x>
+      <y>195</y>
+      <w>35</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=()-
 m1=handle\nuser input
@@ -1440,10 +1440,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1408</x>
-      <y>448</y>
-      <w>56</w>
-      <h>56</h>
+      <x>670</x>
+      <y>280</y>
+      <w>35</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 various
@@ -1453,10 +1453,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1880</x>
-      <y>512</y>
-      <w>72</w>
-      <h>64</h>
+      <x>965</x>
+      <y>320</y>
+      <w>45</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=)-
 send
@@ -1468,10 +1468,10 @@ fontsize=8
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>856</x>
-      <y>392</y>
-      <w>128</w>
-      <h>64</h>
+      <x>325</x>
+      <y>245</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>MQTT Client
 REST
@@ -1487,10 +1487,10 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>904</x>
-      <y>304</y>
-      <w>24</w>
-      <h>104</h>
+      <x>355</x>
+      <y>190</y>
+      <w>15</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=()-
 </panel_attributes>
@@ -1499,10 +1499,10 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>864</x>
-      <y>448</y>
-      <w>56</w>
-      <h>56</h>
+      <x>330</x>
+      <y>280</y>
+      <w>35</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 fontsize=8
@@ -1513,10 +1513,10 @@ requests</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>832</x>
-      <y>424</y>
-      <w>48</w>
-      <h>24</h>
+      <x>310</x>
+      <y>265</y>
+      <w>30</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Paho
 transparency=0
@@ -1530,10 +1530,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>912</x>
-      <y>328</y>
-      <w>40</w>
-      <h>24</h>
+      <x>360</x>
+      <y>205</y>
+      <w>25</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=8
@@ -1545,10 +1545,10 @@ via MQTT</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>952</x>
-      <y>304</y>
-      <w>40</w>
-      <h>104</h>
+      <x>385</x>
+      <y>190</y>
+      <w>25</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=)-</panel_attributes>
     <additional_attributes>20.0;20.0;20.0;110.0</additional_attributes>
@@ -1556,10 +1556,10 @@ via MQTT</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>968</x>
-      <y>328</y>
-      <w>48</w>
-      <h>24</h>
+      <x>395</x>
+      <y>205</y>
+      <w>30</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=8
@@ -1571,10 +1571,10 @@ via MQTT</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>848</x>
-      <y>304</y>
-      <w>40</w>
-      <h>104</h>
+      <x>320</x>
+      <y>190</y>
+      <w>25</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=)-</panel_attributes>
     <additional_attributes>20.0;20.0;20.0;110.0</additional_attributes>
@@ -1582,10 +1582,10 @@ via MQTT</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>864</x>
-      <y>328</y>
-      <w>40</w>
-      <h>24</h>
+      <x>330</x>
+      <y>205</y>
+      <w>25</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=8
@@ -1597,10 +1597,10 @@ via MQTT</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>952</x>
-      <y>448</y>
-      <w>48</w>
-      <h>56</h>
+      <x>385</x>
+      <y>280</y>
+      <w>30</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 send
@@ -1611,10 +1611,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1816</x>
-      <y>680</y>
-      <w>128</w>
-      <h>64</h>
+      <x>925</x>
+      <y>425</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Script Manager
 symbol=component
@@ -1626,10 +1626,10 @@ customelement=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1864</x>
-      <y>632</y>
-      <w>40</w>
-      <h>64</h>
+      <x>955</x>
+      <y>395</y>
+      <w>25</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=()-
 recv
@@ -1640,10 +1640,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1808</x>
-      <y>632</y>
-      <w>64</w>
-      <h>64</h>
+      <x>920</x>
+      <y>395</y>
+      <w>40</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=)-
 call service 
@@ -1655,10 +1655,10 @@ fontsize=8
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1896</x>
-      <y>632</y>
-      <w>40</w>
-      <h>64</h>
+      <x>975</x>
+      <y>395</y>
+      <w>25</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=()-
 run
@@ -1669,10 +1669,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1128</x>
-      <y>304</y>
-      <w>48</w>
-      <h>104</h>
+      <x>495</x>
+      <y>190</y>
+      <w>30</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=()-
 </panel_attributes>
@@ -1681,10 +1681,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1160</x>
-      <y>328</y>
-      <w>48</w>
-      <h>24</h>
+      <x>515</x>
+      <y>205</y>
+      <w>30</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=8
@@ -1696,10 +1696,10 @@ Tester</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1976</x>
-      <y>560</y>
-      <w>128</w>
-      <h>64</h>
+      <x>1025</x>
+      <y>350</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Time
 Manager
@@ -1711,10 +1711,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2032</x>
-      <y>520</y>
-      <w>48</w>
-      <h>56</h>
+      <x>1060</x>
+      <y>325</y>
+      <w>30</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 time
@@ -1726,10 +1726,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1816</x>
-      <y>784</y>
-      <w>128</w>
-      <h>24</h>
+      <x>925</x>
+      <y>490</y>
+      <w>80</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Scripts
 symbol=artifact
@@ -1746,10 +1746,10 @@ drawLine(21.8,11.4,20,15) lw=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1872</x>
-      <y>736</y>
-      <w>24</w>
-      <h>64</h>
+      <x>960</x>
+      <y>460</y>
+      <w>15</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=-
 fontsize=8
@@ -1759,10 +1759,10 @@ fontsize=8
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1880</x>
-      <y>768</y>
-      <w>16</w>
-      <h>16</h>
+      <x>965</x>
+      <y>480</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=12
@@ -1772,10 +1772,10 @@ fontsize=12
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1656</x>
-      <y>392</y>
-      <w>128</w>
-      <h>64</h>
+      <x>825</x>
+      <y>245</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Upper Tester
 symbol=component
@@ -1786,10 +1786,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1712</x>
-      <y>312</y>
-      <w>64</w>
-      <h>96</h>
+      <x>860</x>
+      <y>195</y>
+      <w>40</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=()-
 m1=Upper Tester\nrequests
@@ -1799,10 +1799,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1672</x>
-      <y>448</y>
-      <w>56</w>
-      <h>56</h>
+      <x>835</x>
+      <y>280</y>
+      <w>35</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 requests
@@ -1812,10 +1812,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1736</x>
-      <y>448</y>
-      <w>48</w>
-      <h>56</h>
+      <x>875</x>
+      <y>280</y>
+      <w>30</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 scripts
@@ -1825,10 +1825,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2192</x>
-      <y>520</y>
-      <w>48</w>
-      <h>56</h>
+      <x>1160</x>
+      <y>325</y>
+      <w>30</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 handle
@@ -1840,10 +1840,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>2136</x>
-      <y>560</y>
-      <w>128</w>
-      <h>64</h>
+      <x>1125</x>
+      <y>350</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Semantic
 Manager
@@ -1855,10 +1855,10 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1496</x>
-      <y>392</y>
-      <w>128</w>
-      <h>64</h>
+      <x>725</x>
+      <y>245</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Text UI
 symbol=component
@@ -1869,10 +1869,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1584</x>
-      <y>448</y>
-      <w>48</w>
-      <h>56</h>
+      <x>780</x>
+      <y>280</y>
+      <w>30</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 logging
@@ -1883,10 +1883,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1512</x>
-      <y>448</y>
-      <w>64</w>
-      <h>56</h>
+      <x>735</x>
+      <y>280</y>
+      <w>40</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 requests
@@ -1898,10 +1898,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1552</x>
-      <y>312</y>
-      <w>56</w>
-      <h>96</h>
+      <x>760</x>
+      <y>195</y>
+      <w>35</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=()-
 m1=handle\nuser input
@@ -1911,10 +1911,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1152</x>
-      <y>904</y>
-      <w>112</w>
-      <h>24</h>
+      <x>510</x>
+      <y>565</y>
+      <w>70</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Actions
 symbol=artifact
@@ -1927,10 +1927,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1152</x>
-      <y>968</y>
-      <w>112</w>
-      <h>24</h>
+      <x>510</x>
+      <y>605</y>
+      <w>70</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Schedules
 symbol=artifact
@@ -1943,10 +1943,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1152</x>
-      <y>936</y>
-      <w>112</w>
-      <h>24</h>
+      <x>510</x>
+      <y>585</y>
+      <w>70</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Requests
 symbol=artifact
@@ -1959,10 +1959,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>848</x>
-      <y>776</y>
-      <w>144</w>
-      <h>184</h>
+      <x>320</x>
+      <y>485</y>
+      <w>90</w>
+      <h>115</h>
     </coordinates>
     <panel_attributes>Imports
 transparency=0</panel_attributes>
@@ -1971,10 +1971,10 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>856</x>
-      <y>800</y>
-      <w>128</w>
-      <h>24</h>
+      <x>325</x>
+      <y>500</y>
+      <w>80</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Attribute Policies
 symbol=artifact
@@ -1987,10 +1987,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>856</x>
-      <y>864</y>
-      <w>128</w>
-      <h>24</h>
+      <x>325</x>
+      <y>540</y>
+      <w>80</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Attribute Policies
 symbol=artifact
@@ -2003,10 +2003,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1976</x>
-      <y>680</y>
-      <w>128</w>
-      <h>64</h>
+      <x>1025</x>
+      <y>425</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Onboarding
 symbol=component
@@ -2017,10 +2017,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2032</x>
-      <y>640</y>
-      <w>56</w>
-      <h>56</h>
+      <x>1060</x>
+      <y>400</y>
+      <w>35</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 handle
@@ -2031,10 +2031,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>2136</x>
-      <y>680</y>
-      <w>128</w>
-      <h>64</h>
+      <x>1125</x>
+      <y>425</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Location
 Manager
@@ -2046,10 +2046,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2192</x>
-      <y>640</y>
-      <w>48</w>
-      <h>56</h>
+      <x>1160</x>
+      <y>400</y>
+      <w>30</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 handle
@@ -2061,10 +2061,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>2288</x>
-      <y>560</y>
-      <w>128</w>
-      <h>64</h>
+      <x>1220</x>
+      <y>350</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Action
 Manager
@@ -2076,10 +2076,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2368</x>
-      <y>520</y>
-      <w>48</w>
-      <h>56</h>
+      <x>1270</x>
+      <y>325</y>
+      <w>30</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=()-
 handle
@@ -2091,10 +2091,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2296</x>
-      <y>512</y>
-      <w>64</w>
-      <h>64</h>
+      <x>1225</x>
+      <y>320</y>
+      <w>40</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=)-
 call service 
@@ -2106,10 +2106,10 @@ fontsize=8
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1472</x>
-      <y>424</y>
-      <w>64</w>
-      <h>24</h>
+      <x>710</x>
+      <y>265</y>
+      <w>40</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Textualize
 transparency=0
@@ -2123,10 +2123,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>2112</x>
-      <y>592</y>
-      <w>48</w>
-      <h>24</h>
+      <x>1110</x>
+      <y>370</y>
+      <w>30</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>rdflib
 transparency=0
@@ -2140,10 +2140,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1312</x>
-      <y>424</y>
-      <w>48</w>
-      <h>24</h>
+      <x>610</x>
+      <y>265</y>
+      <w>30</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>rich
 transparency=0
@@ -2157,12 +2157,13 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>696</x>
-      <y>392</y>
-      <w>128</w>
-      <h>64</h>
+      <x>225</x>
+      <y>245</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
-    <panel_attributes>WS Server/Client
+    <panel_attributes>WebSocket
+Server/Client
 REST
 symbol=component
 valign=center
@@ -2176,10 +2177,10 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>672</x>
-      <y>424</y>
-      <w>56</w>
-      <h>24</h>
+      <x>210</x>
+      <y>265</y>
+      <w>35</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>WebSocket
 transparency=0
@@ -2193,10 +2194,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>704</x>
-      <y>304</y>
-      <w>40</w>
-      <h>104</h>
+      <x>230</x>
+      <y>190</y>
+      <w>25</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=)-</panel_attributes>
     <additional_attributes>20.0;20.0;20.0;110.0</additional_attributes>
@@ -2204,10 +2205,10 @@ fontsize=10</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>720</x>
-      <y>328</y>
-      <w>40</w>
-      <h>24</h>
+      <x>240</x>
+      <y>205</y>
+      <w>25</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=8
@@ -2219,10 +2220,10 @@ via WS</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>744</x>
-      <y>304</y>
-      <w>24</w>
-      <h>104</h>
+      <x>255</x>
+      <y>190</y>
+      <w>15</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=()-
 </panel_attributes>
@@ -2231,10 +2232,10 @@ via WS</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>752</x>
-      <y>328</y>
-      <w>40</w>
-      <h>24</h>
+      <x>260</x>
+      <y>205</y>
+      <w>25</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=8
@@ -2246,10 +2247,10 @@ via WS</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>792</x>
-      <y>304</y>
-      <w>40</w>
-      <h>104</h>
+      <x>285</x>
+      <y>190</y>
+      <w>25</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=)-</panel_attributes>
     <additional_attributes>20.0;20.0;20.0;110.0</additional_attributes>
@@ -2257,10 +2258,10 @@ via WS</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>808</x>
-      <y>328</y>
-      <w>48</w>
-      <h>24</h>
+      <x>295</x>
+      <y>205</y>
+      <w>30</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=8
@@ -2272,24 +2273,24 @@ via WS</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>792</x>
-      <y>448</y>
-      <w>48</w>
-      <h>48</h>
+      <x>285</x>
+      <y>280</y>
+      <w>35</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=()-
-send
-requests
+  send
+  requests
 fontsize=8</panel_attributes>
     <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>704</x>
-      <y>448</y>
-      <w>56</w>
-      <h>56</h>
+      <x>230</x>
+      <y>280</y>
+      <w>35</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=)-
 fontsize=8
@@ -2300,10 +2301,10 @@ requests</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1008</x>
-      <y>776</y>
-      <w>128</w>
-      <h>64</h>
+      <x>420</x>
+      <y>485</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>TinyDB
 DB Binding
@@ -2316,10 +2317,10 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1152</x>
-      <y>776</y>
-      <w>128</w>
-      <h>64</h>
+      <x>510</x>
+      <y>485</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>PostgreSQL
 DB Binding
@@ -2331,10 +2332,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1072</x>
-      <y>736</y>
-      <w>152</w>
-      <h>56</h>
+      <x>460</x>
+      <y>460</y>
+      <w>95</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=-
 fontsize=8</panel_attributes>
@@ -2343,10 +2344,10 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1096</x>
-      <y>776</y>
-      <w>16</w>
-      <h>16</h>
+      <x>475</x>
+      <y>485</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=12
@@ -2356,10 +2357,10 @@ fontsize=12
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1096</x>
-      <y>776</y>
-      <w>16</w>
-      <h>16</h>
+      <x>475</x>
+      <y>485</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=12
@@ -2369,10 +2370,10 @@ fontsize=12
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1096</x>
-      <y>776</y>
-      <w>16</w>
-      <h>16</h>
+      <x>475</x>
+      <y>485</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=12
@@ -2382,10 +2383,10 @@ fontsize=12
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1096</x>
-      <y>776</y>
-      <w>16</w>
-      <h>16</h>
+      <x>475</x>
+      <y>485</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=12
@@ -2395,10 +2396,10 @@ fontsize=12
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1096</x>
-      <y>776</y>
-      <w>16</w>
-      <h>16</h>
+      <x>475</x>
+      <y>485</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=12
@@ -2408,10 +2409,10 @@ fontsize=12
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1208</x>
-      <y>760</y>
-      <w>16</w>
-      <h>16</h>
+      <x>545</x>
+      <y>475</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lw=0
 fontsize=12
@@ -2421,10 +2422,10 @@ fontsize=12
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1072</x>
-      <y>832</y>
-      <w>88</w>
-      <h>64</h>
+      <x>460</x>
+      <y>520</y>
+      <w>55</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=..
 fontsize=8</panel_attributes>
@@ -2433,13 +2434,158 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1136</x>
-      <y>832</y>
-      <w>88</w>
-      <h>64</h>
+      <x>500</x>
+      <y>520</y>
+      <w>55</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=..
 fontsize=8</panel_attributes>
     <additional_attributes>10.0;60.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>125</x>
+      <y>245</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>CoAP
+Server/Client
+REST
+symbol=component
+valign=center
+transparency=0
+customelement=
+drawArc(10,10,10,10,0,270,true) transparency=100
+drawLine(16.5,14,20,15)
+drawLine(21.8,11.4,20,15)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>105</x>
+      <y>265</y>
+      <w>40</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>CoAPthon3-
+ACME-CSE
+transparency=0
+bg=light_gray
+valign=center
+halign=center
+layer=1
+fontsize=10</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>130</x>
+      <y>190</y>
+      <w>25</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=)-</panel_attributes>
+    <additional_attributes>20.0;20.0;20.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>140</x>
+      <y>205</y>
+      <w>25</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lw=0
+fontsize=8
+halign=left
+Mcc
+via CoAP</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>155</x>
+      <y>190</y>
+      <w>15</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>160</x>
+      <y>205</y>
+      <w>25</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lw=0
+fontsize=8
+halign=left
+Mca / Mcc
+via CoAP</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>185</x>
+      <y>190</y>
+      <w>25</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=)-</panel_attributes>
+    <additional_attributes>20.0;20.0;20.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>185</x>
+      <y>280</y>
+      <w>35</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+  send
+  requests
+fontsize=8</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>130</x>
+      <y>280</y>
+      <w>35</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=)-
+fontsize=8
+forward
+requests</panel_attributes>
+    <additional_attributes>20.0;40.0;20.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>195</x>
+      <y>205</y>
+      <w>30</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lw=0
+fontsize=8
+halign=left
+Notifications
+via CoAP</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

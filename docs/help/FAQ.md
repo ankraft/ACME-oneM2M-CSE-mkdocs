@@ -8,7 +8,7 @@
 ## Network
 
 1. **How can I access the CSE from remote/another computer on my network?**  
-   By default the CSE binds to the *localhost/loopback* interface, meaning it **will not** be able to receive requests from remote machines. To make it accessible from a remote machine you need to bind the CSE's http server or MQTT client to another network interface, or address. This can be done in the *[http]* and *[mqtt]* sections of the configuration file. 
+   By default the CSE binds to the *localhost/loopback* interface, meaning it **will not** be able to receive requests from remote machines. To make it accessible from a remote machine you need to bind the CSE's http server or MQTT client to another network interface, or address. This can be done in the *[coap]*, *[http]*, *[mqtt]* and *[websocket]* sections of the configuration file. 
    Setting the listen interface to "0.0.0.0" binds the servers to all available interfaces.  
    The reason for this default setting is security: making the CSE accessible from remote machines should be a conscious decision and not the default.
 
@@ -16,10 +16,10 @@
 ## Database
 
 1. **Corrupt database files**  
-   In very rare cases, e.g. when the CSE was not properly shut down, the on-disk database files for TinyDB  may be corrupted. The CSE tries to detect this during start-up, but there is not much one can do about this. However, a backup of the database file is created every time the CSE starts. This backup can be found in the *backup* sub-directory of the *data* directory. 
+   In very rare cases, e.g. when the CSE was not properly shut down, the on-disk database files for TinyDB may be corrupted. The CSE tries to detect this during start-up, but there is not much one can do about this. However, a backup of the database file is created every time the CSE starts. This backup can be found in the *backup* sub-directory of the *data* directory. 
 
 
-## HTTP
+## HTTP Binding
 
 1. **What does the error message "[Errno 13] Permission denied" during startup of the CSE mean?**  
    This error is shown by the CSE when the http server tries to bind to a TCP/IP port to listen for incoming requests, 
@@ -55,7 +55,7 @@
    CSE must be configured to run the http server with TLS support enabled (https).
 
 
-## MQTT
+## MQTT Binding
 
 1. **What does the error message "Out of memory" mean that appears sometimes?**  
    This error message should actually read "connection refused" or "general error" that is returned by the underlying MQTT library. The error code "1" indicates this error but the human readable error message seems to be wrongly assigned here.

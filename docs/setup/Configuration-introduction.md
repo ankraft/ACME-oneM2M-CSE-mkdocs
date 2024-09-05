@@ -80,3 +80,12 @@ Another useful application is to provide the IP address of a Docker host to the 
 [basic.config]
 cseHost=${DOCKER_HOST_IP}
 ```
+
+## Dot Notation
+
+Configuration settings can be accessed and updated from scripts, for example with the [get-config](../development/ACMEScript-functions.md#get-config) function. For this, the section and setting names are concatenated using dot notation. The full section name is followed by a dot and then the setting name.
+
+For example:
+
+- The *cseID* setting in the *[cse]* section may be accessed by the name `cse.cseID`
+- The *host* setting in the *[database.postgresql]* section may be accessed by the name `database.postgresql.host`

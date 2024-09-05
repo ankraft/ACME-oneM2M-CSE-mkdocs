@@ -1,22 +1,26 @@
-# A Short Introduction to the ACME CSE
+# A Short Introduction to the ACME oneM2M CSE
 
-The ACME oneM2M CSE is a compliant implentation of a oneM2M *Common Service Entity* that provides a subset of the [oneM2M IoT standard](../home/oneM2M-introduction.md) to provide a useful and rich implementation for educational purposes and small trials. Though it may not implement all parts of the standard yet, the [support for more oneM2M resource types and functionalities](../home/Supported.md) is growing as development continues. 
+The **ACME oneM2M CSE** (*ACME CSE* for short) is an implementation of a *Common Service Entity* that supports a subset of the [oneM2M IoT standard](../home/oneM2M-introduction.md). It provides a useful and rich implementation for educational purposes and small trials. 
 
-The goal is to provide an easy to [install](../setup/Installation.md), [run](../setup/Running.md), and [extensible](../development/Overview.md) oneM2M CSE. The ACME CSE is written in Python and can be installed and run with a few simple commands almost everywhere where Python is available. For the data storage it uses a simple document database that is suitable for small installations. For more sophisticated installations, the ACME CSE can connect to a PostgreSQL database. 
-
-The ACME CSE can also be embedded in other Python applications, for example in a [Jupyter notebook](../development/Embedding_ACME.md#jupyter-notebooks), to implement and demonstrate IoT scenarios.
+The goal is to provide an easy to [install](../setup/Installation.md) and [run](../setup/Running.md) oneM2M CSE. The ACME CSE is written in Python, and can be installed and run with a few commands almost everywhere where the Python runtime environment is available.  By default, the implementation uses a simple file-based document database for data storage that is suitable for small installations. For more sophisticated deployments, the ACME CSE can connect to a PostgreSQL database. 
 
 <div class="grid" markdown>
-A text-based user interface (UI) is provided to interact with the ACME CSE and the hosted oneM2M resources. The UI is accessible via an OS's terminal console.  
-A console UI is also available. It is the default UI when running the ACME CSE in a terminal and is better suited to display log and debug information.
+The ACME CSE also offers a rich text-based user interface that runs directly inside an OS's terminal console and provides a convenient way to inspect and work with resources, requests, and status information. This UI is especially useful when running the CSE on a remote server or in a Docker container. 
+<br/>
+<br/>
+A more basic console UI is also available. It is the default UI when running the ACME CSE in a terminal console, and which is better suited to show log and debug output.  
+<br/>
+
 
 <figure markdown="1">
-![Text UI of the ACME CSE](../images/textUI.png#only-light){data-gallery="light", width="60%", alogn=right}
-![Text UI of the ACME CSE](../images/textUI-dark.png#only-dark){data-gallery="dark", width="60%", alogn=right}
+![Text UI of the ACME CSE](../images/textUI.png#only-light){data-gallery="light", width="70%", alogn=right}
+![Text UI of the ACME CSE](../images/textUI-dark.png#only-dark){data-gallery="dark", width="70%", alogn=right}
 <figcaption>Text UI of the ACME CSE</figcaption>
 </figure>
 
 </div>
 
 
-The ACME CSE is open source, and the source code is available under the [BSD 3-Clause License](../home/License.md). The project is hosted on [GitHub](https://github.com/ankraft/ACME-oneM2M-CSE).
+Though the ACME CSE may not yet support all parts of the standard, the [support for more oneM2M resource types and functionalities](../home/Supported.md) is growing as development continues. 
+
+The project and its source code is available on [GitHub](https://github.com/ankraft/ACME-oneM2M-CSE).

@@ -55,7 +55,7 @@ You can start the CSE by simply running it from the command line:
 
 	=== "For Package Installation "
 
-		Run the following command from the command line from **within any directory that uses the Python environment where you installed the package**:
+		Run the following command from the command line of your terminal program from **within any directory that uses the Python environment where you installed the package**:
 
 		```bash title="Start ACME CSE"
 		acmecse

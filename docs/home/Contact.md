@@ -2,8 +2,8 @@
 
 ## ACME CSE on GitHub
 
-The ACME CSE project is hosted on [https://github.com/ankraft/ACME-oneM2M-CSE](https://github.com/ankraft/ACME-oneM2M-CSE){target=_new}. 
-You can find the source code, documentation, and issues there.
+The ACME CSE project is hosted on [https://github.com/ankraft/ACME-oneM2M-CSE](https://github.com/ankraft/ACME-oneM2M-CSE){target=_new}.  
+There, you can find the source code and discuss issues.
 
 ### Issues
 
