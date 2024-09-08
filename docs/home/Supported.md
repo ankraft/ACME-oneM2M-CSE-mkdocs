@@ -181,6 +181,12 @@ are not yet fully implemented, and some features are experimental.
 
 :	The ACME CSE supports semantic queries and discovery for resources with semantic descriptors.
 
+	At the moment, the following presentation formats are supported:
+
+	- RDF/XML
+	- JSON-LD
+	- Turtle
+
 
 
 ### Location Management
