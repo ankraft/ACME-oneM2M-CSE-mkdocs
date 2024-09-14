@@ -64,7 +64,7 @@ $ python runTests.py -h
 usage: runTests.py [-h] [--all] [--load-only] [--verbose-requests] [--disable-teardown]
                    [--exclude-tests EXCLUDETESTS [EXCLUDETESTS ...]] [--run-teardown] [--run-count NUMBEROFRUNS]
                    [--run-tests TESTCASENAME [TESTCASENAME ...]] [--show-skipped] [--no-failfast]
-                   [--list-tests | --list-tests-sorted]
+                   [--local-notification-server] [--list-tests | --list-tests-sorted]
                    [TESTSUITE ...]
 
 positional arguments:
@@ -88,6 +88,8 @@ options:
                         run only the specified test cases from the set of test suites
   --show-skipped        show skipped test cases in summary
   --no-failfast         continue running test cases after a failure
+   --local-notification-server, -lns
+                        use a local notification server address
   --list-tests, -ls     list the test cases of the specified test suites in the order they are defined and exit
   --list-tests-sorted, -lss
                         alphabetical sorted list the test cases of the specified test suites and exit
@@ -190,7 +192,7 @@ This disables the clean-up of the CSE after the test suite has run, so that the 
 To list the available test cases one can use the `--list-tests` (list in the order the test cases have been defined in the test suite) and the `--list-tests-sorted` (list alphabetically) options.
 
 
-### Exluding Test Cases
+### Excluding Test Cases
 
 One can exclude test cases from running by using the `--exclude-tests` or `-et` option. This option takes a list of test case names to exclude from the test run.
 
@@ -199,6 +201,11 @@ The following example runs all test cases in the *testSUB* test suite except the
 ```bash title="Exclude Test Cases"
 $ python runTests.py testSUB --exclude-tests test_createCNTforEXC 
 ```
+
+
+### Use local address for Notification Server
+
+The `--local-notification-server` or `-lns` option can be used to specify that the notification server is running on the same machine as the CSE. This is useful when explicitly routing notifications via the local network interface.
 
 
 ### Tear-down and Clean-up
