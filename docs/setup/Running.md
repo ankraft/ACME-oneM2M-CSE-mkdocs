@@ -90,6 +90,36 @@ The ACME CSE provides a number of command line arguments that will override the 
 | --ws, --no-ws                                            | Enable or disable the WebSocket binding.<br />This overrides the [websocket.enable](../setup//Configuration-ws.md#general-settings) configuration setting.              |
 
 
+### Reading Command Line Arguments from a File
+
+!!! warning "Under Development"
+	This functionality is still under development and not available in the current release. This documentation is for future reference.
+
+Command line arguments can also be read from a file. This is useful when you have a large number of arguments that you want to pass to the CSE. The file should contain one argument per line. Empty lines and lines starting with a hash sign (`#`) are ignored.
+
+**Example:**
+
+=== "argsfile.txt"
+
+	```plaintext
+	--db-type memory
+
+	# enable the http server
+	--http
+
+	# enable the mqtt server
+	--mqtt
+
+	# set the log level to debug
+	--log-level debug
+	```
+
+=== "Run the CSE with arguments from file"
+
+	```bash
+	acmecse @argsfile.txt
+	```
+
 
 ## Stopping the CSE
 
