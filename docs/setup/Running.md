@@ -101,7 +101,7 @@ Command line arguments can also be read from a file. This is useful when you hav
 
 === "argsfile.txt"
 
-	```plaintext
+	```plaintext title="The content of the file argsfile.txt"
 	--db-type memory
 
 	# enable the http server
@@ -116,7 +116,7 @@ Command line arguments can also be read from a file. This is useful when you hav
 
 === "Run the CSE with arguments from file"
 
-	```bash
+	```bash title="Run the CSE with arguments from file"
 	acmecse @argsfile.txt
 	```
 
