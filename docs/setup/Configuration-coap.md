@@ -1,9 +1,5 @@
 # Configuration - CoAP Binding Settings
 
-
-!!! warning "Under Development"
-	The CoAP binding is still under development and not available in the current release. This documentation is for future reference.
-
 The CSE supports CoAP communication via the CoAP binding. The CoAP binding is disabled by default and must be enabled in the configuration file under `[coap].enable` .
 
 ##	General Settings

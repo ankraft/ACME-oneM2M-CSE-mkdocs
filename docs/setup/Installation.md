@@ -2,7 +2,8 @@
 
 ## Pre-Requisites
 
-ACME requires **Python 3.10** or newer. Install it with your favorite package manager or as part of a virtual environment.
+ACME requires **Python 3.10** or newer. ACME has **not** been tested with the upcoming Python 3.13 yet.  
+Install it with your favorite package manager or as part of a virtual environment.
 
 ## Installation and First Setup
 
@@ -87,3 +88,17 @@ You can start the CSE by simply running it from the command line:
 1.  After terminating the CSE again you can edit that configuration file and add more settings if necessary.
 	There are a lot of individual settings to configure here. Mostly, the defaults should be sufficient, but individual settings can be applied to each of the sections.  
 	See the [Configuration](../setup/Configuration-introduction.md) documentation for further details, and the defaults configuration file [acme.ini.default](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/acme.ini.default){target=_new}.
+
+
+## Installing the Development Version
+
+If you want to install the development version of the ACME CSE, you can either clone the repository and check-out the *development* branch, or you can install the current stable development version from the Python Package Index (PyPI): 
+
+```bash title="Install the ACME CSE Development Version"
+python -m pip install acmecse-dev
+```
+
+This command will install the latest development version of the ACME CSE and all required dependencies. It can be run in the same way as the stable version.
+
+!!! warning "Development Version"
+	The development version contains the latest changes, features, and bug fixes, but it is not stable and may contain bugs or incomplete features. It is not recommended for production use.
