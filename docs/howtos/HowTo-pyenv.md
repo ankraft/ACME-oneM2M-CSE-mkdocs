@@ -3,7 +3,7 @@
 This guide shortly describes how to install the [pyenv](https://github.com/pyenv/pyenv){target=_new} virtual environment manager.
 In addition, we will install [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv){target=_new}. This is a *pyenv* plugin for creating and managing virtual Python environments. 
 
-Pyenv is only officially supported on Linux/MacOS systems, so we will focus on these OS environments.
+**pyenv** is only officially supported on Linux/MacOS systems, so we will focus on these OS environments.
 
 
 ## Prerequisites

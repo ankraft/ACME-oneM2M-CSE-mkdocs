@@ -152,6 +152,11 @@
 ### RaspberryPi
 
 1. **Restrictions on 32 bit Systems**  
+
+	!!! Note
+		This answer is a bit outdated. Newer Raspberry Pi models are 64 bit systems and can run the 64 bit version of Raspberry Pi OS.  
+		Still, the following information might be useful for older models or for other 32 bit systems.
+
 	Currently, the normally installed Raspbian OS is a 32 bit system. This means that several restrictions apply here, such as the maximum date supported (~2038). It needs to be determined whether these restrictions still apply when the 64 bit version of Raspbian is available.
 1. **The console or the text UI is not displayed correctly**  
 	It could be that the OS's terminal applications doesn't support rendering of extra characters, like line graphics. One recommendation on Linux systems is to install the [Mate Terminal](https://wiki.mate-desktop.org/mate-desktop/applications/mate-terminal/){target=_new}, which supports UTF-8 and line graphics. It also renders the output much faster.
@@ -161,5 +166,5 @@
 	```
 
 1. **Timing Issues**  
-	 Also, the resolution of the available Python timers is rather low on Raspbian, and background tasks might not run exactly on the desired time.  
+	 Also, the resolution of the available Python timers is rather low on Raspbian 32 Bits, and background tasks might not run exactly on the desired time.  
 	 Unfortunately, this is also why sometimes a couple of the CSE's tests cases may fail randomly.
