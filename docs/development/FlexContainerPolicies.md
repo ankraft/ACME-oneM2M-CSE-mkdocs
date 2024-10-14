@@ -4,7 +4,7 @@ This article describes the flexContainer specialization policies used by the ACM
 
 For all &lt;flexContainer> specializations, e.g. for oneM2M's TS-0023 ModuleClasses, the [attribute policies](../development/AttributePolicies.md) and the allowed &lt;flexContainer> hierarchy must be provided. 
 
-The files for &lt;flexContainer> specializations are also imported from the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} and [secondary init](../setup/Running.md#secondary-init-directory) directory. More than one such file can be provided, for example one per domain. The files must have the extension `.fcp`. 
+The files for &lt;flexContainer> specializations are also automatically imported from the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} and [secondary init](../setup/Running.md#secondary-init-directory) directory. More than one such file can be provided, for example one per domain. The files must have the extension `.fcp`. 
 
 The format is a JSON structure that follows the structure described in the following code.  
 
@@ -124,4 +124,60 @@ The following examples show the attribute policies for the *binarySwitch* and *d
 	}
 ]
 ```
+
+## Self-Defined Specializations
+
+It is possible to define own specializations that need to be placed in schema files, similar to the provided ones. These files must have the `.fcp` extension and must be placed in one of the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} or [secondary init](../setup/Running.md#secondary-init-directory) directories. They are imported automatically when the CSE starts.
+
+The self-defined schema files have to follow the format described above. 
+
+
+### Example: Defining a New Specialization
+
+The following example shows a specialization for a new ModuleClass *myKeyValue* in the domain *myDomain* (short name: *mdm*). The ModuleClass has three DataPoints: *key*, which is mandatory, and two optional *stringValue* and *integerValue* attributes.
+
+
+```json title="FlexContainer specialization myKeyValue.fcp"
+[
+	// ModuleClass: myKeyValue (myKVe) 
+	{
+		"type"      : "mdm:myKVe",
+		"lname"     : "myKeyValue",
+		"cnd"       : "org.myDomain.myKeyValue",
+		"attributes": [
+			// DataPoint: key
+			{
+				"sname" : "key", 
+				"lname" : "key", 
+				"type" : "string", 
+				"car" : "1"
+			}, 
+			
+			// DataPoint: stringValue
+			{ 
+				"sname" : "strVe", 
+				"lname" : "stringValue", 
+				"type" : "string", 
+				"car" : "01" 
+			},
+
+
+			// DataPoint: integerValue
+			{ 
+				"sname" : "intVe", 
+				"lname" : "integerValue", 
+				"type" : "integer", 
+				"car" : "01" 
+			}
+
+		]
+	}
+]
+```
+
+### Using Self-Defined Specializations
+
+Once defined and placed in the correct directory, and after restarting the CSE, the self-defined specializations can be used in the same way as the provided ones.
+
+
 
