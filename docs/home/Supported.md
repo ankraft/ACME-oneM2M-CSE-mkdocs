@@ -121,16 +121,14 @@ are not yet fully implemented, and some features are experimental.
 
 :	The ACME CSE supports the following management objects:
 
-	| Management Objects       | Management Objects     |
-	|--------------------------|------------------------|
-	| AreaNwkDeviceInfo (ANDI) | Memory (MEM)           |
-	| AreaNwkInfo (ANI)        | MobileNetwork (MNWK)   |
-	| Battery (BAT)            | MyCertFileCred (NYCFC) |
-	| DataCollect (DATC)       | Reboot (REB)           |
-	| DeviceCapability (DVC)   | SIM (SIM)              |
-	| DeviceInfo (DVI)         | Software (SWR)         |
-	| EventLog (EVL)           | WifiClient (WIFIC)     |
-	| Firmware (FWR)           |                        |
+| Management Objects                                                                              | Management Objects     | Management Objects |
+|-------------------------------------------------------------------------------------------------|------------------------|--------------------|
+| AreaNwkDeviceInfo (ANDI)                                                                        | DeviceInfo (DVI)       | Reboot (REB)       |
+| AreaNwkInfo (ANI)                                                                               | EventLog (EVL)         | SIM (SIM)          |
+| Battery (BAT)                                                                                   | Firmware (FWR)         | Software (SWR)     |
+| Credentials (CRDS)<span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> | Memory (MEM)           | WifiClient (WIFIC) |
+| DataCollect (DATC)                                                                              | MobileNetwork (MNWK)   |                    |
+| DeviceCapability (DVC)                                                                          | MyCertFileCred (NYCFC) |                    |
 
 
 **Node (NOD)**
