@@ -45,7 +45,7 @@ Every function and s-expression returns a value. This is usually the function re
 
 ```lisp title="Example"
 ;; First, set the variable a to 3, then use it in a calculation.
-;; Then, the result of the calculation is printed.
+;; Then, the calculation result is printed.
 (print ( (setq a 3) (+ a 4) ))   ;; prints 7
 ```
 

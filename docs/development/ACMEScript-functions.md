@@ -369,7 +369,7 @@ The `eval` function evaluates and executes a quoted list or symbol.
 With this function one can disable or enable the [evaluation of s-expressions in strings](../development/ACMEScript.md#evaluating-s-expressions-in-strings-and-json-structures).
 
 ```lisp title="Example"
-(evaluate-inline false)  ;; Disables inline evaluation
+(evaluate-inline false)      ;; Disables inline evaluation
 (print "1 + 2 = [(+ 1 2)]")  ;; Prints "1 + 2 = [(+ 1 2)]"
 ```
 
@@ -386,6 +386,33 @@ The `filter` function filters a list based on a *function*. The *function* is ap
 
 ```lisp title="Example"
 (filter (lambda (x) (< x 3)) '(1 2 3 4 5))  ;; Returns (1 2)
+```
+
+---
+
+### fset <span style="vertical-align:super;font-size:smaller;color:#b42025">(under development)</span>
+
+`(fset <function name> <function name or lambda>)`
+
+The `fset` function sets an alias for a function or a lambda function.
+
+The first argument is a quoted symbol that specifies the new function's name. The second argument is a quoted symbol that specifies the function to be aliased. The alias can also be a [lambda](#lambda) function.
+
+!!! warning
+	With the `fset` function one can override already user-defined or built-in functions with the same name.
+
+!!! see-also "See also"
+	[defun](#defun), [lambda](#lambda)
+
+```lisp title="Example"
+(defun greeting (name)  ;; define the function
+	(print "hello" name))
+
+(fset 'hi 'greeting)    ;; set an alias
+(hi "Arthur")           ;; call the alias
+
+(fset 'hi (lambda (name) (print "hi" name)))  ;; set an alias with a lambda function
+(hi "Arthur")                                 ;; call the alias
 ```
 
 ---
@@ -572,7 +599,8 @@ The second argument is an s-expression that is evaluated as the function body.
 The result of a lambda function is the result of the expression that is evaluated last in a function evaluation.
 
 !!! see-also "See also"
-	[defun](#defun), [return](#return)
+	[defun](#defun), [fset](#fset), [return](#return)
+
 
 ```lisp title="Examples"
 ((lambda (x) (* x x)) 5)       ;; Returns 25
@@ -580,6 +608,13 @@ The result of a lambda function is the result of the expression that is evaluate
 (setq y (lambda (x) (* x x)))  ;; Define and assign lambda function
 (y)                            ;; Returns ( ( x ) ( * x x ) )
 ((y) 5)                        ;; Returns 25
+```
+
+The [fset](#fset) function can be used to assign a lambda function to a symbol for easier use.
+
+```lisp title="Example"
+(fset 'square (lambda (x) (* x x)))  ;; Assign lambda function to symbol
+(square 5)                           ;; Returns 25
 ```
 
 ---

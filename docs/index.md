@@ -57,7 +57,6 @@ It is an easy to install, run and extensible oneM2M CSE for educational purposes
 
     [:octicons-arrow-right-24: Development Documentation](development/Overview.md)&nbsp;&nbsp;&nbsp;&nbsp; [:octicons-arrow-right-24: HowTos](howtos/HowTos.md) &nbsp;&nbsp;&nbsp;&nbsp;[:octicons-arrow-right-24: FAQ](help/FAQ.md)
 	
-
 -   :material-scale-balance:{ .lg .middle } **Open Source | BSD 3-Clause**
 
     ---

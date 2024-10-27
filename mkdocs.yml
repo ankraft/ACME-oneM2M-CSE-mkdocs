@@ -155,7 +155,7 @@ nav:
       - 'CSE General Settings': 'setup/Configuration-cse.md'
       - 'Databases': 'setup/Configuration-database.md'
       - 'Logging': 'setup/Configuration-logging.md'
-      # - 'Protocol Binding - CoAP <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span>': 'setup/Configuration-coap.md'
+      # - 'Protocol Binding - CoAP <span style="vertical-align:super;font-size:smaller;color:#b42025">(under development)</span>': 'setup/Configuration-coap.md'
       - 'Protocol Binding - CoAP': 'setup/Configuration-coap.md'
       - 'Protocol Binding - HTTP': 'setup/Configuration-http.md'
       - 'Protocol Binding - MQTT': 'setup/Configuration-mqtt.md'
