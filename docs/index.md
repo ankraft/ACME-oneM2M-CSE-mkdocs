@@ -36,7 +36,7 @@ It is an easy to install, run and extensible oneM2M CSE for educational purposes
 	
 	```
 
-    [:octicons-arrow-right-24: Detailed Instructions](setup/Installation.md)
+    [:octicons-arrow-right-24: Detailed Instructions](setup/Installation.md) &nbsp;&nbsp;&nbsp;&nbsp;[:octicons-arrow-right-24: Docker](howtos/Docker.md)
 
 -   :material-microscope:{ .lg .middle } **Compliant**
 

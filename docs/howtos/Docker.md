@@ -22,7 +22,7 @@ docker run -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -it -p 8080:8080 --r
 
 ## Build Your Own Docker Image
 
-You can adapt (ie. configure a new Docker Hub ID) the build script and *Dockerfile* in the [tools/Docker](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/tools/Docker){target=_new} directory. It might be a good idea, for example, to run the CSE in head-less mode (command line argument `--headless` or configuration setting *[console].headless*), which disables screen output.
+You can adapt (ie. configure a new Docker Hub ID) the build script and *Dockerfile* in the [tools/Docker](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/tools/Docker){target=_new} directory. It might be a good idea, for example, to run the CSE in head-less mode (command line argument `--headless` or configuration setting *[console].headless*), which disables screen output. This is the default setting for the provided Docker image.
 
 The build script takes all the current scripts, attribute definitions etc. from the ACME module's *init* directory and includes them in the Docker image. The configuration file for the Docker image's *acme.ini* file is copied from file *acme.docker* from the *Docker* directory. Please make any necessary changes to that file before building the image.
 
@@ -37,7 +37,10 @@ The Docker image uses the *data* directory as the base directory for the CSE's r
 docker run -it -p 8080:8080 -v /path/to/data:/data --rm --name acme-onem2m-cse ankraft/acme-onem2m-cse
 ```
 
-This is useful for persisting data across container restarts and to provide a different configuration file that is then used instead of the default *acme.ini* file.
+This is useful for persisting data across container restarts and to provide a different configuration file that is then used instead of the default *acme.ini* file. This directory may also contain a [secondary init directory](../setup/Running.md#secondary-init-directory) with additional scripts, attribute definitions, etc.
+
+!!! important
+	Don't forget to copy a valid *acme.ini* file to the mapped directory that contains all the [configurations](../setup/Configuration-basic.md) for your CSE. The CSE will use this file instead of the default one.
 
 
 ###  Environment Variables
@@ -63,3 +66,10 @@ docker run -it -p 8080:8080 -v /path/to/data:/data -e DOCKER_HOST_IP=`ifconfig e
 ```
 
 Values for other setting, such as credentials, can be provided the same way.
+
+
+### Exposed Ports
+
+The provided Docker image exposes TCP ports 8080 (http) and 8180 (websockets), and UDP port 5683 (CoAP). The ports can be mapped to different ports on the host system. 
+
+The ports are always exposed even if only the HTTP binding is enabled by default.
