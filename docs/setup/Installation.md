@@ -104,9 +104,9 @@ This command will install the latest development version of the ACME CSE and all
 	The development version contains the latest changes, features, and bug fixes, but it is not stable and may contain bugs or incomplete features. It is not recommended for production use.
 
 
-## Installing the *Syntax Highlighting* Package
+## Enabling Syntax Highlighting in the Resource Editor
 
-The ACME CSE supports syntax highlighting in the text UI by default, but not for the resource text editor. This feature is provided by the *textual[syntax]* package. To install it, run the following command:
+The ACME CSE supports syntax highlighting in the text UI by default, but not for the resource text editor. This feature is provided by the *textual[syntax]* package. To install it, run the following commands:
 
 ```bash title="Install Syntax Highlighting Package"
 python -m pip uninstall textual
@@ -118,9 +118,7 @@ python -m pip install textual[syntax]
 
 	This package may not be available for all platforms. If you encounter any issues, please use the normal installation without the *syntax* feature.
 
-### Enabling Syntax Highlighting
-
-To enable syntax highlighting in the resource text editor, set the configuration setting [enableTextEditorSyntaxHighlighting](../setup/Configuration-uis.md#text-ui) to *True* in the *acme.ini* file:
+After installing the package, you can enable syntax highlighting in the resource text editor. To do this, set the configuration setting [enableTextEditorSyntaxHighlighting](../setup/Configuration-uis.md#text-ui) to *True* in the local *acme.ini* file:
 
 ```ini title="Enable Syntax Highlighting for the resource text editor"
 [textui]
