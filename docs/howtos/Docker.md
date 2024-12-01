@@ -27,6 +27,18 @@ You can adapt (ie. configure a new Docker Hub ID) the build script and *Dockerfi
 The build script takes all the current scripts, attribute definitions etc. from the ACME module's *init* directory and includes them in the Docker image. The configuration file for the Docker image's *acme.ini* file is copied from file *acme.docker* from the *Docker* directory. Please make any necessary changes to that file before building the image.
 
 
+### Different CPU Architectures
+
+The default Docker image is built for the amd64 architecture. If you want to run the CSE on a different architecture and avoid running in emulation mode, you need to build the image on that architecture. The Makefile in the [tools/Docker](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/tools/Docker){target=_new} directory provides a targets for building the image on the ARM64 and AMD64 architectures.
+
+```sh title="Build Docker Image for ARM64"
+# Build Docker Image for ARM64
+make build-arm64
+
+# Build Docker Image for AMD64
+make build-amd64
+```
+
 ## Running the CSE 
 
 ### Mapped Base Directory
