@@ -16,10 +16,13 @@ One can also provide OAuth2 settings in case the CSE under test is behind an OAu
 
 ### Enable Remote Configuration (Upper Tester)
 
-The CSE under test must be started with the **remote configuration interface** enabled. During test runs the test suite will temporarily change some of the CSE's delays (e.g. the check for resource expirations) in order to speed up the test. You can either do this by changing the configuration [http.enableUpperTesterEndpoint](../setup/Configuration-http.md#general-settings) in the CSE's [configuration file](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/tests/config.py){target=_new}.
+The CSE under test can be started with the **remote configuration interface** enabled. During test runs the test suite will temporarily change some of the CSE's delays (e.g. the check for resource expirations) in order to speed up the test. You can either do this by changing the configuration [http.enableUpperTesterEndpoint](../setup/Configuration-http.md#general-settings) in the CSE's [configuration file](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/tests/config.py){target=_new}.
 
 !!! Note
-	This ability to remotly re-configure the CSE during runtime is a particular function of the  *ACME* CSE and might not be available with other CSE implementations.
+	This ability to remotely re-configure the CSE during runtime is a particular function of the  *ACME* CSE and might not be available with other CSE implementations.
+
+The use of the Upper Tester interface can be disabled by setting the `--disable-uppertester` option when running the tests.
+
 
 ### Internal Settings
 
@@ -62,8 +65,10 @@ The `--help` or `-h` command line argument provides a usage overview for the *ru
 $ python runTests.py -h
 
 usage: runTests.py [-h] [--all] [--load-only] [--verbose-requests] [--disable-teardown]
-                   [--exclude-tests EXCLUDETESTS [EXCLUDETESTS ...]] [--run-teardown] [--run-count NUMBEROFRUNS]
-                   [--run-tests TESTCASENAME [TESTCASENAME ...]] [--show-skipped] [--no-failfast]
+                   [--exclude-tests EXCLUDETESTS [EXCLUDETESTS ...]] [--run-teardown]
+				   [--run-count NUMBEROFRUNS] [--disable-uppertester]
+				   [--run-tests TESTCASENAME [TESTCASENAME ...]] 
+				   [--show-skipped] [--no-failfast]
                    [--local-notification-server] [--list-tests | --list-tests-sorted]
                    [TESTSUITE ...]
 
@@ -78,6 +83,8 @@ options:
                         show verbose requests, responses and notifications output
   --disable-teardown, -notd
                         disable the tear-down / cleanup procedure at the end of a test suite
+  --disable-uppertester, -nout
+                        disable the use of the upper tester interface
   --exclude-tests EXCLUDETESTS [EXCLUDETESTS ...], -et EXCLUDETESTS [EXCLUDETESTS ...]
                         exclude the specified test cases from running
   --run-teardown, -runtd
