@@ -196,11 +196,11 @@ nav:
   - 'HowTos':
       - 'Overview': 'howtos/HowTos.md'
       - 'Docker': 'howtos/Docker.md'
-	  - 'Syntax Highlighting in the Resource Editor': 'howtos/EnablingSyntaxHighlighting.md'
       - 'Experimental WebSocket Binding': 'howtos/ExperimentalWebSocketBinding.md'
       - 'Exporting Resources & Data': 'howtos/ExportResources.md'
       - 'Pyenv Setup': 'howtos/HowTo-pyenv.md'
       - 'Raspberry Pi': 'howtos/RaspberryPi.md'
+      - 'Resource Editor Syntax Highlighting': 'howtos/EnablingSyntaxHighlighting.md'
       - 'Stand-alone Web UI': 'howtos/StandAloneWebUI.md'
   - 'Help': 
     - 'FAQ': 'help/FAQ.md'
