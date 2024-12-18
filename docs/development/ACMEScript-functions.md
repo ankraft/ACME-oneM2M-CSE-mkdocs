@@ -390,7 +390,8 @@ The `filter` function filters a list based on a *function*. The *function* is ap
 
 ---
 
-### fset <span style="vertical-align:super;font-size:smaller;color:#b42025">(under development)</span>
+### fset
+ <span style="vertical-align:super;font-size:smaller;color:#b42025">(under development)</span>
 
 `(fset <function name> <function name or lambda>)`
 

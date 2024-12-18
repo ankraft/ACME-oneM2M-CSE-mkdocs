@@ -74,6 +74,15 @@ are not yet fully implemented, and some features are experimental.
 
 :	The ContentInstance resource type is fully supported.
 
+	Values with the following data types are supported for the *content* attribute:
+
+	- string
+	- integer <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
+	- float <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
+	- boolean <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
+	- list <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
+	- dictionary / JSON object <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
+
 
 **FlexContainer (FCNT)**
 
@@ -99,6 +108,14 @@ are not yet fully implemented, and some features are experimental.
 :	The TimeSeriesInstance resource type is fully supported, except for the *dataGenerationTime*
 	attribute, which is only supported with absolute timestamps.
 
+	Values with the following data types are supported for the *content* attribute:
+
+	- string <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
+	- integer <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
+	- float <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
+	- boolean <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
+	- list <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
+	- dictionary / JSON object <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
 
 
 ### Subscription and Notification
