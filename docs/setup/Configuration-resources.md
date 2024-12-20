@@ -31,11 +31,26 @@ The default values for Action resources.
 
 The default values for Container resources.
 
-| Setting      | Description                        | Default      |
-|:-------------|:-----------------------------------|:-------------|
-| enableLimits | Enable/disable the default limits. | False        |
-| mni          | Default for maxNrOfInstances.      | 10           |
-| mbs          | Default for maxByteSize.           | 10.000 bytes |
+| Setting      | Description                        | Default                                                                          |
+|:-------------|:-----------------------------------|:---------------------------------------------------------------------------------|
+| enableLimits | Enable/disable the default limits. | False                                                                            |
+| mbs          | Default for maxByteSize.           | 10.000 bytes                                                                     |
+| mia          | Default for maxInstanceAge.        | [cse.maxExpirationDelta](../setup/Configuration-cse.md#general-settings) seconds |
+| mni          | Default for maxNrOfInstances.      | 10                                                                               |
+
+
+## FlexContainer
+
+**Section: `[resource.fcnt]`**
+
+The default values for FlexContainer resources.
+
+| Setting      | Description                        | Default                                                                          |
+|:-------------|:-----------------------------------|:---------------------------------------------------------------------------------|
+| enableLimits | Enable/disable the default limits. | False                                                                            |
+| mbs          | Default for maxByteSize.           | 10.000 bytes                                                                     |
+| mia          | Default for maxInstanceAge.        | [cse.maxExpirationDelta](../setup/Configuration-cse.md#general-settings) seconds |
+| mni          | Default for maxNrOfInstances.      | 10                                                                               |
 
 
 ## Group
@@ -88,12 +103,13 @@ The default values for Subscription resources.
 
 The default values for TimeSeries resources.
 
-| Setting      | Description                        | Default      |
-|:-------------|:-----------------------------------|:-------------|
-| enableLimits | Enable/disable the default limits. | False        |
-| mni          | Default for maxNrOfInstances.      | 10           |
-| mbs          | Default for maxByteSize.           | 10.000 bytes |
-| mdn          | Default for missingDataMaxNr.      | 10           |
+| Setting      | Description                        | Default                                                                          |
+|:-------------|:-----------------------------------|:---------------------------------------------------------------------------------|
+| enableLimits | Enable/disable the default limits. | False                                                                            |
+| mbs          | Default for maxByteSize.           | 10.000 bytes                                                                     |
+| mdn          | Default for missingDataMaxNr.      | 10                                                                               |
+| mia          | Default for maxInstanceAge.        | [cse.maxExpirationDelta](../setup/Configuration-cse.md#general-settings) seconds |
+| mni          | Default for maxNrOfInstances.      | 10                                                                               |
 
 
 ## TimeSyncBeacon
