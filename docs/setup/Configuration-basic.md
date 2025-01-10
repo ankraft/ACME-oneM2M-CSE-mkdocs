@@ -3,7 +3,7 @@
 The CSE is configured using the configuration file `acme.ini`. This file contains all necessary settings for the CSE to run. 
 These settings are used throughout the configuration settings using [interpolation](Configuration-introduction.md#settings-interpolation).
 
-When creating the configuration file, it is recommended to use the [interactive procedure](../setup/Installation.md#guided-configuration) to generate a file with basic configuration settings. [^1]
+When creating the configuration file, it is recommended to use the [interactive procedure](../setup/Installation.md#guided-onboarding) to generate a file with basic configuration settings. [^1]
 
 [^1]:You can add further configurations if necessary by copying sections and settings from [acme.ini.default](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/acme.ini.default){target=_new}.
 

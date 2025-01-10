@@ -8,17 +8,17 @@ You can start the CSE by simply running it from the command line. This is the si
 
 === "Package installation"
 
-	```bash title="Start ACME CSE"
+	```bash title="Starting the ACME CSE"
 	acmecse
 	```
 
 === "Manual Installation"
 
-	```bash title="Start ACME CSE as a module"
+	```bash title="Starting the ACME CSE as a module"
 	python3 -m acme
 	```
 
-The current working directory is used as the base directory for the CSE and the *acme.ini* [configuration file](../setup/Configuration-introduction.md#the-configuration-file) must be in the same directory. An [interactive configuration process](Installation.md#guided-configuration) is started if the configuration file is not found.
+The current working directory is used as the base directory for the CSE and the *acme.ini* [configuration file](../setup/Configuration-introduction.md#the-configuration-file) must be in the same directory. An [interactive configuration process](Installation.md#guided-onboarding) is started if the configuration file is not found.
 
 
 ### Different Configuration File
@@ -27,13 +27,13 @@ The CSE can also be started with a different configuration file:
 
 === "Package Installation"
 
-	```bash title="Start ACME CSE with a different configuration file"
+	```bash title="Starting the ACME CSE with a different configuration file"
 	acmecse --config <filename>
 	```
 
 === "Manual Installation"
 
-	```bash title="Start ACME CSE with a different configuration file"
+	```bash title="Starting the ACME CSE with a different configuration file"
 	python3 -m acme --config <filename>
 	```
 
@@ -45,13 +45,13 @@ The CSE can also be started with a different base directory:
 
 === "Package Installation"
 
-	```bash title="Start ACME CSE with a different base directory"
+	```bash title="Starting the ACME CSE with a different base directory"
 	acmecse -dir <directory>
 	```
 
 === "Manual Installation"
 
-	```bash title="Start ACME CSE with a different base directory"
+	```bash title="Starting the ACME CSE with a different base directory"
 	python3 -m acme -dir <directory>
 	```
 
@@ -101,7 +101,7 @@ Command line arguments can also be read from a file. This is useful when you hav
 
 === "argsfile.txt"
 
-	```plaintext title="The content of the file argsfile.txt"
+	```plaintext title="The content of the arguments file 'argsfile.txt'"
 	--db-type memory
 
 	# enable the http server
@@ -114,9 +114,9 @@ Command line arguments can also be read from a file. This is useful when you hav
 	--log-level debug
 	```
 
-=== "Run the CSE with arguments from file"
+=== "Runing the CSE with arguments from an arguments file"
 
-	```bash title="Run the CSE with arguments from file"
+	```bash title="Runing the CSE with arguments from an arguments file"
 	acmecse @argsfile.txt
 	```
 

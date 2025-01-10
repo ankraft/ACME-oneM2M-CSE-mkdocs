@@ -182,6 +182,7 @@ nav:
         - 'Help File Format': 'development/HelpDocumentation.md'
       - 'Tools':
         - 'Notification Server': 'development/NotificationServer.md'
+        - 'Onboarding Tool': 'development/OnboardingTool.md'
       - 'ACMEScript':
         - 'Introduction': 'development/ACMEScript.md'
         - 'Loading & Running Scripts': 'development/ACMEScript-loading.md'
