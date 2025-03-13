@@ -28,38 +28,47 @@ After you generated these files you can move them to a separate directory (for e
 The ACME CSE supports the following HTTP authentication methods.
 
 !!! warning
-	Note that the credentials are stored in plain text in the respective credential files. Make sure to protect these files accordingly.
+	Note that the credentials are partly stored as plain text (ie. user names) and in hashed form (ie. passwords and tokens) in the respective credential files. Make sure to protect these files accordingly.
 
 ### Basic Authentication
 
 The ACME CSE supports basic authentication. To enable it, you have to set the [[http.security].enableBasicAuth](../setup/Configuration-http.md#security) configuration parameter in the *acme.ini* configuration file to *True* .
 
-In addition, you have to set the [[http.security].basicAuthFile](../setup/Configuration-http.md#security) configuration parameter to the path of a file that contains the user credentials. The file must be in the format *username:password*, and comments are allowed.
+In addition, you have to set the [[http.security].basicAuthFile](../setup/Configuration-http.md#security) configuration parameter to the path of a file that contains the user credentials. The file must be in the format *username:password*, and comments are allowed.  
+The *password* is **not** as plain text but as a hashed password. You can use the [hashcreds](../development/tools/HashCredentials.md) tool to create a hashed password.
 
 **Example:**
 
 ```text
 # This is a comment
-user1:password1
-user2:password2
+user1:hashedPassword1
+user2:hashedPassword2
 ```
 
-To access the CSE, you have to provide the credentials in the HTTP request  header in the form of ```Authorization: Basic <credentials>```, where &lt;credentials> is the Base64 encoding of a username and password joined by a single colon. The following example the HTTP header for basic authentication.
+To access the CSE, you have to provide the credentials in the HTTP request header in the form of ```Authorization: Basic <credentials>```, where &lt;credentials> is the Base64 encoding of a username and (unhashed) password joined by a single colon.
+
 
 
 ### Bearer Token Authentication
 
 The ACME CSE also supports a simple form of bearer token authentication. To enable it, you have to set the [[http.security].enableTokenAuth](../setup/Configuration-http.md#security) configuration parameter in the *acme.ini* configuration file to *True* .
 
-In addition, you have to set the [[http.security].tokenAuthFile](../setup/Configuration-http.md#security) configuration parameter to the path of a file that contains the bearer token. The file must contain lines with each token on a separate line. Comments are allowed.
+In addition, you have to set the [[http.security].tokenAuthFile](../setup/Configuration-http.md#security) configuration parameter to the path of a file that contains the bearer token. The file must contain lines with each token on a separate line. Comments (lines starting with #) are allowed.  
+The token is **not** stored as plain text but as a hashed token. You can use the [hashcreds](../development/tools/HashCredentials.md) tool to create a hashed token.
 
 **Example:**
 
 ```text
 # This is a comment
-token1
-token2
+hashedToken1
+hashedToken2
 ```
 
-In this case to access the CSE, you have to provide the bearer token in the HTTP request header in the form of ```Authorization: Bearer <token>```.
+In this case to access the CSE, you have to provide the (unhashed) bearer token in the HTTP request header in the form of ```Authorization: Bearer <token>```.
 
+
+## WebSocket Authentication
+
+The ACME CSE supports the same authentication methods for the WebSocket binding as for the HTTP binding. To enable basic or token authentication for the WebSocket binding, you have to set the [[websocket.security].enableBasicAuth](../setup/Configuration-ws.md#security) or [[websocket.security].enableTokenAuth](../setup/Configuration-ws.md#security) configuration parameter in the *acme.ini* configuration file to *True* .
+
+The configuration parameters are the same as for the HTTP binding. See [HTTP Authentication](#http-authentication) for further details on how to configure the authentication files.

@@ -24,6 +24,9 @@ These are the general CoAP client settings.
 
 These are the security settings for the CoAP binding.
 
+!!! warnig "Attention"
+	Security for the CoAP binding is currently not implemented. The settings are reserved for future use.
+
 | Setting           | Description                                                                                                                                                    | Default      |
 |:------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|
 | useTLS            | Enable TLS for CoAP communications.                                                                                                                            | False        |

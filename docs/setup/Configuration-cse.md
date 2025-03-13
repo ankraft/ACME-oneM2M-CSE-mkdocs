@@ -34,19 +34,6 @@ These settings are used to configure basic settings and the general behavior of 
 | type                                   | The CSE type. Allowed values: IN, MN, ASN.                                                                                                                                                                                                                                                           | IN                                                                                             |
 
 
-## Resource Announcements
-
-**Section: `[cse.announcements]`**
-
-These settings are used to configure the behavior of resource announcements. They control mainly internal CSE behaviour and are not directly related to the oneM2M standard.
-
-| Setting                        | Description                                                                                                                 | Default    |
-|:-------------------------------|:----------------------------------------------------------------------------------------------------------------------------|:-----------|
-| checkInterval                  | Wait n seconds between tries to announce resources to registered remote CSE.                                                | 10 seconds |
-| allowAnnouncementsToHostingCSE | Allow resource announcements to the own hosting CSE.                                                                        | True       |
-| delayAfterRegistration         | Specify a short delay in seconds before starting announcing resources after a remote CSE has registered at the hosting CSE. | 3 seconds  |
-
-
 ## Operation - Jobs
 
 **Section: `[cse.operation.jobs]`**
@@ -74,7 +61,33 @@ These settings are used to configure the CSE's internal request recording.
 | size    | Maximum number of requests to be stored. Oldest requests will be deleted when this threshold is reached. Note, that a large number of requests might take a moment to be displayed in the console or UIs. | 250     |
 
 
-## CSE Registration 
+## General Security
+
+**Section: `[cse.security]`**
+
+These settings are used to configure the CSE's security settings.
+
+| Setting         | Description                                                           | Default                               |
+|:----------------|:----------------------------------------------------------------------|:--------------------------------------|
+| secret          | The main secret key used for seeding hash functions and encryption.   | The string "acme". Should be changed. |
+| enableACPChecks | Enable access control checks.                                         | True                                  |
+| fullAccessAdmin | Always grant the admin originator full access (bypass access checks). | True                                  |
+
+## Statistics
+
+**Section: `[cse.statistics]`**
+
+These settings are used to configure the CSE's internal statistics collection and reporting.
+
+| Setting       | Description                                                                                             | Default    |
+|:--------------|:--------------------------------------------------------------------------------------------------------|:-----------|
+| enable        | This setting enables or disables the CSE's statistics collection and reporting.                         | True       |
+| writeInterval | This setting specifies the pause, in seconds, between writing the collected statistics to the database. | 60 seconds |
+
+## Registration Configurarions
+
+
+### CSE Registration 
 
 **Section: `[cse.registration]`**
 
@@ -87,11 +100,11 @@ These settings are used to configure the CSE's internal registration behaviour, 
 | checkLiveliness       | Check the liveliness of the registrations to the registrar CSE and also from the registree CSEs.                                                                                     | True       |
 
 
-## Registrar CSE Access 
+### Registrar CSE Access 
 
 **Section: `[cse.registrar]`**
 
-These settings are used to configure the address and access to its Registrar CSE.
+These settings are used to configure the address, access and general behavior to a Registrar CSE.
 
 | Setting              | Description                                                                                                                                                                                                   | Default      |
 |:---------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|
@@ -105,26 +118,34 @@ These settings are used to configure the address and access to its Registrar CSE
 | excludeCSRAttributes | Comma separated list of attributes that are excluded when creating a registrar CSR.                                                                                                                           | empty list   |
 
 
-## General Security
+### Registrar CSE Security
 
-**Section: `[cse.security]`**
+**Section: `[cse.registrar.security]`**
 
-These settings are used to configure the CSE's security settings.
+| Setting            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Default                                                      |
+|:-------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------|
+| httpUsername       | The username used for the Registrar CSE authentication via *http* if basic authentication is enabled for the Registrar CSE.                                                                                                                                                                                                                                                                                                                                         | empty string                                                 |
+| httpPassword       | The password used for the Registrar CSE authentication via *http* if basic authentication is enabled for the Registrar CSE.                                                                                                                                                                                                                                                                                                                                         | empty string                                                 |
+| httpBearerToken    | The authentication token used for the Registrar CSE authentication via *http* if bearer token authentication is enabled for the Registrar CSE.                                                                                                                                                                                                                                                                                                                      | empty string                                                 |
+| wsUsername         | The username used for the Registrar CSE authentication via *WebSocket* if basic authentication is enabled for the Registrar CSE.                                                                                                                                                                                                                                                                                                                                    | empty string                                                 |
+| wsPassword         | The password used for the Registrar CSE authentication via *WebSocket* if basic authentication is enabled for the Registrar CSE.                                                                                                                                                                                                                                                                                                                                    | empty string                                                 |
+| wsBearerToken      | The authentication token used for the Registrar CSE authentication via *WebSocket* if bearer token authentication is enabled for the Registrar CSE.                                                                                                                                                                                                                                                                                                                 | empty string                                                 |
+| poaCredentialsFile | The filename of the credential file for the reverse Registrar CSE authentication via *http* or *WebSocket*. This file contains a mapping between CSE-IDs and username/password credentials.<br />These credentials are used for the authentication by the remote CSE to this CSE. The credentials will be added to the URLs of the *poa* attribute of the *remoteCSE* resource.<br /> The format is one line per CSE-ID with the format "CSE-ID:username:password".<br/>See [Authentication between CSEs](../howtos/AuthenticationBetweenCSEs.md) | ${basic.config:baseDirectory}/certs/acme_poa_credentials.txt |
 
-| Setting         | Description                                                           | Default |
-|:----------------|:----------------------------------------------------------------------|:--------|
-| enableACPChecks | Enable access control checks.                                         | True    |
-| fullAccessAdmin | Always grant the admin originator full access (bypass access checks). | True    |
+
+### Resource Announcements
+
+**Section: `[cse.announcements]`**
+
+These settings are used to configure the behavior of resource announcements. They control mainly internal CSE behaviour and are not directly related to the oneM2M standard.
+
+| Setting                        | Description                                                                                                                 | Default    |
+|:-------------------------------|:----------------------------------------------------------------------------------------------------------------------------|:-----------|
+| checkInterval                  | Wait n seconds between tries to announce resources to registered remote CSE.                                                | 10 seconds |
+| allowAnnouncementsToHostingCSE | Allow resource announcements to the own hosting CSE.                                                                        | True       |
+| delayAfterRegistration         | Specify a short delay in seconds before starting announcing resources after a remote CSE has registered at the hosting CSE. | 3 seconds  |
 
 
-## Statistics
 
-**Section: `[cse.statistics]`**
 
-These settings are used to configure the CSE's internal statistics collection and reporting.
-
-| Setting       | Description                                                                                             | Default    |
-|:--------------|:--------------------------------------------------------------------------------------------------------|:-----------|
-| enable        | This setting enables or disables the CSE's statistics collection and reporting.                         | True       |
-| writeInterval | This setting specifies the pause, in seconds, between writing the collected statistics to the database. | 60 seconds |
 

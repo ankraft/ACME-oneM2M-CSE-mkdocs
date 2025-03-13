@@ -4,7 +4,7 @@ The CSE is highly configurable and can be adapted to different environments and 
 
 ## Introduction
 
-Configuration of CSE parameters is done through a configuration file. This file contains all configurable and customizable
+Configuration of CSE parameters is primarily done through a configuration file. This file contains all configurable and customizable
 settings for the CSE. Configurations are mostly optional, and settings in this file overwrite the CSE's default values.
 
 The configuration file follows the Windows INI file format with sections, setting and values. A configuration file may include comments, prefixed with the characters `#` or `;` .
@@ -68,11 +68,45 @@ There are some built-in configuration settings that can be used in the configura
 	Both settings are equivalent and can be used interchangeably.
 
 
+**${secret}**
+:	Built-in configuration setting that contains the main secret key for the CSE. This key is used, for example, to seed passwords for hashing.  
+	The default for	this setting is `acme`, and it is highly recommended to change it to a unique value.  
+	It is also possible to use the environment variable [ACME_SECURITY_SECRET](#environment-variables)
+	to set this value.
+
 ### Environment Variables
 
-You can also use environment variables in the configuration file. The syntax is also `${VARIABLE_NAME}`.
+You can also use environment variables in the configuration file. The syntax to get their values is also `${ENVIRONMEMNT_VARIABLE_NAME}`.
 
-Environment variables can be used in the configuration file to provide sensitive information like passwords or API keys. 
+Environment variables can be used in the configuration file to provide sensitive information like passwords or API keys, or to provide a more flexible way to set configuration settings.
+
+
+#### Hiding Sensitive Information
+
+Sensitive information like passwords or API keys should not be stored in the configuration file in plain text. Instead, you can use environment variables to store this information and reference them in the configuration file.
+
+The following environment variables are supported by default for configurations and don't need to be defined separately in the configuration file:
+
+| Environment Variable                         | Description                                                                                                                                                                                                                 | Configuration Setting                                                                       |
+|----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| ACME_SECURITY_SECRET                         | The main secret key for the CSE. This key is used, for example, so seed passwords for hashing.                                                                                                                              | [\[cse.security\].secret](./Configuration-cse.md#general-security)                          |
+| ACME_DATABASE_POSTGRESQL_PASSWORD            | Password to authenticate with the PostgreSQL database                                                                                                                                                                       | [\[database.postgresql\].password](./Configuration-database.md#postgresql)                  |
+| ACME_MQTT_SECURITY_PASSWORD                  | Password to authenticate with the MQTT broker                                                                                                                                                                               | [\[mqtt.security\].password](./Configuration-mqtt.md#security)                              |
+| ACME_MQTT_SECURITY_USERNAME                  | Username to authenticate with the MQTT broker                                                                                                                                                                               | [\[mqtt.security\].username](./Configuration-mqtt.md#security)                              |
+| ACME_CSE_REGISTRAR_SECURITY_HTTPUSERNAME     | Username for HTTP Basic Authentication with the registrar CSE                                                                                                                                                               | [\[cse.registrar.security\].httpUsername](./Configuration-cse.md#registrar-cse-security)    |
+| ACME_CSE_REGISTRAR_SECURITY_HTTPPASSWORD     | Password for HTTP Basic Authentication with the registrar CSE                                                                                                                                                               | [\[cse.registrar.security\].httpPassword](./Configuration-cse.md#registrar-cse-security)    |
+| ACME_CSE_REGISTRAR_SECURITY_HTTPBEARERTOKEN  | Bearer token for HTTP Bearer Token Authentication with the registrar CSE                                                                                                                                                    | [\[cse.registrar.security\].httpBearerToken](./Configuration-cse.md#registrar-cse-security) |
+| ACME_CSE_REGISTRAR_SECURITY_WSUSERNAME       | Username for WebSocket Basic Authentication with the registrar CSE                                                                                                                                                          | [\[cse.registrar.security\].wsUsername](./Configuration-cse.md#registrar-cse-security)      |
+| ACME_CSE_REGISTRAR_SECURITY_WSPASSWORD       | Password for WebSocket Basic Authentication with the registrar CSE                                                                                                                                                          | [\[cse.registrar.security\].wsPassword](./Configuration-cse.md#registrar-cse-security)      |
+| ACME_CSE_REGISTRAR_SECURITY_WSBEARERTOKEN    | Bearer token for WebSocket Bearer Token Authentication with the registrar CSE                                                                                                                                               | [\[cse.registrar.security\].wsBearerToken](./Configuration-cse.md#registrar-cse-security)   |
+| ACME_CSE_REGISTRAR_SECURITY_SELFHTTPUSERNAME | The CSE's own wsername for HTTP Basic Authentication with the CSE by a registrar CSE.<br>See also [Authentication Between CSEs](../howtos/AuthenticationBetweenCSEs.md#authenticating-requests-from-the-registrar-cse)      | [\[cse.security\].httpUsername](./Configuration-cse.md#registrar-cse-security)              |
+| ACME_CSE_REGISTRAR_SECURITY_SELFHTTPPASSWORD | The CSE's own password for HTTP Basic Authentication with the CSE by a registrar CSE.<br>See also [Authentication Between CSEs](../howtos/AuthenticationBetweenCSEs.md#authenticating-requests-from-the-registrar-cse)      | [\[cse.security\].httpPassword](./Configuration-cse.md#registrar-cse-security)              |
+| ACME_CSE_REGISTRAR_SECURITY_SELFWSUSERNAME   | The CSE's own username for WebSocket Basic Authentication with the CSE by a registrar CSE.<br>See also [Authentication Between CSEs](../howtos/AuthenticationBetweenCSEs.md#authenticating-requests-from-the-registrar-cse) | [\[cse.security\].wsUsername](./Configuration-cse.md#registrar-cse-security)                |
+| ACME_CSE_REGISTRAR_SECURITY_SELFWSPASSWORD   | The CSE's own password for WebSocket Basic Authentication with the CSE by a registrar CSE.<br>See also [Authentication Between CSEs](../howtos/AuthenticationBetweenCSEs.md#authenticating-requests-from-the-registrar-cse) | [\[cse.security\].wsPassword](./Configuration-cse.md#registrar-cse-security)                |
+
+
+
+#### Docker Host IP
 
 Another useful application is to provide the IP address of a Docker host to the CSE. This can be done, for example, by setting the environment variable `DOCKER_HOST_IP` and using it in the configuration file.
 

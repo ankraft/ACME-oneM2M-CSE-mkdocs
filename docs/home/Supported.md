@@ -77,11 +77,11 @@ are not yet fully implemented, and some features are experimental.
 	Values with the following data types are supported for the *content* attribute:
 
 	- string
-	- integer <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
-	- float <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
-	- boolean <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
-	- list <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
-	- dictionary / JSON object <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
+	- integer  
+	- float
+	- boolean
+	- list
+	- dictionary / JSON object 
 
 
 **FlexContainer (FCNT)**
@@ -110,12 +110,12 @@ are not yet fully implemented, and some features are experimental.
 
 	Values with the following data types are supported for the *content* attribute:
 
-	- string <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
-	- integer <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
-	- float <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
-	- boolean <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
-	- list <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
-	- dictionary / JSON object <span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> 
+	- string 
+	- integer
+	- float 
+	- boolean 
+	- list
+	- dictionary / JSON object  
 
 
 ### Subscription and Notification
@@ -138,14 +138,14 @@ are not yet fully implemented, and some features are experimental.
 
 :	The ACME CSE supports the following management objects:
 
-| Management Objects                                                                              | Management Objects     | Management Objects |
-|-------------------------------------------------------------------------------------------------|------------------------|--------------------|
-| AreaNwkDeviceInfo (ANDI)                                                                        | DeviceInfo (DVI)       | Reboot (REB)       |
-| AreaNwkInfo (ANI)                                                                               | EventLog (EVL)         | SIM (SIM)          |
-| Battery (BAT)                                                                                   | Firmware (FWR)         | Software (SWR)     |
-| Credentials (CRDS)<span style="vertical-align:super;font-size:smaller;color:#b42025">dev</span> | Memory (MEM)           | WifiClient (WIFIC) |
-| DataCollect (DATC)                                                                              | MobileNetwork (MNWK)   |                    |
-| DeviceCapability (DVC)                                                                          | MyCertFileCred (NYCFC) |                    |
+| Management Objects       | Management Objects     | Management Objects |
+|--------------------------|------------------------|--------------------|
+| AreaNwkDeviceInfo (ANDI) | DeviceInfo (DVI)       | Reboot (REB)       |
+| AreaNwkInfo (ANI)        | EventLog (EVL)         | SIM (SIM)          |
+| Battery (BAT)            | Firmware (FWR)         | Software (SWR)     |
+| Credentials (CRDS)       | Memory (MEM)           | WifiClient (WIFIC) |
+| DataCollect (DATC)       | MobileNetwork (MNWK)   |                    |
+| DeviceCapability (DVC)   | MyCertFileCred (NYCFC) |                    |
 
 
 **Node (NOD)**
@@ -238,13 +238,16 @@ The following oneM2M service functionionalities are supported.
 :	The ACME CSE supports AE registration and deregistrations via the Mca reference point.
 
 
-**Blocking Requests**
+**Blocking and Non-Blocking Requests**
 
 :	Blocking requests are the common way for an AE to interact with the CSE.
 	They are also used for CSE-to-CSE communication via the Mcc reference point.
 
+	To avoid blocking the AE, the ACME CSE supports non-blocking requests in 
+	synchronous and asynchronous mode as well.
 
-**Delayed Request Execution***
+
+**Delayed Request Execution**
 
 :	The ACME CSE supports delayed request execution via the *Operation Execution Timestamp* request attribute.
 
@@ -271,6 +274,16 @@ The following oneM2M service functionionalities are supported.
 
 	This mechanism is used for sending notifications and other requests to AEs and CSEs that are not directly reachable 
 	via the Mca or Mcc reference points, e.g. because of firewalls or NATs.
+
+
+**No-Response Requests**
+
+:	No-response requests are supported for requests that do not require a response. This is especially
+	useful for constrained devices that do not need to wait for a response, or cannot handle
+	possible error responses.
+
+	!!! info "Experimental Feature"
+		This feature is still experimental and might change according to specification changes.
 
 
 **Notifications**
@@ -327,7 +340,7 @@ The following oneM2M service functionionalities are supported.
 
 :	Announcements of resources are supported via the Mcc reference point.
 	Resources are announced under a CSEBaseAnnc resource on the target CSE (R4 feature).  
-	Bi-directional update sync is supported as well.
+	Bi-directional update and attribute syncronization is supported as well.
 
 
 **Resource Expiration**
