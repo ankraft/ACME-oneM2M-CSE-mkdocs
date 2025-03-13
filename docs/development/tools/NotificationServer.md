@@ -1,6 +1,6 @@
 # Notification Server
 
-The Notification that is provided in the directory [tools/notificationServer](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/tools/notificationServer){target=_new} is a simple implementation of a Notification Server that can be used to receive notifications from a CSE. 
+The Notification Server that is provided in the directory [tools/notificationServer](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/tools/notificationServer){target=_new} is a simple implementation of a Notification Server that can be used to receive notifications from a CSE. 
 
 Verification requests are always acknowledged, and notifications are just printed to the console.
 
