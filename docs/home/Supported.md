@@ -231,7 +231,7 @@ are not yet fully implemented, and some features are experimental.
 
 ## Service Functionalities
 
-The following oneM2M service functionionalities are supported.
+The following oneM2M service functionalities are supported.
 
 **AE Registration**
 
@@ -249,13 +249,13 @@ The following oneM2M service functionionalities are supported.
 
 **Delayed Request Execution**
 
-:	The ACME CSE supports delayed request execution via the *Operation Execution Timestamp* request attribute.
+:	The ACME CSE supports delayed request execution via the *Operation Execution Timestamp* request parameter.
 
 
 **Discovery**
 
 :	The ACME CSE supports normal retrieval and discovery of resources via the filterCriteria 
-	and discoveryResultType attributes.
+	and discoveryResultType parameters.
 
 
 **Geo-Query**
@@ -265,7 +265,7 @@ The following oneM2M service functionionalities are supported.
 
 **Location Management**
 
-:	Only *device based, and no *network based* location policies are supported. 
+:	Only *device based*, and no *network based* location policies are supported. 
 
 
 **Long Polling**
@@ -297,11 +297,11 @@ The following oneM2M service functionionalities are supported.
 
 :	The following notification event types for Subscriptions are supported:
 
-	| Notification Event Type | Notification Event Type | Notification Event Type |
-	|:------------------------|:------------------------|:------------------------|
-	| resourceUpdate          | deleteDirectChild       | blockingUpdate          |
-	| resourceUpdate          | retrieveCNTNoChild      | missingData             |
-	| createDirectChild       | triggerReceivedForAE    |                         |
+| Notification Event Type | Notification Event Type | Notification Event Type |
+|:------------------------|:------------------------|:------------------------|
+| resourceUpdate          | retrieveCNTNoChild      | blockingUpdate          |
+| createDirectChild       | triggerReceivedForAE    |                         |
+| deleteDirectChild       | missingData             |                         |
 
 
 **Partial Retrieve**
@@ -309,7 +309,7 @@ The following oneM2M service functionionalities are supported.
 :	Partial retrieve of individual resource attributes is supported.
 
 
-**Remote CSE registration**
+**Remote CSE Registration**
 
 :	The ACME CSE supports CSE registrations via the Mcc reference point. 
 	In addtion announced resources, synchronization, and transit requests that 
@@ -318,7 +318,7 @@ The following oneM2M service functionionalities are supported.
 
 **Request Expiration**
 
-:	The *Request Expiration Timestamp* request attribute is supported.
+:	The *Request Expiration Timestamp* request parameter is supported.
 
 
 **Request Forwarding**
@@ -328,7 +328,7 @@ The following oneM2M service functionionalities are supported.
 
 **Request and Resource Validations**
 
-:	Validation of all requests received via the Mca and Mcc reference points is supported.
+:	All requests and resources received via the Mca and Mcc reference points are validated.
 
 
 **Resource Addressing**
@@ -348,11 +348,6 @@ The following oneM2M service functionionalities are supported.
 :	Resources are automatically deleted after the expiration time has passed.
 
 
-**Resource Validations**
-
-:	All requests and resources received via the Mca and Mcc reference points are validated.
-
-
 **Result Content Types**
 
 :	The following result contents are implemented for standard oneM2M requests and discovery:
@@ -369,12 +364,12 @@ The following oneM2M service functionionalities are supported.
 
 **Result Expiration**
 
-:	The *Result Expiration Timestamp* request attribute is supported.
+:	The *Result Expiration Timestamp* request parameter is supported.
 
 
 **Semantics**
 
-:	Basic support for semantic descriptors, semantic queries and discovery is supported.
+:	Basic support for semantic descriptors, semantic queries and discovery is available.
 
 
 **Subscriptions**
@@ -396,12 +391,12 @@ The following oneM2M service functionionalities are supported.
 ## Protocols Bindings
 
 The following *Protocol Bindings* are supported.  
-It is possible to enable only one binding, or use any combination of them for a CSE instance.
+It is possible to enable only one binding, or to use any combination of them for a CSE instance.
 
 **CoAP**
 
 :	The CoAP protocol is supported.  
-	However, CoAP over DTLS is not yet implemented.
+	CoAP over DTLS is not yet implemented.
 
 	!!! Info "Release 5"
 		The current implementation only support the CoAP binding specification for oneM2M Release 1-4. 
@@ -432,8 +427,8 @@ It is possible to enable only one binding, or use any combination of them for a 
 
 :	The WebSocket protocol is supported, including TLS (wss) support   
 
-	**Experimental**: Besides the standard oneM2M WebSocket binding, the ACME CSE supports an
-	[experimental extension](../howtos/ExperimentalWebSocketBinding.md) to better support notifications.
+	!!! info  "Experimental Feature"
+	Besides the standard oneM2M WebSocket binding, the ACME CSE supports an	[experimental extension](../howtos/ExperimentalWebSocketBinding.md) to better support notifications.
 
 
 ## Serialization Types

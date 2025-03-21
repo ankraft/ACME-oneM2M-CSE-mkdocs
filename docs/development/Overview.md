@@ -14,12 +14,12 @@ The ACME CSE is divided into several components. The following diagram shows the
 
 ## Resource Class Hierarchy
 
-The CSE's resources are implemented as classes. The following diagram shows the class hierarchy of the resources.
+The CSE's resources are implemented as classes. The following diagram shows the class hierarchy of the supported resource types.
 
 <figure markdown="1">
 ![UML Class Diagram of the ACME CSE Resources](../images/resources_uml.png#only-light){data-gallery="light"}
 ![UML Class Diagram of the ACME CSE Resources](../images/resources_uml-dark.png#only-dark){data-gallery="dark"}
-<figcaption>UML Class Diagram of the ACME CSE Resources</figcaption>
+<figcaption>UML Class Diagram of the Supported oneM2M Resources Types</figcaption>
 </figcaption>
 </figure>
 

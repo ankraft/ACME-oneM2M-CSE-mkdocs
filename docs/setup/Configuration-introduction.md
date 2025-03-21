@@ -1,6 +1,6 @@
 # Configuration - Introduction
 
-The CSE is highly configurable and can be adapted to different environments and requirements. This document describes the configuration settings and how to change them.
+The CSE is highly configurable and can be adapted to different environments and requirements. This article describes the configuration settings and how to change them.
 
 ## Introduction
 

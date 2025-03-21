@@ -4,7 +4,7 @@ This article describes how to start and stop the CSE, and how to use the command
 
 ## Running the CSE
 
-You can start the CSE by simply running it from the command line. This is the simplest way to start the ACME CSE.
+You can start the CSE by running it from the command line. This is the simplest way to start the ACME CSE.
 
 === "Package installation"
 
@@ -93,9 +93,6 @@ The ACME CSE provides a number of command line arguments that will override the 
 
 
 ### Reading Command Line Arguments from a File
-
-!!! warning "Under Development"
-	This functionality is still under development and not available in the current release. This documentation is for future reference.
 
 Command line arguments can also be read from a file. This is useful when you have a large number of arguments that you want to pass to the CSE. The file should contain one argument per line. Empty lines and lines starting with a hash sign (`#`) are ignored.
 

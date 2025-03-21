@@ -32,6 +32,13 @@ The following database bindings are supported:
 
 ## Additional CSE Runtime Features
 
+The ACME CSE provides the following additional features:
+
+
+**Guided Setup**
+
+:	An interactive setup process that guides the user through the initial configuration of the CSE.
+
 
 **HTTP Authorization**
 
@@ -64,16 +71,16 @@ The following database bindings are supported:
 	implement simple AEs, prototypes, tests, and more.
 
 
-**Text Console**
-
-:	Control and manage the CSE, inspect resources, and run scripts in a text [console](../setup/Console.md).  
-	The log output is also displayed in the text console.
-
-
 **Testing: Upper Tester**
 
 :	Basic support for the [Upper Tester](../setup/Operation-uppertester.md) protocol defined in oneM2M's [TS-0019](https://specifications.onem2m.org/ts-0019){target=_new},
 	and additional command execution support.
+
+
+**Text Console**
+
+:	Control and manage the CSE, inspect resources, and run scripts in a text [console](../setup/Console.md).  
+	The log output is also displayed in the text console.
 
 
 **Text UI**
@@ -97,4 +104,6 @@ The ACME CSE runs at least on the following runtime environments:
 - MS Windows
 - Jupyter Notebooks  
 	ACME CSE can be run headless inside a [Jupyter Notebook](../development/Embedding_ACME.md#jupyter-notebooks).
+- Docker  
+	ACME CSE can be run in a [Docker container](../howtos/Docker.md).
 
