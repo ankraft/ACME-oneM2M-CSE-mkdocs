@@ -21,7 +21,7 @@ specializationPolicy = [
 
 		// The specialisation's long name. 
 		// Optional, and for future developments.
-		"lname"     : "attributePolicyLongname",
+		"lname"     : "specialisationLongname",
 
 		// The specialisation's containerDefinition. 
 		// Mandatory for flexContainers, but can be empty to prevent warnings.
@@ -47,6 +47,9 @@ specializationPolicy = [
 ]
 ```
 The *attributePolicies* are the same as described in the [Attribute Policies](../development/AttributePolicies.md) article.
+
+See also oneM2M's [TS-0023 specification rules](https://specifications.onem2m.org/ts/ts-0023/latest/5.2/#522-description-rules-for-module-classes-and-deviceclasses){target=_new} for more information when defining new ModuleClasses and DeviceClasses.
+
 
 ## Examples
 
