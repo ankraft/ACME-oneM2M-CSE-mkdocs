@@ -69,11 +69,22 @@ Some of the fields are not yet used, but will supported by a future version of t
 	// This can be any of the types defined for *type*, or a complex type.
 	"ltype" : "type",
 
+	// The fixed size of a list type.
+	// This is the expected number of elements in the list.
+	// This is only used for list types. If the list is not fixed, this field is not present.
+	"lsize" : integer,
+
 	// The complex type name for a complex type attribute.
 	// This is the name of the parent complex type to which an attribute belongs.
 	// This attribute is only present in an attribute policy definition when
 	// this attribute belongs to a complex type.
 	"ctype" : "complexType",
+
+	// Indicates an attribute that is a member of a choice.
+	// This is a boolean value, and only present if the attribute is a member of a choice. This
+	// means that from all the attributes in a structure, only one of them can be present.
+	// Usually this is used for complex types.
+	"choice": boolean, 
 
 	// Definition of enumeration values.
 	// This can only be an integer value, or range definitions in the format
