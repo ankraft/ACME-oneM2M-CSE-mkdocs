@@ -132,6 +132,40 @@ are not yet fully implemented, and some features are experimental.
 	monitoring are supported.   
 
 
+**NotificationTargetSelfReference (NTSR)**
+
+:	The NotificationTargetSelfReference virtual resource type is fully supported.
+
+	This resource type is used to support self-removal of notification targets.
+	It is used together with the following resource types.
+
+
+**notificationTargetPolicy (NTP)**
+
+:	The NotificationTargetPolicy resource type is fully supported.
+
+	This resource type is used to configure the policies that are used for notification
+	target self-removal.
+
+	The CSE automatically creates a system "Default" &lt;NTP> resource during startup, which is used for all notification targets that do not have a specific &lt;NTP> resource assigned.
+
+
+**notificationTargetMgmtPolicyRef (NTPR)**
+
+:	The NotificationTargetManagementPolicyReference resource type is fully supported.
+
+	This resource type is used to reference the &lt;NTP> resource that is used during the self-removal of notification targets.
+
+
+**policyDeletionRules (PDR)**
+
+:	The PolicyDeletionRules resource type is partly supported.
+
+	This resource type specifies the policies for the self-removal of notification targets.
+
+	The ACME CSE currently only supports scheduling policies, but not the geo-location policies.
+
+
 ### Device Management
 
 **Management Objects**
@@ -483,5 +517,5 @@ discussed oneM2M functionalities. They are not yet part of the oneM2M standard.
 
 **Support for DELETE requests for http/1.0**
 
-:	Using PATCH requests to emulate DELETE requests for http/1.0 clients.
+:	Using [PATCH requests](../setup/Configuration-http.md#general-settings) to emulate DELETE requests for http/1.0 clients.
 
