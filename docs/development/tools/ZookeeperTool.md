@@ -37,7 +37,7 @@ in Zookeeper as `/id-in/http/security/usetls`.
 
 Key pathes are case-insensitive by default. This means that all keys are stored in lowercase and the
 key path is converted to lowercase before storing it in Zookeeper. 
-This is sone to ensure that the keys are always stored in a consistent format and to avoid issues with
+This is done to ensure that the keys are always stored in a consistent format and to avoid issues with
 the case-insentive nature of the INI configuration files.  
 To enable case-sensitive key paths, use the `--case-sensitive` option.
 
