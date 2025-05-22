@@ -40,6 +40,10 @@ The ACME CSE provides the following additional features:
 :	An interactive setup process that guides the user through the initial configuration of the CSE.
 
 
+**Remote Configuration**
+
+:	Besides using a local configuration file, the ACME CSE can also use a [Apache Zookeeper](https://zookeeper.apache.org/){target=_new} server to retrieve its configuration.
+
 **HTTP Authorization**
 
 :	Basic support for *basic* and *bearer* (token) authorization.

@@ -18,7 +18,7 @@ You can start the CSE by running it from the command line. This is the simplest 
 	python3 -m acme
 	```
 
-The current working directory is used as the base directory for the CSE and the *acme.ini* [configuration file](../setup/Configuration-introduction.md#the-configuration-file) must be in the same directory. An [interactive configuration process](Installation.md#guided-onboarding) is started if the configuration file is not found.
+The current working directory is used as the base directory for the CSE and the *acme.ini* [configuration file](../setup/Configuration-introduction.md#the-acmeini-configuration-file) must be in the same directory. An [interactive configuration process](Installation.md#guided-onboarding) is started if the configuration file is not found.
 
 
 ### Different Configuration File
@@ -71,6 +71,9 @@ The ACME CSE provides a number of command line arguments that will override the 
 | -h, --help                                               | Show a help message and exit.                                                                                                                                           |
 | --coap, --no-coap                                        | Enable or disable the CoAP binding.<br />This overrides the [coap.enable](../setup/Configuration-coap.md#general-settings) configuration setting.                       |
 | --config &lt;filename>                                   | Specify a configuration file that is used instead of the default (*acme.ini*) one.                                                                                      |
+| --config-zk-host <hostname>                              | Specify the Zookeeper host name.<br/>This together with the `--config-zk-root` option is used to enable the CSE to use Zookeeper for remote configuration.              |
+| --config-zk-port <port>                                  | Specify the Zookeeper port (default: 2181)                                                                                                                              |
+| --config-zk-root <root node>                             | Specify the Zookeeper root node (default: None). This should be unique, for example the the CSE ID                                                                      |
 | --base-directory &lt;directory>,<br/>-dir &lt;directory> | Specify the root directory for runtime data such as data, logs, and temporary files.                                                                                    |
 | --dark, --light                                          | Enable *dark* or *light* theme for the console and text UI.                                                                                                             |
 | --db-directory &lt;directory>                            | Specify the directory where the CSE's data base files are stored.                                                                                                       |

@@ -12,8 +12,8 @@ The oneM2M architecture is based on the concept of *Common Service Functions* (C
 
 
 <figure markdown="1">
-![Figure 2: oneM2M Common Service Functions](../images/oneM2M-CSF.png#only-light){width="80%",data-gallery="light"}
-![Figure 2: oneM2M Common Service Functions](../images/oneM2M-CSF.png#only-dark){width="80%",data-gallery="dark"}
+![Figure 1: oneM2M Common Service Functions](../images/oneM2M-CSF.png#only-light){width="80%",data-gallery="light"}
+![Figure 1: oneM2M Common Service Functions](../images/oneM2M-CSF.png#only-dark){width="80%",data-gallery="dark"}
 <figcaption>Figure 1: oneM2M Common Service Functions (source: oneM2M)</figcaption>
 </figure>
 

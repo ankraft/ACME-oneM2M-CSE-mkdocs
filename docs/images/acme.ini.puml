@@ -1,0 +1,10 @@
+@startuml
+skinparam componentStyle rectangle
+
+artifact "acme.ini.default" as inidefault
+artifact "acme.ini" as ini
+[ACME CSE] as cse
+cse ..> inidefault : 1. reads\ndefault\nconfiguration
+cse ..> ini : 2. reads\nconfig file
+
+@enduml

@@ -14,19 +14,40 @@ The configuration file follows the Windows INI file format with sections, settin
 Also, some settings can be applied via the command line when starting the CSE. These command line arguments overwrite the
 settings in the configuration file.
 
-## The Configuration File
+## The *acme.ini* Configuration File
 
 !!! warning
 	Changes should only be done to a copy of the default configuration file.
 
-A default configuration file is provided with the file [acme.ini.default](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/acme.ini.default){target=_new}. Don't make changes to this file, but rather copy relevant configuration setting to a new file named *acme.ini*, which is the default configuration file name. You can use another filename, but must then specify it with the `--config` command line argument when running the (see [Running the CSE](../setup/Running.md#running-the-cse)).
+A default configuration file is provided with the file [acme.ini.default](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/acme.ini.default){target=_new}. **Don't make changes to this file**, but rather copy relevant configuration setting to a new file named *acme.ini*, which is the default configuration file name. You can use another filename, but must then specify it with the `--config` command line argument when running the (see [Running the CSE](../setup/Running.md#running-the-cse)).
 
 It is sufficient to only add the settings to the configuration file that are different from the default settings. All other settings are read from the default config file *acme.ini.default*.
+
+<figure markdown="1">
+![Figure 1: Steps when reading a configuration from the *acme.ini* file](../images/acme.ini.png)
+<figcaption>Figure 1: Steps when reading a configuration from the <i>acme.ini</i> file</figcaption>
+</figure>
 
 If the configuration file *acme.ini* could not be found at the specified location then an interactive procedure is started to generate a file with basic configuration settings. You can add further configurations if necessary by copying sections and settings from *acme.ini.default*.
 
 !!!	info
 	It is highly recommended to use this interactive procedure to create the configuration file. This ensures that all necessary settings are present and that the file is correctly formatted.
+
+## Using Apache Zookeeper for Configuration
+
+The CSE can also be configured using [Apache Zookeeper](https://zookeeper.apache.org/){target=_new}. This allows for a more dynamic configuration and is especially useful in distributed environments. The configuration settings are stored in Zookeeper and can be accessed by the CSE at runtime.
+
+<figure markdown="1">
+![Figure 2: Steps when reading a configuration from Zookeeper](../images/zookeeper.ini.png)
+<figcaption>Figure 2: Steps when reading a configuration from Zookeeper</figcaption>
+</figure>
+
+In this case, a local configuration file (e.g. *acme.ini*) is not used, and the CSE is started with the command line arguments [--config-zk-host](Running.md#command-line-arguments) and [--config-zk-root](Running.md#command-line-arguments) to specify the Zookeeper server and the root configuration node. The CSE will then read the configuration settings from Zookeeper. 
+
+!!! info
+	Similar to using the 'acme.ini' configuration file, it is sufficient to only add the settings to the Zookeeper configuration that are different from the default settings. All other settings are read from the default config file *acme.ini.default*.
+
+One can create a Zookeeper-based configuration using the [Zookeeper Tool](../development/tools/ZookeeperTool.md). First, create a configuration file using either the [onboarding tool](../development/tools/OnboardingTool.md) or do it manually. Then, use the Zookeeper Tool to upload the configuration to Zookeeper. The [Zookeeper Tool](../development/tools/ZookeeperTool.md) will create the necessary nodes and set the configuration settings in Zookeeper.
 
 
 ## Settings Interpolation
