@@ -1,4 +1,8 @@
 @startuml
+
+' !include https://raw.githubusercontent.com/MikhailKravets/mkdocs_puml/themes/themes/catppuccin/latte-white.puml
+!include https://raw.githubusercontent.com/MikhailKravets/mkdocs_puml/themes/themes/catppuccin/mocha.puml
+
 skinparam componentStyle rectangle
 
 artifact "acme.ini.default" as inidefault
@@ -6,8 +10,8 @@ artifact "configuration\nvalues" as ini
 [ACME CSE] as cse
 [Zookeeper] as zk
 
-cse .right.> zk : 2. reads remote \nconfiguration
-cse ..> inidefault : 1. reads default\nconfiguration
-zk ..> ini
+cse -right-> zk : 2. reads remote \nconfiguration
+cse --> inidefault : 1. reads default\nconfiguration
+zk .. ini
 
 @enduml

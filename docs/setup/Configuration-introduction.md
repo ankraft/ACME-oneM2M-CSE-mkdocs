@@ -24,9 +24,11 @@ A default configuration file is provided with the file [acme.ini.default](https:
 It is sufficient to only add the settings to the configuration file that are different from the default settings. All other settings are read from the default config file *acme.ini.default*.
 
 <figure markdown="1">
-![Figure 1: Steps when reading a configuration from the *acme.ini* file](../images/acme.ini.png)
+![Figure 1: Steps when reading a configuration from the <i>acme.ini</i> file](../images/acme.ini.png#only-light){data-gallery="light"}
+![Figure 1: Steps when reading a configuration from the <i>acme.ini</i> file](../images/acme.ini-dark.png#only-dark){data-gallery="dark"}
 <figcaption>Figure 1: Steps when reading a configuration from the <i>acme.ini</i> file</figcaption>
 </figure>
+
 
 If the configuration file *acme.ini* could not be found at the specified location then an interactive procedure is started to generate a file with basic configuration settings. You can add further configurations if necessary by copying sections and settings from *acme.ini.default*.
 
@@ -38,9 +40,11 @@ If the configuration file *acme.ini* could not be found at the specified locatio
 The CSE can also be configured using [Apache Zookeeper](https://zookeeper.apache.org/){target=_new}. This allows for a more dynamic configuration and is especially useful in distributed environments. The configuration settings are stored in Zookeeper and can be accessed by the CSE at runtime.
 
 <figure markdown="1">
-![Figure 2: Steps when reading a configuration from Zookeeper](../images/zookeeper.ini.png)
-<figcaption>Figure 2: Steps when reading a configuration from Zookeeper</figcaption>
+![Figure 2: Steps when reading a configuration from Apache Zookeeper](../images/zookeeper.ini.png#only-light){data-gallery="light"}
+![Figure 2: Steps when reading a configuration from Apache Zookeeper](../images/zookeeper.ini-dark.png#only-dark){data-gallery="dark"}
+<figcaption>Figure 2: Steps when reading a configuration from Apache Zookeeper</figcaption>
 </figure>
+
 
 In this case, a local configuration file (e.g. *acme.ini*) is not used, and the CSE is started with the command line arguments [--config-zk-host](Running.md#command-line-arguments) and [--config-zk-root](Running.md#command-line-arguments) to specify the Zookeeper server and the root configuration node. The CSE will then read the configuration settings from Zookeeper. 
 
