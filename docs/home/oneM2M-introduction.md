@@ -66,7 +66,7 @@ The following table lists the abbreviations used in the oneM2M architecture.
 The oneM2M architecture defines a set of reference points that are used to describe the RESTful
 interfaces between the different components of a oneM2M system. Figure 2 also shows the reference
 points of the oneM2M architecture. They start with the letters *"Mc"* and are followed by a letter
-that indicates the direction of the interface, for example "*MCa*" for the interface between a CSE
+that indicates the direction of the interface, for example "*Mca*" for the interface between a CSE
 and an AE.
 
 !!! Note
