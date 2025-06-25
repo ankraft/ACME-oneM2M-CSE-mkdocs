@@ -6,9 +6,9 @@ The ACME CSE uses a database to store resources and other runtime data. You have
 
 The default database is a simple but fast file-based database using the [TinyDB](https://github.com/msiemens/tinydb){target=_new} library. By default, it requires no additional setup.
 
-The database files are stored by default in the directory *{baseDirectory}/data* (which can be changed by a [configuration setting](../setup/Configuration-database.md#tinydb)). 
+The database files are stored by default in the directory *{baseDirectory}/data* (which can be changed by a [configuration setting](../setup/Configuration-database.md#tinydb)). The filenames in that directory have unique filenemes that are derived from the database type, Service Provider ID, and CSE ID. For example, the file for the resources of the CSE with ID *id-in* and Service Provider ID *acme.example.com* would be named *resources-acme.example.com-id-in.json*.
 
-You enable the TinyDB database by setting the *databaseType* setting in the *\[basic.config\]* section to *tinydb*:
+You enable the TinyDB file-based database by setting the *databaseType* setting in the *\[basic.config\]* section to *tinydb*:
 
 ```ini title="Enable TinyDB as database"
 [basic.config]
