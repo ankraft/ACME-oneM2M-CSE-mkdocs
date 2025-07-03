@@ -1,6 +1,6 @@
 # How to Interconnect Service Providers
 
-A normal oneM2M deployment consists of a set of oneM2M nodes that are connected to each other in a tree-like structure, consisting of a root infrastructure node (IN-CSE) and several child nodes that can be either middle nodes, application service nodes (ASN-CSE), or application dedicated nodes (ADN-CSE).
+A normal oneM2M deployment consists of a set of oneM2M nodes that are connected to each other in a tree-like structure, consisting of a root infrastructure node (IN-CSE) and several child nodes that can be either middle nodes (MN-CSE), application service nodes (ASN-CSE), or application dedicated nodes (ADN-CSE).
 
 
 ## Service Provider Registrations
