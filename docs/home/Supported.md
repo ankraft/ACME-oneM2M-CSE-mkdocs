@@ -41,7 +41,8 @@ are not yet fully implemented, and some features are experimental.
 
 **RemoteCSE (CSR)**
 
-:	The ACME CSE supports CSE registrations via the Mcc reference point. 
+:	The ACME CSE supports CSE registrations via the Mcc reference point, and 
+	Service Provder registrations via the Mcc' reference point. 
 	In addtion announced resources, synchronization, and transit requests that 
 	target resources on remote CSE's are supported, as well.
 
@@ -275,7 +276,7 @@ The following oneM2M service functionalities are supported.
 **Blocking and Non-Blocking Requests**
 
 :	Blocking requests are the common way for an AE to interact with the CSE.
-	They are also used for CSE-to-CSE communication via the Mcc reference point.
+	They are also used for CSE-to-CSE communication via the  and Mcc' reference points.
 
 	To avoid blocking the AE, the ACME CSE supports non-blocking requests in 
 	synchronous and asynchronous mode as well.
@@ -307,7 +308,7 @@ The following oneM2M service functionalities are supported.
 :	*Long Polling* is supported for *request unreachable* AEs and CSEs through *pollingChannel* resources.
 
 	This mechanism is used for sending notifications and other requests to AEs and CSEs that are not directly reachable 
-	via the Mca or Mcc reference points, e.g. because of firewalls or NATs.
+	via the Mca, Mcc or Mcc' reference points, e.g. because of firewalls or NATs.
 
 
 **No-Response Requests**
@@ -406,6 +407,14 @@ The following oneM2M service functionalities are supported.
 :	Basic support for semantic descriptors, semantic queries and discovery is available.
 
 
+**Service Provider Registration**
+
+:	Registrations between Service Provider IN-CSEs are supported via the Mcc'
+	reference point. All the functionalities of the Mcc reference point are
+	supported, such as resource announcements, synchronization, and transit
+	requests that target resources on remote oneM2M service provider CSEs.
+
+
 **Subscriptions**
 
 :	Subscriptions are supported, including batch notification, and resource type and attribute filtering.
@@ -462,7 +471,7 @@ It is possible to enable only one binding, or to use any combination of them for
 :	The WebSocket protocol is supported, including TLS (wss) support   
 
 	!!! info  "Experimental Feature"
-	Besides the standard oneM2M WebSocket binding, the ACME CSE supports an	[experimental extension](../howtos/ExperimentalWebSocketBinding.md) to better support notifications.
+		Besides the standard oneM2M WebSocket binding, the ACME CSE supports an	[experimental extension](../howtos/ExperimentalWebSocketBinding.md) to better support notifications.
 
 
 ## Serialization Types

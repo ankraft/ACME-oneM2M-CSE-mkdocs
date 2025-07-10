@@ -93,11 +93,9 @@ These settings are used to configure the CSE's internal statistics collection an
 
 These settings are used to configure the CSE's internal registration behaviour, but also set the allowed originators for AE and CSR registrations.
 
-| Setting               | Description                                                                                                                                                                          | Default    |
-|:----------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| allowedAEOriginators  | List of AE originators that can register. This is a comma-separated list of originators. Wildcards (* and ?) are supported.                                                          | C\*, S\*   |
+| checkInterval         | This setting specifies the pause in seconds between tries to connect to the configured registrar CSE. This value is also used to check the connectivity to the registrar CSE after a successful registration. | 30 seconds   |
+| allowedAEOriginators  | List of AE originators that can register. This is a comma-separated list of originators. Wildcards (\* and ?) are supported.                                                          | C\*, S\*   |
 | allowedCSROriginators | List of CSR originators that can register. This is a comma-separated list of originators. Wildcards (\* and ?) are supported.<br />**Note**: CSE-IDs must **not** have a leading "/". | empty list |
-| checkLiveliness       | Check the liveliness of the registrations to the registrar CSE and also from the registree CSEs.                                                                                     | True       |
 
 
 ### Registrar CSE Access 
@@ -114,23 +112,82 @@ These settings are used to configure the address, access and general behavior to
 | resourceName         | The Registrar CSE's resource name.                                                                                                                                                                            | no default   |
 | INCSEcseID           | The CSE-ID of the Infrastructure CSE at the top of the deployment tree.                                                                                                                                       | /id-in       |
 | serialization        | Specify the serialization type that must be used for the registration to the registrar CSE.<br />Allowed values: json, cbor                                                                                   | json         |
-| checkInterval        | This setting specifies the pause in seconds between tries to connect to the configured registrar CSE. This value is also used to check the connectivity to the registrar CSE after a successful registration. | 30 seconds   |
 | excludeCSRAttributes | Comma separated list of attributes that are excluded when creating a registrar CSR.                                                                                                                           | empty list   |
+| originator		   | The originator used for the registration to the registrar CSE.                                                                                                                                                | none         |
 
-
-### Registrar CSE Security
+### Registrar CSE Security Settings
 
 **Section: `[cse.registrar.security]`**
 
-| Setting            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Default                                                      |
-|:-------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------|
-| httpUsername       | The username used for the Registrar CSE authentication via *http* if basic authentication is enabled for the Registrar CSE.                                                                                                                                                                                                                                                                                                                                         | empty string                                                 |
-| httpPassword       | The password used for the Registrar CSE authentication via *http* if basic authentication is enabled for the Registrar CSE.                                                                                                                                                                                                                                                                                                                                         | empty string                                                 |
-| httpBearerToken    | The authentication token used for the Registrar CSE authentication via *http* if bearer token authentication is enabled for the Registrar CSE.                                                                                                                                                                                                                                                                                                                      | empty string                                                 |
-| wsUsername         | The username used for the Registrar CSE authentication via *WebSocket* if basic authentication is enabled for the Registrar CSE.                                                                                                                                                                                                                                                                                                                                    | empty string                                                 |
-| wsPassword         | The password used for the Registrar CSE authentication via *WebSocket* if basic authentication is enabled for the Registrar CSE.                                                                                                                                                                                                                                                                                                                                    | empty string                                                 |
-| wsBearerToken      | The authentication token used for the Registrar CSE authentication via *WebSocket* if bearer token authentication is enabled for the Registrar CSE.                                                                                                                                                                                                                                                                                                                 | empty string                                                 |
-| poaCredentialsFile | The filename of the credential file for the reverse Registrar CSE authentication via *http* or *WebSocket*. This file contains a mapping between CSE-IDs and username/password credentials.<br />These credentials are used for the authentication by the remote CSE to this CSE. The credentials will be added to the URLs of the *poa* attribute of the *remoteCSE* resource.<br /> The format is one line per CSE-ID with the format "CSE-ID:username:password".<br/>See [Authentication between CSEs](../howtos/AuthenticationBetweenCSEs.md) | ${basic.config:baseDirectory}/certs/acme_poa_credentials.txt |
+| Setting          | Description                                                                                                                                         | Default      |
+|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|
+| httpUsername     | The username used for the Registrar CSE authentication via *http* if basic authentication is enabled for the Registrar CSE.                         | empty string |
+| httpPassword     | The password used for the Registrar CSE authentication via *http* if basic authentication is enabled for the Registrar CSE.                         | empty string |
+| httpBearerToken  | The authentication token used for the Registrar CSE authentication via *http* if bearer token authentication is enabled for the Registrar CSE.      | empty string |
+| wsUsername       | The username used for the Registrar CSE authentication via *WebSocket* if basic authentication is enabled for the Registrar CSE.                    | empty string |
+| wsPassword       | The password used for the Registrar CSE authentication via *WebSocket* if basic authentication is enabled for the Registrar CSE.                    | empty string |
+| wsBearerToken    | The authentication token used for the Registrar CSE authentication via *WebSocket* if bearer token authentication is enabled for the Registrar CSE. | empty string |
+| selfHttpUsername | The own CSE's username used for the Registrar CSE authentication via *http* if basic authentication is enabled for the Registrar CSE.               | empty string |
+| selfHttpPassword | The own CSE's password used for the Registrar CSE authentication via *http* if basic authentication is enabled for the Registrar CSE.               | empty string |
+| selfWsUsername   | The own CSE's username used for the Registrar CSE authentication via *WebSocket* if basic authentication is enabled for the Registrar CSE.          | empty string |
+| selfWsPassword   | The own CSE's password used for the Registrar CSE authentication via *WebSocket* if basic authentication is enabled for the Registrar CSE.          | empty string |
+
+
+### Service Provider Registrations
+
+**Section: `[cse.sp.registrar.{SP Name}]`**
+
+These settings are used to configure the behavior when registering to another service provider's Infrastructure CSE. 
+If one wants to register to more than one service provider, one must create a separate section for each service provider 
+with a name or identifier for the service provider as part of the section name.
+
+The section name must match the section name of the service provider's registration settings, i.e. `[cse.sp.registrar.MySP]`.
+
+
+| Setting              | Description                                                                                                                             | Default           |
+|:---------------------|:----------------------------------------------------------------------------------------------------------------------------------------|:------------------|
+| spID                 | The oneM2M Service Provider ID (SP-ID) of the service provider to regiser to.                                                           | none              |
+| address              | URL of the other service provider's IN-CSE.                                                                                             | none              |
+| root                 | The service provider's IN-CSE root path. Never provide a trailing /.                                                                    | empty string      |
+| cseID                | CSE-ID of the service provider's IN-CSE. A CSE-ID must start with a /.                                                                  | no default        |
+| excludeCSRAttributes | Comma separated list of attributes that are excluded when creating a registrar CSR.                                                     | empty list        |
+| resourceName         | The service provider's IN-CSE's resource name.                                                                                          | no default        |
+| INCSEcseID           | The CSE-ID of the Infrastructure CSE at the top of the deployment tree.                                                                 | /id-in            |
+| serialization        | Specify the serialization type that must be used for the registration to the service provider's IN-CSE.<br />Allowed values: json, cbor | json              |
+| originator           | The originator used for the registration to the service provider's IN-CSE.                                                              | The CSE's CSE ID  |
+
+### Service Provider Security Settings
+
+**Section: `[cse.sp.registrar.security.{SP Name}]`**
+
+These settings are used to configure the security settings when registering to another service provider's Infrastructure CSE. 
+If one wants to register to more than one service provider, one must create a separate section for each service provider
+with a name or identifier for the service provider as part of the section name.
+
+The section name must match the section name of the service provider's registration settings, i.e.
+
+```ini title="Example of a service provider's registration section, including security settings"
+[cse.sp.registrar.MySP]
+...
+
+[cse.sp.registrar.security.MySP]
+...	
+```
+
+
+| Setting          | Description                                                                                                                                         | Default      |
+|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|
+| httpUsername     | The username used for the service provider's IN-CSE authentication via *http* if basic authentication is enabled for the service provider's IN-CSE.                         | empty string |
+| httpPassword     | The password used for the service provider's IN-CSE authentication via *http* if basic authentication is enabled for the service provider's IN-CSE.                         | empty string |
+| httpBearerToken  | The authentication token used for the service provider's IN-CSE authentication via *http* if bearer token authentication is enabled for the service provider's IN-CSE.      | empty string |
+| wsUsername       | The username used for the service provider's IN-CSE authentication via *WebSocket* if basic authentication is enabled for the Registrar CSE.                    | empty string |
+| wsPassword       | The password used for the service provider's IN-CSE authentication via *WebSocket* if basic authentication is enabled for the Registrar CSE.                    | empty string |
+| wsBearerToken    | The authentication token used for the service provider's IN-CSE authentication via *WebSocket* if bearer token authentication is enabled for the service provider's IN-CSE. | empty string |
+| selfHttpUsername | The own CSE's username used for the service provider's IN-CSE authentication via *http* if basic authentication is enabled for the service provider's IN-CSE.               | empty string |
+| selfHttpPassword | The own CSE's password used for the service provider's IN-CSE authentication via *http* if basic authentication is enabled for the service provider's IN-CSE.               | empty string |
+| selfWsUsername   | The own CSE's username used for the service provider's IN-CSE authentication via *WebSocket* if basic authentication is enabled for the service provider's IN-CSE.          | empty string |
+| selfWsPassword   | The own CSE's password used for the service provider's IN-CSE authentication via *WebSocket* if basic authentication is enabled for the service provider's IN-CSE.          | empty string |
+
 
 
 ### Resource Announcements

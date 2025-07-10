@@ -54,6 +54,12 @@ To store an individual ACME CSE configuration from a local *acme.ini* file in a 
 python zk-tool.py -host zookeeper.example.com -root /id-in -store
 ```
 
+This command reads the configuration from the default *acme.ini* file. To specify a different configuration file, use the `--config`/`-c` option:
+
+```bash
+python zk-tool.py -host zookeeper.example.com -root /id-in -store -c /path/to/your/acme.ini
+```
+
 ### Retrieve Configuration
 
 To retrieve the configuration from Zookeeper and print it to *stdout*, use the following command:

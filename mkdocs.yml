@@ -205,6 +205,7 @@ nav:
       - 'Pyenv Setup': 'howtos/HowTo-pyenv.md'
       - 'Raspberry Pi': 'howtos/RaspberryPi.md'
       - 'Resource Editor Syntax Highlighting': 'howtos/EnablingSyntaxHighlighting.md'
+      - 'How to Interconnect Service Providers': 'howtos/ServiceProviderRegistration.md'
       - 'Stand-alone Web UI': 'howtos/StandAloneWebUI.md'
   - 'Help': 
     - 'FAQ': 'help/FAQ.md'
