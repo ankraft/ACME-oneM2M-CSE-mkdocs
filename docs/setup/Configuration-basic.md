@@ -15,12 +15,15 @@ When creating the configuration file, it is recommended to use the [interactive 
 These are the general settings for the CSE.
 Some settings are mandatory, others are optional. This depends on the type of CSE to run.
 
+These basic settings are used in the [default configuration file](../setup/Configuration-introduction.md#the-acmeini-configuration-file) and 
+can be set by using the [interactive procedure](../setup/Installation.md#guided-onboarding) or by editing the file directly.
+
 | Setting          | Description                                                                                                                                                                                         | Optional |
 |:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------|
 | cseType          | The type of CSE to run.<br/>Allowed values: `IN`, `MN`, `ASN`                                                                                                                                       | No       |
-| cseID            | The CSE-ID of the CSE. This is a unique identifier for the CSE.                                                                                                                                     | No       |
+| cseID            | The CSE-ID of the CSE. This is a unique identifier for the CSE.<br/>This ID must not start with `/` and must not contain a further `/` or white space.                                              | No       |
 | cseName          | The name of the CSE.                                                                                                                                                                                | No       |
-| adminID          | The CSE-ID of the CSE's admin.                                                                                                                                                                      | No       |
+| adminID          | The ID for the CSE's admin originator.                                                                                                                                                              | No       |
 | networkInterface | The network interface to use.                                                                                                                                                                       | No       |
 | cseHost          | The IP address of the CSE.<br/>The default is [${hostIPAddress}](../setup/Configuration-introduction.md#command-line-arguments).                                                                    | No       |
 | httpPort         | The port for the HTTP server.<br/>This value depends on the *cseType*.                                                                                                                              | No       |

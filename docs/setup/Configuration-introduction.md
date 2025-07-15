@@ -11,7 +11,7 @@ The configuration file follows the Windows INI file format with sections, settin
 
 ### Command Line Arguments
 
-Also, some settings can be applied via the command line when starting the CSE. These command line arguments overwrite the
+Also, some settings can be applied via the [command line](../setup/Running.md#command-line-arguments) when starting the CSE. These command line arguments overwrite the
 settings in the configuration file.
 
 ## The *acme.ini* Configuration File
@@ -49,7 +49,7 @@ The CSE can also be configured using [Apache Zookeeper](https://zookeeper.apache
 In this case, a local configuration file (e.g. *acme.ini*) is **not** used, and the CSE is started with the command line arguments [--config-zk-host](Running.md#command-line-arguments) and [--config-zk-root](Running.md#command-line-arguments) to specify the Zookeeper server and the root configuration node. The CSE will then read the configuration settings from Zookeeper. 
 
 !!! info
-	Similar to using the 'acme.ini' configuration file, it is sufficient to only add the settings to the Zookeeper configuration that are different from the default settings. All other settings are read from the default config file *acme.ini.default*.
+	Similar to using the *acme.ini* configuration file, it is sufficient to only add the settings to the Zookeeper configuration that are different from the default settings. All other settings are read from the default config file *acme.ini.default*.
 
 One can create a Zookeeper-based configuration using the [Zookeeper Tool](../development/tools/ZookeeperTool.md). First, create a configuration file using either the [onboarding tool](../development/tools/OnboardingTool.md) or do it manually. Then, use the Zookeeper Tool to upload the configuration to Zookeeper. The [Zookeeper Tool](../development/tools/ZookeeperTool.md) will create the necessary nodes and set the configuration settings in Zookeeper.
 

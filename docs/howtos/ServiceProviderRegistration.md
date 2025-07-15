@@ -25,7 +25,7 @@ The configuration of the service provider registration is done in a similar way 
 
 The difference is that one needs to specify one or two sections in the configuration file. The name of each section is important, as it is used to distinguish the different service provider registrations. The section names must start with `cse.sp.registrar.` followed by a unique identifier for that particular service provider registration.
 
-In the exampkes below, we use **"Service Provider 0"** as the own service provider, and **"Service Provider 1"** as the remote service provider that we want to register with. 
+In the exampkes below, we use **"Service Provider 0"** as the local service provider, and **"Service Provider 1"** as the remote service provider that we want to register with. 
 
 More details about these configuration settings can be found in the configuration documentation for [Service Provider Registrations](../setup/Configuration-cse.md#service-provider-registrations) and [Service Provider Security](../setup/Configuration-cse.md#service-provider-security-settings).
 
@@ -40,7 +40,7 @@ A minimum configuration section for a service provider registration could look l
 [cse.sp.registrar.exampleProvider1]
 
 ; The remote IN-CSE's service provider ID, address, CSE ID, resource name and serialization format
-spID = provider1.example.com
+spID = //provider1.example.com
 address = https://provider1.example.com:8080
 cseID = /id-in-sp1
 resourceName = cse-in-sp1
