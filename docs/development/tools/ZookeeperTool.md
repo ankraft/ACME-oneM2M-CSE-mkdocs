@@ -17,7 +17,7 @@ The available commands are:
 | `--help`                                 | `-h`            | Show this help message and exit                                                              |                                        |
 | `--zookeeper-host hostname`              | `-host`         | Hostname of the Zookeeper server                                                             | `localhost`                            |
 | `--zookeeper-port port`                  | `-port`         | Port of the Zookeeper server                                                                 | `2181`                                 |
-| `--zookeeper-root nodeName`              | `-root`         | Name of the configuration node                                                               | `/acme`                                |
+| `--zookeeper-root nodeName`              | `-root`         | Name of the root configuration node                                                          | `/`.                                   |
 | `--verbose`                              | `-v`            | Enable verbose output                                                                        |                                        |
 | `--case-sensitive`                       | `-cs`           | Enable case sensitive node and key names                                                     | `False`                                |
 | `--config filename`                      | `-c`            | Specify the ACME CSE's instance configuration file                                           | `../../acme.ini`                       |
