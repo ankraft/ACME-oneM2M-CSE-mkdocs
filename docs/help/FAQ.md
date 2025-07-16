@@ -117,7 +117,7 @@
 1. **How to increase the performance of ACME CSE?**  
    The log output provides useful information to analyze the flows of requests inside the CSE. However, it reduces the performance of the CSE by a lot. Reducing the log level to *info* or *warning* already helps. This can be done in the *[logging]* section of the configuration file, or by pressing `shift-L` on the console to change the logging level to the desired value. Also, [disabline writing the log to a file](../setup/Configuration-logging.md) will increase the performance.  
    Another option is to change the database to *memory* mode. This means that all database access happens in memory and not on disk. But please be aware that this also means that all data will be lost when the CSE terminates!  
-   Lastly, the ACME CSE can be run with Python 3.11, which is way faster than previous versions of Python.
+   Lastly, the ACME CSE can be run with newer versions of Python, which is way faster and more efficient than previous versions of Python.
 
 1. **Increase database performance with *disk* mode**  
    When running the CSE with the database mode set to *tinydb* (ie. store the database on disk rather then in memory) one can improve the performance by [increasing the time before data is actually written to disk](../setup/Configuration-database.md#tinydb). The default is 1 second, but it can be increased as necessary.  
@@ -127,6 +127,19 @@
 	[database.tinydb]
 	writeDelay=10
 	```
+
+1. **Reduce various check-intervals**  
+   The CSE checks various things at regular intervals, such as the liveliness of remote CSEs, expired resources, 
+   and so on. The following table list various intervals that can be configured to reduce the load on the CSE and the network.
+   The default values are usually sufficient for development use cases, but can be reduced to a lower value for deployment use cases.
+   
+   | Setting                             | Description                                                                                                                                                                                   |
+   |:------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | \[cse].checkExpirationsInterval     | The interval in seconds to check for expired resources. This can be set to a much higher value than the default of 60 seconds if it is not necessary to expire resources quickly.             |
+   | \[cse.registration].checkInterval   | The interval in seconds to check the liveliness of remote CSEs. This behaviour can even be disabled by setting the following configuration option to `false`.                                 |
+   | \[cse.registration].checkLiveliness | Whether to check the liveliness of remote CSEs. This can be disabled to reduce the load on the CSE and the network. Set this to `false` to disable the check.                                 |
+   | \[cse.statistics].writeInterval     | The interval in seconds to write the statistics to the database. This can be set to a much higher value than the default of 60 seconds if it is not necessary to write statistics frequently. |
+   | \[scripting].fileMonitoringInterval | The interval in seconds to check for changes in the scripting files. This can be set to a higher value if it is not necessary to check for changes frequently.                                |
 
 
 ## Web UI

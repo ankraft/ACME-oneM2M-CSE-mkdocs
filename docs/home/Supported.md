@@ -26,6 +26,14 @@ The ACME CSE supports the following CSE types:
 The ACME CSE supports the following oneM2M resource types. Some resource types 
 are not yet fully implemented, and some features are experimental.
 
+<figure markdown="1">
+![UML Class Diagram of the ACME CSE Resources](../images/resources_uml.png#only-light){data-gallery="light"}
+![UML Class Diagram of the ACME CSE Resources](../images/resources_uml-dark.png#only-dark){data-gallery="dark"}
+<figcaption>UML Class Diagram of the Supported oneM2M Resources Types</figcaption>
+</figcaption>
+</figure>
+
+
 ### Entities
 
 **CSEBase (CB)**

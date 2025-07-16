@@ -67,3 +67,9 @@ selfHttpPassword = hashedPassword1
 ```
 
 
+### Authorize Service Provider Registrations
+
+As with every registration, the registering CSE must be authorized to register with the remote IN-CSE. This is done by adding the CSE's ID to the *allowedCSROriginators* setting in the *\[cse.registration]* section of the remote IN-CSE's configuration file.
+
+The registrar CSE's ID does **not** need to be added to the local CSE's *allowedCSROriginators* setting. This is automatically done internally by the CSE when the registration is successful.
+

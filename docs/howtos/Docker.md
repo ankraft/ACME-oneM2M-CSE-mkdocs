@@ -85,3 +85,10 @@ Values for other setting, such as credentials, can be provided the same way.
 The provided Docker image exposes TCP ports 8080 (http) and 8180 (websockets), and UDP port 5683 (CoAP). The ports can be mapped to different ports on the host system. 
 
 The ports are always exposed even if only the HTTP binding is enabled by default.
+
+
+### Headless Mode
+
+The ACME CSE can be run in headless mode, which means that the console output is not displayed in the terminal. This is useful when running the CSE in a Docker container, where the console output is not needed.
+
+To run the CSE in headless mode, use the command line argument `--headless` or set the configuration setting *[console].headless* to `true` in the *acme.ini* configuration file. 

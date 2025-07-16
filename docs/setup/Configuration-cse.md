@@ -95,10 +95,10 @@ These settings are used to configure the CSE's internal registration behaviour, 
 
 | Setting               | Description                                                                                                                                                                                                   | Default    |
 |:----------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| checkInterval         | This setting specifies the pause in seconds between tries to connect to the configured registrar CSE. This value is also used to check the connectivity to the registrar CSE after a successful registration. | 30 seconds |
 | allowedAEOriginators  | List of AE originators that can register. This is a comma-separated list of originators. Wildcards (\* and ?) are supported.                                                                                  | C\*, S\*   |
 | allowedCSROriginators | List of CSR originators that can register. This is a comma-separated list of originators. Wildcards (\* and ?) are supported.<br />**Note**: CSE-IDs must **not** have a leading `/`.                         | empty list |
 | checkLiveliness       | Check the liveliness of the registrations to the registrar CSE and also from the registree CSEs.                                                                                                              | True       |
+| checkInterval         | This setting specifies the pause in seconds between tries to connect to the configured registrar CSE. This value is also used to check the connectivity to the registrar CSE after a successful registration. | 60 seconds |
 
 
 ### Registrar CSE Access 
