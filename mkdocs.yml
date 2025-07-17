@@ -165,6 +165,7 @@ nav:
       - 'oneM2M Resources': 'setup/Configuration-resources.md'
     - 'Operation':
       - 'Infrastructure Diagrams': 'setup/Operation-diagrams.md'
+      - 'CSE Management': 'setup/Operation-management.md'
       - 'MQTT Broker': 'setup/Operation-mqtt.md'
       - 'Upper Tester': 'setup/Operation-uppertester.md'
     - 'User Interfaces':

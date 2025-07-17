@@ -59,6 +59,13 @@ The ACME CSE provides the following additional features:
 	*[WSGI]: Web Server Gateway Interface
 
 
+**Management Interface**
+
+:	A management interface that provides several commands to manage the CSE and retrieve information about its operation. 
+	The management interface is disabled by default and can be enabled in the configuration file.  
+	See [CSE Management](../setup/Operation-management.md) for more information.
+
+
 **Recording Requests**
 
 :	Requests over Mca and Mcc to an from a CSE can be recorded. This may be used to inspect
