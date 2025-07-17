@@ -1,4 +1,4 @@
-# Operation - Diagrams
+# Operation - Infrastructure Diagrams
 
 
 ## Resource Tree and Deployment Infrastructure Diagram

@@ -1,6 +1,6 @@
 # Operation - MQTT Broker
 
-ACME supports Mca and Mcc communication via MQTT. This binding must be enabled in the configuration file with the [`[client.mqtt].enable`](../setup/Configuration-mqtt.md#general-settings) setting. The address and optionally the port of the MQTT broker must be configured as well.
+ACME supports Mca, Mcc and Mcc' communication via MQTT. This binding must be enabled in the configuration file with the [`[client.mqtt].enable`](../setup/Configuration-mqtt.md#general-settings) setting. The address and optionally the port of the MQTT broker must be configured as well.
 
 ```ini title="MQTT Configuration Example"
 [mqtt]
