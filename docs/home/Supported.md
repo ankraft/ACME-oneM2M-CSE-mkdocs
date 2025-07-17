@@ -354,7 +354,7 @@ The following oneM2M service functionalities are supported.
 
 **Remote CSE Registration**
 
-:	The ACME CSE supports CSE registrations via the Mcc reference point. 
+:	The ACME CSE supports CSE registrations via the Mcc and Mcc' reference points. 
 	In addtion announced resources, synchronization, and transit requests that 
 	target resources on remote CSE's are supported.
 
@@ -371,7 +371,7 @@ The following oneM2M service functionalities are supported.
 
 **Request and Resource Validations**
 
-:	All requests and resources received via the Mca and Mcc reference points are validated.
+:	All requests and resources received via the Mca, Mcc and Mcc' reference points are validated.
 
 
 **Resource Addressing**
@@ -381,7 +381,7 @@ The following oneM2M service functionalities are supported.
 
 **Resource Announcements**
 
-:	Announcements of resources are supported via the Mcc reference point.
+:	Announcements of resources are supported via the Mcc and Mcc' reference points.
 	Resources are announced under a CSEBaseAnnc resource on the target CSE (R4 feature).  
 	Bi-directional update and attribute syncronization is supported as well.
 
