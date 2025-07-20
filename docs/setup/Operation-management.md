@@ -22,6 +22,7 @@ The CSE management interface provides several commands that can be used to manag
 | log           | Stream the live log output of the CSE. The log will continue to stream until the connection is closed.                                                         |
 | loglevel      | Get or set the log level of the CSE. The log level can be set to `info`, `debug`, `warn`, `error`, or `off`.                                                   |
 | registrations | Get the current registrations of the CSE in JSON format. This includes the registrations to remote CSEs, service providers and the registrations of local AEs. |
+| requests      | Stream a live output of the current requests of the CSE in JSON format as well as enable, disable and get the status of request recording.                     |
 | reset         | Reset the CSE to its initial state. This will clear all resources from the CSE.                                                                                |
 | restart       | Shutdown the CSE to restart it. The CSE will **not** restart internally, but it will exit with an exit code 82. See also the example below.                    |
 | shutdown      | Shutdown the CSE normally. The CSE will exit with an exit code 0.                                                                                              |
@@ -48,21 +49,31 @@ curl -X GET http://localhost:8080/__mgmt__/log
 
 This will stream the live log output of the CSE. The log will continue to stream until the connection is closed, e.g. by pressing `Ctrl+C` in the terminal.
 
+
+### Get the CSE's Log Level
+
+```bash title="Get CSE Log Level"
+curl -X GET http://localhost:8080/__mgmt__/loglevel
+```
+
+
 ### Set the CSE's Log Level
 
 ```bash title="Set CSE Log Level to Debug"
-curl -X GET http://localhost:8080/__mgmt__/log/debug
+curl -X GET http://localhost:8080/__mgmt__/loglevel/debug
 ```
 
 ```bash title="Disable CSE Log Output"
-curl -X GET http://localhost:8080/__mgmt__/log/off
+curl -X GET http://localhost:8080/__mgmt__/logloglevel/off
 ```
+
 
 ### Shutdown the CSE
 
 ```bash title="Shutdown CSE"
 curl -X GET http://localhost:8080/__mgmt__/shutdown
 ```
+
 
 ### Restart the CSE
 
@@ -96,3 +107,28 @@ The following example code shows how to restart the CSE automatically using a sh
     end
 	```
 
+
+### Stream CSE Requests
+
+```bash title="Stream CSE Requests"
+curl -X GET http://localhost:8080/__mgmt__/requests
+```
+
+
+### Enable Request Recording
+
+```bash title="Enable Request Recording"
+curl -X GET http://localhost:8080/__mgmt__/requests/enable
+```
+
+
+### Disable Request Recording
+```bash title="Disable Request Recording"
+curl -X GET http://localhost:8080/__mgmt__/requests/disable
+```
+
+
+### Get the Request Recording Status
+```bash title="Get Request Recording Status"
+curl -X GET http://localhost:8080/__mgmt__/requests/recording/status
+```
