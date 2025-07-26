@@ -87,7 +87,7 @@ You can start the CSE by simply running it from the command line:
 
 1.  <a id="guided-onboarding-2"></a>After terminating the CSE again you can edit that configuration file and add more settings if necessary.
 	There are a lot of individual settings to configure here. Mostly, the defaults should be sufficient, but individual settings can be applied to each of the sections.  
-	See the [Configuration](../setup/Configuration-introduction.md) documentation for further details, and the defaults configuration file [acme.ini.default](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/acme.ini.default){target=_new}.
+	See the [Configuration](../setup/Configuration-introduction.md) documentation for further details, and the default configuration file [acme.ini.default](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/acme.ini.default){target=_new}.
 
 
 #### Stand-Alone Configuration Creation
@@ -112,6 +112,20 @@ If you want to configure the CSE without starting it, you can use the following 
 
 
 This will start the configuration process and save the configuration to the specified file. The configuration file can be edited later as described [before](#guided-onboarding-2).
+
+
+#### Guided Onboarding with a Zookeeper Configuration Service
+
+If you want to use a [Zookeeper configuration service](../setup/Configuration-introduction.md#using-apache-zookeeper-for-configuration) instead of a local configuration file to manage the configuration of the CSE, you can create a configuration that is stored in Zookeeper. This can be done by passing the *--zookeeper-host* (and optionally *--zookeeper-port*) command line arguments to the onboarding tool:
+
+```bash title="Running the onboarding tool with Zookeeper"
+acmecse-onboarding --zookeeper-host <host>
+```
+
+This will start the configuration process as before, but the configuration will be stored in Zookeeper instead of a local file.
+
+Storing the configuration in Zookeeper is also possible when running the CSE for the first time. When you run the CSE with the [--config-zk-host](../setup/Running.md#command-line-arguments) command line argument, the CSE will start the onboarding process and store the configuration in Zookeeper.
+
 
 ## Installing the Development Version
 
