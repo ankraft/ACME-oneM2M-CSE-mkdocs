@@ -165,7 +165,7 @@ nav:
       - 'oneM2M Resources': 'setup/Configuration-resources.md'
     - 'Operation':
       - 'Infrastructure Diagrams': 'setup/Operation-diagrams.md'
-      - 'CSE Management': 'setup/Operation-management.md'
+      - 'CSE Management API': 'setup/Operation-management.md'
       - 'MQTT Broker': 'setup/Operation-mqtt.md'
       - 'Upper Tester': 'setup/Operation-uppertester.md'
     - 'User Interfaces':
@@ -175,7 +175,6 @@ nav:
   - 'Development': 
       - 'Overview': 'development/Overview.md'
       - 'Unit Tests': 'development/UnitTests.md'
-      - 'Type Checking': 'development/TypeChecking.md'
       - 'Start-Up and Policies':
         - 'Start-Up Resources': 'development/StartupResources.md'
         - 'Attribute Policies': 'development/AttributePolicies.md'
@@ -196,6 +195,7 @@ nav:
         - 'Upper Tester Integration': 'development/ACMEScript-uppertester.md'
       - 'Embedding ACME CSE': 'development/Embedding_ACME.md'
       - 'Debug Mode': 'development/DebugMode.md'
+      - 'Type Checking': 'development/TypeChecking.md'
       - 'Third Party Components': 'development/ThirdPartyLibraries.md'
   - 'HowTos':
       - 'Overview': 'howtos/HowTos.md'

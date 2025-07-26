@@ -1,10 +1,14 @@
-# Operation - CSE Management
+# Operation - CSE Management API
 
-If enabled, the CSE provides a management interface that allows to manage some aspects of the CSE as well as to retrieve information about the CSE's operation. Management commands can be sent to the CSE via HTTP requests.
+If enabled, the CSE provides a management API that allows to retrieve configuration and status information, stream logs and requests
+as well as to reset, shutdown and restart the CSE. This API is intended for operational tasks and monitoring of the CSE.
+
+Management commands can be sent to the CSE via HTTP requests.
+
 
 ## Enabling CSE Management
 
-The CSE management interface is disabled by default. To enable it, set the [*enableManagementEndpoint*](../setup/Configuration-http.md#general-settings) setting in the configuration file to `true`:
+The CSE management API is disabled by default. To enable it, set the [*enableManagementEndpoint*](../setup/Configuration-http.md#general-settings) setting in the configuration file to `true`:
 
 ```ini title="Enable CSE Management"
 [http]
