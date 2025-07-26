@@ -12,10 +12,10 @@ These are the general WebSocket settings.
 |:---------|:-----------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
 | enable   | Enable the WebSocket binding.                                                                  | False                                                                                       |
 | port     | Set the port for the WebSocket server.                                                         | 8180                                                                                        |
-| listenIF | Interface to listen to. Use 0.0.0.0 for "all" interfaces.                                      | 0.0.0.0                                                                                     |
+| listenIF | Interface to listen to. Use 0.0.0.0 for "all" interfaces.                                      | [${basic.config:networkInterface}](../setup/Configuration-basic.md#basic-configuration)     |
 | address  | Own address. Should be a local/public reachable address.                                       | ws://[${basic.config:cseHost}](../setup/Configuration-basic.md#basic-configuration):${port} |
 | loglevel | Loglevel for the WebSocket server. Allowed values: `debug`, `info`, `warning`, `error`, `off`. | [${basic.config:logLevel}](../setup/Configuration-logging.md)                               |
-| timeout  | Timeout when sending websocket requests and waiting for responses.                             | [${cse:requestExpirationDelta}](../setup/Configuration-cse.md#general-settings)       |
+| timeout  | Timeout when sending websocket requests and waiting for responses.                             | [${cse:requestExpirationDelta}](../setup/Configuration-cse.md#general-settings)             |
 
 
 ## Security

@@ -19,7 +19,8 @@ settings in the configuration file.
 !!! warning
 	Changes should only be done to a copy of the default configuration file.
 
-A default configuration file is provided with the file [acme.ini.default](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/acme.ini.default){target=_new}. **Don't make changes to this file**, but rather copy relevant configuration setting to a new file named *acme.ini*, which is the default configuration file name. You can use another filename, but must then specify it with the `--config` command line argument when running the (see [Running the CSE](../setup/Running.md#running-the-cse)).
+A default configuration is provided with the file [acme.ini.default](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/acme.ini.default){target=_new}. The settings in this file are the default values for the CSE and can be overwritten by local configuration file.  
+ **Don't make changes to the default configuration file**, but rather copy relevant configuration setting to a new file named, for example, *acme.ini*, which is the default configuration file name. You can use another filename, but must then specify it with the `--config` command line argument when running the (see [Running the CSE](../setup/Running.md#running-the-cse)).
 
 It is sufficient to only add the settings to the configuration file that are different from the default settings. All other settings are read from the default config file *acme.ini.default*.
 
@@ -34,6 +35,7 @@ If the configuration file *acme.ini* could not be found at the specified locatio
 
 !!!	info
 	It is highly recommended to use this interactive procedure to create the configuration file. This ensures that all necessary settings are present and that the file is correctly formatted.
+
 
 ## Using Apache Zookeeper for Configuration
 
@@ -66,6 +68,7 @@ acmecse --config-zk-host localhost:2181 --config-zk-root id-in
 ## Settings Interpolation
 
 In addition to assigning individual or fixed values for configurations settings you can use [settings interpolation](https://docs.python.org/3/library/configparser.html#interpolation-of-values){target=_new} which allows you to reference settings from the same or from other sections. The syntax to denote a value from a section is ```${section:option}```.
+
 
 ### Built-in Settings
 
