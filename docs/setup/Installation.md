@@ -118,9 +118,15 @@ This will start the configuration process and save the configuration to the spec
 
 If you want to use a [Zookeeper configuration service](../setup/Configuration-introduction.md#using-apache-zookeeper-for-configuration) instead of a local configuration file to manage the configuration of the CSE, you can create a configuration that is stored in Zookeeper. This can be done by passing the *--zookeeper-host* (and optionally *--zookeeper-port*) command line arguments to the onboarding tool:
 
-```bash title="Running the onboarding tool with Zookeeper"
-acmecse-onboarding --zookeeper-host <host>
-```
+=== "For Package Installation"
+	```bash title="Running the onboarding tool with Zookeeper"
+	acmecse-onboarding --zookeeper-host <host>
+	```
+
+=== "For Manual Installation"
+	```bash title="Running the onboarding tool with Zookeeper as a module"
+	python3 -m acme.onboarding --zookeeper-host <host>
+	```
 
 This will start the configuration process as before, but the configuration will be stored in Zookeeper instead of a local file.
 
