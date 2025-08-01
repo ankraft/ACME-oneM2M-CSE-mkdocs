@@ -60,8 +60,10 @@ One can create a Zookeeper-based configuration using the [Zookeeper Tool](../dev
 
 ### Example: Starting the CSE with Zookeeper Configuration
 
+The following command starts the CSE with a Zookeeper configuration using the host `localhost` and the root node `id-in`. The default Zookeeper port `2181` is used implicitly.
+
 ```bash title="Starting the CSE with Zookeeper configuration"
-acmecse --config-zk-host localhost:2181 --config-zk-root id-in
+acmecse --config-zk-host localhost --config-zk-root id-in
 ```
 
 
