@@ -271,7 +271,7 @@ The result of a function is the result of the expression that is evaluated last 
 	(if (< n 2)
 		n
 		(+ (fib (- n 1)) 
-		(fib (- n 2)))
+		   (fib (- n 2)))
 	))
 (fib 10)                ;; Returns 55
 ```
@@ -391,7 +391,6 @@ The `filter` function filters a list based on a *function*. The *function* is ap
 ---
 
 ### fset
- <span style="vertical-align:super;font-size:smaller;color:#b42025">(under development)</span>
 
 `(fset <function name> <function name or lambda>)`
 
