@@ -64,7 +64,7 @@ Variable names are case-sensitive.
 
 ### Comments
 
-Comments start with one or two semicolons and continue to the end of the line.
+Comments start with two semicolons and continue to the end of the line.
 
 
 
