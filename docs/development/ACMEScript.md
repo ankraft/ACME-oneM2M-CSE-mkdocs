@@ -30,13 +30,14 @@ An s-expression is a list of symbols that represent either a value or another s-
 
 The following data types are supported by ACMEscript:
 
-- String: for example "Hello, World"
+- String: A normal string, for example "Hello, World"
 - Number: integer or float, for example 42
 - Boolean: `true` or `false`
 - JSON: A valid JSON structure
 - List or s-expression: a list of symbols or other s-expressions
 - Lambda: A nameless function
-- nil: An empty list or non-value
+- nil: An empty list or non-value.
+- T: A special symbol that is used to represent the "not nil" value
 
 
 ### Return Values
