@@ -16,7 +16,13 @@ The following figure illustrates this concept.
 
 The CSEs of a single service provider can register with each other via the *Mcc* reference point (the blue connections in the figure). The top-level IN-CSE of each service provider can then regiser itself with the IN-CSE of another service provider via the *Mcc'*[^1] reference point (the orange connections in the figure).
 
-[^1]: *Mcc'* is pronounced *Mcc prime*
+[^1]: *Mcc'* is pronounced "*Mcc prime*"
+
+!!! info "Registrations are uni-directional"
+    A registration between the IN-CSEs of different service providers is a uni-directional process. This means that the registration from one service provider to another only happens in one direction. The other service provider's IN-CSE **must not** register with the first service provider's IN-CSE.
+
+
+After the registration is successful, the two IN-CSEs can exchange information about their CSEs and resources. This allows the CSEs of one service provider to access resources of the other service provider's CSEs, as long as the remote CSEs allow this via their access control policies.
 
 
 ## Configuration
@@ -25,7 +31,7 @@ The configuration of the service provider registration is done in a similar way 
 
 The difference is that one needs to specify one or two sections in the configuration file. The name of each section is important, as it is used to distinguish the different service provider registrations. The section names must start with `cse.sp.registrar.` followed by a unique identifier for that particular service provider registration.
 
-In the exampkes below, we use **"Service Provider 0"** as the local service provider, and **"Service Provider 1"** as the remote service provider that we want to register with. 
+In the examples below, we use **"Service Provider 1"** as the local service provider, and **"Service Provider 2"** as the remote service provider that we want to register with. Remember, the second service provider's IN-CSE must not register with the first service provider's IN-CSE.
 
 More details about these configuration settings can be found in the configuration documentation for [Service Provider Registrations](../setup/Configuration-cse.md#service-provider-registrations) and [Service Provider Security](../setup/Configuration-cse.md#service-provider-security-settings).
 
@@ -40,10 +46,10 @@ A minimum configuration section for a service provider registration could look l
 [cse.sp.registrar.exampleProvider1]
 
 ; The remote IN-CSE's service provider ID, address, CSE ID, resource name and serialization format
-spID = //provider1.example.com
-address = https://provider1.example.com:8080
-cseID = /id-in-sp1
-resourceName = cse-in-sp1
+spID = //provider-2.example.com
+address = https://provider-2.example.com:8080
+cseID = /id-in-sp2
+resourceName = cse-in-sp2
 serialization = json
 ```
 
@@ -55,21 +61,31 @@ An example security section for the service provider connection specified above 
 could look like this:
 
 ```ini title="Example Service Provider Security Configuration"
-[cse.sp.registrar.exampleProvider1.security]
+[cse.sp.registrar.exampleProvider-2.security]
 
 ; This is our user name and password that we use to authenticate with the remote IN-CSE
-httpUsername = sp0User
-httpPassword = hashedPassword0
+httpUsername = sp-1-User
+httpPassword = hashedPassword-1
 
 ; This is the user name and password that the remote IN-CSE uses to authenticate with us
-selfHttpUsername = spUser1
-selfHttpPassword = hashedPassword1
+selfHttpUsername = spUser1-2
+selfHttpPassword = hashedPassword-2
 ```
 
 
 ### Authorize Service Provider Registrations
 
-As with every registration, the registering CSE must be authorized to register with the remote IN-CSE. This is done by adding the CSE's ID to the *allowedCSROriginators* setting in the *\[cse.registration]* section of the remote IN-CSE's configuration file.
+As with every registration, the registering CSE (*Service Provider 1*) must be authorized to register with the remote IN-CSE (*Service Provider 2*). This is done by adding the CSE's ID of *Service Provider 1* to the *allowedCSROriginators* setting in the [*\[cse.registration\]*](../setup/Configuration-cse.md#cse-registration) section of *Service Provider 2*'s configuration file:
 
-The registrar CSE's ID does **not** need to be added to the local CSE's *allowedCSROriginators* setting. This is automatically done internally by the CSE when the registration is successful.
+```ini title="Example Service Provider Registration Authorization for Service Provider 2"
+[cse.registration]
+allowedCSROriginators=//provider-1.example.com/id-in-sp1
+```
+
+*allowedCSROriginators* is a list of CSE IDs, and may contain multiple entries, separated by commas. Each entry must be a valid CSE ID in absolute or SP-relative form.
+
+!!! info "What about the registrar CSE's ID?"
+
+	The registrar CSE's (*Service Provider 2*) ID does **not** need to be added to the local CSE's (*Service Provider 1*) *allowedCSROriginators* setting.  
+	This ID is added implicitly when the registration is successful.
 
