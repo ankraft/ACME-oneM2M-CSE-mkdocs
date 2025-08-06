@@ -1309,6 +1309,8 @@ The following functions provide support to access certain CSE functionalities, c
 
 The `clear-console` function clears the console screen.
 
+If the Text UI is currently active and the current script is running as a [TUI Tool](../development/ACMEScript-metatags.md#tuitool), then the scripts output console is cleared.
+
 ```lisp title="Example"
 (clear-console)  ;; Clears the console screen
 ```
