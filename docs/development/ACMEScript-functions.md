@@ -98,6 +98,21 @@ The `assert` function terminates the script if its argument evaluates to *false*
 
 ---
 
+### base64-decode
+
+`(base64-decode <string>)`
+
+This function decodes a base64-encoded string.
+
+!!! see-also "See also"
+	[base64-encode](#base64-encode), [url-encode](#url-encode)
+
+```lisp title="Example"
+(base64-decode "SGVsbG8sIFdvcmxk")  ;; Returns "Hello, World"
+```
+
+---
+
 ### base64-encode
 
 `(base64-encode <string>)`
@@ -105,7 +120,7 @@ The `assert` function terminates the script if its argument evaluates to *false*
 This function encodes a string as base64.
 
 !!! see-also "See also"
-	[url-encode](#url-encode)
+	[base64-decode](#base64-decode), [url-encode](#url-encode)
 
 ```lisp title="Example"
 (base64-encode "Hello, World")  ;; Returns "SGVsbG8sIFdvcmxk"
@@ -1479,6 +1494,20 @@ The `put-storage` function inserts or updates a *value* in the CSE's internal sc
 
 ---
 
+### refresh-registrations
+
+`(refresh-registrations)`
+
+The `refresh-registrations` function refreshes the CSE's registrations with the remote registrar CSE(s). This is useful when the CSE's configuration has changed and the registrations need to be updated, or the regular registration refresh is disabled.
+
+The function returns *nil*.
+
+```lisp title="Example"
+(refresh-registrations)  ;; Refreshes the registrations with the remote registrar CSE(s)
+```
+
+---
+
 ### remove-storage
 
 `(remove-storage <key:string>)`
@@ -1556,6 +1585,19 @@ This is different from [include-script](#include-script) and [run-script](#run-s
 
 ```lisp title="Example"
 (schedule-next-script "scriptName" "anArgument")  ;; Schedule a script with an argument
+```
+
+---
+
+### shutdown-cse
+
+`(shutdown-cse)`
+
+The `shutdown-cse` function initiates a CSE shutdown.
+The script execution does continue after the CSE finished the shutdown, but may be affected by the shutdown process.
+
+```lisp title="Example"
+(shutdown-cse)  ;; Initiates the CSE shutdown
 ```
 
 ---
@@ -1857,6 +1899,36 @@ The `runs-in-tui` function determines whether the CSE currently runs in Text UI 
 ```lisp title="Example"
 (runs-in-tui)  ;; Returns true if the CSE runs in Text UI mode
 ```
+
+---
+
+<a name="tui-confirm"></a>
+
+### tui-confirm
+
+`(tui-confirm <message:str> <title:str> [[<confirm button text:str>] [<cancel button text:str>]])`
+
+Show a desktop-like confirmation dialog in the TUI. 
+
+It has the following arguments:
+
+- message: The message to show.
+- title: The title of the confirmation dialog.
+- confirm button text: (Optional) The text for the confirmation button. If not specified, the button will be labeled "OK".
+- cancel button text: (Optional) The text for the cancel button. If not specified, the button will be labeled "Cancel".
+
+The function returns a boolean value or *nil*:
+
+- *true* if the user clicked the confirmation button
+- *false* if the user clicked the cancel button
+- *nil* if the dialog was closed without clicking any button
+
+
+```lisp title="Examples"
+(tui-confirm "Are you sure?" "Confirmation")  ;; Shows a confirmation dialog with default button labels
+(tui-confirm "Delete this item?" "Confirmation" "Yes" "No")  ;; Shows a confirmation dialog with custom button labels
+```
+
 
 ---
 
