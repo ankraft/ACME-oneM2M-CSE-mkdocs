@@ -1545,6 +1545,24 @@ The script execution does continue after the CSE finished the reset.
 
 ---
 
+### restart-cse
+
+`(restart-cse)`
+
+The `restart-cse` function initiates a CSE restart.
+The script execution does continue after the CSE started to initiate the restart, but may be affected by the restart process.
+
+The `restart-cse` function initiates a CSE shutdown, with the difference that the CSE will terminate with a status code of `82` instead of `0`.
+
+!!! see-also "See also"
+	[shutdown-cse](#shutdown-cse), [Management API - restart](../setup/Operation-management.md#restart-the-cse)
+
+```lisp title="Example"
+(restart-cse)  ;; Initiates the CSE restart/shutdown
+```
+
+---
+
 ### run-script
 
 `(run-script <script name:string> [<argument:any>]*)`
@@ -1595,8 +1613,11 @@ This is different from [include-script](#include-script) and [run-script](#run-s
 
 `(shutdown-cse)`
 
-The `shutdown-cse` function initiates a CSE shutdown.
-The script execution does continue after the CSE finished the shutdown, but may be affected by the shutdown process.
+The `shutdown-cse` function initiates a CSE shutdown. The CSE will terminate with a status code of `0`.
+The script execution does continue after the CSE started to initiate the shutdown, but may be affected by the shutdown process.
+
+!!! see-also "See also"
+	[restart-cse](#restart-cse), [Management API - shutdown](../setup/Operation-management.md#shutdown-the-cse)
 
 ```lisp title="Example"
 (shutdown-cse)  ;; Initiates the CSE shutdown
