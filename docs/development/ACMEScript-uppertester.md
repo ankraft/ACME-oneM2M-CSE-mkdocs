@@ -6,7 +6,7 @@ ACMEScript is integrated with the [Upper Tester (UT) Interface](../setup/Operati
 X-M2M-UTCMD: aScript param1 param2
 ```
 
-A script result is  passed back in a response in the *X-M2M-UTRSP* header of the response:
+A script result is passed back in a response in the *X-M2M-UTRSP* header of the response:
 
 ```text title="Upper Tester Response"
 X-M2M-UTRSP: aResult

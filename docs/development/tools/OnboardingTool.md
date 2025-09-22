@@ -27,16 +27,30 @@ The onboarding process is started by running the onboarding tool from the comman
 
 This will start the configuration process and save the configuration to the specified file. The configuration file can be edited later.
 
+Beside the basic configuration options, the onboarding tool also supports to set advanced configuration options. This is optional and can be skipped.
+
 
 ## Command Line Arguments
 
 The onboarding tool provides the following command line arguments.
 
 
-| Command Line Argument | Description                                            |
-|:----------------------|:-------------------------------------------------------|
-| -h, --help            | Show a help message and exit.                          |
-| --overwrite, -o       | Overwrite the configuration file if it already exists. |
+| Command Line Argument       | Description                                            |
+|:----------------------------|:-------------------------------------------------------|
+| -h, --help                  | Show a help message and exit.                          |
+| --overwrite, -o             | Overwrite the configuration file if it already exists. |
+| --zookeeper-host <hostname> | Specify the Zookeeper host name.                       |
+| --zookeeper-port <port>     | Specify the Zookeeper port (default: 2181).            |
 
 The name of the configuration file is the only required argument.
 If the configuration file already exists, the tool will terminate unless the `--overwrite` argument is provided.
+
+
+## Zookeeper Support
+
+The onboarding tool can be run with Zookeeper support by specifying the `--zookeeper-host` and optional `--zookeeper-port` command line arguments. This allows the tool to connect to a Zookeeper instance.
+
+During the onboarding process, the tool will ask for some Zookeeper-specific configuration options, such as the Zookeeper host, port, and root path. 
+
+!!! Note
+    The root path is the Zookeeper node where the CSE's configuration is stored. If left empty, the CSE-ID will be used as the root path.
