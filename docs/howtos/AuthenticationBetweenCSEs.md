@@ -4,7 +4,7 @@ For the *Mca* communication between an AE and a CSE, the CSE supports [Basic Aut
 
 
 ## Authenticating to the Registrar CSE
-For example, to enable *basic authentication* to authenticate access to the registrar CSE, one has to set the currect *username* and *password* in the *acme.ini* configuration file of the registrar CSE in the [\[cse.registrar.security\]](../setup/Configuration-cse.md#registrar-cse-security) section, for example
+For example, to enable *basic authentication* to authenticate access to the registrar CSE, one has to set the currect *username* and *password* in the *acme.ini* configuration file of the registrar CSE in the [\[cse.registrar.security\]](../setup/Configuration-cse.md#registrar-cse-security-settings) section, for example
 
 ```ini title="Setting the username and password for http <i>basic authentication</i> with the registrar CSE"
 [cse.registrar.security]
@@ -18,7 +18,7 @@ The CSE then uses these credentials to authenticate the *Mcc* communication with
 
 In return it is also possible to provide credentials that the registrar CSE must use for the *Mcc* communication with this CSE. *http* and *WebSocket* requests from the registrar CSE to this registree CSE can be authenticated using the same methods as described above.
 
-The configuration for the CSE is done as well in the [\[cse.registrar.security\]](../setup/Configuration-cse.md#registrar-cse-security) section of the *acme.ini* configuration file:
+The configuration for the CSE is done as well in the [\[cse.registrar.security\]](../setup/Configuration-cse.md#registrar-cse-security-settings) section of the *acme.ini* configuration file:
 
 
 ```ini title="Setting the username and password for http <i>basic authentication</i> to be used by the registrar CSE"
