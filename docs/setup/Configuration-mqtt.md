@@ -1,6 +1,6 @@
 # Configuration - MQTT Binding Settings
 
-The CSE supports MQTT communication via the MQTT binding. The MQTT binding is disabled by default and must be enabled in the configuration file under `[mqtt].enable` .
+The ACME CSE supports MQTT communication via the MQTT binding. The MQTT binding is disabled by default and must be enabled in the configuration file under `[mqtt].enable` .
 
 ##	General Settings
 
@@ -17,6 +17,19 @@ These are the general MQTT client settings.
 | keepalive   | Value for the MQTT connection's keep-alive parameter in seconds. | 60 seconds            |
 | topicPrefix | Optional prefix for topics.                                      | empty string          |
 | timeout     | Timeout when sending MQTT requests and waiting for responses.    | 10.0 seconds          |
+
+
+## MQTT over WebSocket
+
+**Section: `[mqtt.websocket]`**
+
+The ACME CSE supports MQTT communication over WebSocket. This allows for MQTT messages to be sent and received over a WebSocket connection.
+
+| Setting | Description                                                            | Default      |
+|:--------|:-----------------------------------------------------------------------|:-------------|
+| enable  | Enable the MQTT WebSocket binding.                                     | False        |
+| port    | The port for the MQTT WebSocket server.                                | 8080         |
+| path    | Path it is the endpoint where the mqtt broker is accepting connections | empty string |
 
 
 ## Security

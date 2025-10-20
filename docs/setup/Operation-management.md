@@ -98,16 +98,18 @@ The following example code shows how to restart the CSE automatically using a sh
 		if [ $? -ne 82 ]; then
 			break
 		fi
+		echo "Restarting ACME CSE..."
 	done
 	```
 
 === "Fish Shell"
 	```fish title="Restart CSE with Fish Shell"
 	while true
-        python -m acme
-        if test $status -ne 82
-            break
-        end
+		python -m acme
+		if test $status -ne 82
+			break
+		end
+		echo "Restarting ACME CSE..."
     end
 	```
 

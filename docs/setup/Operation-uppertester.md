@@ -38,6 +38,10 @@ when running test cases.
 In case a command returns a result then it is available in the header field `X-M2M-UTRSP` of the HTTP response to the Uper Tester's request.
 
 
+## UtTriggerPrimitive/UtTriggerAckPrimitive Support
+
+A request to the Upper Tester endpoint can also contain a oneM2M request in the body. This allows for more complex interactions and testing scenarios. The request will be processed as a standard oneM2M request, and the response will include the usual oneM2M response message.
+
 ## Examples
 
 ### Resetting the CSE
