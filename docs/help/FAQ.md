@@ -80,9 +80,10 @@
 	This behaviour can be disabled by setting the configuration setting [`[cse.registration].checkLiveliness`](../setup/Configuration-cse.md#cse-registration) to *false*.  
 	The check interval can be configured with the [`[cse.registration].checkInterval`](../setup/Configuration-cse.md#cse-registration) setting.
 
+
 1. **Why does my CSE not register to another CSE or announce resources?**  
    One problem could be that the CSE has no access rights to register to the target CSE. To solve this, the CSE's originator (ie. the CSE's CSE-ID, for example "/id-mn") must be added to the target CSE's configuration file. The configuration section [cse.registration] has a setting *allowedCSROriginators*, which is a comma separated list of originators. Add the registering CSE's
-   CSE-ID (**without a leading slash!**) to this configuration section to allow access for this originator.  
+   CSE-ID in ^^absolute^^{title="e.g. //MySP/id-in"} or ^^SP-relative^^{title="e.g. /id-in"} format to this configuration section to allow access for this originator.  
    <br/>
    This must be done for both the CSEs that want to register and announce resources.  
    </br>
@@ -90,16 +91,31 @@
 
 	```ini title="Example to allow a CSE with the CSE-ID 'id-mn' to register to the IN-CSE"
 	[cse.registration]
-	allowedCSROriginators=id-mn
+	allowedCSROriginators=/id-mn
 	```
    <br/>
    And for an MN-CSE with the CSE-ID "*/id-mn*":
 
 	```ini title="Example to allow the IN-CSE with the CSE-ID 'id-in' to get access"
 	[cse.registration]
-	allowedCSROriginators=id-in
+	allowedCSROriginators=/id-in
 	```
-  
+
+1. **The CSE is able to register to another CSE, but the registration vanishes after a short time. What is happening?**  
+  This could happen when the registering CSE is not reachable. During the registration process the normal configuration settings are used to establish the registration. This includes the protocol, server address and port, etc.  
+  But afterwards, the *point-of-access* (*poa*) attribute of the *&lt;remoteCSE>* (*CSR*) resource is used to determine the protocol and endpoint to reach the remote CSE. If this value is incorrect and/or the checking CSE cannot reach the remote CSE, then the checking CSE removes the registration for that remote CSE. This might happen, for example, when the CSE is behind a NAT or running in a Docker container, and the *poa* contains only the private or local IP address of the CSE.  
+  <br/>
+  During startup, the CSE tries to determine its public IP address and set the *poa* attribute(s) accordingly. But this process might fail for various reasons:  
+  	- **The CSE is behind a NAT in a private network and cannot determine its public IP address**.  
+	In this case, the best way is to set the *cseHost* setting in the configuration section *[basic.config]* manually to the correct public IP address.  
+	Also, do not forget to add a proper port forwarding rule
+	to your router's configuration.
+ 	- **The CSE is running in a Docker container and the *poa* contains the container's private IP address**.  
+	This is a variant of the previous case. One way to solve this problem is to use an environment variable to pass, for example, the Docker host's public IP address. See the [discussion about Environment Variables](../howtos/Docker.md#environment-variables) in a Docker runtime environment.
+  	- **The CSE cannot determine its IP address for other reasons**.  
+	If for some other reason the CSE cannot determine its IP address, one of the previous solutions can be applied.
+	- **One or both CSE is behind a firewall**.  
+	In this case, the firewall might block incoming or outgoing connections from or to the checking CSE, leading to the removal of the registration. A proper firewall configuration or port forwarding to the remote CSE is necessary to allow these connections.
 
 ## Subscriptions & Notifications
 

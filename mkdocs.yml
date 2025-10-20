@@ -88,6 +88,10 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
   - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -139,6 +143,7 @@ nav:
     - 'Supported Features': 
       - 'oneM2M': 'home/Supported.md'
       - 'CSE Runtime': 'home/SupportedRuntime.md'
+    - 'FAQ': 'help/FAQ.md'
     - 'Roadmap': 'home/Roadmap.md'
     - 'LICENSE': 'home/License.md'
     - 'Acknowledgements': 'home/Acknowledgements.md'
