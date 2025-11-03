@@ -2,8 +2,18 @@
 
 ## Pre-Requisites
 
-ACME requires **Python 3.10** or newer. ACME has **not** been tested with the upcoming Python 3.13 yet.  
+ACME requires **Python 3.11** or newer.  
+ACME has **not** been tested with Python 3.14 yet.
+
 Install it with your favorite package manager or as part of a virtual environment.
+
+!!! Note "Python Free-Threaded Mode"
+	ACME can also runs with Python 3.13t in free-threaded mode, but some dependencies may not be fully compatible yet. You may try to run it with the `-Xgil=0` option to enforce free-threaded mode, but you may run into issues with some of the libraries used by ACME.
+
+	Python 3.13 is already much faster than previous versions in normal (non-free-threaded) mode. It
+	is recommended to use Python 3.13 in normal mode for smaller deployments unless you specifically 
+	need the free-threaded mode that may perform better under certain workloads.
+
 
 ## Installation and First Setup
 
@@ -36,7 +46,7 @@ There are two ways to install the ACME CSE: using *pip* or by doing a manual ins
 		cd ACME-oneM2M-CSE
 		```
 
-	1. It is recommend to install the required packages by running the following command:
+	1. It is recommended to install the required packages by running the following command:
 
 		```bash title="Installing Required Packages"
 		python3 -m pip install -r requirements.txt

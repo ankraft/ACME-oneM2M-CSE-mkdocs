@@ -20,7 +20,7 @@ settings in the configuration file.
 	Changes should only be done to a copy of the default configuration file.
 
 A default configuration is provided with the file [acme.ini.default](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/acme.ini.default){target=_new}. The settings in this file are the default values for the CSE and can be overwritten by local configuration file.  
- **Don't make changes to the default configuration file**, but rather copy relevant configuration setting to a new file named, for example, *acme.ini*, which is the default configuration file name. You can use another filename, but must then specify it with the `--config` command line argument when running the (see [Running the CSE](../setup/Running.md#running-the-cse)).
+ **Don't make changes to the default configuration file**, but rather copy relevant configuration setting to a new file named, for example, *acme.ini*, which is the default configuration file name. You can use another filename, but must then specify it with the `--config` command line argument when [running the ACME CSE](../setup/Running.md#running-the-cse)).
 
 It is sufficient to only add the settings to the configuration file that are different from the default settings. All other settings are read from the default config file *acme.ini.default*.
 

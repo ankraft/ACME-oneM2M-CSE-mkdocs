@@ -2,7 +2,7 @@
 
 Meta tags are special commands in a script that are not executed during the runtime of a script, but describe certain capabilities of the script or give, for example, the script a name or provide instructions when a script should be executed. 
 
-Meta tags are keywords that start with an at-character `@`. They can appear anywhere in a script file on a single line, but it is recommend to collect them either at the start or the end of a script. 
+Meta tags are keywords that start with an at-character `@`. They can appear anywhere in a script file on a single line, but it is recommended to collect them either at the start or the end of a script. 
 
 !!! important
 	Meta tag names are case sensitive.
