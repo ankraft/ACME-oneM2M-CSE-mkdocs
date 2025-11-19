@@ -61,7 +61,7 @@ docker run -it -p 8080:8080 -v /host/data:/data --rm --name acme-onem2m-cse ankr
 
 ###  Environment Variables
 
-ACME supports the use of environment variables in the configuration settings. This is useful when running the CSE in a Docker container, where the configuration settings can be set via [environment variables](../setup/Configuration-introduction.md#environment-variables). 
+ACME supports the use of environment variables in the configuration settings. This is useful when running the CSE in a Docker container, where the configuration settings can be set via [environment variables](../setup/Configuration-introduction.md#environment-variables) or a [.env file](../setup/Configuration-introduction.md#env-file-support).
 
 One example is to provide the Docker host's IP address to the CSE as the *cseHost* configuration settings.
 

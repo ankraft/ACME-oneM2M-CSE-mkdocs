@@ -124,7 +124,7 @@ Environment variables can be used in the configuration file to provide sensitive
 
 Sensitive information like passwords or API keys should not be stored in the configuration file in plain text. Instead, you can use environment variables to store this information and reference them in the configuration file.
 
-The following environment variables are supported by default for configurations and don't need to be defined separately in the configuration file:
+The following environment variables are supported by default for configurations and don't need to be defined separately in the configuration file. They default to empty values if the environment variable is not set.
 
 | Environment Variable                         | Description                                                                                                                                                                                                                 | Configuration Setting                                                                                |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
@@ -144,10 +144,33 @@ The following environment variables are supported by default for configurations 
 | ACME_CSE_REGISTRAR_SECURITY_SELFWSPASSWORD   | The CSE's own password for WebSocket Basic Authentication with the CSE by a registrar CSE.<br>See also [Authentication Between CSEs](../howtos/AuthenticationBetweenCSEs.md#authenticating-requests-from-the-registrar-cse) | [\[cse.security\].wsPassword](./Configuration-cse.md#registrar-cse-security-settings)                |
 
 
+#### .env File Support
+
+You can also use a *.env* file to define environment variables for the CSE. This file should be placed in the base directory of the CSE or **one of its parent directories**. It should contain key-value pairs in the format `KEY=VALUE`, one per line. Blank lines or lines starting with `#` are ignored.
+
+When the CSE starts, it will automatically load the environment variables from the *.env* file and make them available for use in the configuration file.
+
+It will **not** overwrite existing environment variables that are already set in the system.
+
+Besides the pre-defined environment variables from the previous section, you can also define your own environment variables in the *.env* file and use them in the configuration file.
+
+##### Example *.env File
+
+```env title="Example .env file"
+# .env file for ACME CSE
+ACME_SECURITY_SECRET=mysecretkey
+ACME_DATABASE_POSTGRESQL_PASSWORD=mydbpassword
+```
+
+This file sets the secret key and the PostgreSQL database password for the CSE. It uses the same environment variable names as described in the previous section.
+
+
+!!! Warning "Do not commit the .env file to version control"
+	The *.env* file may contain sensitive information like passwords or API keys. It is recommended to add the *.env* file to your *.gitignore* or equivalent file to prevent it from being committed to version control systems like Git.
 
 #### Docker Host IP
 
-Another useful application is to provide the IP address of a Docker host to the CSE. This can be done, for example, by setting the environment variable `DOCKER_HOST_IP` and using it in the configuration file.
+Another useful application is to provide the IP address of a Docker host to the CSE. This can be done, for example, by setting the environment variable `DOCKER_HOST_IP` (or adding it to the *.env* file) and using it in the configuration file.
 
 ```ini title="Use Environment Variable to set the Host IP"
 [basic.config]
