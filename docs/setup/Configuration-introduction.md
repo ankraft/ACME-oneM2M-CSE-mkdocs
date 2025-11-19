@@ -148,21 +148,20 @@ The following environment variables are supported by default for configurations 
 
 You can also use a *.env* file to define environment variables for the CSE. This file should be placed in the base directory of the CSE or **one of its parent directories**. It should contain key-value pairs in the format `KEY=VALUE`, one per line. Blank lines or lines starting with `#` are ignored.
 
-When the CSE starts, it will automatically load the environment variables from the *.env* file and make them available for use in the configuration file.
+When the CSE starts, it will automatically load the environment variables from the *.env* file in its base directory and make them available for use in the configuration file. If the CSE is started with a [different base directory](../setup/Running.md#different-base-directory), it will search for the *.env* file in that directory and its parent directories. Loading the *.env* file will **not** overwrite existing environment variables that are already set in the system.
 
-It will **not** overwrite existing environment variables that are already set in the system.
-
-Besides the pre-defined environment variables from the previous section, you can also define your own environment variables in the *.env* file and use them in the configuration file.
-
-##### Example *.env File
+The file in the following example defines the secret key, the PostgreSQL database password, and a custom CSE-ID for the CSE. 
 
 ```env title="Example .env file"
 # .env file for ACME CSE
 ACME_SECURITY_SECRET=mysecretkey
 ACME_DATABASE_POSTGRESQL_PASSWORD=mydbpassword
+DEPLOYMENT_CSE_ID=mycseid
 ```
 
-This file sets the secret key and the PostgreSQL database password for the CSE. It uses the same environment variable names as described in the previous section.
+Besides the pre-defined environment variables from the [previous section](#hiding-sensitive-information), you can also define your own environment variables in the *.env* file and use them in the configuration file.
+In the example above, the custom environment variable `DEPLOYMENT_CSE_ID` is defined and can be used in the configuration file as `${DEPLOYMENT_CSE_ID}`.
+
 
 
 !!! Warning "Do not commit the .env file to version control"
