@@ -1,0 +1,2286 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../oneM2M-introduction/">
+      
+      
+        <link rel="next" href="../SupportedRuntime/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>oneM2M - ACME oneM2M CSE</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: auto; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#supported-onem2m-functionalities" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ACME oneM2M CSE" class="md-header__button md-logo" aria-label="ACME oneM2M CSE" data-md-component="logo">
+      
+  <img src="../../images/acme_sm.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACME oneM2M CSE
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              oneM2M
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="acmecse-light" data-md-color-primary="grey" data-md-color-accent="red" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="acmecse-dark" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to system preference" type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ankraft/ACME-oneM2M-CSE" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    ACME-oneM2M-CSE
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../setup/Installation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Setup &amp; Running
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../development/Overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../howtos/HowTos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  HowTos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../help/FAQ/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Help
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ACME oneM2M CSE" class="md-nav__button md-logo" aria-label="ACME oneM2M CSE" data-md-component="logo">
+      
+  <img src="../../images/acme_sm.png" alt="logo">
+
+    </a>
+    ACME oneM2M CSE
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ankraft/ACME-oneM2M-CSE" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    ACME-oneM2M-CSE
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ACME-CSE-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is the ACME CSE?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oneM2M-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is oneM2M?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Supported Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oneM2M
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oneM2M
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#onem2m-specification-conformance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        oneM2M Specification Conformance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cse-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSE Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscription-and-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscription and Notification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#location-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Location Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Functionalities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocols-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protocols Bindings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serialization-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Serialization Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Functionalities
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SupportedRuntime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSE Runtime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LICENSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Acknowledgements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acknowledgements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../setup/Installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup &amp; Running
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../development/Overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../howtos/HowTos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HowTos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../help/FAQ/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#onem2m-specification-conformance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        oneM2M Specification Conformance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cse-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSE Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscription-and-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscription and Notification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#location-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Location Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Functionalities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocols-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protocols Bindings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serialization-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Serialization Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Functionalities
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="supported-onem2m-functionalities">Supported oneM2M Functionalities</h1>
+<p>This article lists the supported oneM2M resource types and related functionalities of the ACME CSE</p>
+<h2 id="onem2m-specification-conformance">oneM2M Specification Conformance</h2>
+<p>The CSE implementation successfully passes all the relevant oneM2M test cases for the supported resource types, attributes and behaviours.</p>
+<h2 id="release-versions">Release Versions</h2>
+<p>The ACME CSE supports oneM2M release <strong>1 - 4</strong> and the upcoming release <strong>5</strong> for the supported resource types and functionalities listed below. </p>
+<h2 id="cse-types">CSE Types</h2>
+<p>The ACME CSE supports the following CSE types:</p>
+<ul>
+<li>IN-CSE</li>
+<li>MN-CSE</li>
+<li>ASN-CSE</li>
+</ul>
+<hr>
+<h2 id="resource-types">Resource Types</h2>
+<p>The ACME CSE supports the following oneM2M resource types. Some resource types 
+are not yet fully implemented, and some features are experimental.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../images/resources_uml.png#only-light" data-title="UML Class Diagram of the ACME CSE Resources" data-desc-position="bottom" data-gallery="light"><img alt="UML Class Diagram of the ACME CSE Resources" data-gallery="light" src="../../images/resources_uml.png#only-light"></a>
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../images/resources_uml-dark.png#only-dark" data-title="UML Class Diagram of the ACME CSE Resources" data-desc-position="bottom" data-gallery="dark"><img alt="UML Class Diagram of the ACME CSE Resources" data-gallery="dark" src="../../images/resources_uml-dark.png#only-dark"></a></p>
+<figcaption>UML Class Diagram of the Supported oneM2M Resources Types</figcaption>
+
+</figure>
+<h3 id="entities">Entities</h3>
+<dl>
+<dt><strong>CSEBase (CB)</strong></dt>
+<dd>
+<p>The CSEBase resource type is fully supported.</p>
+</dd>
+<dt><strong>Application Entity (AE)</strong></dt>
+<dd>
+<p>The Application Entity resource type is supported, except for some of the "S" registration related functionalities.</p>
+</dd>
+<dt><strong>RemoteCSE (CSR)</strong></dt>
+<dd>
+<p>The ACME CSE supports CSE registrations via the Mcc reference point, and 
+Service Provder registrations via the Mcc' reference point. 
+In addtion announced resources, synchronization, and transit requests that 
+target resources on remote CSE's are supported, as well.</p>
+</dd>
+</dl>
+<h3 id="security">Security</h3>
+<dl>
+<dt><strong>Access Control Policy (ACP)</strong></dt>
+<dd>
+<p>In addition to the basic ACP functionality, the ACME CSE supports the following ACP features:</p>
+<ul>
+<li>Attribute-based access control</li>
+<li>accessControlWindow</li>
+</ul>
+<p>The following attributes are not supported because the linked-to resource types are not yet supported.</p>
+<ul>
+<li><code>authorizationDecisionResourceIDs</code> / &lt;authorizationDecision&gt;</li>
+<li><code>authorizationPolicyResourceIDs</code>/ &lt;authorizationPolicy&gt;</li>
+<li><code>authorizationInformationResourceIDs</code> / &lt;authorizationInformation&gt;</li>
+</ul>
+</dd>
+</dl>
+<h3 id="data-management">Data Management</h3>
+<dl>
+<dt><strong>Container (CNT)</strong></dt>
+<dd>
+<p>The Container resource type is fully supported.</p>
+</dd>
+<dt><strong>ContentInstance (CIN)</strong></dt>
+<dd>
+<p>The ContentInstance resource type is fully supported.</p>
+<p>Values with the following data types are supported for the <em>content</em> attribute:</p>
+<ul>
+<li>string</li>
+<li>integer  </li>
+<li>float</li>
+<li>boolean</li>
+<li>list</li>
+<li>dictionary / JSON object </li>
+</ul>
+</dd>
+<dt><strong>FlexContainer (FCNT)</strong></dt>
+<dd>
+<p>The ACME CSE fully supports the FlexContainer resource type.</p>
+<p>It is possible to use the predefined FlexContainer Specializations of <a href="https://specifications.onem2m.org/ts-0023/latest" target="_new">oneM2M TS-0023</a>, <em>AllJoin</em>, oneM2M's <em>GenericInterworking</em>, or to define custom FlexContainerSpecializations.</p>
+<p>See <a href="../../development/AttributePolicies/">Attribute Policies</a> for further details.</p>
+</dd>
+<dt><strong>FlexContainerInstance (FCI)</strong></dt>
+<dd>
+<p>This is an experimental implementation of the draft FlexContainerInstance specification.</p>
+</dd>
+<dt><strong>TimeSeries (TS)</strong></dt>
+<dd>
+<p>The ACME CSE supports missing data detection and the respective notifications.</p>
+</dd>
+<dt><strong>TimeSeriesInstance (TSI)</strong></dt>
+<dd>
+<p>The TimeSeriesInstance resource type is fully supported, except for the <em>dataGenerationTime</em>
+attribute, which is only supported with absolute timestamps.</p>
+<p>Values with the following data types are supported for the <em>content</em> attribute:</p>
+<ul>
+<li>string </li>
+<li>integer</li>
+<li>float </li>
+<li>boolean </li>
+<li>list</li>
+<li>dictionary / JSON object  </li>
+</ul>
+</dd>
+</dl>
+<h3 id="subscription-and-notification">Subscription and Notification</h3>
+<dl>
+<dt><strong>CrossResourceSubscription (CRS)</strong></dt>
+<dd>
+<p>Besides the standard CrossResourceSubscription functionality the ACME CSE implements an experimental feature to support an <em>eventEvaluationMode</em> to react on missing events.</p>
+</dd>
+<dt><strong>Subscription (SUB)</strong></dt>
+<dd>
+<p>The ACME CSE supports notifications via direct url or an AE's Point-of-Access (POA). 
+Further,  BatchNotifications, attributes, notification statistics, and operation 
+monitoring are supported.   </p>
+</dd>
+<dt><strong>NotificationTargetSelfReference (NTSR)</strong></dt>
+<dd>
+<p>The NotificationTargetSelfReference virtual resource type is fully supported.</p>
+<p>This resource type is used to support self-removal of notification targets.
+It is used together with the following resource types.</p>
+</dd>
+<dt><strong>notificationTargetPolicy (NTP)</strong></dt>
+<dd>
+<p>The NotificationTargetPolicy resource type is fully supported.</p>
+<p>This resource type is used to configure the policies that are used for notification
+target self-removal.</p>
+<p>The CSE automatically creates a system "Default" &lt;NTP&gt; resource during startup, which is used for all notification targets that do not have a specific &lt;NTP&gt; resource assigned.</p>
+</dd>
+<dt><strong>notificationTargetMgmtPolicyRef (NTPR)</strong></dt>
+<dd>
+<p>The NotificationTargetManagementPolicyReference resource type is fully supported.</p>
+<p>This resource type is used to reference the &lt;NTP&gt; resource that is used during the self-removal of notification targets.</p>
+</dd>
+<dt><strong>policyDeletionRules (PDR)</strong></dt>
+<dd>
+<p>The PolicyDeletionRules resource type is partly supported.</p>
+<p>This resource type specifies the policies for the self-removal of notification targets.</p>
+<p>The ACME CSE currently only supports scheduling policies, but not the geo-location policies.</p>
+</dd>
+</dl>
+<h3 id="device-management">Device Management</h3>
+<dl>
+<dt><strong>Management Objects</strong></dt>
+<dd>
+<p>The ACME CSE supports the following management objects:</p>
+</dd>
+</dl>
+<table>
+<thead>
+<tr>
+<th>Management Objects</th>
+<th>Management Objects</th>
+<th>Management Objects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AreaNwkDeviceInfo (ANDI)</td>
+<td>DeviceInfo (DVI)</td>
+<td>Reboot (REB)</td>
+</tr>
+<tr>
+<td>AreaNwkInfo (ANI)</td>
+<td>EventLog (EVL)</td>
+<td>SIM (SIM)</td>
+</tr>
+<tr>
+<td>Battery (BAT)</td>
+<td>Firmware (FWR)</td>
+<td>Software (SWR)</td>
+</tr>
+<tr>
+<td>Credentials (CRDS)</td>
+<td>Memory (MEM)</td>
+<td>WifiClient (WIFIC)</td>
+</tr>
+<tr>
+<td>DataCollect (DATC)</td>
+<td>MobileNetwork (MNWK)</td>
+<td></td>
+</tr>
+<tr>
+<td>DeviceCapability (DVC)</td>
+<td>MyCertFileCred (NYCFC)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt><strong>Node (NOD)</strong></dt>
+<dd>
+<p>The Node resource type is fully supported.</p>
+</dd>
+</dl>
+<h3 id="communication">Communication</h3>
+<dl>
+<dt><strong>PollingChannel (PCH)</strong></dt>
+<dd>
+<p>Request and notification long-polling via the <em>pcu</em> (pollingChannelURI) 
+virtual child resource are supported.<br>
+<em>requestAggregation</em> functionality to retrieve multiple requests in one 
+polling request is supported as well.</p>
+</dd>
+<dt><strong>Request (REQ)</strong></dt>
+<dd>
+<p>The ACME CSE supports blocking, and synchronous and asynchronous non-blocking
+ requests, which are managed through &lt;request&gt; resources.</p>
+</dd>
+</dl>
+<h3 id="group-management">Group Management</h3>
+<dl>
+<dt><strong>Group (GRP)</strong></dt>
+<dd>
+<p>The ACME CSE supports requests via the <em>fopt</em> (fanOutPoint) virtual resource.<br>
+Remote resources may be members of a group.</p>
+</dd>
+</dl>
+<h3 id="automation">Automation</h3>
+<dl>
+<dt><strong>Action (ACTR)</strong></dt>
+<dd>
+<p>The <code>input</code> attribute of the &lt;action&gt; resource type is not supported yet.</p>
+</dd>
+<dt><strong>Dependency (DEPR)</strong></dt>
+<dd>
+<p>The Dependency resource type is fully supported.</p>
+</dd>
+</dl>
+<h3 id="semantics">Semantics</h3>
+<dl>
+<dt><strong>SemanticDescriptor (SMD)</strong></dt>
+<dd>
+<p>The ACME CSE supports semantic queries and discovery for resources with semantic descriptors.</p>
+<p>At the moment, the following presentation formats are supported:</p>
+<ul>
+<li>RDF/XML</li>
+<li>JSON-LD</li>
+<li>Turtle</li>
+</ul>
+</dd>
+</dl>
+<h3 id="location-management">Location Management</h3>
+<dl>
+<dt><strong>LocationPolicy (LCP)</strong></dt>
+<dd>
+<p>Only <em>device based</em> location policy is supported. 
+The LCP's <em>cnt</em> stores geo-coordinates and geo-fencing results.</p>
+</dd>
+</dl>
+<h3 id="time-management">Time Management</h3>
+<dl>
+<dt><strong>Schedule (SCH)</strong></dt>
+<dd>
+<p>The ACME CSE supports scheduling for various of its functions, such as CSE 
+communication windows, and resource types, such as the &lt;node&gt;, 
+&lt;subscription&gt; and &lt;crossResourceSubscription&gt; resource types.</p>
+</dd>
+<dt><strong>TimeSyncBeacon (TSB)</strong></dt>
+<dd>
+<p>The ACME CSE supports the TimeSyncBeacon resource type. The functionality is currently
+only <strong>experimental</strong> and might change according to specification changes.</p>
+</dd>
+</dl>
+<h2 id="service-functionalities">Service Functionalities</h2>
+<p>The following oneM2M service functionalities are supported.</p>
+<dl>
+<dt><strong>AE Registration</strong></dt>
+<dd>
+<p>The ACME CSE supports AE registration and deregistrations via the Mca reference point.</p>
+</dd>
+<dt><strong>Blocking and Non-Blocking Requests</strong></dt>
+<dd>
+<p>Blocking requests are the common way for an AE to interact with the CSE.
+They are also used for CSE-to-CSE communication via the  and Mcc' reference points.</p>
+<p>To avoid blocking the AE, the ACME CSE supports non-blocking requests in 
+synchronous and asynchronous mode as well.</p>
+</dd>
+<dt><strong>Delayed Request Execution</strong></dt>
+<dd>
+<p>The ACME CSE supports delayed request execution via the <em>Operation Execution Timestamp</em> request parameter.</p>
+</dd>
+<dt><strong>Discovery</strong></dt>
+<dd>
+<p>The ACME CSE supports normal retrieval and discovery of resources via the filterCriteria 
+and discoveryResultType parameters.</p>
+</dd>
+<dt><strong>Geo-Query</strong></dt>
+<dd>
+<p>The ACME CSE supports location and geometry queries and location-based discovery.</p>
+</dd>
+<dt><strong>Location Management</strong></dt>
+<dd>
+<p>Only <em>device based</em>, and no <em>network based</em> location policies are supported. </p>
+</dd>
+<dt><strong>Long Polling</strong></dt>
+<dd>
+<p><em>Long Polling</em> is supported for <em>request unreachable</em> AEs and CSEs through <em>pollingChannel</em> resources.</p>
+<p>This mechanism is used for sending notifications and other requests to AEs and CSEs that are not directly reachable 
+via the Mca, Mcc or Mcc' reference points, e.g. because of firewalls or NATs.</p>
+</dd>
+<dt><strong>No-Response Requests</strong></dt>
+<dd>
+<p>No-response requests are supported for requests that do not require a response. This is especially
+useful for constrained devices that do not need to wait for a response, or cannot handle
+possible error responses.</p>
+<div class="admonition info">
+<p class="admonition-title">Experimental Feature</p>
+<p>This feature is still experimental and might change according to specification changes.</p>
+</div>
+</dd>
+<dt><strong>Notifications</strong></dt>
+<dd>
+<p>The ACME CSE supports notifications via direct url, or an AE's or CSE's Point-of-Access (POA). 
+Further,  BatchNotifications, attributes, notification statistics, and operation 
+monitoring are supported.</p>
+</dd>
+<dt><strong>Notification Event Types</strong></dt>
+<dd>
+<p>The following notification event types for Subscriptions are supported:</p>
+</dd>
+</dl>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Notification Event Type</th>
+<th style="text-align: left;">Notification Event Type</th>
+<th style="text-align: left;">Notification Event Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">resourceUpdate</td>
+<td style="text-align: left;">retrieveCNTNoChild</td>
+<td style="text-align: left;">blockingUpdate</td>
+</tr>
+<tr>
+<td style="text-align: left;">createDirectChild</td>
+<td style="text-align: left;">triggerReceivedForAE</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">deleteDirectChild</td>
+<td style="text-align: left;">missingData</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt><strong>Partial Retrieve</strong></dt>
+<dd>
+<p>Partial retrieve of individual resource attributes is supported.</p>
+</dd>
+<dt><strong>Remote CSE Registration</strong></dt>
+<dd>
+<p>The ACME CSE supports CSE registrations via the Mcc and Mcc' reference points. 
+In addtion announced resources, synchronization, and transit requests that 
+target resources on remote CSE's are supported.</p>
+</dd>
+<dt><strong>Request Expiration</strong></dt>
+<dd>
+<p>The <em>Request Expiration Timestamp</em> request parameter is supported.</p>
+</dd>
+<dt><strong>Request Forwarding</strong></dt>
+<dd>
+<p>Forwarding requests from one CSE to another is supported.</p>
+</dd>
+<dt><strong>Request and Resource Validations</strong></dt>
+<dd>
+<p>All requests and resources received via the Mca, Mcc and Mcc' reference points are validated.</p>
+</dd>
+<dt><strong>Resource Addressing</strong></dt>
+<dd>
+<p><em>CSE-Relative</em>, <em>SP-Relative</em> and <em>Absolute</em> as well as hybrid addressing are supported.</p>
+</dd>
+<dt><strong>Resource Announcements</strong></dt>
+<dd>
+<p>Announcements of resources are supported via the Mcc and Mcc' reference points.
+Resources are announced under a CSEBaseAnnc resource on the target CSE (R4 feature).<br>
+Bi-directional update and attribute syncronization is supported as well.</p>
+</dd>
+<dt><strong>Resource Expiration</strong></dt>
+<dd>
+<p>Resources are automatically deleted after the expiration time has passed.</p>
+</dd>
+<dt><strong>Result Content Types</strong></dt>
+<dd>
+<p>The following result contents are implemented for standard oneM2M requests and discovery:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Discovery Type</th>
+<th style="text-align: center;">RCN</th>
+<th style="text-align: left;">Discovery Type</th>
+<th style="text-align: center;">RCN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">nothing</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">child-resource-references</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">attributes</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">original-resource</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">hierarchical address</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">child-resources</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">hierarchical address + attributes</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">modified attributes</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">attributes + child-resources</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">semantic content</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">attributes + child-resource-references</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">discovery result references</td>
+<td style="text-align: center;">11</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Result Expiration</strong></dt>
+<dd>
+<p>The <em>Result Expiration Timestamp</em> request parameter is supported.</p>
+</dd>
+<dt><strong>Semantics</strong></dt>
+<dd>
+<p>Basic support for semantic descriptors, semantic queries and discovery is available.</p>
+</dd>
+<dt><strong>Service Provider Registration</strong></dt>
+<dd>
+<p>Registrations between Service Provider IN-CSEs are supported via the Mcc'
+reference point. All the functionalities of the Mcc reference point are
+supported, such as resource announcements, synchronization, and transit
+requests that target resources on remote oneM2M service provider CSEs.</p>
+</dd>
+<dt><strong>Subscriptions</strong></dt>
+<dd>
+<p>Subscriptions are supported, including batch notification, and resource type and attribute filtering.</p>
+</dd>
+<dt><strong>Time Synchronization</strong></dt>
+<dd>
+<p>The ACME CSE supports time synchronization via the <em>timeSyncBeacon</em> resource type.</p>
+</dd>
+<dt><strong>TimeSeries Data Handling</strong></dt>
+<dd>
+<p>TimeSeries data handling is supported, including missing data detection, monitoring and notifications.</p>
+</dd>
+</dl>
+<h2 id="protocols-bindings">Protocols Bindings</h2>
+<p>The following <em>Protocol Bindings</em> are supported.<br>
+It is possible to enable only one binding, or to use any combination of them for a CSE instance.</p>
+<dl>
+<dt><strong>CoAP</strong></dt>
+<dd>
+<p>The CoAP protocol is supported.<br>
+CoAP over DTLS is not yet implemented.</p>
+<div class="admonition info">
+<p class="admonition-title">Release 5</p>
+<p>The current implementation only support the CoAP binding specification for oneM2M Release 1-4. 
+The upcoming Release 5 specification is not yet supported.</p>
+</div>
+</dd>
+<dt><strong>http</strong></dt>
+<dd>
+<p>The http protocol is supported, including TLS (https) and <abbr title="Cross-Origin Resource Sharing">CORS</abbr> support. </p>
+<p>The <em>basic</em> and <em>bearer</em> authentication methods are supported.</p>
+<div class="admonition info">
+<p class="admonition-title">Experimental Feature</p>
+<p>Some libraries and embedded chipsets do not support the DELETE method in http/1.0 (this method was only added in http/1.1). The ACME CSE therefore supports DELETE requests via the PATCH method, that is available in many http/1.0 implementations.  </p>
+<p>See also the <a href="../../setup/Configuration-http/#general-settings">allowPatchForDelete</a> configuration setting.</p>
+</div>
+</dd>
+<dt><strong>mqtt</strong></dt>
+<dd>
+<p>The mqtt protocol is supported, including TLS (mqtts) support.</p>
+<p>This protocol binding requires a separate MQTT broker to be installed and running.</p>
+<p>Basic username/password authentication with an mqtt broker is supported as well.</p>
+</dd>
+<dt><strong>WebSocket</strong></dt>
+<dd>
+<p>The WebSocket protocol is supported, including TLS (wss) support   </p>
+<div class="admonition info">
+<p class="admonition-title">Experimental Feature</p>
+<p>Besides the standard oneM2M WebSocket binding, the ACME CSE supports an <a href="../../howtos/ExperimentalWebSocketBinding/">experimental extension</a> to better support notifications.</p>
+</div>
+</dd>
+</dl>
+<h2 id="serialization-types">Serialization Types</h2>
+<p>The following serialization types for requests and responses are supported. </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The XML serialization is not supported.<br>
+Though it is part of the oneM2M standard, it is not planned to be implemented in the ACME CSE because XML is only very rarely used in real-world IoT deployments.</p>
+</div>
+<dl>
+<dt><strong>JSON</strong></dt>
+<dd>
+<p>In addition to the common JSON syntax, C-style and Python-style comments are supported as well:</p>
+<ul>
+<li>Block comment:  <code>/* ... */</code></li>
+<li>End-of-line comment: <code>// ...</code> and <code># ...</code></li>
+</ul>
+</dd>
+<dt><strong><abbr title="Concise Binary Object Representation">CBOR</abbr></strong></dt>
+<dd>
+<p><abbr title="Concise Binary Object Representation">CBOR</abbr> is a <a href="https://cbor.io" target="_new">binary serialization</a> format.<br>
+Messages are fairly smaller and faster to process than JSON messages.</p>
+</dd>
+</dl>
+<h2 id="experimental-functionalities">Experimental Functionalities</h2>
+<p>These features are prove-of-concept implementations of new and currently 
+discussed oneM2M functionalities. They are not yet part of the oneM2M standard.</p>
+<dl>
+<dt><strong>Enhanced CSR functionality</strong></dt>
+<dd>
+<p>Support for a new R5 <em>eventEvaluationMode</em> to react on missing events.</p>
+</dd>
+<dt><strong>Subscription References</strong></dt>
+<dd>
+<p>Support for subscription references for resource instead of direct subscriptions.</p>
+</dd>
+<dt><strong>Advanced Queries</strong></dt>
+<dd>
+<p>Experimental implementation of a new query language to support enhanced query capabilities.</p>
+</dd>
+<dt><strong>Simplified Time Synchronization</strong></dt>
+<dd>
+<p>Experimental implementation of a simplified time synchronization mechanism.</p>
+</dd>
+<dt><strong>Support for DELETE requests for http/1.0</strong></dt>
+<dd>
+<p>Using <a href="../../setup/Configuration-http/#general-settings">PATCH requests</a> to emulate DELETE requests for http/1.0 clients.</p>
+</dd>
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="/home/License" rel="license noopener noreferrer" style="display:inline-block;">© 2025 by Andreas Kraft</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/home/Imprint/" target="_blank" rel="noopener" title="Imprint · Impressum" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M110 0C49.2 0 0 49.2 0 110c0 23.7 7.6 45.8 20.5 64C7.6 192 0 214.1 0 238c0 53.7 38.9 99.6 91.9 108.4l61.7 10.3c22.2 3.7 38.4 22.9 38.4 45.3 0 25.4-20.6 46-46 46H48c-17.7 0-32 14.3-32 32s14.3 32 32 32h98c60.7 0 110-49.2 110-110 0-23.7-7.6-45.9-20.5-64 12.9-18 20.5-40.1 20.5-64 0-53.8-38.9-99.6-91.9-108.5l-61.7-10.3C80.2 151.6 64 132.4 64 110c0-25.4 20.6-46 46-46h98c17.7 0 32-14.3 32-32S225.7 0 208 0zm74.7 299.1c-6.5-2.4-13.4-4.3-20.5-5.5l-61.7-10.3c-22.2-3.7-38.4-22.9-38.4-45.3 0-9.2 2.7-17.8 7.4-25 6.5 2.4 13.4 4.3 20.5 5.5l61.7 10.3c22.2 3.7 38.4 22.9 38.4 45.3 0 9.2-2.7 17.8-7.4 25"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/ankraft/ACME-oneM2M-CSE" target="_blank" rel="noopener" title="ACME Git Repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+    <a href="https://mstdn.social/@acmeCSE" target="_blank" rel="noopener me" title="ACME CSE @ Mastodon" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://discord.gg/6ryMHQC2Uj" target="_blank" rel="noopener" title="ACME Discord Server" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.footnote.tooltips", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
