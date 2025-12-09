@@ -45,4 +45,4 @@ These are the settings for the web UI.
 
 | Setting | Description                                 |Default |
 |:--------|:--------------------------------------------|:-------|
-| root    | Root path of the web UI.                    | /webui |
+| root    | Root path of the web UI.                    | ${http:root}webui |

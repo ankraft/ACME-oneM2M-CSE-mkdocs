@@ -104,3 +104,30 @@ To run the CSE in headless mode, use the command line argument `--headless` or s
 ### Restarting the CSE
 
 In the provided Docker image, the CSE is run within a loop that restarts it if the CSE is shutdown with the intention to be [restarted](../setup/Operation-management.md#restart-the-cse). This means that the CSE can be restarted without restarting the Docker container. If the CSE shuts down normally, the Docker container will exit. 
+
+
+### Ingress Paths and the Web UI
+
+Usually, the web UI can be accessed at the following URL:
+
+```
+http://<docker-host-ip>:<mapped-port>/webui
+```
+
+However, this might be different if the external root path for the dockerized ACME CSE's HTTP server is different than the one that is used in the CSE's configuration setting *[http].root* (the container-internal root path). This could be the case, for example, in a kubernetes environment where the CSE is accessed via an ingress path.
+
+Because the web UI uses the root path for browser redirection, the external root path must be made known to the CSE. This can be done by setting the configuration setting *[http].externalRoot* to the correct external path.
+
+**Example:**
+
+If the CSE is accessed at `http://<docker-host-ip>:8080/acme/` (note the `/acme/` path), then the setting for *[http].externalRoot* must be set to `/acme/` in order to access the web UI at `http://<docker-host-ip>:8080/acme/webui`. Note the leading and trailing slashes.
+
+```ini title="Set External Root Path"
+[http]
+...
+root=/
+externalRoot=/acme/
+...
+```
+
+See also the [HTTP Configuration](../setup/Configuration-http.md#general-settings) for more information about these settings.
