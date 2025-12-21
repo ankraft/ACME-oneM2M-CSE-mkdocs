@@ -49,6 +49,9 @@ theme:
     - navigation.instant
     - navigation.instant.progress
     - navigation.instant.prefetch
+    - navigation.instant.preview
+
+    #- navigation.path
     - navigation.prune
     - navigation.sections
     - navigation.tabs
@@ -198,6 +201,7 @@ nav:
         - 'Variables': 'development/ACMEScript-variables.md'
         - 'Meta Tags': 'development/ACMEScript-metatags.md'
         - 'Upper Tester Integration': 'development/ACMEScript-uppertester.md'
+      - 'Plugins': 'development/Plugins.md'
       - 'Embedding ACME CSE': 'development/Embedding_ACME.md'
       - 'Debug Mode': 'development/DebugMode.md'
       - 'Type Checking': 'development/TypeChecking.md'
