@@ -55,7 +55,9 @@ The CSE can also be started with a different base directory:
 	python3 -m acme -dir <directory>
 	```
 
-This will use the specified directory as the root directory for runtime data such as *data*, *logs*, and *temporary* files. The configuration file *acme.ini*is expected to be in the specified directory, or it will be created there if it does not exist.
+This will use the specified directory as the root directory for runtime data such as *data*, *logs*, own provided *plugins*, and *temporary* files. The configuration file *acme.ini*is expected to be in the specified directory, or it will be created there if it does not exist.
+
+The default base directory, if not specified, is the current working directory.
 
 ### Secondary *init* Directory
 

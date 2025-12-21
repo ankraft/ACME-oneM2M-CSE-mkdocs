@@ -43,11 +43,11 @@ make build-amd64
 
 ### Mapped Base Directory
 
-The Docker image uses the */data* directory as the base directory for the CSE's runtime data. This directory can be mapped to a directory on the host system. 
+The Docker image uses the `/data` directory as the base directory for the CSE's runtime data. This directory can be mapped to a directory on the host system.
 
-This is useful for persisting data across container restarts and to provide a different configuration file that is then used instead of the default *acme.ini* file. This directory may also contain a [secondary init directory](../setup/Running.md#secondary-init-directory) with additional scripts, attribute definitions, etc.
+This is useful for persisting data across container restarts, to provide additional [plugins](../development/Plugins.md), and to provide a different configuration file that is then used instead of the default *acme.ini* file. This directory may also contain a [secondary init directory](../setup/Running.md#secondary-init-directory) with additional scripts, attribute definitions, etc.
 
-For example, to use the directory */host/data* on the Docker host as the base directory, run the following command:
+For example, to use the directory `/host/data` on the Docker host as the base directory, run the following command:
 
 ```sh title="Run Container with Mapped Base Directory"
 docker run -it -p 8080:8080 -v /host/data:/data --rm --name acme-onem2m-cse ankraft/acme-onem2m-cse

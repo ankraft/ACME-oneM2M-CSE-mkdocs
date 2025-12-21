@@ -33,8 +33,9 @@ These settings are used to configure basic settings and the general behavior of 
 | supportedReleaseVersions               | A comma-separated list of supported release versions. This list can contain a single or multiple values.                                                                                                                                                                                             | 2a,3,4,5                                                                                    |
 | type                                   | The CSE type. Allowed values: IN, MN, ASN.                                                                                                                                                                                                                                                           | [${basic.config:cseType}](../setup/Configuration-basic.md#basic-configuration)              |
 
+## Operation Configurations
 
-## Operation - Jobs
+### Jobs
 
 **Section: `[cse.operation.jobs]`**
 
@@ -48,7 +49,19 @@ Jobs are used to handle asynchronous tasks like resource expiration, resource an
 | balanceReduceFactor | Thread Pool Management: The factor to reduce the paused jobs (number of paused / balanceReduceFactor) in a balance check.<br/>Example: a factor of 2.0 reduces the number of paused threads by half in a single balance check. | 2.0     |
 
 
-## Operation - Requests
+### Plugins
+
+**Section: `[cse.operation.plugins]`**
+
+These settings are used to configure the CSE's [plugin management](../development/Plugins.md).
+
+| Setting             | Description                                                                                                                                                                                                                    | Default |
+|:--------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------|
+| disabledPlugins     | A list of plugins that are disabled and will not be loaded. The entries in this list are the module names of the plugins to disable. A plugin name may contain simple wildcards (e.g. `plugin*`) to match multiple plugins.    | [ ]     |
+| replace             | Replace existing plugins with the same name when loading. The replaced plugins will be stopped, finalized, and unloaded before the new plugin is loaded.                                                                       | False   |
+
+
+### Requests
 
 **Section: `[cse.operation.requests]`**
 
