@@ -26,7 +26,7 @@ All plugins are loaded under the same Python module namespace `acme.plugins` and
 
 ### Disabling Plugins
 
-Plugins can be disabled by adding them to the configuration option [\[cse.operation.plugins\].disabledPlugins](../setup/Configuration-cse.md#plugins). Plugin listed in this configuration setting will not be loaded by the CSE at startup. 
+Plugins can be disabled by adding them to the configuration option [\[cse.operation.plugins\].disabledPlugins](../setup/Configuration-cse.md#plugins). Plugins listed in this configuration setting will not be loaded by the CSE at startup. 
 
 Names of disabled plugins must match the plugin module name (i.e., the filename without the `.py` extension). Simple wildcard patterns (e.g., `MyPlugin*`) can be used to disable multiple plugins at once.
 
