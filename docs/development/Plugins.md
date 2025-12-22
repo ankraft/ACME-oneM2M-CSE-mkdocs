@@ -129,7 +129,7 @@ The plugin is loaded and initialized when the CSE starts. The `@PluginManager.in
 
 The signature of the `@PluginManager.init` method is as follows:
 
-```python
+```
 @PluginManager.init
 def init(self) -> None:
     ...
@@ -141,7 +141,7 @@ The plugin can read configuration settings from the CSE's configuration file dur
 
 The signature of the `@PluginManager.configure` method is as follows:
 
-```python
+```
 @PluginManager.configure
 def configure(self, config: Configuration) -> None:
     ...
@@ -156,7 +156,7 @@ This phase occurs after configuration and before activation. The plugin can use 
 
 The signature of the `@PluginManager.validate` method should be as follows:
 
-```python
+```
 @PluginManager.validate
 def validate(self, config: Configuration) -> None:
     ...
@@ -169,7 +169,7 @@ The plugin becomes active and starts performing its intended functions. The `@Pl
 
 The signature of the `@PluginManager.start` method is as follows:
 
-```python
+```
 @PluginManager.start
 def start(self) -> None:
     ...
@@ -182,7 +182,7 @@ The plugin is deactivated and stops performing its functions. The `@PluginManage
 
 The signature of the `@PluginManager.stop` method is as follows:
 
-```python
+```
 @PluginManager.stop
 def stop(self) -> None:
     ...
@@ -194,7 +194,7 @@ If the CSE is restarted internally, the plugin's `@PluginManager.restart` decora
 
 The signature of the `@PluginManager.restart` method is as follows:
 
-```python
+```
 @PluginManager.restart
 def restart(self) -> None:
     ...
@@ -206,7 +206,7 @@ The plugin is finalized and cleaned up when the CSE shuts down. The `@PluginMana
 
 The signature of the `@PluginManager.finish` method is as follows:
 
-```python
+```
 @PluginManager.finish
 def finish(self) -> None:
     ...
