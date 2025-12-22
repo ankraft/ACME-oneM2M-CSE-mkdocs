@@ -49,28 +49,28 @@ For example, if your plugin is named `HelloWorld`, create a file named `HelloWor
 
 In your plugin module, you need to define a class that is decorated with `@PluginManager.runnableClass`. This class will contain methods that are decorated to hook into the CSE's lifecycle events.
 
-```python title="HelloWorld.py" linenums="1"
+```title="HelloWorld.py" linenums="1"
 from acme.helpers import PluginManager
 from acme.runtime.Logging import Logging as L
 
 @PluginManager.pluginClass
 class HelloWorldPlugin:
 
-	@PluginManager.init
-	def init(self) -> None:
-		L.log('HelloWorld plugin initialized')
+    @PluginManager.init
+    def init(self) -> None:
+        L.log('HelloWorld plugin initialized')
 
-	@PluginManager.finish
-	def finish(self) -> None:
-		L.log('HelloWorld plugin finished')
+    @PluginManager.finish
+    def finish(self) -> None:
+        L.log('HelloWorld plugin finished')
 
-	@PluginManager.start
-	def start(self) -> None:
-		L.log('Hello, world!')
+    @PluginManager.start
+    def start(self) -> None:
+        L.log('Hello, world!')
 
-	@PluginManager.stop
-	def stop(self) -> None:
-		L.log('Goodbye, world!')
+    @PluginManager.stop
+    def stop(self) -> None:
+        L.log('Goodbye, world!')
 ```
 
 In this example, the `HelloWorld` class is decorated with `@PluginManager.pluginClass`, indicating that it is a plugin class. There can only be one plugin class per plugin module.
@@ -107,14 +107,14 @@ stateDiagram
     direction LR
     [*] --> Initialization
     Initialization --> Configuration 
-	Configuration --> Validation
-	Validation --> Running
-	Running --> Restarting
-	Restarting --> Running
-	Running --> Stopped
-	Stopped --> Running
-	Stopped --> Finalization
-	Finalization --> [*]
+    Configuration --> Validation
+    Validation --> Running
+    Running --> Restarting
+    Restarting --> Running
+    Running --> Stopped
+    Stopped --> Running
+    Stopped --> Finalization
+    Finalization --> [*]
 
 ```
 
@@ -132,7 +132,7 @@ The signature of the `@PluginManager.init` method is as follows:
 ```python
 @PluginManager.init
 def init(self) -> None:
-	...
+    ...
 ```
 
 ### Configuration
@@ -144,7 +144,7 @@ The signature of the `@PluginManager.configure` method is as follows:
 ```python
 @PluginManager.configure
 def configure(self, config: Configuration) -> None:
-	...
+    ...
 ```
 
 
@@ -159,7 +159,7 @@ The signature of the `@PluginManager.validate` method should be as follows:
 ```python
 @PluginManager.validate
 def validate(self, config: Configuration) -> None:
-	...
+    ...
 ```
 
 
@@ -172,7 +172,7 @@ The signature of the `@PluginManager.start` method is as follows:
 ```python
 @PluginManager.start
 def start(self) -> None:
-	...
+    ...
 ```
 
 
@@ -185,7 +185,7 @@ The signature of the `@PluginManager.stop` method is as follows:
 ```python
 @PluginManager.stop
 def stop(self) -> None:
-	...
+    ...
 ```
 
 ### Restarting
@@ -197,7 +197,7 @@ The signature of the `@PluginManager.restart` method is as follows:
 ```python
 @PluginManager.restart
 def restart(self) -> None:
-	...
+    ...
 ```
 
 ### Finalization
@@ -209,5 +209,5 @@ The signature of the `@PluginManager.finish` method is as follows:
 ```python
 @PluginManager.finish
 def finish(self) -> None:
-	...
+    ...
 ```
