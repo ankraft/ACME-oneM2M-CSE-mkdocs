@@ -25,8 +25,9 @@ when running test cases.
 
 | UT Functionality               | Description                                                                                             |
 |--------------------------------|---------------------------------------------------------------------------------------------------------|
-| reset                          | Resets the CSE to its initial state. No other function or operation present in the request is executed. |
-| status                         | Returns the CSE running status in the response header field `X-M2M-UTRSP`.                              |
+| Reset                          | Resets the CSE to its initial state. No other function or operation present in the request is executed. |
+| Status                         | Returns the CSE running status in the response header field `X-M2M-UTRSP`.                              |
+| GetConfig &lt;key>             | Returns the configuration value for the specified key in the response header field `X-M2M-UTRSP`.       |
 | disableShortRequestExpiration  | For running [test cases](../development/UnitTests.md): Disables short request expiration.               |
 | disableShortResourceExpiration | For running [test cases](../development/UnitTests.md): Disables short resource expiration.              |
 | enableShortRequestExpiration   | For running [test cases](../development/UnitTests.md): Enables short request expiration.                |
