@@ -191,7 +191,7 @@ nav:
       - 'Tools':
         - 'Notification Server': 'development/tools/NotificationServer.md'
         - 'Onboarding Tool': 'development/tools/OnboardingTool.md'
-        - 'Hash Credentials': 'development/tools/HashCredentials.md'
+        - 'Hashing Credentials': 'development/tools/HashCredentials.md'
         - 'Zookeeper Tool': 'development/tools/ZookeeperTool.md'
       - 'ACMEScript':
         - 'Introduction': 'development/ACMEScript.md'

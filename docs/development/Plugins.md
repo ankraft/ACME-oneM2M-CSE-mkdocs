@@ -37,7 +37,7 @@ disabledPlugins = APlugin,MyPlugin*, AnotherPlugin
 
 ## Developing an Example Plugin
 
-The programming language for plugins is Python, the same as for the ACME CSE itself. To create a new plugin, follow the following steps. We will create a simple example plugin that will log a message when the CSE starts up and shuts down.
+The programming language for plugins is Python, the same as for the ACME CSE itself. To create a new plugin, follow the steps below. We will create a simple example plugin that will log a message when the CSE starts up and shuts down.
 
 ### Creating a Plugin Module
 
@@ -49,8 +49,8 @@ For example, if your plugin is named `HelloWorld`, create a file named `HelloWor
 
 In your plugin module, you need to define a class that is decorated with `@PluginManager.runnableClass`. This class will contain methods that are decorated to hook into the CSE's lifecycle events.
 
-```title="HelloWorld.py" linenums="1"
-from acme.helpers import PluginManager
+```python title="HelloWorld.py" linenums="1"
+from acme.runtime import PluginManager
 from acme.runtime.Logging import Logging as L
 
 @PluginManager.pluginClass
@@ -73,14 +73,14 @@ class HelloWorldPlugin:
         L.log('Goodbye, world!')
 ```
 
-In this example, the `HelloWorld` class is decorated with `@PluginManager.pluginClass`, indicating that it is a plugin class. There can only be one plugin class per plugin module.
+In this example, the `HelloWorld` class is decorated with `@PluginManager.pluginClass`, indicating that it is a plugin class. There can only be one plugin class per plugin module. This class will automatically be instantiated by the `PluginManager` when the plugin is loaded.
 
 The class has four methods that are decorated to hook into the CSE's lifecycle events: `init`, `finish`, `start`, and `stop`. Each method logs a message to the ACME logging system when the CSE starts up and shuts down.
 
 
 ### Running the Plugin
 
-To run the plugin, start or restart the ACME CSE with the working directory containing your `plugins` folder. You should see log messages indicating that the plugin has been initialized and started. When you shutdown the CSE, you should see log messages indicating that the plugin has been stopped and finished.
+To run the plugin, start or restart the ACME CSE with the working directory containing your `plugins` folder. You should see log messages indicating that the plugin has been loaded, and the class has been instantiated, initialized, and started. When you shutdown the CSE, you should see log messages indicating that the plugin has been stopped and finished.
 
 The log output should look similar to the following:
 
@@ -93,6 +93,91 @@ INFO    MainThread - Goodbye, world!                            HelloWorld.py:21
 INFO    MainThread - HelloWorld plugin finished                 HelloWorld.py:13
 ...
 ```
+
+## The PluginManager
+
+The `PluginManager` is the  component of the ACME CSE that is responsible for managing the lifecycle of plugins. It provides decorators, methods and properties that plugins can use to hook into the CSE's lifecycle events. It is loaded and run as part of the CSE's startup process. Similar, it is finalized during the CSE's shutdown process.
+
+The PluginManager offers the possibility to access loaded plugins and their assigned plugin classes at runtime. This can be useful for plugins that need to interact with other plugins or for debugging purposes.
+
+How to access loaded plugins and their plugin classes is described in the following sections.
+
+
+### Getting Plugin Information
+
+The `PluginManager` provides a way to access the runtime information of loaded plugins. This includes the ability to get the Python module, but also other information such as the plugin's name and its associated plugin class. This can be useful for introspection or for dynamically loading additional resources from the plugin's module.
+
+Plugin information can be accessed through the `PluginManager.<PluginName>` property, where `<PluginName>` is the name of the plugin module (i.e., the filename without the `.py` extension).
+
+
+```python title="Getting Plugin Python Module"
+from acme.runtime import PluginManager
+
+# Get the module for a specific plugin
+hello_world_info = PluginManager.HelloWorld
+hello_world_module = hello_world_info.module
+```
+
+The `hello_world_module` variable will now contain the Python module object for the `HelloWorld` plugin, allowing access to its Python attributes, classes, and functions. 
+
+The plugin information contains additional properties, including the current plugin state, pointers to the decorated lifecycle methods, and the instantiated plugin class.
+
+
+### Accessing the Plugin Class
+
+The PluginManager always instantiates the plugin's class that is decorated with `@PluginManager.pluginClass` when the plugin is loaded. By default it is only accessible via Plugin information, but it is not directly exposed for access.
+
+However, it is possible to pass a name for a property in the `@PluginManager.pluginClass` decorator, which will cause the instantiated plugin class to be accessible via a property with that name.
+
+For example, the `HelloWorld` plugin class can be decorated as follows:
+
+```python title="HelloWorld.py with Named Plugin Class"
+from acme.runtime import PluginManager
+
+@PluginManager.pluginClass(property='greetings')
+class HelloWorld:
+    ...
+```
+
+The instantiated plugin class can then be accessed via the `PluginManager.greetings` property:
+
+```python title="Getting Named Plugin Class"
+hello_world_instance = PluginManager.greetings
+```
+
+
+### Setting the Plugin Class Priority
+
+By default, the `PluginManager` instantiates and processes plugin classes in the order they are loaded. However, it is possible to set a priority for the plugin class instantiation using the `priority` parameter in the `@PluginManager.pluginClass` decorator. This can be useful if a plugin class depends on another plugin class being instantiated first.
+
+Plugin classes with a lower priority value are instantiated before those with a higher priority value. The default priority is `50`.
+
+```python title="HelloWorld.py with Priority"
+from acme.runtime import PluginManager
+
+@PluginManager.pluginClass(priority=10)
+class HelloWorld:
+	...
+```
+
+In this example, the `HelloWorld` plugin class will be instantiated before any other plugin classes with the default priority of, for example, `50`.
+
+It is important to note that plugin classes with a lower priority value are instantiated first, but are stopped and finalized later during the CSE shutdown or unloading process. 
+
+
+### Getting All Plugin Information
+
+The information of all loaded plugins can be accessed via the `PluginManager.plugins` property. This is a list of `PluginInfo` objects, each containing information about a loaded plugin, including its name, module, state, and associated plugin class.
+
+Usually, this is only needed for debugging or introspection purposes.
+
+```python title="Getting Plugin Information"
+from acme.runtime import PluginManager
+
+# Get a list of all loaded plugins
+loaded_plugins = PluginManager.plugins
+```
+
 
 ## Plugin Lifecycle & API
 
@@ -129,7 +214,7 @@ The plugin is loaded and initialized when the CSE starts. The `@PluginManager.in
 
 The signature of the `@PluginManager.init` method is as follows:
 
-```
+```python title="Plugin Initialization Decorator"
 @PluginManager.init
 def init(self) -> None:
     ...
@@ -141,7 +226,7 @@ The plugin can read configuration settings from the CSE's configuration file dur
 
 The signature of the `@PluginManager.configure` method is as follows:
 
-```
+```python title="Plugin Configuration Decorator"
 @PluginManager.configure
 def configure(self, config: Configuration) -> None:
     ...
@@ -156,7 +241,7 @@ This phase occurs after configuration and before activation. The plugin can use 
 
 The signature of the `@PluginManager.validate` method should be as follows:
 
-```
+```python title="Plugin Validation Decorator"
 @PluginManager.validate
 def validate(self, config: Configuration) -> None:
     ...
@@ -169,7 +254,7 @@ The plugin becomes active and starts performing its intended functions. The `@Pl
 
 The signature of the `@PluginManager.start` method is as follows:
 
-```
+```python title="Plugin Start Decorator"
 @PluginManager.start
 def start(self) -> None:
     ...
@@ -182,7 +267,7 @@ The plugin is deactivated and stops performing its functions. The `@PluginManage
 
 The signature of the `@PluginManager.stop` method is as follows:
 
-```
+```python title="Plugin Stop Decorator"
 @PluginManager.stop
 def stop(self) -> None:
     ...
@@ -194,7 +279,7 @@ If the CSE is restarted internally, the plugin's `@PluginManager.restart` decora
 
 The signature of the `@PluginManager.restart` method is as follows:
 
-```
+```python title="Plugin Restart Decorator"
 @PluginManager.restart
 def restart(self) -> None:
     ...
@@ -206,7 +291,7 @@ The plugin is finalized and cleaned up when the CSE shuts down. The `@PluginMana
 
 The signature of the `@PluginManager.finish` method is as follows:
 
-```
+```python title="Plugin Finalization Decorator"
 @PluginManager.finish
 def finish(self) -> None:
     ...
