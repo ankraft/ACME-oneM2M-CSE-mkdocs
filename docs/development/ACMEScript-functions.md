@@ -766,11 +766,14 @@ The `match` function determines whether a string matches a regular expression *r
 - `?` : any single character
 - `*` : zero or more characters
 - `+` : one or more characters
+- `[abc]` : any character in the set
+- `[^abc]` : any character not in the set
 - `\` : Escape an expression operator
 
 ```lisp title="Examples"
 (match "aa" "a?")  ;; Returns true
 (match "aa" "b*")  ;; Returns false
+(match "aa" "[ab]+") ;; Returns true
 ```
 
 ---
