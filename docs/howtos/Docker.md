@@ -24,7 +24,7 @@ docker run -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -it -p 8080:8080 --r
 
 You can adapt (ie. configure a new Docker Hub ID) the build script and *Dockerfile* in the [tools/Docker](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/tools/Docker){target=_new} directory. It might be a good idea, for example, to run the CSE in head-less mode (command line argument `--headless` or configuration setting *[console].headless*), which disables screen output. This is the default setting for the provided Docker image.
 
-The build script takes all the current scripts, attribute definitions etc. from the ACME module's *init* directory and includes them in the Docker image. The configuration file for the Docker image's *acme.ini* file is copied from file *acme.docker* from the *Docker* directory. Please make any necessary changes to that file before building the image.
+The build script takes all the current scripts, attribute definitions etc. from the ACME module's *init* directory and includes them in the Docker image. The configuration file for the Docker image's *acme.ini* file is copied from file *acme.ini* from the *Docker* directory. Please make any necessary changes to that file before building the image.
 
 
 ### Different CPU Architectures
