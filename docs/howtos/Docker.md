@@ -83,6 +83,10 @@ docker run -it -p 8080:8080 -v /path/to/data:/data -e DOCKER_HOST_IP=`ifconfig e
 
 Values for other setting, such as credentials, can be provided the same way.
 
+!!! important
+	Do not use names of configuration settings as environment variable names, 
+	as this will lead to conflicts. Instead, use different names, such as in the example above.
+
 
 ### Exposed Ports
 
