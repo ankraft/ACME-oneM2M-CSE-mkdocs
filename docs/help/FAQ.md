@@ -108,9 +108,9 @@ See [the documentation about defining FlexContainer spezializations](../developm
 When a CSE is configured as an MN-CSE or ASN-CSE it can register to a remote CSE, respectively an IN-CSE and MN-CSE can receive connection requests from those CSE types. A &lt;remoteCSE> resource is created in case of a successful registration. A CSE checks regularly the connection to other remote CSEs and removes the *remoteCSE* if the connection could not been established. This is done to keep the CSE's resource tree clean and up-to-date.
 
 
-This behaviour can be disabled by setting the configuration setting [`[cse.registration].checkLiveliness`](../setup/Configuration-cse.md#cse-registration) to *false*.
+This behaviour can be disabled by setting the configuration setting [`[cse.registration].checkLiveliness`](../setup/Configuration-registrations.md#cse-registration) to *false*.
 
-The check interval can be configured with the [`[cse.registration].checkInterval`](../setup/Configuration-cse.md#cse-registration) setting.
+The check interval can be configured with the [`[cse.registration].checkInterval`](../setup/Configuration-registrations.md#cse-registration) setting.
 
 
 ### Why does my CSE not register to another CSE or announce resources?

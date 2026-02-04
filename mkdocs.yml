@@ -161,6 +161,7 @@ nav:
       - 'Introduction': 'setup/Configuration-introduction.md'
       - 'Basic Configuration': 'setup/Configuration-basic.md'
       - 'CSE General Settings': 'setup/Configuration-cse.md'
+      - 'CSE Registrations': 'setup/Configuration-registrations.md'
       - 'Databases': 'setup/Configuration-database.md'
       - 'Logging': 'setup/Configuration-logging.md'
       # - 'Protocol Binding - CoAP <span style="vertical-align:super;font-size:smaller;color:#b42025">(under development)</span>': 'setup/Configuration-coap.md'

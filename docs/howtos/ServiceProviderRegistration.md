@@ -33,7 +33,7 @@ The difference is that one needs to specify one or two sections in the configura
 
 In the examples below, we use **"Service Provider 1"** as the local service provider, and **"Service Provider 2"** as the remote service provider that we want to register with. Remember, the second service provider's IN-CSE must not register with the first service provider's IN-CSE.
 
-More details about these configuration settings can be found in the configuration documentation for [Service Provider Registrations](../setup/Configuration-cse.md#service-provider-registrations) and [Service Provider Security](../setup/Configuration-cse.md#service-provider-security-settings).
+More details about these configuration settings can be found in the configuration documentation for [Service Provider Registrations](../setup/Configuration-registrations.md#service-provider-registrations) and [Service Provider Security](../setup/Configuration-registrations.md#service-provider-security-settings).
 
 
 ### Service Provider Section
@@ -75,7 +75,7 @@ selfHttpPassword = hashedPassword-2
 
 ### Authorize Service Provider Registrations
 
-As with every registration, the registering CSE (*Service Provider 1*) must be authorized to register with the remote IN-CSE (*Service Provider 2*). This is done by adding the CSE's ID of *Service Provider 1* to the *allowedCSROriginators* setting in the [*\[cse.registration\]*](../setup/Configuration-cse.md#cse-registration) section of *Service Provider 2*'s configuration file:
+As with every registration, the registering CSE (*Service Provider 1*) must be authorized to register with the remote IN-CSE (*Service Provider 2*). This is done by adding the CSE's ID of *Service Provider 1* to the *allowedCSROriginators* setting in the [*\[cse.registration\]*](../setup/Configuration-registrations.md#cse-registration) section of *Service Provider 2*'s configuration file:
 
 ```ini title="Example Service Provider Registration Authorization for Service Provider 2"
 [cse.registration]
