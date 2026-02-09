@@ -10,13 +10,13 @@ allowed originators for AE and CSR registrations, and resource announcement beha
 
 These settings are used to configure the CSE's internal registration behaviour, but also set the allowed originators for AE and CSR registrations.
 
-| Setting                | Description                                                                                                                                                                                                   | Default    |
-|:-----------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| allowedAEOriginators   | List of AE originators that can register. This is a comma-separated list of originators. Wildcards (\* and ?) are supported.                                                                                  | C\*, S\*   |
-| allowedCSROriginators  | List of CSR originators that can register. This is a comma-separated list of originators. Wildcards (\* and ?) are supported.<br />**Note**: CSE-IDs must be in absolute or SP-relative form.                 | empty list |
-| checkLiveliness        | Check the liveliness of the registrations to the registrar CSE and also from the registree CSEs.                                                                                                              | True       |
-| checkInterval          | This setting specifies the pause in seconds between tries to connect to the configured registrar CSE. This value is also used to check the connectivity to the registrar CSE after a successful registration. | 60 seconds |
-| unregisterWhenStopping | Unregister from the registrar CSE when stopping the CSE. This includes deleting the CSR resource at the registrar CSE.                                                                                        | True       |
+| Setting                | Description                                                                                                                                                                                                                                                       | Default    |
+|:-----------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+| allowedAEOriginators   | List of AE originators that can register. This is a comma-separated list of originators. Wildcards (\* and ?) are supported.                                                                                                                                      | C\*, S\*   |
+| allowedCSROriginators  | List of CSR originators that can register. This is a comma-separated list of originators. Wildcards (\* and ?) are supported.<br />**Note**: CSE-IDs must be in absolute or SP-relative form, i.e. they must start with `/` or `//`, even when wildcards are used. | empty list |
+| checkLiveliness        | Check the liveliness of the registrations to the registrar CSE and also from the registree CSEs.                                                                                                                                                                  | True       |
+| checkInterval          | This setting specifies the pause in seconds between tries to connect to the configured registrar CSE. This value is also used to check the connectivity to the registrar CSE after a successful registration.                                                     | 60 seconds |
+| unregisterWhenStopping | Unregister from the registrar CSE when stopping the CSE. This includes deleting the CSR resource at the registrar CSE.                                                                                                                                            | True       |
 
 
 ## Registrar CSE Access 
