@@ -188,6 +188,7 @@ nav:
         - 'Start-Up Resources': 'development/StartupResources.md'
         - 'Attribute Policies': 'development/AttributePolicies.md'
         - 'FlexContainer Policies': 'development/FlexContainerPolicies.md'
+        - 'Resource Type Policies': 'development/ResourceTypePolicies.md'
         - 'Help File Format': 'development/HelpDocumentation.md'
       - 'Tools':
         - 'Notification Server': 'development/tools/NotificationServer.md'

@@ -2,6 +2,11 @@
 
 This article describes the startup process of the CSE, how to import resources, and attribute definitions.
 
+This process is relevant for the initial deployment of the CSE, but also for restarting the CSE after it has been stopped. 
+
+!!! tip "Tip"
+	Normally, it should not be necessary to change the default resources that are imported during CSE startup, but it is possible to add additional resources or change the default ones by modifying the script in the primary *init* directory.
+
 ## Initial Resources
 
 During CSE startup and restart it is necessary to import a first set of resources to the CSE. This is done automatically by the CSE by running a script that has the [@init](../development/ACMEScript-metatags.md#init) meta tag set. By default this is the [init.as](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/init.as){target=_new} script from the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} directory.
