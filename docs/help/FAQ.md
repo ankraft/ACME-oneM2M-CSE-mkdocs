@@ -4,7 +4,7 @@
 /* Hide deeper levels of the Table of Contents in the sidebar  */
 /*number of ".md-nav__list" determines the max level of TOC to be displayed in TOC*/
 /*e.g. if ".md-nav__list" is repeated 2 times - the headers ###, ####, #####,  ... will not be displayed in TOC*/
-.md-sidebar--secondary .md-nav__list .md-nav__list {
+.md-sidebar--secondary .md-nav__list .md-nav__list  {
   display: none
 }
 </style>
@@ -36,6 +36,18 @@ In very rare cases, e.g. when the CSE was not properly shut down, the on-disk da
 
 
 ## HTTP Binding
+
+### How to improve the performance of the HTTP binding?
+
+The HTTP binding is based on the [flask framework](https://flask.palletsprojects.com/){target=_new} which is not suitable for production environments. For production use cases, it is recommended to use the WSGI-based HTTP server, which is more robust and has better management of parallel connections. 
+
+If you experience performance issues, broken or hanging connections, etc. with the default HTTP server, try to enable the WSGI-based server in the configuration file. See the [HTTP Configuration](../setup/Configuration-http.md#wsgi) documentation for further details.  
+You may also need to adjust the *threadPoolSize* and *connectionLimit* settings accordingly to the expected number of parallel connections.
+
+!!! note
+	The WSGI-based server does **not** support TLS. If you want to use TLS with the WSGI-based server, you have to use a reverse proxy (e.g. nginx) that is usually used in production environments to support secure HTTP connections.
+
+
 
 ### What does the error message "[Errno 13] Permission denied" during startup of the CSE mean?
 
@@ -173,7 +185,7 @@ With this, the CSE will not verify the notification endpoints and the &lt;subscr
 
 ### How to improve the performance of ACME CSE?
 
-The log output provides useful information to analyze the flows of requests inside the CSE. However, it reduces the performance of the CSE by a lot. Reducing the log level to *info* or *warning* already helps. This can be done in the *[logging]* section of the configuration file, or by pressing `shift-L` on the console to change the logging level to the desired value. Also, [disabling writing the log to a file](../setup/Configuration-logging.md) will increase the performance.
+The log output provides useful information to analyze the flows of requests inside the CSE. However, it reduces the performance of the CSE by a lot. Reducing the log level to *info* or *warning* already helps. This can be done in the [logging](../setup/Configuration-logging.md) section of the configuration file, or by pressing `shift-L` on the console to change the logging level to the desired value. Also, [disabling writing the log to a file](../setup/Configuration-logging.md) will increase the performance.
 
 Another option is to change the database to *memory* mode. This means that all database access happens in memory and not on disk. But please be aware that this also means that all data will be lost when the CSE terminates! 
 

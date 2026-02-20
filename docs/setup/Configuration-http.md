@@ -1,6 +1,17 @@
 # Configuration - HTTP Binding Settings
 
-The CSE supports HTTP binding for communication with clients and other CSEs. The HTTP binding is always enabled and its settings are configured in the configuration file under the section `[http]` and its subsections.
+The CSE supports HTTP binding for communication with clients and other CSEs. 
+The HTTP binding is always enabled and its settings are configured in the configuration file under the section `[http]` 
+and its subsections.
+
+!!! info 
+
+	The default HTTP server implementation is based on the [flask framework](https://flask.palletsprojects.com/){target=_new} which is 
+	**not** suitable for production environments.  It has limited performance and connection handling capabilities, but it does
+	support TLS. If you want to use secure connections with the HTTP binding, you have to use the default server implementation.
+
+	To use a more robust HTTP server implementation, you can enable the [WSGI-based server](../setup/Configuration-http.md#wsgi) in
+	the configuration settings. However, the WSGI-based server doesn't support TLS. To support secure HTTP connections, you have to use a reverse proxy (e.g. nginx) to enable TLS.
 
 ##	General Settings
 
@@ -34,7 +45,7 @@ These are the security settings for the HTTP binding.
 
 | Setting           | Description                                                                                                                                                                                                                                                                                                 | Default                                                                                                        |
 |:------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------|
-| useTLS            | Enable TLS for communications.<br />This can be overridden by the command line arguments [--http and --https](Running.md).<br />See oneM2M TS-0003 Clause 8.2.1 "Overview on Security Association Establishment Frameworks".                                                                                | False                                                                                                          |
+| useTLS            | Enable TLS for communications.<br />This can be overridden by the command line arguments [--http and --https](Running.md).<br />This option can only be enabled if the http server is not running in [WSGI server mode](../setup/Configuration-http.md#wsgi).<br />In  oneM2M TS-0003 Clause 8.2.1 "Overview on Security Association Establishment Frameworks".                                                                                | False                                                                                                          |
 | tlsVersion        | TLS version to be used in connections. <br />Allowed versions: `TLS1.1`, `TLS1.2`, `auto` . Use `auto` to allow client-server certificate version negotiation.                                                                                                                                              | auto                                                                                                           |
 | verifyCertificate | Verify certificates in requests. Set to *False* when using self-signed certificates.                                                                                                                                                                                                                        | False                                                                                                          |
 | caCertificateFile | Path and filename of the certificate file.                                                                                                                                                                                                                                                                  | empty string                                                                                                   |
@@ -63,6 +74,20 @@ These are the CORS (Cross-Origin Resource Sharing) settings for the HTTP binding
 **Section: `[http.wsgi]`**
 
 These are the settings for the WSGI (Web Server Gateway Interface) support.
+
+This is an alternative HTTP server implementation that is based on the
+[waitress WSGI server](https://docs.pylonsproject.org/projects/waitress/en/latest/){target=_new} and
+that can be used instead of the default one. 
+
+It is more robust than the default server and can be used in production environments, 
+but it doesn't support TLS.
+If you want to use TLS with the WSGI-based server, you have to use a reverse proxy (e.g. nginx) to enable TLS.
+
+
+!!! info
+	The default values for the WSGI settings are optimized for a typical deployment with up to 100 parallel connections.  
+	If you encounter performance issues and have more parallel connections, you may need to adjust the *threadPoolSize* 
+	and *connectionLimit* settings accordingly.
 
 | Setting         | Description                                                                                                                                | Default |
 |:----------------|:-------------------------------------------------------------------------------------------------------------------------------------------|:--------|

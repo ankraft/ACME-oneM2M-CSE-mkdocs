@@ -28,7 +28,7 @@ fontfamily=Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
+      <x>306</x>
       <y>36</y>
       <w>468</w>
       <h>90</h>
@@ -47,7 +47,7 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
+      <x>306</x>
       <y>207</y>
       <w>468</w>
       <h>117</h>
@@ -68,7 +68,7 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
+      <x>306</x>
       <y>342</y>
       <w>468</w>
       <h>90</h>
@@ -87,7 +87,7 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
+      <x>306</x>
       <y>450</y>
       <w>468</w>
       <h>99</h>
@@ -107,12 +107,12 @@ layer=1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>342</x>
+      <x>288</x>
       <y>171</y>
       <w>504</w>
       <h>396</h>
     </coordinates>
-    <panel_attributes>identifiers-&lt;csi&gt;.json
+    <panel_attributes>identifiers-&lt;spid&gt;-&lt;csi&gt;.json
 fg=gray
 bg=#dddddd</panel_attributes>
     <additional_attributes/>
@@ -120,7 +120,7 @@ bg=#dddddd</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
+      <x>306</x>
       <y>621</y>
       <w>468</w>
       <h>279</h>
@@ -152,12 +152,12 @@ layer=1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>342</x>
+      <x>288</x>
       <y>585</y>
       <w>504</w>
       <h>333</h>
     </coordinates>
-    <panel_attributes>subscriptions-&lt;csi&gt;.json
+    <panel_attributes>subscriptions-&lt;spid&gt;-&lt;csi&gt;.json
 fg=gray
 bg=#dddddd</panel_attributes>
     <additional_attributes/>
@@ -165,7 +165,7 @@ bg=#dddddd</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
+      <x>846</x>
       <y>423</y>
       <w>468</w>
       <h>117</h>
@@ -186,7 +186,7 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1521</x>
+      <x>1467</x>
       <y>648</y>
       <w>504</w>
       <h>72</h>
@@ -199,12 +199,12 @@ Why extra structs? Cheaper than full resources</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>882</x>
+      <x>828</x>
       <y>387</y>
       <w>504</w>
       <h>171</h>
     </coordinates>
-    <panel_attributes>batchNotifications-&lt;csi&gt;.json
+    <panel_attributes>batchNotifications-&lt;spid&gt;-&lt;csi&gt;.json
 fg=gray
 bg=#dddddd</panel_attributes>
     <additional_attributes/>
@@ -212,12 +212,12 @@ bg=#dddddd</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>882</x>
+      <x>828</x>
       <y>0</y>
       <w>504</w>
       <h>126</h>
     </coordinates>
-    <panel_attributes>statistics-&lt;csi&gt;.json
+    <panel_attributes>statistics-&lt;spid&gt;-&lt;csi&gt;.json
 fg=gray
 bg=#dddddd</panel_attributes>
     <additional_attributes/>
@@ -225,7 +225,7 @@ bg=#dddddd</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
+      <x>846</x>
       <y>36</y>
       <w>468</w>
       <h>72</h>
@@ -243,7 +243,7 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
+      <x>846</x>
       <y>180</y>
       <w>468</w>
       <h>171</h>
@@ -268,12 +268,12 @@ layer=1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>882</x>
+      <x>828</x>
       <y>144</y>
       <w>504</w>
       <h>225</h>
     </coordinates>
-    <panel_attributes>actions-&lt;csi&gt;.json
+    <panel_attributes>actions-&lt;spid&gt;-&lt;csi&gt;.json
 fg=gray
 bg=#dddddd</panel_attributes>
     <additional_attributes/>
@@ -281,7 +281,7 @@ bg=#dddddd</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
+      <x>846</x>
       <y>612</y>
       <w>468</w>
       <h>207</h>
@@ -308,12 +308,12 @@ layer=1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>882</x>
+      <x>828</x>
       <y>576</y>
       <w>504</w>
       <h>261</h>
     </coordinates>
-    <panel_attributes>requests	-&lt;csi&gt;.json
+    <panel_attributes>requests-&lt;spid&gt;-&lt;csi&gt;.json
 fg=gray
 bg=#dddddd</panel_attributes>
     <additional_attributes/>
@@ -321,12 +321,12 @@ bg=#dddddd</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>342</x>
+      <x>288</x>
       <y>0</y>
       <w>504</w>
       <h>153</h>
     </coordinates>
-    <panel_attributes>resources-&lt;csi&gt;.json
+    <panel_attributes>resources-&lt;spid&gt;-&lt;csi&gt;.json
 fg=gray
 bg=#dddddd</panel_attributes>
     <additional_attributes/>
@@ -334,7 +334,7 @@ bg=#dddddd</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
+      <x>846</x>
       <y>891</y>
       <w>468</w>
       <h>108</h>
@@ -354,12 +354,12 @@ layer=1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>882</x>
+      <x>828</x>
       <y>855</y>
       <w>504</w>
       <h>162</h>
     </coordinates>
-    <panel_attributes>schedules-&lt;csi&gt;.json
+    <panel_attributes>schedules-&lt;spid&gt;-&lt;csi&gt;.json
 fg=gray
 bg=#dddddd</panel_attributes>
     <additional_attributes/>
@@ -367,7 +367,7 @@ bg=#dddddd</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>342</x>
+      <x>288</x>
       <y>945</y>
       <w>504</w>
       <h>72</h>
@@ -376,8 +376,40 @@ bg=#dddddd</panel_attributes>
 lw=0
 *Notes*
 
-1) Table is not used for PostgreSQL
+1) Table is not used in PostgreSQL binding
 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>846</x>
+      <y>1071</y>
+      <w>468</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>schedules
+--
+PK originator : string  // originator name
+   type       : integer // originator type (C-AEI,S-AEI,CSI)
+--
+
+bg=#ffffff
+transparency=0
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>828</x>
+      <y>1035</y>
+      <w>504</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>originators-&lt;spid&gt;-&lt;csi&gt;.json
+fg=gray
+bg=#dddddd</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

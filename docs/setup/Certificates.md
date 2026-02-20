@@ -4,6 +4,8 @@ The ACME CSE supports the secure protocol version of HTTP, MQTT, and WebSockets.
 
 To enable, for example, https you have to set various settings under the security configuration [http.security](../setup/Configuration-http.md#security), and provide a certificate and a key file. The other protocols are configured in a similar way.
 
+Please note, that TLS is only supported for the non-WSGI-based HTTP server, so if you are using the WSGI-based server, you have to use a reverse proxy (e.g. nginx) to enable TLS.
+
 !!! see-also "See also"
 	[HTTP Security Settings](../setup/Configuration-http.md#security)  
 	[MQTT Security Settings](../setup/Configuration-mqtt.md#security)  
