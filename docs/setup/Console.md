@@ -1,7 +1,10 @@
 # Command Console
 
-The CSE has a command console interface to show logging information, to execute build-in commands, to inspect resources, to show statistics, to plot graphs, and many more. The console is started automatically when the CSE is started. It can be accessed via the terminal where the CSE is
-running.
+The CSE has a command console interface to show logging information, to execute build-in commands, to inspect resources, 
+to show statistics, to plot graphs, and many more. The console is started automatically when the CSE is started and the 
+console *type* is set to `rich` (the default). If the console *type* is set to `simple`, a more basic console is started, which only provides a minimal user interface.
+
+The console can be accessed via the terminal where the CSE is running.
 
 
 ## Console Commands
@@ -9,29 +12,30 @@ running.
 The following commands are available:
 
 
-| Key           | Description                                        |
-|---------------|----------------------------------------------------|
-| `=`           | Print a separator line to the log                  |
-| `A`           | About                                              |
-| `c`           | Show configuration                                 |
-| `C`           | Clear the console screen                           |
-| `D`           | Delete resource                                    |
-| `E`           | Export resource tree to *data* directory           |
-| `G`, `CTRL-G` | Plot graph once / continously (only for container) |
-| `h`, `?`      | This help                                          |
-| `I`           | Inspect resource and child resources               |
-| `i`, `CTRL-K` | Inspect resource once / continously                |
-| `k`,          | Catalog of scripts                                 |
-| `l`           | Toggle screen logging on/off                       |
-| `L`           | Toggle through log levels                          |
-| `Q`, `CTRL-C` | Shutdown CSE                                       |
-| `r`           | Show CSE registrations                             |
-| `s`, `CTRLS`  | Show statistics once / continously                 |
-| `t`           | Show resource tree                                 |
-| `T`, `CTRL-T` | Show child resource tree once / continously        |
-| `u`           | Open web UI                                        |
-| `w`           | Show workers and threads status                    |
-| `Z`           | Reset and restart the CSE                          |
+| Key           | Description                                                              |
+|---------------|--------------------------------------------------------------------------|
+| `=`           | Print a separator line to the log                                        |
+| `A`           | About                                                                    |
+| `c`           | Show configuration                                                       |
+| `C`           | Clear the console screen                                                 |
+| `D`           | Delete resource                                                          |
+| `E`           | Export resource tree to *data* directory                                 |
+| `G`, `CTRL-G` | Plot graph once / continously (only for container)                       |
+| `h`, `?`      | This help                                                                |
+| `I`           | Inspect resource and child resources                                     |
+| `i`, `CTRL-K` | Inspect resource once / continously                                      |
+| `k`,          | Catalog of scripts                                                       |
+| `l`           | Toggle screen logging on/off                                             |
+| `L`           | Toggle through log levels                                                |
+| `Q`, `CTRL-C` | Shutdown CSE                                                             |
+| `r`           | Show CSE registrations                                                   |
+| `s`, `CTRLS`  | Show statistics once / continously                                       |
+| `t`           | Show resource tree                                                       |
+| `T`, `CTRL-T` | Show child resource tree once / continously                              |
+| `u`           | Open web UI                                                              |
+| `w`           | Show workers and threads status                                          |
+| `Z`           | Reset and restart the CSE                                                |
+| `#`           | Toggle between the normal console and the [Text UI](../setup/TextUI.md). |
 
 
 **Example**  
@@ -43,6 +47,14 @@ The CSE's resource tree can be shown by pressing the `t` key:
 </figure>
 
 In addition to the build-in commands, the console shows the [Script commands](../development/ACMEScript.md) with a configured [key binding](../development/ACMEScript-metatags.md#onkey).
+
+
+## Minimal Console
+
+The minimal console (console *type* set to `simple`) provides only a very basic user interface. It does not support most of the
+above commands, but it still supports the `CTRL-C` (or `Q`) command to shutdown the CSE, and the `#` command to toggle between the minimal console and the [Text UI](../setup/TextUI.md). 
+
+It is useful if you want to run the CSE with a console, but you don't need the advanced features of the rich console, or if you want to save system resources.
 
 
 ## Exporting Resources
@@ -81,9 +93,9 @@ table lists the names that can be used, e.g. in scripts.
 
 === "POSIX (Linux, Mac OS)"
 
-	| Supported (Function) Keys                           | Modifiers                                                           |
+	| Supported (Function) Keys                         | Modifiers                                                           |
 	|---------------------------------------------------|---------------------------------------------------------------------|
-	| `A` - `Z`                               |   `CTRL`, `SHIFT`                                                                  |
+	| `A` - `Z`                                         | `CTRL`, `SHIFT`                                                     |
 	| `F1` - `F12`                                      | `SHIFT`                                                             |
 	| `UP`, `DOWN`, `LEFT`, `RIGHT`, `HOME`, `END`      | `SHIFT`, `CTRL`, `ALT`, `SHIFT_ALT`, `SHIFT_CTRL`, `SHIFT_CTRL_ALT` |
 	| `PAGE_UP`, `PAGE_DOWN`                            | `ALT`                                                               |
