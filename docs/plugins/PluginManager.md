@@ -71,7 +71,7 @@ It is important to note that plugin classes with a lower priority value are inst
 
 ## Getting All Plugin Information
 
-The information of all loaded plugins can be accessed via the `PluginManager.plugins` property. This is a list of `PluginInfo` objects, each containing information about a loaded plugin, including its name, module, state, and associated plugin class.
+The information of all loaded plugins can be accessed via the `PluginManager.plugins` property. This is a list of `PluginInfo` objects, each containing information about a loaded plugin, including its name, module, state, documentation, and associated plugin class.
 
 Usually, this is only needed for debugging or introspection purposes. One should be careful when using this property, as it provides access to all loaded plugins and their information, which can lead to unintended consequences if not used properly.
 

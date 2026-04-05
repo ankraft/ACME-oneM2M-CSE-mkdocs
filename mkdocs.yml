@@ -212,6 +212,7 @@ nav:
       - 'Plugin API & Lifecycle': 'plugins/PluginAPI.md'
       - 'Developing an Example Plugin': 'plugins/PluginExample.md'
       - 'Plugin Manager': 'plugins/PluginManager.md'
+      - 'CSE Core Plugins': 'plugins/PluginCorePlugins.md'
   - 'HowTos':
       - 'Overview': 'howtos/HowTos.md'
       - 'Authentication between CSEs': 'howtos/AuthenticationBetweenCSEs.md'

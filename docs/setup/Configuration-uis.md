@@ -46,5 +46,5 @@ These are the settings for the web UI.
 
 | Setting | Description              | Default           |
 |:--------|:-------------------------|:------------------|
-| enabled | Enable the web UI.       | True              |
+| enable  | Enable the web UI.       | True              |
 | root    | Root path of the web UI. | ${http:root}webui |

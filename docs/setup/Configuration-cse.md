@@ -53,7 +53,7 @@ Jobs are used to handle asynchronous tasks like resource expiration, resource an
 
 **Section: `[cse.operation.plugins]`**
 
-These settings are used to configure the CSE's [plugin management](../development/Plugins.md).
+These settings are used to configure the CSE's [plugin management](../plugins/PluginsOverview.md).
 
 | Setting             | Description                                                                                                                                                                                                                    | Default |
 |:--------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------|

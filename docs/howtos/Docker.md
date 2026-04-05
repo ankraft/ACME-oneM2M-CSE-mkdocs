@@ -45,7 +45,7 @@ make build-amd64
 
 The Docker image uses the `/data` directory as the base directory for the CSE's runtime data. This directory can be mapped to a directory on the host system.
 
-This is useful for persisting data across container restarts, to provide additional [plugins](../development/Plugins.md), and to provide a different configuration file that is then used instead of the default *acme.ini* file. This directory may also contain a [secondary init directory](../setup/Running.md#secondary-init-directory) with additional scripts, attribute definitions, etc.
+This is useful for persisting data across container restarts, to provide additional [plugins](../plugins/PluginsOverview.md), and to provide a different configuration file that is then used instead of the default *acme.ini* file. This directory may also contain a [secondary init directory](../setup/Running.md#secondary-init-directory) with additional scripts, attribute definitions, etc.
 
 For example, to use the directory `/host/data` on the Docker host as the base directory, run the following command:
 
