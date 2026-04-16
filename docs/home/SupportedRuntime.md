@@ -66,6 +66,15 @@ The ACME CSE provides the following additional features:
 	See [CSE Management](../setup/Operation-management.md) for more information.
 
 
+**Plugin System**
+
+:	A plugin system to extend the functionalities of the CSE with custom plugins. 
+	Plugins can be used to implement additional protocol bindings, management commands, and more.
+	In addition, ACME's core plugins are only loaded when their functionalities are enabled, 
+	which helps to keep the resource usage of the CSE low. It also increases portability,
+	as plugins that use platform-specific dependencies are only loaded on platforms that support them.    
+	See [Plugin Overview](../plugins/PluginsOverview.md) for more information about developing plugins for the ACME CSE.
+
 **Recording Requests**
 
 :	Requests over Mca and Mcc to an from a CSE can be recorded. This may be used to inspect

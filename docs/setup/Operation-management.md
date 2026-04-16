@@ -19,19 +19,24 @@ enableManagementEndpoint = true
 
 The CSE management interface provides several commands that can be used to manage the CSE and retrieve information about its operation. The commands are sent as HTTP requests to the management endpoint, which is  located at `/__mgmt__` of the CSE's HTTP server.
 
-| Command       | Description                                                                                                                                                                                                     |
-|:--------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| help          | Show a list of available management commands.                                                                                                                                                                   |
-| config        | Get the current configuration of the CSE in JSON format.                                                                                                                                                        |
-| log           | Stream the live log output of the CSE. The log will continue to stream until the connection is closed.                                                                                                          |
-| loglevel      | Get or set the log level of the CSE. The log level can be set to `info`, `debug`, `warn`, `error`, or `off`.                                                                                                    |
-| registrations | Get the current registrations of the CSE in JSON format. This includes the registrations to remote CSEs, service providers and the registrations of local AEs.<br>Also, initiate a manual registration refresh. |
-| requests      | Stream a live output of the current requests of the CSE in JSON format as well as enable, disable and get the status of request recording.                                                                      |
-| reset         | Reset the CSE to its initial state. This will clear all resources from the CSE.                                                                                                                                 |
-| restart       | Shutdown the CSE to restart it. The CSE will **not** restart internally, but it will exit with an exit code 82. See also the example below.                                                                     |
-| shutdown      | Shutdown the CSE normally. The CSE will exit with an exit code 0.                                                                                                                                               |
-| status        | Get the current status of the CSE in JSON format. This includes information about the CSE resources, operational parameters and requests.                                                                       |
+| Command                                                                             | Description                                                                                                                                                                                                     |
+|:------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| help                                                                                | Show a list of available management commands.                                                                                                                                                                   |
+| config                                                                              | Get the current configuration of the CSE in JSON format.                                                                                                                                                        |
+| log                                                                                 | Stream the live log output of the CSE. The log will continue to stream until the connection is closed.                                                                                                          |
+| loglevel<br>loglevel/&lt;level>                                                     | Get or set the log level of the CSE. The log level can be set to `info`, `debug`, `warn`, `error`, or `off`.                                                                                                    |
+| registrations<br>registrations/refresh                                              | Get the current registrations of the CSE in JSON format. This includes the registrations to remote CSEs, service providers and the registrations of local AEs.<br>Also, initiate a manual registration refresh. |
+| requests<br>requests/enable<br>requests/disable<br>requests/status<br>requests/puml | Stream a live output of the current requests of the CSE in JSON format as well as enable, disable and get the status of request recording.                                                                      |
+| reset                                                                               | Reset the CSE to its initial state. This will clear all resources from the CSE.                                                                                                                                 |
+| restart                                                                             | Shutdown the CSE to restart it. The CSE will **not** restart internally, but it will exit with an exit code 82. See also the example below.                                                                     |
+| shutdown                                                                            | Shutdown the CSE normally. The CSE will exit with an exit code 0.                                                                                                                                               |
+| status<br>status/modules<br>status/plugins                                          | Get the current status of the CSE in JSON format. This includes information about the CSE resources, operational parameters, plugins, and requests.                                                             |
 
+All commands with subcommands (e.g., `loglevel` and `requests`) also have a *help* subcommand that provides more detailed information about the available subcommands and their usage. For example, to get more information about the `loglevel` command, you can send the following request:
+
+```bash title="Get help for loglevel command"
+curl -X GET http://localhost:8080/__mgmt__/loglevel/help
+```
 
 ## Examples
 
@@ -134,7 +139,7 @@ curl -X GET http://localhost:8080/__mgmt__/requests/disable
 ```
 
 
-### Get the Request Recording Status
+### Get Request Recording Status
 ```bash title="Get Request Recording Status"
 curl -X GET http://localhost:8080/__mgmt__/requests/recording/status
 ```
@@ -149,4 +154,23 @@ curl -X GET http://localhost:8080/__mgmt__/registrations
 
 ```bash title="Refresh CSE Registrations"
 curl -X GET http://localhost:8080/__mgmt__/registrations/refresh
+```
+
+### Get the CSE's Status
+
+```bash title="Get CSE Status"
+curl -X GET http://localhost:8080/__mgmt__/status
+```
+
+### Get Loaded Python Modules
+
+```bash title="Get Loaded Python Modules"
+curl -X GET http://localhost:8080/__mgmt__/status/modules
+```
+
+
+### Get Loaded Plugins and their Status and Dependencies
+
+```bash title="Get Loaded Plugins and their Status and Dependencies"
+curl -X GET http://localhost:8080/__mgmt__/status/plugins
 ```

@@ -29,16 +29,16 @@ The plugin information contains additional properties, including the current plu
 
 ## Accessing the Plugin Class
 
-The PluginManager always instantiates the plugin's class that is decorated with `@PluginManager.pluginClass` when the plugin is loaded. By default it is only accessible via Plugin information, but it is not directly exposed for access.
+The PluginManager always instantiates the plugin's class that is decorated with `@PluginManager.plugin` when the plugin is loaded. By default it is only accessible via Plugin information, but it is not directly exposed for access.
 
-However, it is possible to pass a name for a property in the `@PluginManager.pluginClass` decorator, which will cause the instantiated plugin class to be accessible via a property with that name.
+However, it is possible to pass a name for a property in the `@PluginManager.plugin` class decorator, which will cause the instantiated plugin class to be accessible via a property on the PluginManager with that name.
 
 For example, the `HelloWorld` plugin class can be decorated as follows:
 
 ```python title="HelloWorld.py with Named Plugin Class"
 from acme.runtime import PluginManager
 
-@PluginManager.pluginClass(property='greetings')
+@PluginManager.plugin(property='greetings')
 class HelloWorld:
     ...
 ```
@@ -52,14 +52,14 @@ hello_world_instance = PluginManager.greetings
 
 ## Setting the Plugin Class Priority
 
-By default, the `PluginManager` instantiates and processes plugin classes in the order they are loaded. However, one can set a priority for the plugin class instantiation using the `priority` parameter in the `@PluginManager.pluginClass` decorator. This can be useful if a plugin class depends on another plugin class being instantiated first.
+By default, the `PluginManager` instantiates and processes plugin classes in the order they are loaded. However, one can set a priority for the plugin class instantiation using the `priority` parameter in the `@PluginManager.plugin` class decorator. This can be useful if a plugin class depends on another plugin class being instantiated first.
 
 Plugin classes with a lower priority value are instantiated before those with a higher priority value. The default priority is `50`.
 
 ```python title="HelloWorld.py with Priority"
 from acme.runtime import PluginManager
 
-@PluginManager.pluginClass(priority=10)
+@PluginManager.plugin(priority=10)
 class HelloWorld:
 	...
 ```
@@ -67,6 +67,23 @@ class HelloWorld:
 In this example, the `HelloWorld` plugin class will be instantiated before any other plugin classes with the default priority of `50`.
 
 It is important to note that plugin classes with a lower priority value are instantiated first, but are stopped and finalized later, i.e. after plugin classes with a higher priority value, during the CSE shutdown or unloading process. 
+
+
+## Tagging Plugin Classes
+
+The `@PluginManager.plugin` class decorator also allows for tagging plugin classes with specific keywords using the `tags` parameter. This can be useful for categorizing plugins or for filtering plugins based on their tags at runtime.
+
+```python title="HelloWorld.py with Tags"
+from acme.runtime import PluginManager
+
+@PluginManager.plugin(tags=['greeting', 'example'])
+class HelloWorld:
+    ...
+```
+
+In this example, the `HelloWorld` plugin class is tagged with the keywords 'greeting' and 'example'. This information can be accessed through the plugin information for the `HelloWorld` plugin, which can be useful for filtering or categorizing plugins at runtime.
+
+For example, the protocol binding plugins are all tagged with the keyword 'binding'.
 
 
 ## Getting All Plugin Information
@@ -81,3 +98,4 @@ from acme.runtime import PluginManager
 # Get a list of all loaded plugins
 loaded_plugins = PluginManager.plugins
 ```
+

@@ -10,6 +10,9 @@ Create a new file for the Python module in the `plugins` folder of your ACME CSE
 
 For example, if your plugin is named `HelloWorld`, create a file named `HelloWorld.py` in the `plugins` directory.
 
+User-defined plugins are loaded under the `plugins` Python module namespace.
+
+
 ## Writing the Plugin Code
 
 In your plugin module, you need to define a class that is decorated with `@PluginManager.runnableClass`. This class will contain methods that are decorated to hook into the CSE's lifecycle events.
@@ -18,7 +21,7 @@ In your plugin module, you need to define a class that is decorated with `@Plugi
 from acme.runtime import PluginManager
 from acme.runtime.Logging import Logging
 
-@PluginManager.pluginClass
+@PluginManager.plugin
 class HelloWorldPlugin:
 
     @PluginManager.init
@@ -38,7 +41,7 @@ class HelloWorldPlugin:
         Logging.log('Goodbye, world!')
 ```
 
-In this example, the `HelloWorld` class is decorated with `@PluginManager.pluginClass`, indicating that it is a plugin class. There can only be one plugin class per plugin module. This class will automatically be instantiated by the `PluginManager` when the plugin is loaded.
+In this example, the `HelloWorld` class is decorated with `@PluginManager.plugin`, indicating that it is a plugin class. There can only be one plugin class per plugin module. This class will automatically be instantiated by the `PluginManager` when the plugin is loaded.
 
 The class has four methods that are decorated to hook into the CSE's lifecycle events: `init`, `finish`, `start`, and `stop`. Each method logs a message to the ACME logging system when the CSE starts up and shuts down.
 

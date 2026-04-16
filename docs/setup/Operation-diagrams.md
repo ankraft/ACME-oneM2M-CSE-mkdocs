@@ -7,7 +7,8 @@ The CSE can generate a diagram with an overview about the hosted resource tree a
 This is available by sending a GET request as follows:
 
 ```bash title="GET request to retrieve the diagram script"
-curl localhost:8080/__structure__
+curl localhost:8080/__structure__        # ...or...
+curl localhost:8080/__structure__/puml
 ```
 
 This returns a PlantUML diagram script that can be rendered with the [PlantUML](https://plantuml.com){target=_new} tool. The diagram shows the resource tree and the deployment infrastructure of remote CSEs. The diagram can be used to get an overview of the current deployment and to identify potential issues.
