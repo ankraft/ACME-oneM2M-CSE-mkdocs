@@ -28,6 +28,7 @@ These are the settings for the text UI.
 
 | Setting                            | Description                                                                                                                             | Default                      |
 |:-----------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
+| enable                             | Enable the text UI.                                                                                                                     | True                         |
 | enableTextEditorSyntaxHighlighting | Enable syntax highlighting in the resource text editor. This setting is only available when the package "textual[syntax]" is installed. | False                        |
 | maxRequestSize                     | Max size of a request or response in bytes to display. Requests or responses larger than this threshold will not be displayed.          | 10.000                       |
 | notificationTimeout                | Timeout for text UI notifications in seconds.                                                                                           | 2.0                          |

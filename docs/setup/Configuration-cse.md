@@ -86,6 +86,24 @@ These settings are used to configure the CSE's security settings.
 | enableACPChecks | Enable access control checks.                                         | True                                                                          |
 | fullAccessAdmin | Always grant the admin originator full access (bypass access checks). | True                                                                          |
 
+
+## Services
+
+The CSE implements various oneM2M services, such as location or semantic services.
+Depending on the use case, some of these services might not be needed and can be disabled to 
+reduce the resource usage of the CSE. 
+
+The following settings are used to configure, and enable or disable the CSE's services.
+
+### Location Service
+
+**Section: `[cse.service.location]`**
+
+| Setting | Description                                                                                                                                                                                                                                                                    | Default |
+|:--------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------|
+| enable  | Enable the location service.<br>Note, that disabling this service will prevent location-based features from functioning. The &lt;LocationPolicy> and other location-related resource types are still available, but their functionality will be very limited or even disabled. | True    |
+
+
 ## Statistics
 
 **Section: `[cse.statistics]`**
