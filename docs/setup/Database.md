@@ -64,7 +64,9 @@ The database schema, tables and other structures are created automatically by th
 
 ### Disabling PostgreSQL Support
 
-Sometimes it may not be possible or desirable to use a PostgreSQL database, for example, when running the CSE on a system where PostgreSQL is not available or when you want to use the CSE in a simple test environment.
+The PostgreSQL database binding uses the *psycopg2* Python library to connect to the PostgreSQL server. It
+contains binary components that are loaded when the database binding plugin is loaded. Sometimes, these
+binary components are not available for certain platforms. In this case, one cannot use the PostgreSQL database binding at all.
 
 In this case, you can disable the PostgreSQL database by setting the *databaseType* setting in the *\[basic.config\]* section to *tinydb* or *memory*:
 
@@ -73,8 +75,4 @@ In this case, you can disable the PostgreSQL database by setting the *databaseTy
 databaseType=tinydb
 ```
 
-In order to prevent the PostgreSQL Python modules (i.e. psycopg2) to be loaded you can also set the `ACME_NO_PGSQL` environment variable to any value before running the CSE:
 
-```bash title="Disable PostgreSQL Database Support in Environment"
-export ACME_NO_PGSQL=1
-```

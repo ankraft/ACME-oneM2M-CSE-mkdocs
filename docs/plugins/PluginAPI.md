@@ -21,7 +21,7 @@ stateDiagram
 
 		initialized --> configured:@configure
 		configured --> validated:@validate
-		validated --> resolved:@on_resolved
+		validated --> resolved:@onResolved
 
 	}
 	
@@ -48,7 +48,7 @@ stateDiagram
 	}
 
 	state Finalizing {
-		[*] --> unresolved:@on_unresolved
+		[*] --> unresolved:@onUnresolved
 		unresolved --> finalized:@finish
 		unresolved:<i>unresolved
 		finalized:<i>finalized
@@ -119,7 +119,7 @@ The `@requires` decorator can be used multiple times together with the `@plugin`
 
 In case a class is not a plugin itself, the `@requires` decorator can be used to express dependencies to plugins and to have the plugin instances automatically injected into the class. This can be useful for classes that depend on the functionality provided by a plugin and want to access plugin instances directly.
 
-A plugin or non-plugin class can monitor the availability of its dependencies by using the [`@on_resolved`](#on_resolved) and [`@on_unresolved`](#on_unresolved) decorators, which are called when all dependencies are resolved and when any dependency becomes unresolved, respectively. This allows the class to react to changes in the availability of its dependencies at runtime.
+A plugin or non-plugin class can monitor the availability of its dependencies by using the [`@onResolved`](#onResolved) and [`@onUnresolved`](#onUnresolved) decorators, which are called when all dependencies are resolved and when any dependency becomes unresolved, respectively. This allows the class to react to changes in the availability of its dependencies at runtime.
 
 
 #### Decorator Arguments
@@ -303,32 +303,32 @@ def finish(self) -> None:
 ```
 
 
-### @on_resolved
+### @onResolved
 
-The `@PluginManager.on_resolved` decorated method is called when all dependencies of the plugin are resolved and the plugin is ready to be started. This can be used to perform any necessary setup that depends on the availability of the plugin's dependencies.
+The `@PluginManager.onResolved` decorated method is called when all dependencies of the plugin are resolved and the plugin is ready to be started. This can be used to perform any necessary setup that depends on the availability of the plugin's dependencies.
 
 The decorated method receives a list of `Dependency` objects as an argument, which represent the resolved and unresolved dependencies of the plugin or class. Each `Dependency` object contains information about the dependency, including its name, the instance name, and whether it is required and was resolved.
 
-The signature of the `@PluginManager.on_resolved` method is as follows:
+The signature of the `@PluginManager.onResolved` method is as follows:
 
 ```python title="Example: Plugin Resolved Decorator"
-@PluginManager.on_resolved
-def on_resolved_handler(self, dependencies:list[Dependency]) -> None:
+@PluginManager.onResolved
+def onResolved_handler(self, dependencies:list[Dependency]) -> None:
 	...
 ```
 
 
-### @on_unresolved
+### @onUnresolved
 
-The `@PluginManager.on_unresolved` decorated method is called when any dependency of the plugin becomes unresolved. This can be used to perform any necessary cleanup or state management when a dependency becomes unavailable at runtime.
+The `@PluginManager.onUnresolved` decorated method is called when any dependency of the plugin becomes unresolved. This can be used to perform any necessary cleanup or state management when a dependency becomes unavailable at runtime.
 
 The decorated method receives a list of `Dependency` objects as an argument, which represent the resolved and unresolved dependencies of the plugin or class. Each `Dependency` object contains information about the dependency, including its name, the instance name, and whether it is required and was resolved.
 
-The signature of the `@PluginManager.on_unresolved` method is as follows:
+The signature of the `@PluginManager.onUnresolved` method is as follows:
 
 ```python title="Example: Plugin Unresolved Decorator"
-@PluginManager.on_unresolved
-def on_unresolved_handler(self, dependencies:list[Dependency]) -> None:
+@PluginManager.onUnresolved
+def onUnresolved_handler(self, dependencies:list[Dependency]) -> None:
 	...
 ```
 

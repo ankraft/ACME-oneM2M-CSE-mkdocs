@@ -93,15 +93,91 @@ The CSE implements various oneM2M services, such as location or semantic service
 Depending on the use case, some of these services might not be needed and can be disabled to 
 reduce the resource usage of the CSE. 
 
+!!! Note
+	By disabling a service plugin, the corresponding oneM2M service will not be available in the CSE.
+	The related oneM2M resource types may still be available, but they will operate in a limited way.
+	Creation or update of resources that rely on the service may cause *NOT_IMPLEMENTED* errors.
+
+	For example, when disabling the *LocationManager* plugin, the &lt;LocationPolicy> resource may 
+	still be available, but its functionality will be very limited or even disabled.
+
+
+
 The following settings are used to configure, and enable or disable the CSE's services.
+
+### Action Service
+
+**Section: `[cse.service.action]`**
+
+| Setting | Description                | Default |
+|:--------|:---------------------------|:--------|
+| enable  | Enable the action service. | True    |
+
+
+### Announcement Service
+
+**Section: `[cse.service.announcement]`**
+
+| Setting | Description                      | Default |
+|:--------|:---------------------------------|:--------|
+| enable  | Enable the announcement service. | True    |
+
+
+### Group Service
+
+**Section: `[cse.service.group]`**
+
+| Setting | Description               | Default |
+|:--------|:--------------------------|:--------|
+| enable  | Enable the group service. | True    |
+
 
 ### Location Service
 
 **Section: `[cse.service.location]`**
 
-| Setting | Description                                                                                                                                                                                                                                                                    | Default |
-|:--------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------|
-| enable  | Enable the location service.<br>Note, that disabling this service will prevent location-based features from functioning. The &lt;LocationPolicy> and other location-related resource types are still available, but their functionality will be very limited or even disabled. | True    |
+| Setting | Description                  | Default |
+|:--------|:-----------------------------|:--------|
+| enable  | Enable the location service. | True    |
+
+
+### Remote CSE Service
+
+**Section: `[cse.service.remoteCSE]`**
+
+| Setting | Description                    | Default |
+|:--------|:-------------------------------|:--------|
+| enable  | Enable the remote CSE service. | True    |
+
+
+
+### Semantic Service
+
+**Section: `[cse.service.semantic]`**
+
+| Setting | Description                  | Default |
+|:--------|:-----------------------------|:--------|
+| enable  | Enable the semantic service. | True    |
+
+
+### Time Service
+
+**Section: `[cse.service.time]`**
+
+| Setting | Description                         | Default |
+|:--------|:------------------------------------|:--------|
+| enable  | Enable the time management service. | True    |
+
+
+
+### TimeSeries Service
+
+**Section: `[cse.service.timeSeries]`**
+
+| Setting | Description                    | Default |
+|:--------|:-------------------------------|:--------|
+| enable  | Enable the timeSeries service. | True    |
+
 
 
 ## Statistics

@@ -15,7 +15,7 @@ User-defined plugins are loaded under the `plugins` Python module namespace.
 
 ## Writing the Plugin Code
 
-In your plugin module, you need to define a class that is decorated with `@PluginManager.runnableClass`. This class will contain methods that are decorated to hook into the CSE's lifecycle events.
+In your plugin module, you need to define a class that is decorated with `@PluginManager.plugin`. This class will contain methods that are decorated to hook into the CSE's lifecycle events.
 
 ```python title="HelloWorld.py" linenums="1"
 from acme.runtime import PluginManager

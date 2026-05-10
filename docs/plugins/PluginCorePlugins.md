@@ -39,17 +39,41 @@
 
 ## Services
 
-| Plugin Name                          | Functionality                                                                                              | Responsible Configuration Setting                                     |
-|:-------------------------------------|:-----------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|
-| acme.plugins.services.LocationManager | Provides the location management functionality.<br>Runs together with the CSE core and manages location-based features. | [\[cse.service.location\]:enable](../setup/Configuration-cse.md#location-service) |
+The service plugins implement oneM2M's *Common Service Functions* They run together with the CSE core.
 
+
+| Plugin Name                               | Functionality                                                                                                                      | Responsible Configuration Setting                                                         |
+|:------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------|
+| acme.plugins.services.ActionManager       | Provides the action management services.                                                                                           | [\[cse.service.action\]:enable](../setup/Configuration-cse.md#action-service)             |
+| acme.plugins.services.AnnouncementManager | Provides the announcement management services.<br>The *acme.plugins.services.RemoteCSEManager* plugin is required for this plugin. | [\[cse.service.announcement\]:enable](../setup/Configuration-cse.md#announcement-service) |
+| acme.plugins.services.GroupManager        | Provides the group management services.                                                                                            | [\[cse.service.group\]:enable](../setup/Configuration-cse.md#group-service)               |
+| acme.plugins.services.LocationManager     | Provides the location management services.                                                                                         | [\[cse.service.location\]:enable](../setup/Configuration-cse.md#location-service)         |
+| acme.plugins.services.RemoteCSEManager    | Provides the remote CSE management services.                                                                                       | [\[cse.service.remoteCSE\]:enable](../setup/Configuration-cse.md#remote-cse-service)      |
+| acme.plugins.services.SemanticManager     | Provides the semantic management services.                                                                                         | [\[cse.service.semantic\]:enable](../setup/Configuration-cse.md#semantic-service)         |
+| acme.plugins.services.TimeManager         | Provides general time management services.                                                                                         | [\[cse.service.time\]:enable](../setup/Configuration-cse.md#time-service)                 |
+| acme.plugins.services.TimeSeriesManager   | Provides the timeSeries management services.                                                                                       | [\[cse.service.timeSeries\]:enable](../setup/Configuration-cse.md#timeSeries-service)     |
 
 !!! Note
 	By disabling a service plugin, the corresponding oneM2M service will not be available in the CSE.
 	The related oneM2M resource types may still be available, but they will operate in a limited way.
-	
+	Creation or update of resources that rely on the service may cause *NOT_IMPLEMENTED* errors.
+
 	For example, when disabling the *LocationManager* plugin, the &lt;LocationPolicy> resource may 
 	still be available, but its functionality will be very limited or even disabled.
+
+
+
+## Database
+
+| Plugin Name                             | Functionality                                                                         | Responsible Configuration Setting                                                    |
+|:----------------------------------------|:--------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------|
+| acme.plugins.database.PostgreSQLBinding | Provides the PostgreSQL database binding functionality.                               | [\[basic.config\]:databaseType](../setup/Configuration-basic.md#basic-configuration) |
+| acme.plugins.database.TinyDBBinding     | Provides the TinyDB database binding functionality for memory and file-based storage. | [\[basic.config\]:databaseType](../setup/Configuration-basic.md#basic-configuration) |
+
+
+!!! Note
+	Only one database binding is loaded at a time, depending on the value of the *databaseType* setting in
+	the basic configuration. 
 
 
 ## Management & Testing 
