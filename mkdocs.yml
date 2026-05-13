@@ -183,6 +183,7 @@ nav:
       - 'Web UI': 'setup/WebUI.md'
   - 'Development': 
       - 'Overview': 'development/Overview.md'
+      - 'API Docs': 'development/APIDocs.md'
       - 'Unit Tests': 'development/UnitTests.md'
       - 'Start-Up and Policies':
         - 'Start-Up Resources': 'development/StartupResources.md'
