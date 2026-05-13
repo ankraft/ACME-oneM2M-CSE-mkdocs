@@ -6,7 +6,7 @@
     <id>UMLGeneric</id>
     <coordinates>
       <x>402</x>
-      <y>342</y>
+      <y>252</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -18,14 +18,22 @@ transparency=0
 customelement=
 drawArc(10,10,10,10,0,270,true) transparency=100
 drawLine(16.5,14,20,15)
-drawLine(21.8,11.4,20,15)</panel_attributes>
+drawLine(21.8,11.4,20,15)
+
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>408</x>
-      <y>276</y>
+      <y>186</y>
       <w>18</w>
       <h>78</h>
     </coordinates>
@@ -37,7 +45,7 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>408</x>
-      <y>384</y>
+      <y>294</y>
       <w>42</w>
       <h>42</h>
     </coordinates>
@@ -51,7 +59,7 @@ requests</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>462</x>
-      <y>438</y>
+      <y>348</y>
       <w>54</w>
       <h>42</h>
     </coordinates>
@@ -66,7 +74,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>402</x>
-      <y>468</y>
+      <y>378</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -80,7 +88,7 @@ transparency=0</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>402</x>
-      <y>558</y>
+      <y>468</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -98,7 +106,7 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>444</x>
-      <y>534</y>
+      <y>444</y>
       <w>30</w>
       <h>36</h>
     </coordinates>
@@ -112,7 +120,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>438</x>
-      <y>510</y>
+      <y>420</y>
       <w>30</w>
       <h>36</h>
     </coordinates>
@@ -123,7 +131,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>522</x>
-      <y>558</y>
+      <y>468</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -138,7 +146,7 @@ transparency=0</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>282</x>
-      <y>558</y>
+      <y>468</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -152,7 +160,7 @@ transparency=0</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>318</x>
-      <y>528</y>
+      <y>438</y>
       <w>48</w>
       <h>42</h>
     </coordinates>
@@ -167,7 +175,7 @@ fontsize=8
     <id>UMLGeneric</id>
     <coordinates>
       <x>162</x>
-      <y>558</y>
+      <y>468</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -181,7 +189,7 @@ transparency=0</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>204</x>
-      <y>534</y>
+      <y>444</y>
       <w>36</w>
       <h>36</h>
     </coordinates>
@@ -193,12 +201,13 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>384</x>
-      <y>366</y>
+      <x>474</x>
+      <y>276</y>
       <w>36</w>
-      <h>18</h>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Flask
+waitress
 Requests
 transparency=0
 bg=light_gray
@@ -212,7 +221,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>42</x>
-      <y>558</y>
+      <y>468</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -226,7 +235,7 @@ transparency=0</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>84</x>
-      <y>528</y>
+      <y>438</y>
       <w>48</w>
       <h>42</h>
     </coordinates>
@@ -240,7 +249,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>408</x>
-      <y>726</y>
+      <y>636</y>
       <w>84</w>
       <h>18</h>
     </coordinates>
@@ -256,7 +265,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>408</x>
-      <y>750</y>
+      <y>660</y>
       <w>84</w>
       <h>18</h>
     </coordinates>
@@ -272,7 +281,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>396</x>
-      <y>708</y>
+      <y>618</y>
       <w>204</w>
       <h>144</h>
     </coordinates>
@@ -284,7 +293,7 @@ transparency=0</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>444</x>
-      <y>600</y>
+      <y>510</y>
       <w>18</w>
       <h>42</h>
     </coordinates>
@@ -296,7 +305,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>282</x>
-      <y>672</y>
+      <y>582</y>
       <w>96</w>
       <h>18</h>
     </coordinates>
@@ -312,7 +321,7 @@ fontsize=10</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>324</x>
-      <y>600</y>
+      <y>510</y>
       <w>18</w>
       <h>42</h>
     </coordinates>
@@ -324,7 +333,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>48</x>
-      <y>636</y>
+      <y>546</y>
       <w>84</w>
       <h>18</h>
     </coordinates>
@@ -340,7 +349,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>90</x>
-      <y>618</y>
+      <y>528</y>
       <w>12</w>
       <h>12</h>
     </coordinates>
@@ -353,7 +362,7 @@ fontsize=12
     <id>Relation</id>
     <coordinates>
       <x>84</x>
-      <y>600</y>
+      <y>510</y>
       <w>18</w>
       <h>42</h>
     </coordinates>
@@ -365,7 +374,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>414</x>
-      <y>294</y>
+      <y>204</y>
       <w>48</w>
       <h>18</h>
     </coordinates>
@@ -380,7 +389,7 @@ via http</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>162</x>
-      <y>648</y>
+      <y>558</y>
       <w>96</w>
       <h>18</h>
     </coordinates>
@@ -396,7 +405,7 @@ fontsize=10</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>204</x>
-      <y>600</y>
+      <y>510</y>
       <w>18</w>
       <h>42</h>
     </coordinates>
@@ -408,7 +417,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>570</x>
-      <y>528</y>
+      <y>438</y>
       <w>60</w>
       <h>42</h>
     </coordinates>
@@ -422,7 +431,7 @@ fontsize=8</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>12</x>
-      <y>312</y>
+      <y>222</y>
       <w>1500</w>
       <h>564</h>
     </coordinates>
@@ -437,7 +446,7 @@ transparency=0</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>48</x>
-      <y>660</y>
+      <y>570</y>
       <w>84</w>
       <h>18</h>
     </coordinates>
@@ -453,7 +462,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>42</x>
-      <y>630</y>
+      <y>540</y>
       <w>96</w>
       <h>54</h>
     </coordinates>
@@ -464,7 +473,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>282</x>
-      <y>468</y>
+      <y>378</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -478,7 +487,7 @@ transparency=0</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>306</x>
-      <y>432</y>
+      <y>342</y>
       <w>48</w>
       <h>48</h>
     </coordinates>
@@ -492,7 +501,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>564</x>
-      <y>438</y>
+      <y>348</y>
       <w>42</w>
       <h>42</h>
     </coordinates>
@@ -509,7 +518,7 @@ fontsize=8
     <id>UMLGeneric</id>
     <coordinates>
       <x>210</x>
-      <y>618</y>
+      <y>528</y>
       <w>12</w>
       <h>12</h>
     </coordinates>
@@ -522,7 +531,7 @@ fontsize=12
     <id>UMLGeneric</id>
     <coordinates>
       <x>330</x>
-      <y>618</y>
+      <y>528</y>
       <w>12</w>
       <h>12</h>
     </coordinates>
@@ -535,7 +544,7 @@ fontsize=12
     <id>UMLGeneric</id>
     <coordinates>
       <x>450</x>
-      <y>618</y>
+      <y>528</y>
       <w>12</w>
       <h>12</h>
     </coordinates>
@@ -548,7 +557,7 @@ fontsize=12
     <id>Relation</id>
     <coordinates>
       <x>492</x>
-      <y>564</y>
+      <y>474</y>
       <w>42</w>
       <h>24</h>
     </coordinates>
@@ -562,7 +571,7 @@ fontsize=8
     <id>UMLGeneric</id>
     <coordinates>
       <x>510</x>
-      <y>576</y>
+      <y>486</y>
       <w>12</w>
       <h>12</h>
     </coordinates>
@@ -575,7 +584,7 @@ fontsize=12
     <id>UMLNote</id>
     <coordinates>
       <x>516</x>
-      <y>834</y>
+      <y>744</y>
       <w>78</w>
       <h>18</h>
     </coordinates>
@@ -593,7 +602,7 @@ layer=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>348</x>
-      <y>438</y>
+      <y>348</y>
       <w>48</w>
       <h>42</h>
     </coordinates>
@@ -607,7 +616,7 @@ resources</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>162</x>
-      <y>468</y>
+      <y>378</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -625,7 +634,7 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>450</x>
-      <y>276</y>
+      <y>186</y>
       <w>30</w>
       <h>78</h>
     </coordinates>
@@ -636,7 +645,7 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>462</x>
-      <y>294</y>
+      <y>204</y>
       <w>36</w>
       <h>18</h>
     </coordinates>
@@ -651,7 +660,7 @@ via http</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>210</x>
-      <y>432</y>
+      <y>342</y>
       <w>36</w>
       <h>48</h>
     </coordinates>
@@ -665,7 +674,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>240</x>
-      <y>438</y>
+      <y>348</y>
       <w>48</w>
       <h>42</h>
     </coordinates>
@@ -679,25 +688,33 @@ resources</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>642</x>
-      <y>468</y>
+      <y>378</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
-    <panel_attributes>remoteCSE Manager
+    <panel_attributes>RemoteCSE Manager
 symbol=component
 valign=center
 transparency=0
 customelement=
 drawArc(10,10,10,10,40,270,true) transparency=100
 drawLine(16.5,14,20,15)
-drawLine(21.8,11.4,20,15)</panel_attributes>
+drawLine(21.8,11.4,20,15)
+
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
       <x>408</x>
-      <y>774</y>
+      <y>684</y>
       <w>84</w>
       <h>18</h>
     </coordinates>
@@ -713,7 +730,7 @@ fontsize=10</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>546</x>
-      <y>528</y>
+      <y>438</y>
       <w>36</w>
       <h>42</h>
     </coordinates>
@@ -728,7 +745,7 @@ set/get
     <id>Relation</id>
     <coordinates>
       <x>528</x>
-      <y>528</y>
+      <y>438</y>
       <w>30</w>
       <h>18</h>
     </coordinates>
@@ -740,7 +757,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>474</x>
-      <y>384</y>
+      <y>294</y>
       <w>36</w>
       <h>42</h>
     </coordinates>
@@ -754,7 +771,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>168</x>
-      <y>438</y>
+      <y>348</y>
       <w>54</w>
       <h>42</h>
     </coordinates>
@@ -767,21 +784,29 @@ send NOTIFY</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>540</x>
-      <y>204</y>
+      <y>114</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>WebUI
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>486</x>
-      <y>216</y>
+      <y>126</y>
       <w>66</w>
       <h>30</h>
     </coordinates>
@@ -792,7 +817,7 @@ transparency=0</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>492</x>
-      <y>246</y>
+      <y>156</y>
       <w>120</w>
       <h>132</h>
     </coordinates>
@@ -806,7 +831,7 @@ fontsize=8
     <id>UMLGeneric</id>
     <coordinates>
       <x>492</x>
-      <y>204</y>
+      <y>114</y>
       <w>30</w>
       <h>18</h>
     </coordinates>
@@ -821,7 +846,7 @@ via http</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>882</x>
-      <y>468</y>
+      <y>378</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -833,14 +858,22 @@ transparency=0
 customelement=
 drawArc(10,10,10,10,40,270,true) transparency=100
 drawLine(16.5,14,20,15)
-drawLine(21.8,11.4,20,15)</panel_attributes>
+drawLine(21.8,11.4,20,15)
+
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
       <x>762</x>
-      <y>468</y>
+      <y>378</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -848,14 +881,22 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
 Manager
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>822</x>
-      <y>432</y>
+      <y>342</y>
       <w>42</w>
       <h>48</h>
     </coordinates>
@@ -870,7 +911,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>774</x>
-      <y>438</y>
+      <y>348</y>
       <w>48</w>
       <h>42</h>
     </coordinates>
@@ -884,21 +925,29 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>762</x>
-      <y>558</y>
+      <y>468</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>Statistics
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
       <x>408</x>
-      <y>798</y>
+      <y>708</y>
       <w>84</w>
       <h>18</h>
     </coordinates>
@@ -914,7 +963,7 @@ fontsize=10</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>798</x>
-      <y>522</y>
+      <y>432</y>
       <w>36</w>
       <h>48</h>
     </coordinates>
@@ -928,7 +977,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>768</x>
-      <y>528</y>
+      <y>438</y>
       <w>30</w>
       <h>42</h>
     </coordinates>
@@ -942,7 +991,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>642</x>
-      <y>558</y>
+      <y>468</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -960,7 +1009,7 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>690</x>
-      <y>528</y>
+      <y>438</y>
       <w>30</w>
       <h>42</h>
     </coordinates>
@@ -974,7 +1023,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>648</x>
-      <y>528</y>
+      <y>438</y>
       <w>48</w>
       <h>42</h>
     </coordinates>
@@ -989,7 +1038,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>708</x>
-      <y>528</y>
+      <y>438</y>
       <w>36</w>
       <h>42</h>
     </coordinates>
@@ -1003,7 +1052,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>828</x>
-      <y>528</y>
+      <y>438</y>
       <w>36</w>
       <h>42</h>
     </coordinates>
@@ -1016,7 +1065,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>42</x>
-      <y>468</y>
+      <y>378</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -1034,7 +1083,7 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>60</x>
-      <y>438</y>
+      <y>348</y>
       <w>36</w>
       <h>42</h>
     </coordinates>
@@ -1047,7 +1096,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>96</x>
-      <y>438</y>
+      <y>348</y>
       <w>48</w>
       <h>42</h>
     </coordinates>
@@ -1060,8 +1109,8 @@ resources</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>882</x>
-      <y>558</y>
+      <x>1002</x>
+      <y>468</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -1075,8 +1124,8 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>924</x>
-      <y>528</y>
+      <x>1044</x>
+      <y>438</y>
       <w>42</w>
       <h>42</h>
     </coordinates>
@@ -1090,7 +1139,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>522</x>
-      <y>468</y>
+      <y>378</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -1105,7 +1154,7 @@ transparency=0</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>522</x>
-      <y>432</y>
+      <y>342</y>
       <w>54</w>
       <h>48</h>
     </coordinates>
@@ -1121,7 +1170,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>888</x>
-      <y>432</y>
+      <y>342</y>
       <w>54</w>
       <h>48</h>
     </coordinates>
@@ -1136,7 +1185,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>660</x>
-      <y>432</y>
+      <y>342</y>
       <w>54</w>
       <h>48</h>
     </coordinates>
@@ -1151,7 +1200,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>930</x>
-      <y>426</y>
+      <y>336</y>
       <w>60</w>
       <h>54</h>
     </coordinates>
@@ -1166,7 +1215,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>402</x>
-      <y>438</y>
+      <y>348</y>
       <w>48</w>
       <h>42</h>
     </coordinates>
@@ -1181,7 +1230,7 @@ fontsize=8
     <id>UMLNote</id>
     <coordinates>
       <x>48</x>
-      <y>504</y>
+      <y>414</y>
       <w>84</w>
       <h>12</h>
     </coordinates>
@@ -1198,7 +1247,7 @@ fontsize=10</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>522</x>
-      <y>108</y>
+      <y>18</y>
       <w>132</w>
       <h>162</h>
     </coordinates>
@@ -1211,7 +1260,7 @@ layer=-2</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>540</x>
-      <y>138</y>
+      <y>48</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -1223,14 +1272,22 @@ transparency=0
 customelement=
 drawArc(10,10,10,10,0,270,true) transparency=100
 drawLine(16.5,14,20,15)
-drawLine(21.8,11.4,20,15)</panel_attributes>
+drawLine(21.8,11.4,20,15)
+
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>558</x>
-      <y>180</y>
+      <y>90</y>
       <w>30</w>
       <h>36</h>
     </coordinates>
@@ -1243,7 +1300,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>486</x>
-      <y>150</y>
+      <y>60</y>
       <w>66</w>
       <h>30</h>
     </coordinates>
@@ -1254,7 +1311,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>492</x>
-      <y>138</y>
+      <y>48</y>
       <w>30</w>
       <h>18</h>
     </coordinates>
@@ -1269,7 +1326,7 @@ Mca</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>600</x>
-      <y>180</y>
+      <y>90</y>
       <w>48</w>
       <h>36</h>
     </coordinates>
@@ -1282,7 +1339,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>408</x>
-      <y>822</y>
+      <y>732</y>
       <w>84</w>
       <h>18</h>
     </coordinates>
@@ -1298,7 +1355,7 @@ fontsize=10</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>594</x>
-      <y>432</y>
+      <y>342</y>
       <w>48</w>
       <h>48</h>
     </coordinates>
@@ -1313,7 +1370,7 @@ fontsize=8
     <id>Relation</id>
     <coordinates>
       <x>702</x>
-      <y>438</y>
+      <y>348</y>
       <w>48</w>
       <h>42</h>
     </coordinates>
@@ -1327,7 +1384,7 @@ resources</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>90</y>
+      <y>0</y>
       <w>1524</w>
       <h>822</h>
     </coordinates>
@@ -1341,7 +1398,7 @@ layer=-2</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>114</x>
-      <y>594</y>
+      <y>504</y>
       <w>36</w>
       <h>18</h>
     </coordinates>
@@ -1358,7 +1415,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>1002</x>
-      <y>468</y>
+      <y>378</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -1366,14 +1423,22 @@ fontsize=10</panel_attributes>
 Manager
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1008</x>
-      <y>432</y>
+      <y>342</y>
       <w>42</w>
       <h>48</h>
     </coordinates>
@@ -1388,21 +1453,30 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>642</x>
-      <y>342</y>
+      <y>252</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>Console
+(rich, minimal)
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>684</x>
-      <y>282</y>
+      <y>192</y>
       <w>42</w>
       <h>72</h>
     </coordinates>
@@ -1415,7 +1489,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>696</x>
-      <y>384</y>
+      <y>294</y>
       <w>42</w>
       <h>42</h>
     </coordinates>
@@ -1428,7 +1502,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1050</x>
-      <y>432</y>
+      <y>342</y>
       <w>54</w>
       <h>48</h>
     </coordinates>
@@ -1443,7 +1517,7 @@ fontsize=8
     <id>UMLGeneric</id>
     <coordinates>
       <x>282</x>
-      <y>342</y>
+      <y>252</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -1455,14 +1529,22 @@ transparency=0
 customelement=
 drawArc(10,10,10,10,0,270,true) transparency=100
 drawLine(16.5,14,20,15)
-drawLine(21.8,11.4,20,15)</panel_attributes>
+drawLine(21.8,11.4,20,15)
+
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>288</x>
-      <y>276</y>
+      <y>186</y>
       <w>18</w>
       <h>78</h>
     </coordinates>
@@ -1474,7 +1556,7 @@ drawLine(21.8,11.4,20,15)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>288</x>
-      <y>384</y>
+      <y>294</y>
       <w>42</w>
       <h>42</h>
     </coordinates>
@@ -1487,9 +1569,9 @@ requests</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>264</x>
-      <y>366</y>
-      <w>36</w>
+      <x>360</x>
+      <y>276</y>
+      <w>30</w>
       <h>18</h>
     </coordinates>
     <panel_attributes>Paho
@@ -1505,7 +1587,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>294</x>
-      <y>294</y>
+      <y>204</y>
       <w>48</w>
       <h>18</h>
     </coordinates>
@@ -1520,7 +1602,7 @@ via MQTT</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>336</x>
-      <y>276</y>
+      <y>186</y>
       <w>30</w>
       <h>78</h>
     </coordinates>
@@ -1531,7 +1613,7 @@ via MQTT</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>348</x>
-      <y>294</y>
+      <y>204</y>
       <w>36</w>
       <h>18</h>
     </coordinates>
@@ -1546,7 +1628,7 @@ via MQTT</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>354</x>
-      <y>384</y>
+      <y>294</y>
       <w>36</w>
       <h>42</h>
     </coordinates>
@@ -1559,23 +1641,22 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1002</x>
-      <y>558</y>
+      <x>882</x>
+      <y>468</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>Script Manager
 symbol=component
 valign=center
-transparency=0
-customelement=</panel_attributes>
+transparency=0</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1038</x>
-      <y>522</y>
+      <x>918</x>
+      <y>432</y>
       <w>30</w>
       <h>48</h>
     </coordinates>
@@ -1588,8 +1669,8 @@ fontsize=8</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>996</x>
-      <y>522</y>
+      <x>876</x>
+      <y>432</y>
       <w>48</w>
       <h>48</h>
     </coordinates>
@@ -1603,8 +1684,8 @@ fontsize=8
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1062</x>
-      <y>522</y>
+      <x>942</x>
+      <y>432</y>
       <w>30</w>
       <h>48</h>
     </coordinates>
@@ -1618,7 +1699,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>468</x>
-      <y>276</y>
+      <y>186</y>
       <w>42</w>
       <h>78</h>
     </coordinates>
@@ -1630,7 +1711,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>498</x>
-      <y>294</y>
+      <y>204</y>
       <w>24</w>
       <h>18</h>
     </coordinates>
@@ -1645,7 +1726,7 @@ Tester</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>1122</x>
-      <y>468</y>
+      <y>378</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -1653,14 +1734,22 @@ Tester</panel_attributes>
 Manager
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1164</x>
-      <y>438</y>
+      <y>348</y>
       <w>36</w>
       <h>42</h>
     </coordinates>
@@ -1674,8 +1763,8 @@ fontsize=8</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1002</x>
-      <y>636</y>
+      <x>882</x>
+      <y>546</y>
       <w>96</w>
       <h>18</h>
     </coordinates>
@@ -1694,8 +1783,8 @@ drawLine(21.8,11.4,20,15) lw=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1044</x>
-      <y>600</y>
+      <x>924</x>
+      <y>510</y>
       <w>18</w>
       <h>48</h>
     </coordinates>
@@ -1707,8 +1796,8 @@ fontsize=8
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1050</x>
-      <y>624</y>
+      <x>930</x>
+      <y>534</y>
       <w>12</w>
       <h>12</h>
     </coordinates>
@@ -1721,21 +1810,29 @@ fontsize=12
     <id>UMLGeneric</id>
     <coordinates>
       <x>882</x>
-      <y>342</y>
+      <y>252</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>Upper Tester
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>924</x>
-      <y>282</y>
+      <y>192</y>
       <w>48</w>
       <h>72</h>
     </coordinates>
@@ -1748,7 +1845,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>894</x>
-      <y>384</y>
+      <y>294</y>
       <w>42</w>
       <h>42</h>
     </coordinates>
@@ -1761,7 +1858,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>942</x>
-      <y>384</y>
+      <y>294</y>
       <w>36</w>
       <h>42</h>
     </coordinates>
@@ -1774,7 +1871,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1284</x>
-      <y>438</y>
+      <y>348</y>
       <w>36</w>
       <h>42</h>
     </coordinates>
@@ -1789,7 +1886,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>1242</x>
-      <y>468</y>
+      <y>378</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -1797,28 +1894,44 @@ fontsize=8</panel_attributes>
 Manager
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
       <x>762</x>
-      <y>342</y>
+      <y>252</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>Text UI
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>828</x>
-      <y>384</y>
+      <y>294</y>
       <w>36</w>
       <h>42</h>
     </coordinates>
@@ -1832,7 +1945,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>774</x>
-      <y>384</y>
+      <y>294</y>
       <w>48</w>
       <h>42</h>
     </coordinates>
@@ -1847,12 +1960,12 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>804</x>
-      <y>282</y>
+      <y>192</y>
       <w>42</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>lt=()-
-m1=handle\nuser input
+m1=nuser input
 fontsize=8</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
@@ -1860,7 +1973,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>504</x>
-      <y>726</y>
+      <y>636</y>
       <w>84</w>
       <h>18</h>
     </coordinates>
@@ -1876,7 +1989,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>504</x>
-      <y>774</y>
+      <y>684</y>
       <w>84</w>
       <h>18</h>
     </coordinates>
@@ -1892,7 +2005,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>504</x>
-      <y>750</y>
+      <y>660</y>
       <w>84</w>
       <h>18</h>
     </coordinates>
@@ -1908,7 +2021,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>276</x>
-      <y>630</y>
+      <y>540</y>
       <w>108</w>
       <h>90</h>
     </coordinates>
@@ -1920,7 +2033,7 @@ transparency=0</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>282</x>
-      <y>648</y>
+      <y>558</y>
       <w>96</w>
       <h>18</h>
     </coordinates>
@@ -1936,7 +2049,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>282</x>
-      <y>696</y>
+      <y>606</y>
       <w>96</w>
       <h>18</h>
     </coordinates>
@@ -1952,7 +2065,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>1122</x>
-      <y>558</y>
+      <y>468</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -1966,7 +2079,7 @@ transparency=0</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1164</x>
-      <y>528</y>
+      <y>438</y>
       <w>42</w>
       <h>42</h>
     </coordinates>
@@ -1980,7 +2093,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>1242</x>
-      <y>558</y>
+      <y>468</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -1988,14 +2101,22 @@ fontsize=8</panel_attributes>
 Manager
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1284</x>
-      <y>528</y>
+      <y>438</y>
       <w>36</w>
       <h>42</h>
     </coordinates>
@@ -2010,7 +2131,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>1356</x>
-      <y>468</y>
+      <y>378</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -2018,14 +2139,22 @@ fontsize=8</panel_attributes>
 Manager
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1416</x>
-      <y>438</y>
+      <y>348</y>
       <w>36</w>
       <h>42</h>
     </coordinates>
@@ -2040,7 +2169,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1362</x>
-      <y>432</y>
+      <y>342</y>
       <w>48</w>
       <h>48</h>
     </coordinates>
@@ -2054,25 +2183,8 @@ fontsize=8
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>744</x>
-      <y>366</y>
-      <w>48</w>
-      <h>18</h>
-    </coordinates>
-    <panel_attributes>Textualize
-transparency=0
-bg=light_gray
-valign=center
-halign=center
-layer=1
-fontsize=10</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
       <x>1224</x>
-      <y>492</y>
+      <y>390</y>
       <w>36</w>
       <h>18</h>
     </coordinates>
@@ -2086,27 +2198,10 @@ fontsize=10</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>624</x>
-      <y>366</y>
-      <w>36</w>
-      <h>18</h>
-    </coordinates>
-    <panel_attributes>rich
-transparency=0
-bg=light_gray
-valign=center
-halign=center
-layer=1
-fontsize=10</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>UMLGeneric</id>
     <coordinates>
       <x>162</x>
-      <y>342</y>
+      <y>252</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -2119,18 +2214,26 @@ transparency=0
 customelement=
 drawArc(10,10,10,10,0,270,true) transparency=100
 drawLine(16.5,14,20,15)
-drawLine(21.8,11.4,20,15)</panel_attributes>
+drawLine(21.8,11.4,20,15)
+
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>144</x>
-      <y>366</y>
-      <w>42</w>
+      <x>246</x>
+      <y>276</y>
+      <w>24</w>
       <h>18</h>
     </coordinates>
-    <panel_attributes>WebSocket
+    <panel_attributes>WS
 transparency=0
 bg=light_gray
 valign=center
@@ -2143,7 +2246,7 @@ fontsize=10</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>168</x>
-      <y>276</y>
+      <y>186</y>
       <w>18</w>
       <h>78</h>
     </coordinates>
@@ -2155,7 +2258,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>174</x>
-      <y>294</y>
+      <y>204</y>
       <w>48</w>
       <h>18</h>
     </coordinates>
@@ -2170,7 +2273,7 @@ via WS</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>216</x>
-      <y>276</y>
+      <y>186</y>
       <w>30</w>
       <h>78</h>
     </coordinates>
@@ -2181,7 +2284,7 @@ via WS</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>228</x>
-      <y>294</y>
+      <y>204</y>
       <w>36</w>
       <h>18</h>
     </coordinates>
@@ -2196,7 +2299,7 @@ via WS</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>234</x>
-      <y>384</y>
+      <y>294</y>
       <w>42</w>
       <h>36</h>
     </coordinates>
@@ -2210,7 +2313,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>168</x>
-      <y>384</y>
+      <y>294</y>
       <w>42</w>
       <h>42</h>
     </coordinates>
@@ -2224,23 +2327,31 @@ requests</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>396</x>
-      <y>630</y>
+      <y>540</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>TinyDB
 DB Binding
-(Memory, Filesystem)
+(m2m. fs)
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
       <x>504</x>
-      <y>630</y>
+      <y>540</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -2248,14 +2359,22 @@ transparency=0</panel_attributes>
 DB Binding
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>444</x>
-      <y>600</y>
+      <y>510</y>
       <w>114</w>
       <h>42</h>
     </coordinates>
@@ -2267,7 +2386,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>462</x>
-      <y>630</y>
+      <y>540</y>
       <w>12</w>
       <h>12</h>
     </coordinates>
@@ -2280,7 +2399,7 @@ fontsize=12
     <id>UMLGeneric</id>
     <coordinates>
       <x>462</x>
-      <y>630</y>
+      <y>540</y>
       <w>12</w>
       <h>12</h>
     </coordinates>
@@ -2293,7 +2412,7 @@ fontsize=12
     <id>UMLGeneric</id>
     <coordinates>
       <x>462</x>
-      <y>630</y>
+      <y>540</y>
       <w>12</w>
       <h>12</h>
     </coordinates>
@@ -2306,7 +2425,7 @@ fontsize=12
     <id>UMLGeneric</id>
     <coordinates>
       <x>462</x>
-      <y>630</y>
+      <y>540</y>
       <w>12</w>
       <h>12</h>
     </coordinates>
@@ -2319,7 +2438,7 @@ fontsize=12
     <id>UMLGeneric</id>
     <coordinates>
       <x>462</x>
-      <y>630</y>
+      <y>540</y>
       <w>12</w>
       <h>12</h>
     </coordinates>
@@ -2332,7 +2451,7 @@ fontsize=12
     <id>UMLGeneric</id>
     <coordinates>
       <x>546</x>
-      <y>618</y>
+      <y>528</y>
       <w>12</w>
       <h>12</h>
     </coordinates>
@@ -2345,7 +2464,7 @@ fontsize=12
     <id>Relation</id>
     <coordinates>
       <x>444</x>
-      <y>672</y>
+      <y>582</y>
       <w>66</w>
       <h>48</h>
     </coordinates>
@@ -2357,7 +2476,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>492</x>
-      <y>672</y>
+      <y>582</y>
       <w>66</w>
       <h>48</h>
     </coordinates>
@@ -2369,7 +2488,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>42</x>
-      <y>342</y>
+      <y>252</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -2382,14 +2501,22 @@ transparency=0
 customelement=
 drawArc(10,10,10,10,0,270,true) transparency=100
 drawLine(16.5,14,20,15)
-drawLine(21.8,11.4,20,15)</panel_attributes>
+drawLine(21.8,11.4,20,15)
+
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>18</x>
-      <y>366</y>
+      <x>108</x>
+      <y>282</y>
       <w>48</w>
       <h>18</h>
     </coordinates>
@@ -2407,7 +2534,7 @@ fontsize=10</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>54</x>
-      <y>276</y>
+      <y>186</y>
       <w>18</w>
       <h>78</h>
     </coordinates>
@@ -2419,7 +2546,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>60</x>
-      <y>294</y>
+      <y>204</y>
       <w>48</w>
       <h>18</h>
     </coordinates>
@@ -2434,7 +2561,7 @@ via CoAP</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>96</x>
-      <y>276</y>
+      <y>186</y>
       <w>30</w>
       <h>78</h>
     </coordinates>
@@ -2445,7 +2572,7 @@ via CoAP</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>114</x>
-      <y>384</y>
+      <y>294</y>
       <w>42</w>
       <h>36</h>
     </coordinates>
@@ -2459,7 +2586,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>48</x>
-      <y>384</y>
+      <y>294</y>
       <w>42</w>
       <h>42</h>
     </coordinates>
@@ -2473,7 +2600,7 @@ requests</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>108</x>
-      <y>294</y>
+      <y>204</y>
       <w>36</w>
       <h>18</h>
     </coordinates>
@@ -2488,26 +2615,34 @@ via CoAP</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>1002</x>
-      <y>342</y>
+      <y>252</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
-    <panel_attributes>CSE Management
+    <panel_attributes>Management API
 symbol=component
 valign=center
-transparency=0</panel_attributes>
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1044</x>
-      <y>282</y>
+      <y>192</y>
       <w>48</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>lt=()-
-m1=handle\nmanagement\nrequests
+m1=nmanagement\nrequests
 fontsize=8</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
@@ -2515,7 +2650,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1038</x>
-      <y>384</y>
+      <y>294</y>
       <w>42</w>
       <h>42</h>
     </coordinates>
@@ -2528,7 +2663,7 @@ fontsize=8</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>480</x>
-      <y>276</y>
+      <y>186</y>
       <w>54</w>
       <h>78</h>
     </coordinates>
@@ -2540,7 +2675,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>522</x>
-      <y>294</y>
+      <y>204</y>
       <w>36</w>
       <h>18</h>
     </coordinates>
@@ -2555,7 +2690,7 @@ API</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>1356</x>
-      <y>558</y>
+      <y>468</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -2569,88 +2704,40 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1356</x>
-      <y>636</y>
-      <w>96</w>
-      <h>126</h>
+      <x>1392</x>
+      <y>540</y>
+      <w>24</w>
+      <h>18</h>
     </coordinates>
-    <panel_attributes>transparency=0</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>1362</x>
-      <y>642</y>
-      <w>84</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>symbol=component
-WebUI
-layer=1
-fontsize=12</panel_attributes>
+    <panel_attributes>transparency=0
+customelement=
+drawArc(15,13,8,8,180,180,true) transparency=100 lw=1
+drawLine(15,17,15,15) lw=1
+drawLine(23,17,23,15) lw=1 
+drawLine(15,15,23,15) lw=1
+drawLine(17,15,17,11) lw=1
+drawLine(21,15,21,11) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1398</x>
-      <y>600</y>
+      <y>510</y>
       <w>18</w>
-      <h>48</h>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=-
 fontsize=8
 </panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>1362</x>
-      <y>672</y>
-      <w>84</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>symbol=component
-Upper Tester
-layer=1
-fontsize=12</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>1362</x>
-      <y>702</y>
-      <w>84</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>symbol=component
-Mgmt API
-layer=1
-fontsize=12</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>1362</x>
-      <y>732</y>
-      <w>84</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>symbol=component
-Structure API
-layer=1
-fontsize=12</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1398</x>
-      <y>528</y>
+      <y>438</y>
       <w>36</w>
       <h>42</h>
     </coordinates>
@@ -2664,7 +2751,7 @@ fontsize=8</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>162</x>
-      <y>672</y>
+      <y>582</y>
       <w>96</w>
       <h>18</h>
     </coordinates>
@@ -2680,7 +2767,7 @@ fontsize=10</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>156</x>
-      <y>630</y>
+      <y>540</y>
       <w>108</w>
       <h>90</h>
     </coordinates>
@@ -2692,7 +2779,7 @@ transparency=0</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>162</x>
-      <y>696</y>
+      <y>606</y>
       <w>96</w>
       <h>18</h>
     </coordinates>
@@ -2702,6 +2789,78 @@ halign=center
 layer=1
 transparency=0
 fontsize=10</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1116</x>
+      <y>252</y>
+      <w>96</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Structure API
+symbol=component
+valign=center
+transparency=0
+customelement=
+drawArc(10,60,8,8,180,180,true) transparency=100 lw=1
+drawLine(10,64,10,62) lw=1
+drawLine(18,64,18,62) lw=1 
+drawLine(10,62,18,62) lw=1
+drawLine(12,62,12,58) lw=1
+drawLine(16,62,16,58) lw=1
+drawLine(14,68,14,71) lw=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1128</x>
+      <y>294</y>
+      <w>42</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=)-
+requests
+fontsize=8</panel_attributes>
+    <additional_attributes>20.0;40.0;20.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1176</x>
+      <y>294</y>
+      <w>36</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=)-
+scripts
+fontsize=8</panel_attributes>
+    <additional_attributes>20.0;40.0;20.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1158</x>
+      <y>192</y>
+      <w>36</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+m1=structure\nrequests
+fontsize=8</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1398</x>
+      <y>546</y>
+      <w>24</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>transparency=0</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

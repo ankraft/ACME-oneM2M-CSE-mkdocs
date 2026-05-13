@@ -122,6 +122,13 @@ In case a class is not a plugin itself, the `@requires` decorator can be used to
 A plugin or non-plugin class can monitor the availability of its dependencies by using the [`@onResolved`](#onResolved) and [`@onUnresolved`](#onUnresolved) decorators, which are called when all dependencies are resolved and when any dependency becomes unresolved, respectively. This allows the class to react to changes in the availability of its dependencies at runtime.
 
 
+#### Using `@requires` with Functions
+
+The `@requires` decorator can also be used to specify dependencies to functions (instead of a whole plugin), by setting the keyword argument in the `@plugin` decorator to a function path instead of a plugin module name. The function will then be injected as an attribute into the decorated class, and can be called directly from the class methods. This can be useful for providing specific functionality to classes without requiring them to depend on an entire plugin, or to have to import the function directly.
+
+The function that is being depended on must be decorated with the [`@PluginManager.provide`](#provide) decorator. A function can be defined in any module, and does not need to be defined within a plugin module. 
+
+
 #### Decorator Arguments
 
 The `@PluginManager.requires` class decorator takes keyword arguments: 
@@ -175,6 +182,24 @@ class MyClass:
 		self.dependency_plugin2 and self.dependency_plugin2.someFunction()
 ```
 
+
+#### Example: Providing a Function
+
+```python title="Dependency on a Provided Function"
+
+# Mark the function as a provided function
+@PluginManager.provide('a.path.to.provided_function')	
+def provided_function(arg1, arg2) -> ReturnType:
+	...
+
+# Define a dependency on a provided function
+@PluginManager.plugin
+@PluginManager.requires(provided_function='a.path.to.provided_function')	
+class MyPlugin:
+	def aFunction(self):
+		# Call the provided function via the injected attribute
+		self.provided_function(arg1, arg2)
+```
 
 ## Decorators for Lifecycle Methods
 
@@ -329,6 +354,20 @@ The signature of the `@PluginManager.onUnresolved` method is as follows:
 ```python title="Example: Plugin Unresolved Decorator"
 @PluginManager.onUnresolved
 def onUnresolved_handler(self, dependencies:list[Dependency]) -> None:
+	...
+```
+
+### @provide
+
+The `@PluginManager.provide` decorated method is used to mark a function as a provided function that can be called by other plugins or external code. 
+
+The provided function can be injected as a dependency into other plugins or classes using the `@PluginManager.requires` decorator, by using the function path as the plugin name in the dependency.
+
+The signature of the `@PluginManager.provide` method is as follows:
+
+```python title="Example: Plugin Provide Decorator"
+@PluginManager.provide('a.path.to.provided_function')
+def provided_function(self, arg1, arg2) -> ReturnType:
 	...
 ```
 

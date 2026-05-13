@@ -6,9 +6,12 @@ To create a new plugin, one can follow the steps below. We will create a simple 
 
 ## Creating a Plugin Module
 
-Create a new file for the Python module in the `plugins` folder of your ACME CSE's working directory. That is the directory from which the CSE is started.
+Create a new file for the Python module in the `plugins` folder of your ACME CSE's working directory. This is the directory from which the CSE is started.
 
 For example, if your plugin is named `HelloWorld`, create a file named `HelloWorld.py` in the `plugins` directory.
+
+!!! Note
+	Do not put your plugin module in the `acme.plugins` package, as this is reserved for built-in plugins. It will be overwritten when the ACME CSE is updated. 
 
 User-defined plugins are loaded under the `plugins` Python module namespace.
 
@@ -18,37 +21,38 @@ User-defined plugins are loaded under the `plugins` Python module namespace.
 In your plugin module, you need to define a class that is decorated with `@PluginManager.plugin`. This class will contain methods that are decorated to hook into the CSE's lifecycle events.
 
 ```python title="HelloWorld.py" linenums="1"
-from acme.runtime import PluginManager
+from acme.runtime.PluginSupport import *
 from acme.runtime.Logging import Logging
 
-@PluginManager.plugin
+@plugin
 class HelloWorldPlugin:
 
-    @PluginManager.init
+    @init
     def init(self) -> None:
         Logging.log('HelloWorld plugin initialized')
 
-    @PluginManager.finish
+    @finish
     def finish(self) -> None:
         Logging.log('HelloWorld plugin finished')
 
-    @PluginManager.start
+    @start
     def start(self) -> None:
         Logging.log('Hello, world!')
 
-    @PluginManager.stop
+    @stop
     def stop(self) -> None:
         Logging.log('Goodbye, world!')
 ```
 
-In this example, the `HelloWorld` class is decorated with `@PluginManager.plugin`, indicating that it is a plugin class. There can only be one plugin class per plugin module. This class will automatically be instantiated by the `PluginManager` when the plugin is loaded.
+In this example, the `HelloWorld` class is decorated with `@plugin`, indicating that it is a plugin class. There can only be one plugin class per plugin module. This class will automatically be instantiated by the `PluginManager` when the plugin is loaded.
 
 The class has four methods that are decorated to hook into the CSE's lifecycle events: `init`, `finish`, `start`, and `stop`. Each method logs a message to the ACME logging system when the CSE starts up and shuts down.
 
 
 ## Running the Plugin
 
-To run the plugin, start or restart the ACME CSE from within the working directory containing your `plugins` folder. You should see log messages indicating that the plugin has been loaded, and the class has been instantiated, initialized, and started. When you shutdown the CSE, you should see log messages indicating that the plugin has been stopped and finished.
+To run the plugin, start or restart the ACME CSE from within the working directory containing your `plugins` folder. 
+You should see log messages indicating that the plugin has been loaded, and the class has been instantiated, initialized, and started. When you shutdown the CSE, you should see log messages indicating that the plugin has been stopped and finished.
 
 The log output should look similar to the following:
 
@@ -61,3 +65,11 @@ INFO    MainThread - Goodbye, world!                            HelloWorld.py:21
 INFO    MainThread - HelloWorld plugin finished                 HelloWorld.py:13
 ...
 ```
+
+!!! Note
+	User-defined plugins are loaded and started after all built-in plugins have been loaded and started, and they are stopped and finished before all built-in plugins are stopped and finished.
+
+
+## Access to CSE Functionality
+
+The plugin class can access the full functionality of the ACME CSE, including the database, the resources, the request handling, and more. You can import any module from the ACME CSE in your plugin module and use it to implement your plugin's functionality. You can also define dependencies on other plugins or functions provided by other plugins.

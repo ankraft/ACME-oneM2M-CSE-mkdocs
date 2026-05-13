@@ -210,8 +210,9 @@ nav:
   - 'Plugins':
       - 'Overview': 'plugins/PluginsOverview.md'
       - 'Plugin API & Lifecycle': 'plugins/PluginAPI.md'
-      - 'Developing an Example Plugin': 'plugins/PluginExample.md'
       - 'Plugin Manager': 'plugins/PluginManager.md'
+      - 'Service Plugins': 'plugins/PluginServicePlugins.md'
+      - 'Developing an Example Plugin': 'plugins/PluginExample.md'
       - 'CSE Core Plugins': 'plugins/PluginCorePlugins.md'
   - 'HowTos':
       - 'Overview': 'howtos/HowTos.md'

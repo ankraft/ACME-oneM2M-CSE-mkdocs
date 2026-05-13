@@ -7,18 +7,24 @@ The PluginManager offers the possibility to access loaded plugins and their assi
 How to access loaded plugins and their plugin classes is described in the following sections.
 
 
+
 ## Accessing Plugin Information and Modules
 
 The `PluginManager` provides a convenient way to access the runtime information of loaded plugins. This includes the ability to get the Python module, but also other information such as a plugin's name and its associated plugin class. This can be useful for introspection or for dynamically loading additional resources from the plugin's module.
 
-Plugin information can be accessed through the `PluginManager.<PluginName>` property, where `<PluginName>` is the name of the plugin module (i.e., the filename without the `.py` extension).
+The `PluginManager` is a singleton and can therefore be accessed from anywhere in the codebase. 
+
+Plugin information can be accessed through the `pluginManager.<PluginName>` property, where `<PluginName>` is the name of the plugin module (i.e., the filename without the `.py` extension).
 
 
 ```python title="Getting Plugin Python Module"
-from acme.runtime import PluginManager
+from acme.runtime.PluginSupport import *
+
+# Get the singleton instance of the PluginManager
+pluginManager = PluginManager()	
 
 # Get the module for a specific plugin
-hello_world_info = PluginManager.HelloWorld
+hello_world_info = pluginManager.HelloWorld
 hello_world_module = hello_world_info.module
 ```
 
@@ -36,9 +42,9 @@ However, it is possible to pass a name for a property in the `@PluginManager.plu
 For example, the `HelloWorld` plugin class can be decorated as follows:
 
 ```python title="HelloWorld.py with Named Plugin Class"
-from acme.runtime import PluginManager
+from acme.runtime.PluginSupport import *
 
-@PluginManager.plugin(property='greetings')
+@plugin(property='greetings')
 class HelloWorld:
     ...
 ```
@@ -46,7 +52,7 @@ class HelloWorld:
 The instantiated plugin class can then be accessed via the `PluginManager.greetings` property:
 
 ```python title="Getting Named Plugin Class"
-hello_world_instance = PluginManager.greetings
+hello_world_instance = pluginManager.greetings
 ```
 
 
@@ -57,9 +63,9 @@ By default, the `PluginManager` instantiates and processes plugin classes in the
 Plugin classes with a lower priority value are instantiated before those with a higher priority value. The default priority is `50`.
 
 ```python title="HelloWorld.py with Priority"
-from acme.runtime import PluginManager
+from acme.runtime.PluginSupport import *
 
-@PluginManager.plugin(priority=10)
+@plugin(priority=10)
 class HelloWorld:
 	...
 ```
@@ -74,9 +80,9 @@ It is important to note that plugin classes with a lower priority value are inst
 The `@PluginManager.plugin` class decorator also allows for tagging plugin classes with specific keywords using the `tags` parameter. This can be useful for categorizing plugins or for filtering plugins based on their tags at runtime.
 
 ```python title="HelloWorld.py with Tags"
-from acme.runtime import PluginManager
+from acme.runtime.PluginSupport import *
 
-@PluginManager.plugin(tags=['greeting', 'example'])
+@plugin(tags=['greeting', 'example'])
 class HelloWorld:
     ...
 ```
@@ -93,9 +99,43 @@ The information of all loaded plugins can be accessed via the `PluginManager.plu
 Usually, this is only needed for debugging or introspection purposes. One should be careful when using this property, as it provides access to all loaded plugins and their information, which can lead to unintended consequences if not used properly.
 
 ```python title="Getting Plugin Information"
-from acme.runtime import PluginManager
+from acme.runtime.PluginSupport import *
+
+# Get the singleton instance of the PluginManager
+pluginManager = PluginManager()
 
 # Get a list of all loaded plugins
-loaded_plugins = PluginManager.plugins
+loaded_plugins = pluginManager.plugins
 ```
 
+
+## Providing Non-Plugin Class Instances
+
+The `PluginManager` also allows for providing non-plugin class instandces, that can be required by plugin classes via the `@PluginManager.requires` decorator. This can be useful for providing specific functionality to plugin classes that cannot or should not be implemented as a plugin class.
+
+This is done by the PluginManager's `provide()` method. This method takes a string argument that specifies the path to the provided function and the class instance itself.
+
+```python title="Providing a Non-Plugin Class Instance"
+from acme.runtime.PluginSupport import *
+
+# Get the singleton instance of the PluginManager
+pluginManager = PluginManager()
+
+# Create an instance of the non-plugin class
+non_plugin_instance = NonPluginClass()
+
+# Provide the non-plugin class instance to the PluginManager
+pluginManager.provide('a.path.to.non_plugin_instance', non_plugin_instance)
+```
+
+This will make the `non_plugin_instance` available for injection into plugin classes that require it via the `@PluginManager.requires` decorator, by specifying the same path in the `@requires` decorator.
+
+```python title="Using a Non-Plugin Class Instance in a Plugin"
+from acme.runtime.PluginSupport import *
+
+@requires(non_plugin_instance='a.path.to.non_plugin_instance')
+class ExamplePlugin:
+    def aFunction(self):
+		# Access the non-plugin class instance via the injected attribute
+		self.non_plugin_instance.someMethod()
+```
