@@ -49,10 +49,10 @@ The CSE's resource tree can be shown by pressing the `t` key:
 In addition to the build-in commands, the console shows the [Script commands](../development/ACMEScript.md) with a configured [key binding](../development/ACMEScript-metatags.md#onkey).
 
 
-## Minimal Console
+## Simple Console
 
-The minimal console (console *type* set to `simple`) provides only a very basic user interface. It does not support most of the
-above commands, but it still supports the `CTRL-C` (or `Q`) command to shutdown the CSE, and the `#` command to toggle between the minimal console and the [Text UI](../setup/TextUI.md). 
+The simple console (console *type* set to `simple`) provides only a very minimal user interface. It does not support most of the
+above commands, but it still supports the `CTRL-C` (or `Q`) command to shutdown the CSE, and the `#` command to toggle between the simple console and the [Text UI](../setup/TextUI.md), if enabled. 
 
 It is useful if you want to run the CSE with a console, but you don't need the advanced features of the rich console, or if you want to save system resources.
 

@@ -7,7 +7,7 @@ hide:
 # ACME oneM2M CSE
 </div>
 <div style="display:flex;justify-content:center;align-items:center;" markdown>
-v2025.11
+v2026.05
 </div>
 <figure markdown="1">
 ![](images/title.png){.off-glb style="height:60%;width:60%"}

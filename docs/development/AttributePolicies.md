@@ -41,25 +41,41 @@ Some of the fields are not yet used, but will supported by a future version of t
 
 	// The attribute's data type. 
 	// Mandatory, and one from this list:
-	// 
-	// - integer
-	// - positiveInteger
-	// - nonNegInteger
-	// - unsignedInt
-	// - unsignedLong
-	// - string
-	// - timestamp
-	// - list
-	// - dict - any anonymous complex structure. This should be avoided and 
-	//          be replaced by a complex type name
-	// - adict (anonymous dict)
-	// - anyURI
-	// - boolean
-	// - enum
-	// - geoCoordinates
-	// - schedule
-	// - base64
-	// - duration
+	//
+	// - positiveInteger - positive integer
+	// - nonNegInteger  - non-negative integer
+	// - unsignedInt    - unsigned integer
+	// - unsignedLong   - unsigned long
+	// - string         - string
+	// - timestamp      - timestamp
+	// - absRelTimestamp- absolute or relative timestamp
+	// - list           - list
+	// - listNE         - not empty list
+	// - dict           - dictionary or sub-structure
+	// - anyURI         - any URI
+	// - boolean         - boolean
+	// - float           - float
+	// - geoJsonCoordinate - GeoJSON coordinate
+	// - integer         - integer
+	// - void            - void
+	// - duration        - duration
+	// - any             - any type
+	// - complex         - complex type
+	// - enum            - enumeration
+	// - adict           - anonymous dictionary
+	// - base64          - Base64 encoded data
+	// - schedule        - schedule entry
+	// - jsonLike        - JSON like structure or data types
+	// - ID			  - oneM2M ID
+	// - IDCSR			  - oneM2M ID in only CSE-relative format
+	// - ncname			  - XML NCName
+	// - imsi			  - IMSI compliant numerical representation
+	// - iccid			  - ICCID alphanumerical representation
+	// - ipv4Address	  - IPv4 address
+	// - ipv6Address	  - IPv6 address
+	// - token			  - XML token
+	// - time			  - alias for timestamp
+	// - date			  - alias for timestamp
 	//
 	// In addition to the list above, the *attributeType* can be the name of any defined
 	// complex type. This complex type must be defined in any of the attribute policy files.
