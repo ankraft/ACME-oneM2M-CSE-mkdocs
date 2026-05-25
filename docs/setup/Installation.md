@@ -117,7 +117,7 @@ If you want to configure the CSE without starting it, you can use the following 
 	Run the following command from the command line from **within the directory where you installed the CSE**:
 
 	```bash title="Running the onboarding tool as a module"
-	python3 -m acme.onboarding acme.ini
+	python3 -m acmecse.onboarding acme.ini
 	```
 
 
@@ -135,7 +135,7 @@ If you want to use a [Zookeeper configuration service](../setup/Configuration-in
 
 === "For Manual Installation"
 	```bash title="Running the onboarding tool with Zookeeper as a module"
-	python3 -m acme.onboarding --zookeeper-host <host>
+	python3 -m acmecse.onboarding --zookeeper-host <host>
 	```
 
 This will start the configuration process as before, but the configuration will be stored in Zookeeper instead of a local file.

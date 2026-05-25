@@ -140,27 +140,27 @@ The following events are available by default in the ACME CSE and are used inter
 
 The following example shows how to define an event handler for a plugin for resource creation events.
 
-The [@eventHandler](https://api.acmecse.net/acme.helpers.EventManager.html#eventHandler){target="_new"} 
+The [@eventHandler](https://api.acmecse.net/acmecse.helpers.EventManager.html#eventHandler){target="_new"} 
 class decorator is used to indicate that the class contains decorated event handler methods. It is 
 necessary to use this decorator on the class to enable the use of the 
-[@onEvent](https://api.acmecse.net/acme.helpers.EventManager.html#onEvent){target="_new"} method decorator.
+[@onEvent](https://api.acmecse.net/acmecse.helpers.EventManager.html#onEvent){target="_new"} method decorator.
 
-The [@onEvent](https://api.acmecse.net/acme.helpers.EventManager.html#onEvent){target="_new"} decorator is 
+The [@onEvent](https://api.acmecse.net/acmecse.helpers.EventManager.html#onEvent){target="_new"} decorator is 
 used to specify which event a method should handle. 
-The [eventManager](https://api.acmecse.net/acme.runtime.EventManager.EventManager.html){target="_new"} provides 
+The [eventManager](https://api.acmecse.net/acmecse.runtime.EventManager.EventManager.html){target="_new"} provides 
 properties for each of the available events that can be used with the 
-[@onEvent](https://api.acmecse.net/acme.helpers.EventManager.html#onEvent){target="_new"} decorator.
+[@onEvent](https://api.acmecse.net/acmecse.helpers.EventManager.html#onEvent){target="_new"} decorator.
 
 The decorated method will be called whenever the specified event is triggered, and the event data 
 will be passed as an argument to the method. In this example, the event handler simply prints a 
 message to the console when a resource is created.
 
-The event handler always receives an [EventData](https://api.acmecse.net/acme.helpers.EventManager.EventData.html){target="_new"} object as an argument, even if the event does not 
+The event handler always receives an [EventData](https://api.acmecse.net/acmecse.helpers.EventManager.EventData.html){target="_new"} object as an argument, even if the event does not 
 have a payload. 
 
 ```python title="Example Event Handler"
-from acme.runtime.PluginSupport import plugin, eventHandler, onEvent, eventManager, EventData
-from acme.runtime.Logging import Logging
+from acmecse.runtime.PluginSupport import plugin, eventHandler, onEvent, eventManager, EventData
+from acmecse.runtime.Logging import Logging
 
 @plugin
 @eventHandler
@@ -175,17 +175,17 @@ class MyService():
 ### Defining an Event Handler with the EventManager API
 
 It is also possible to assign event handlers programmatically using the
-[EventManager](https://api.acmecse.net/acme.runtime.EventManager.EventManager.html){target="_new"} API. 
+[EventManager](https://api.acmecse.net/acmecse.runtime.EventManager.EventManager.html){target="_new"} API. 
 This can be useful if you want to define event handlers dynamically at runtime. This can be done
 for any class, not just for plugins or assigned event handlers, but also for any other method.
 
 You can add an event handler for any event using the 
-[EventManager.addHandler()](https://api.acmecse.net/acme.helpers.EventManager.EventManager.html#addHandler){target="_new"} method.
+[EventManager.addHandler()](https://api.acmecse.net/acmecse.helpers.EventManager.EventManager.html#addHandler){target="_new"} method.
 
 
 ```python title="Example Event Handler with EventManager API"
-from acme.runtime.PluginSupport import eventManager, EventData
-from acme.runtime.Logging import Logging
+from acmecse.runtime.PluginSupport import eventManager, EventData
+from acmecse.runtime.Logging import Logging
 
 class MyClass():
 
@@ -202,20 +202,20 @@ class MyClass():
 ### Custom Events 
 
 You can add custom events to the ACME CSE using the
-[addEvent()](https://api.acmecse.net/acme.helpers.EventManager.EventManager.html#addEvent){target="_new"} method, 
+[addEvent()](https://api.acmecse.net/acmecse.helpers.EventManager.EventManager.html#addEvent){target="_new"} method, 
 and then add an event handler for that event using the 
-[addHandler()](https://api.acmecse.net/acme.helpers.EventManager.EventManager.html#addHandler){target="_new"} method
+[addHandler()](https://api.acmecse.net/acmecse.helpers.EventManager.EventManager.html#addHandler){target="_new"} method
 as described in the previous example. 
 
 Please note, that custom events added with the 
-[addEvent()](https://api.acmecse.net/acme.helpers.EventManager.EventManager.html#addEvent){target="_new"} method, 
-cannot be used together with the [@onEvent](https://api.acmecse.net/acme.helpers.EventManager.html#onEvent){target="_new"} 
+[addEvent()](https://api.acmecse.net/acmecse.helpers.EventManager.EventManager.html#addEvent){target="_new"} method, 
+cannot be used together with the [@onEvent](https://api.acmecse.net/acmecse.helpers.EventManager.html#onEvent){target="_new"} 
 decorator if the event is defined after a handler method is defined and loaded. The reason for this is that decorators 
 are evaluated at load time of a module, and the custom event will not be available at that time. 
 
 ```python title="Example Event Handler with EventManager API"
-from acme.runtime.PluginSupport import plugin, eventManager, EventData
-from acme.runtime.Logging import Logging
+from acmecse.runtime.PluginSupport import plugin, eventManager, EventData
+from acmecse.runtime.Logging import Logging
 @plugin
 class MyService():
 
