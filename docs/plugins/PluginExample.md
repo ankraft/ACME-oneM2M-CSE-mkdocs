@@ -18,7 +18,7 @@ User-defined plugins are loaded under the `plugins` Python module namespace.
 
 ## Writing the Plugin Code
 
-In your plugin module, you need to define a class that is decorated with `@PluginManager.plugin`. This class will contain methods that are decorated to hook into the CSE's lifecycle events.
+In your plugin module, you need to define a class that is decorated with [@plugin](https://api.acmecse.net/acme.helpers.PluginManager.html#plugin){target="_new"}. This class will contain methods that are decorated to hook into the CSE's lifecycle events.
 
 ```python title="HelloWorld.py" linenums="1"
 from acme.runtime.PluginSupport import *
@@ -44,9 +44,9 @@ class HelloWorldPlugin:
         Logging.log('Goodbye, world!')
 ```
 
-In this example, the `HelloWorld` class is decorated with `@plugin`, indicating that it is a plugin class. There can only be one plugin class per plugin module. This class will automatically be instantiated by the `PluginManager` when the plugin is loaded.
+In this example, the `HelloWorld` class is decorated with [@plugin](https://api.acmecse.net/acme.helpers.PluginManager.html#plugin){target="_new"}, indicating that it is a plugin class. There can only be one plugin class per plugin module. This class will automatically be instantiated by the `PluginManager` when the plugin is loaded.
 
-The class has four methods that are decorated to hook into the CSE's lifecycle events: `init`, `finish`, `start`, and `stop`. Each method logs a message to the ACME logging system when the CSE starts up and shuts down.
+The class has four methods that are decorated to hook into the CSE's lifecycle events: [init](https://api.acmecse.net/acme.helpers.PluginManager.html#init){target="_new"}, [finish](https://api.acmecse.net/acme.helpers.PluginManager.html#finish){target="_new"}, [start](https://api.acmecse.net/acme.helpers.PluginManager.html#start){target="_new"}, and [stop](https://api.acmecse.net/acme.helpers.PluginManager.html#stop){target="_new"}. Each method logs a message to the ACME logging system when the CSE starts up and shuts down.
 
 
 ## Running the Plugin

@@ -1,6 +1,12 @@
 # Onboarding Tool
 
-The ACME CSE can be configured by an interactive onboarding process when it is started for the first time. This process will create a configuration file that can be edited later.
+The ACME CSE can be configured by an interactive onboarding process when it is started for the first time. This process will create a configuration file that can be changed and updated later.
+
+<figure markdown="1">
+![ACME CSE Guided Configurationx](../../images/bootstrapConfig.gif)
+<figcaption>ACME CSE Guided Configuration</figcaption>
+</figure>
+
 
 ## Running
 

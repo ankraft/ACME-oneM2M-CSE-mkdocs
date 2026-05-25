@@ -184,6 +184,7 @@ nav:
   - 'Development': 
       - 'Overview': 'development/Overview.md'
       - 'API Docs': 'development/APIDocs.md'
+      - 'Event System': 'development/EventSystem.md'
       - 'Unit Tests': 'development/UnitTests.md'
       - 'Start-Up and Policies':
         - 'Start-Up Resources': 'development/StartupResources.md'

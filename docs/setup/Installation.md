@@ -88,7 +88,7 @@ You can start the CSE by simply running it from the command line:
 
 	The *base directory* by default is the directory where the CSE is started from. This directory can be changed by the *--base-directory* (or *-dir*) command line argument to a different directory. 
 
-	<figure>
+	<figure markdown="1">
 	![ACME CSE Guided Configuration](../images/bootstrapConfig.gif)
 	<figcaption>ACME CSE Guided Configuration</figcaption>
 	</figure>

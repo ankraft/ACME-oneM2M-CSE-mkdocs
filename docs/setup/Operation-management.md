@@ -30,17 +30,17 @@ The CSE management interface provides several commands that can be used to manag
 | reset                                                                               | Reset the CSE to its initial state. This will clear all resources from the CSE.                                                                                                                                 |
 | restart                                                                             | Shutdown the CSE to restart it. The CSE will **not** restart internally, but it will exit with an exit code 82. See also the example below.                                                                     |
 | shutdown                                                                            | Shutdown the CSE normally. The CSE will exit with an exit code 0.                                                                                                                                               |
-| status<br>status/modules<br>status/plugins                                          | Get the current status of the CSE in JSON format. This includes information about the CSE resources, operational parameters, plugins, and requests.                                                             |
+| status<br>status/modules<br>status/plugins<br>status/services.                      | Get the current status of the CSE in JSON format. This includes information about the CSE resources, operational parameters, plugins, requests, and services.                                                   |
 
-All commands with subcommands (e.g., `loglevel` and `requests`) also have a *help* subcommand that provides more detailed information about the available subcommands and their usage. For example, to get more information about the `loglevel` command, you can send the following request:
+All commands with subcommands (e.g., `status` and `requests`) also have a *help* subcommand that provides more detailed information about the available subcommands and their usage. For example, to get more information about the `status` command, you can send the following request:
 
-```bash title="Get help for loglevel command"
-curl -X GET http://localhost:8080/__mgmt__/loglevel/help
+```bash title="Get help for status command"
+curl -X GET http://localhost:8080/__mgmt__/status/help
 ```
 
 ## Examples
 
-The following examples show how to use the management commands via `curl`.
+The following examples show how to send requests to the management API using [curl](https://curl.se){target="_blank"}.
 
 ### Get the CSE's Configuration
 
@@ -50,30 +50,25 @@ curl -X GET http://localhost:8080/__mgmt__/config
 
 This will return the current configuration of the CSE in JSON format. 
 
-### Get the CSE's Log Output
+### CSE Log Streaming
 
-```bash title="Get CSE Log Output"
+```bash title="Stream CSE Logs"
 curl -X GET http://localhost:8080/__mgmt__/log
 ```
+This will stream the live log output of the CSE.  The log will continue to stream until the connection is closed, e.g. by pressing `Ctrl+C` in the terminal.
 
-This will stream the live log output of the CSE. The log will continue to stream until the connection is closed, e.g. by pressing `Ctrl+C` in the terminal.
 
+### CSE Logging
 
-### Get the CSE's Log Level
-
-```bash title="Get CSE Log Level"
+```bash title="CSE Logging"
+# Get the CSE's Log Level
 curl -X GET http://localhost:8080/__mgmt__/loglevel
-```
 
-
-### Set the CSE's Log Level
-
-```bash title="Set CSE Log Level to Debug"
+# Set the CSE's Log Level, e.g. to debug
 curl -X GET http://localhost:8080/__mgmt__/loglevel/debug
-```
 
-```bash title="Disable CSE Log Output"
-curl -X GET http://localhost:8080/__mgmt__/logloglevel/off
+#Disable CSE Log Output"
+curl -X GET http://localhost:8080/__mgmt__/loglevel/off
 ```
 
 
@@ -118,59 +113,49 @@ The following example code shows how to restart the CSE automatically using a sh
     end
 	```
 
-
 ### Stream CSE Requests
 
 ```bash title="Stream CSE Requests"
+# Stream CSE Requests
 curl -X GET http://localhost:8080/__mgmt__/requests
 ```
 
+### Request Recording
 
-### Enable Request Recording
+```bash title="Request Recording"
 
-```bash title="Enable Request Recording"
+# Enable Request Recording
 curl -X GET http://localhost:8080/__mgmt__/requests/enable
-```
 
-
-### Disable Request Recording
-```bash title="Disable Request Recording"
+# Disable Request Recording
 curl -X GET http://localhost:8080/__mgmt__/requests/disable
-```
 
-
-### Get Request Recording Status
-```bash title="Get Request Recording Status"
+# Get Request Recording Status
 curl -X GET http://localhost:8080/__mgmt__/requests/recording/status
 ```
 
-### Get the CSE's Registrations
+### CSE Registrations
 
-```bash title="Get CSE Registrations"
+```bash title="CSE Registrations"
+# Get CSE Registrations
 curl -X GET http://localhost:8080/__mgmt__/registrations
-```
 
-### Refresh CSE Registrations
-
-```bash title="Refresh CSE Registrations"
+# Refresh CSE Registrations
 curl -X GET http://localhost:8080/__mgmt__/registrations/refresh
 ```
 
-### Get the CSE's Status
+### CSE Status
 
-```bash title="Get CSE Status"
+```bash title="CSE Status"
+# Get CSE Status
 curl -X GET http://localhost:8080/__mgmt__/status
-```
 
-### Get Loaded Python Modules
-
-```bash title="Get Loaded Python Modules"
+# Get Loaded Python Modules
 curl -X GET http://localhost:8080/__mgmt__/status/modules
-```
 
-
-### Get Loaded Plugins and their Status and Dependencies
-
-```bash title="Get Loaded Plugins and their Status and Dependencies"
+# Get Loaded Plugins, their Status and Dependencies
 curl -X GET http://localhost:8080/__mgmt__/status/plugins
+
+# Get Registered Services
+curl -X GET http://localhost:8080/__mgmt__/status/services
 ```

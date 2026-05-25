@@ -51,7 +51,7 @@ The service plugins implement oneM2M's *Common Service Functions* They run toget
 | acme.plugins.services.RemoteCSEManager    | Provides the remote CSE management services.                                                                                       | [\[cse.service.remoteCSE\]:enable](../setup/Configuration-cse.md#remote-cse-service)      |
 | acme.plugins.services.SemanticManager     | Provides the semantic management services.                                                                                         | [\[cse.service.semantic\]:enable](../setup/Configuration-cse.md#semantic-service)         |
 | acme.plugins.services.TimeManager         | Provides general time management services.                                                                                         | [\[cse.service.time\]:enable](../setup/Configuration-cse.md#time-service)                 |
-| acme.plugins.services.TimeSeriesManager   | Provides the timeSeries management services.                                                                                       | [\[cse.service.timeSeries\]:enable](../setup/Configuration-cse.md#timeSeries-service)     |
+| acme.plugins.services.TimeSeriesManager   | Provides the timeSeries management services.                                                                                       | [\[cse.service.timeSeries\]:enable](../setup/Configuration-cse.md#timeseries-service)     |
 
 !!! Note
 	By disabling a service plugin, the corresponding oneM2M service will not be available in the CSE.
