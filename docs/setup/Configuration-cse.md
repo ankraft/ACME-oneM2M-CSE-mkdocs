@@ -74,6 +74,18 @@ These settings are used to configure the CSE's internal request recording.
 | size    | Maximum number of requests to be stored. Oldest requests will be deleted when this threshold is reached. Note, that a large number of requests might take a moment to be displayed in the console or UIs. | 250     |
 
 
+### Startup
+
+**Section: `[cse.operation.startup]`**
+
+These settings are used to configure the CSE's startup behavior.
+
+| Setting | Description                                                                                                     | Default |
+|:--------|:----------------------------------------------------------------------------------------------------------------|:--------|
+| startupDelay | ==development feature== Startup delay in seconds. This is the time the CSE waits before setting itself to the RUNNING state. | 2.0 seconds |
+| guardDelay   | ==development feature== Startup guard: If the CSE is not in the RUNNING state after this time, then a shutdown is forced. | 60.0 seconds |
+
+
 ## General Security
 
 **Section: `[cse.security]`**
