@@ -73,6 +73,9 @@ In this example, the `HelloWorld` plugin class will be instantiated before any o
 It is important to note that plugin classes with a lower priority value are instantiated first, but are stopped and finalized later, i.e. after plugin classes with a higher priority value, during the CSE shutdown or unloading process. 
 
 
+
+
+
 ## Tagging Plugin Classes
 
 The [@plugin](https://api.acmecse.net/acmecse.helpers.PluginManager.html#plugin){target="_new"} class decorator also allows for tagging plugin classes with specific keywords using the `tags` parameter. This can be useful for categorizing plugins or for filtering plugins based on their tags at runtime.
@@ -88,6 +91,39 @@ class HelloWorld:
 In this example, the `HelloWorld` plugin class is tagged with the keywords 'greeting' and 'example'. This information can be accessed through the plugin information for the `HelloWorld` plugin, which can be useful for filtering or categorizing plugins at runtime.
 
 For example, the protocol binding plugins are all tagged with the keyword 'binding'.
+
+
+## Long-Running Plugins
+
+==development feature== 
+
+Plugin functions may be long-running, e.g. they may contain an infinite loop that performs some task periodically. In this case, the plugin function must run this long-running code in a separate thread, so that it does not block the CSE's main thread and other plugins from running. The plugin function can use the `threading` module from the Python standard library to create and manage threads, or it can use the ACME CSE's [BackgroundWorkerPool](https://api.acmecse.net/acmecse.helpers.BackgroundWorker.BackgroundWorkerPool.html){target="_new"} to run background tasks. The `BackgroundWorkerPool` provides a convenient way to run background tasks and ensures that they are properly managed by the CSE.
+
+### Controlling Plugin Execution Time
+
+!!! Warning
+	If a plugin function runs long-running code in the main thread without using a separate thread, it will block the CSE's main thread and prevent other plugins from running.
+	
+	The CSE monitors the execution time of plugin functions and will terminate if a plugin function runs for too long without yielding control back to the CSE. This is to prevent a misbehaving plugin from crashing the entire CSE.
+
+The default timeout period per plugin callback is configurable via the [\[cse.operation.plugins\]:timeout](../setup/Configuration-cse.md#plugins){target="_new"} setting. 
+
+In rare cases, it may be necessary to set a longer timeout for a specific plugin function. This can be done by using the `timeout` parameter in the plugin function decorators. For example:
+
+```python title="HelloWorld.py with Custom Timeout"
+from acmecse.runtime.PluginSupport import *
+
+@plugin
+class SlowStartupPlugin:
+	@start(timeout=10.0)
+	def start(self) -> None:
+		# Long-running code here
+```
+
+!!! Warning
+	Be aware that the startup time of the CSE is monitored as well. If it exceeds the configured timeout, the CSE will terminate. The startup timeout is controlled by the configuration setting [\[cse.operation.startup\]:guardDelay](../setup/Configuration-cse.md#startup){target="_new"}.
+
+	If it can be expected that the CSE startup will take a long time, e.g. due to long-running plugin startup functions, it is recommended to increase the startup timeout in the configuration to prevent the CSE from terminating during startup.
 
 
 ## Getting All Plugin Information

@@ -59,6 +59,7 @@ These settings are used to configure the CSE's [plugin management](../plugins/Pl
 |:--------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------|
 | disabledPlugins     | A list of plugins that are disabled and will not be loaded. The entries in this list are the module names of the plugins to disable. A plugin name may contain simple wildcards (e.g. `plugin*`) to match multiple plugins.    | [ ]     |
 | replace             | Replace existing plugins with the same name when loading. The replaced plugins will be stopped, finalized, and unloaded before the new plugin is loaded.                                                                       | False   |
+| timeout             | Timeout for plugin methods in seconds. This is the default timeout for plugin methods if not set otherwise in the plugin decorators.                                                                                           | 1.0     |
 
 
 ### Requests
