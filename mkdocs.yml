@@ -213,6 +213,7 @@ nav:
       - 'Overview': 'plugins/PluginsOverview.md'
       - 'Plugin API & Lifecycle': 'plugins/PluginAPI.md'
       - 'Plugin Manager': 'plugins/PluginManager.md'
+      - 'Interceptors': 'plugins/PluginInterceptors.md'
       - 'Service Plugins': 'plugins/PluginServicePlugins.md'
       - 'Developing an Example Plugin': 'plugins/PluginExample.md'
       - 'CSE Core Plugins': 'plugins/PluginCorePlugins.md'
