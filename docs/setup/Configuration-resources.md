@@ -31,12 +31,13 @@ The default values for Action resources.
 
 The default values for Container resources.
 
-| Setting      | Description                        | Default                                                                          |
-|:-------------|:-----------------------------------|:---------------------------------------------------------------------------------|
-| enableLimits | Enable/disable the default limits. | False                                                                            |
-| mbs          | Default for maxByteSize.           | 10.000 bytes                                                                     |
-| mia          | Default for maxInstanceAge.        | [cse.maxExpirationDelta](../setup/Configuration-cse.md#general-settings) seconds |
-| mni          | Default for maxNrOfInstances.      | 10                                                                               |
+| Setting                       | Description                                                                                                  | Default                                                                          |
+|:------------------------------|:-------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|
+| enableLimits                  | Enable/disable the default limits.                                                                           | False                                                                            |
+| mbis  ==development feature== | CSE default for maxByteSizePerInstance. A negative value means no limit. Must not exceed the value of *mbs*. | -1                                                                               |
+| mbs                           | CSE default for maxByteSize.                                                                                 | 10.000 bytes                                                                     |
+| mia                           | CSE default for maxInstanceAge.                                                                              | [cse.maxExpirationDelta](../setup/Configuration-cse.md#general-settings) seconds |
+| mni                           | CSE default for maxNrOfInstances.                                                                            | 10                                                                               |
 
 
 ## FlexContainer
