@@ -185,7 +185,20 @@ nav:
       - 'Overview': 'development/Overview.md'
       - 'API Docs': 'development/APIDocs.md'
       - 'Event System': 'development/EventSystem.md'
-      - 'Unit Tests': 'development/UnitTests.md'
+      - Unit Tests:
+          - development/UnitTests.md
+          - Test Reference:
+              - Overview: development/unit-tests/index.md
+              - Core CSE & Registration: development/unit-tests/core-cse.md
+              - Containers & Data: development/unit-tests/containers-data.md
+              - Access Control & Security: development/unit-tests/access-control.md
+              - Subscriptions & Notifications: development/unit-tests/subscriptions.md
+              - Groups & Actions: development/unit-tests/groups-actions.md
+              - Discovery, Requests & Expiration: development/unit-tests/discovery-requests.md
+              - Management, Location & Policies: development/unit-tests/management-location.md
+              - Polling Channels: development/unit-tests/polling-channels.md
+              - Remote CSE / Inter-CSE: development/unit-tests/remote-cse.md
+              - Load & Miscellaneous: development/unit-tests/load-misc.md
       - 'Start-Up and Policies':
         - 'Start-Up Resources': 'development/StartupResources.md'
         - 'Attribute Policies': 'development/AttributePolicies.md'

@@ -2,6 +2,9 @@
 
 Almost all aspects of the ACME CSE implementation are covered by unit tests based on the Python [unittest](https://docs.python.org/3/library/unittest.html){target=_new} framework. The files for the individual test suites and the runner application reside in the [project's *tests*](https://github.com/ankraft/ACME-oneM2M-CSE/tree/master/tests){target=_new} directory.
 
+!!! tip "Looking for what a specific test does?" 
+
+	This page covers configuration and how to run the test suites. For a full breakdown of every individual test case — what requests it makes and what it expects — see the [Test Reference](../development/unit-tests/index.md).
 
 ## Configuration
 
