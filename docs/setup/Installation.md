@@ -77,7 +77,7 @@ You can start the CSE by simply running it from the command line:
 		Run the following command from the command line from **within the directory where you installed the CSE**:
 
 		```bash title="Running the ACME CSE as a module"
-		python3 -m acme
+		python3 -m acmecse
 		```
 
 	Please refer to the [Running](Running.md) documentation for more detailed instructions how to start and run the ACME CSE.

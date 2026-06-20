@@ -27,7 +27,7 @@ The onboarding process is started by running the onboarding tool from the comman
 	Run the following command from the command line from **within the directory where you installed the CSE**:
 
 	```bash title="Running the onboarding tool as a module"
-	python3 -m acme.onboarding acme.ini
+	python3 -m acmecse.onboarding acme.ini
 	```
 
 

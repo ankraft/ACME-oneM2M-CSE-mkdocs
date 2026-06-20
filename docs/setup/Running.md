@@ -15,7 +15,7 @@ You can start the CSE by running it from the command line. This is the simplest 
 === "Manual Installation"
 
 	```bash title="Starting the ACME CSE as a module"
-	python3 -m acme
+	python3 -m acmecse
 	```
 
 The current working directory is used as the base directory for the CSE and the *acme.ini* [configuration file](../setup/Configuration-introduction.md#the-acmeini-configuration-file) must be in the same directory. An [interactive configuration process](Installation.md#guided-onboarding) is started if the configuration file is not found.
@@ -34,7 +34,7 @@ The CSE can also be started with a different configuration file:
 === "Manual Installation"
 
 	```bash title="Starting the ACME CSE with a different configuration file"
-	python3 -m acme --config <filename>
+	python3 -m acmecse --config <filename>
 	```
 
 The current working directory is still the base directory for the CSE and the configuration file is still expected to be located in this directory.
@@ -52,7 +52,7 @@ The CSE can also be started with a different base directory:
 === "Manual Installation"
 
 	```bash title="Starting the ACME CSE with a different base directory"
-	python3 -m acme -dir <directory>
+	python3 -m acmecse -dir <directory>
 	```
 
 This will use the specified directory as the root directory for runtime data such as *data*, *logs*, own provided *plugins*, and *temporary* files. The configuration file *acme.ini*is expected to be in the specified directory, or it will be created there if it does not exist.

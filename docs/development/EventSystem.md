@@ -164,7 +164,7 @@ from acmecse.runtime.Logging import Logging
 
 @plugin
 @eventHandler
-class MyService():
+class MyHandler():
 
 	@onEvent(eventManager.createResource)
 	def handle_create_resource(self, event: EventData) -> None:
@@ -214,10 +214,12 @@ decorator if the event is defined after a handler method is defined and loaded. 
 are evaluated at load time of a module, and the custom event will not be available at that time. 
 
 ```python title="Example Event Handler with EventManager API"
-from acmecse.runtime.PluginSupport import plugin, eventManager, EventData
+from acmecse.runtime.PluginSupport import plugin, eventHandler, eventManager, EventData
 from acmecse.runtime.Logging import Logging
+
 @plugin
-class MyService():
+@eventHandler
+class MyHandler():
 
 	def __init__(self) -> None:
 		# Register the new event
