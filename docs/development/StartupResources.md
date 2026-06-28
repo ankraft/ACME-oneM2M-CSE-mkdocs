@@ -24,11 +24,11 @@ Please note that it is required for a functional CSE deployment to create the CS
 
 An option to import more resources automatically whenever the CSE starts or restarts is to have a script as an event handler for the [onStartup](../development/ACMEScript-metatags.md#onstartup) and [onRestart](../development/ACMEScript-metatags.md#onrestart) events.
 
-These scripts can be added to the [Secondary *init* Directory](../setup/Running.md#secondary-init-directory), which is located in the base directory of the CSE, and from where resources are imported after the primary *init* directory has been processed.
+These scripts can be added to the [User-Provided *init* Directory](../setup/Running.md#user-provided-init-directory), which is located in the base directory of the CSE, and from where resources are imported after the primary *init* directory has been processed.
 
 !!! see-also "See also"
 	The meta tags [onStartup](../development/ACMEScript-metatags.md#onstartup), [onRestart](../development/ACMEScript-metatags.md#onrestart)  
-	[Secondary *init* Directory](../setup/Running.md#secondary-init-directory)
+	[User-Provided *init* Directory](../setup/Running.md#user-provided-init-directory)
 
 
 ### Referencing Configuration Settings

@@ -4,7 +4,7 @@ This article describes the flexContainer specialization policies used by the ACM
 
 For all &lt;flexContainer> specializations, e.g. for oneM2M's TS-0023 ModuleClasses, the [attribute policies](../development/AttributePolicies.md) and the allowed &lt;flexContainer> hierarchy must be provided. 
 
-The files for &lt;flexContainer> specializations are also automatically imported from the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} and [secondary init](../setup/Running.md#secondary-init-directory) directory. More than one such file can be provided, for example one per domain. The files must have the extension `.fcp`. 
+The files for &lt;flexContainer> specializations are also automatically imported from the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} and [user-provided *init* directory](../setup/Running.md#user-provided-init-directory). More than one such file can be provided, for example one per domain. The files must have the extension `.fcp`. 
 
 The format is a JSON structure that follows the structure described in the following code.  
 
@@ -130,7 +130,7 @@ The following examples show the attribute policies for the *binarySwitch* and *d
 
 ## Self-Defined Specializations
 
-It is possible to define own specializations that need to be placed in schema files, similar to the provided ones. These files must have the `.fcp` extension and must be placed in one of the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} or [secondary init](../setup/Running.md#secondary-init-directory) directories. They are imported automatically when the CSE starts.
+It is possible to define own specializations that need to be placed in schema files, similar to the provided ones. These files must have the `.fcp` extension and must be placed in one of the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} or [user-provided *init* directory](../setup/Running.md#user-provided-init-directory). They are imported automatically when the CSE starts.
 
 The self-defined schema files have to follow the format described above. 
 

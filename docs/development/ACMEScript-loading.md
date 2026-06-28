@@ -1,6 +1,6 @@
 # Loading & Running ACMEScripts
 
-By default scripts are stored in and are imported from the *init* directory and in its sub-directories, which names end with *.scripts*. They are imported from the [secondary *init* directory](../setup/Running.md#secondary-init-directory) as well. In addition, one can specify a [list of directories](../setup/Configuration-scripting.md) in the configuration file with additional scripts that will be imported from those directories.
+By default scripts are stored in and are imported from the *init* directory and in its sub-directories, which names end with *.scripts*. They are imported from the [user-provided *init* directory](../setup/Running.md#user-provided-init-directory) as well. In addition, one can specify a [list of directories](../setup/Configuration-scripting.md) in the configuration file with additional scripts that will be imported from those directories.
 
 All files in those directories with the extension `.as` are treated as ACMEScript files and are automatically imported during CSE startup, and are also imported and updated during runtime if a file changes.
 

@@ -2,7 +2,7 @@
 
 This article describes the attribute policies used by the ACME CSE. 
 
-During startup the CSE reads the attribute policies for common resource types and complex type definitions from the files with the extension `.ap` in the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} and [secondary init](../setup/Running.md#secondary-init-directory) directory, for example [attributePolicies.ap](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/attributePolicies.ap){target=_new}. More than one attribute policy file can be added.
+During startup the CSE reads the attribute policies for common resource types and complex type definitions from the files with the extension `.ap` in the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} and [user-provided *init* directory](../setup/Running.md#user-provided-init-directory), for example [attributePolicies.ap](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/attributePolicies.ap){target=_new}. More than one attribute policy file can be added.
 
 
 ## Attribute Policy Format
@@ -154,7 +154,7 @@ Some of the fields are not yet used, but will supported by a future version of t
 
 ## Complex Types 
 
-Complex types are defined in the attribute policy files as well. Complex types are defined in files with the extension `.ap`. The CSE reads the complex type definitions from the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} and [secondary init](../setup/Running.md#secondary-init-directory) directory, for example [complexTypePolicies.ap](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/complexTypePolicies.ap){target=_new}. More than one complex type file can be provided.
+Complex types are defined in the attribute policy files as well. Complex types are defined in files with the extension `.ap`. The CSE reads the complex type definitions from the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} and [user-provided *init* directory](../setup/Running.md#user-provided-init-directory), for example [complexTypePolicies.ap](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/complexTypePolicies.ap){target=_new}. More than one complex type file can be provided.
 
 Complex types are defined indirectly by assigning attributes to them. Attributes for a complex types are defined in the same way as for common resource types. The only difference is that the *ctype* field is set to the name of the complex type the attribute belongs to. If an attribute belongs to more than one complex type, the attribute definition is repeated for each complex type.
 
@@ -189,7 +189,7 @@ The following example shows the definition of an attribute that belongs to multi
 
 ## Enumeration Data Types
 
-In addition to the attribute and complex type policies defined above, enumeration types are defined in files with the extension `.ep`. The CSE reads the enumeration data types from the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} and [secondary init](../setup/Running.md#secondary-init-directory) directory, for example [enumTypesPolicies.ep](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/enumTypesPolicies.ep){target=_new}. More than one enumeration data type file can be provided.
+In addition to the attribute and complex type policies defined above, enumeration types are defined in files with the extension `.ep`. The CSE reads the enumeration data types from the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} and [user-provided *init* directory](../setup/Running.md#user-provided-init-directory), for example [enumTypesPolicies.ep](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init/enumTypesPolicies.ep){target=_new}. More than one enumeration data type file can be provided.
 
 The format is a JSON structure that follows the structure described in the following code.  
 

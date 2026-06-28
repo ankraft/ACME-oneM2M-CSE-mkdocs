@@ -59,9 +59,9 @@ This will use the specified directory as the root directory for runtime data suc
 
 The default base directory, if not specified, is the current working directory.
 
-### Secondary *init* Directory
+### User-Provided *init* Directory
 
-A base directory may also host a secondary *init* directory that is used for importing further resources such as attribute definitions and scripts. Resources in this directory are automatically imported when the CSE starts, and processed after the resources in the primary *init* directory have been imported and processed.
+A base directory may also host a user-provided *init* directory that is used for importing further resources such as attribute definitions and scripts. Resources in this directory are automatically imported when the CSE starts, and processed after the resources in the primary *init* directory have been imported and processed.
 
 
 ## Command Line Arguments
