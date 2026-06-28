@@ -1,0 +1,3567 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../discovery-requests/">
+      
+      
+        <link rel="next" href="../polling-channels/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Management, Location &amp; Policies - ACME oneM2M CSE</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: auto; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#management-location-scheduling-policies" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ACME oneM2M CSE" class="md-header__button md-logo" aria-label="ACME oneM2M CSE" data-md-component="logo">
+      
+  <img src="../../../images/acme_sm.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACME oneM2M CSE
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Management, Location &amp; Policies
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="acmecse-light" data-md-color-primary="grey" data-md-color-accent="red" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="acmecse-dark" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to system preference" type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ankraft/ACME-oneM2M-CSE" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    ACME-oneM2M-CSE
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../setup/Installation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Setup &amp; Running
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../plugins/PluginsOverview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Plugins
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../howtos/HowTos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  HowTos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../help/FAQ/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Help
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ACME oneM2M CSE" class="md-nav__button md-logo" aria-label="ACME oneM2M CSE" data-md-component="logo">
+      
+  <img src="../../../images/acme_sm.png" alt="logo">
+
+    </a>
+    ACME oneM2M CSE
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ankraft/ACME-oneM2M-CSE" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    ACME-oneM2M-CSE
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../setup/Installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup &amp; Running
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../APIDocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EventSystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unit Tests
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unit Tests
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UnitTests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unit Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Test Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-cse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core CSE &amp; Registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../containers-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containers &amp; Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Control &amp; Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subscriptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subscriptions &amp; Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../groups-actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Groups &amp; Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery-requests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discovery, Requests &amp; Expiration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Management, Location &amp; Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polling-channels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polling Channels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote-cse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote CSE / Inter-CSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../load-misc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Load &amp; Miscellaneous
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5">
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start-Up and Policies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start-Up and Policies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StartupResources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start-Up Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AttributePolicies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attribute Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FlexContainerPolicies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FlexContainer Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ResourceTypePolicies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resource Type Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HelpDocumentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help File Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6">
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/NotificationServer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/OnboardingTool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Onboarding Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/HashCredentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hashing Credentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/ZookeeperTool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zookeeper Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7">
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACMEScript
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ACMEScript
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ACMEScript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ACMEScript-loading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loading &amp; Running Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ACMEScript-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ACMEScript-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ACMEScript-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ACMEScript-metatags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meta Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ACMEScript-uppertester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upper Tester Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Embedding_ACME/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedding ACME CSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DebugMode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debug Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TypeChecking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Type Checking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ThirdPartyLibraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third Party Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../plugins/PluginsOverview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugins
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../howtos/HowTos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HowTos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../help/FAQ/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="management-location-scheduling-policies">Management, Location, Scheduling &amp; Policies</h1>
+<p><em>6 test modules, 221 test cases. <a href="../">← Back to overview</a></em></p>
+<details class="note">
+<summary><code>testMgmtObj.py</code> — All &lt;mgmtObj&gt; specializations (FWR, SWR, MEM, ANI, ANDI, BAT, DVI, DVC, RBO, EVL, NYCFC, etc.) (91 tests)</summary>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Test Method</th>
+<th>Requests Performed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_createFWR</code></td>
+<td>CREATE a &lt;FWR&gt; (Firmware mgmtObj) under the &lt;NOD&gt; with <code>dc</code>, <code>vr</code>, <code>fwn</code>, <code>url</code>, <code>ud</code> -&gt; expects CREATED; checks <code>ri</code>.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_retrieveFWR</code></td>
+<td>RETRIEVE the &lt;FWR&gt; -&gt; expects OK; checks <code>mgd=FWR</code>.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_attributesFWR</code></td>
+<td>RETRIEVE the &lt;FWR&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, <code>dc</code>, <code>vr</code>, <code>fwn</code>, <code>url</code>, <code>ud</code>, and <code>uds</code> (update status, a dict).</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_deleteFWR</code></td>
+<td>DELETE the &lt;FWR&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_createSWR</code></td>
+<td>CREATE a &lt;SWR&gt; (Software) with <code>dc</code>, <code>vr</code>, <code>swn</code>, <code>url</code> -&gt; expects CREATED; checks <code>ri</code>.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_retrieveSWR</code></td>
+<td>RETRIEVE the &lt;SWR&gt; -&gt; expects OK; checks <code>mgd=SWR</code>.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_attributesSWR</code></td>
+<td>RETRIEVE the &lt;SWR&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, <code>dc</code>, <code>vr</code>, <code>swn</code>, <code>url</code>, and presence of <code>in</code>/<code>un</code>/<code>ins</code> (install/uninstall status fields).</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_deleteSWR</code></td>
+<td>DELETE the &lt;SWR&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>test_createMEM</code></td>
+<td>CREATE a &lt;MEM&gt; (Memory) with <code>dc</code>, <code>mma</code>, <code>mmt</code> -&gt; expects CREATED; checks <code>ri</code>.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>test_retrieveMEM</code></td>
+<td>RETRIEVE the &lt;MEM&gt; -&gt; expects OK; checks <code>mgd=MEM</code>.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>test_attributesMEM</code></td>
+<td>RETRIEVE the &lt;MEM&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, <code>dc</code>, <code>mma</code>, <code>mmt</code>.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>test_deleteMEM</code></td>
+<td>DELETE the &lt;MEM&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>test_createANI</code></td>
+<td>CREATE a &lt;ANI&gt; (areaNwkInfo) with <code>dc</code>, <code>ant</code>, <code>ldv</code> (list) -&gt; expects CREATED; checks <code>ri</code>.</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>test_retrieveANI</code></td>
+<td>RETRIEVE the &lt;ANI&gt; -&gt; expects OK; checks <code>mgd=ANI</code>.</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>test_attributesANI</code></td>
+<td>RETRIEVE the &lt;ANI&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, <code>dc</code>, <code>ant</code>, and <code>ldv</code> (2-item list).</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>test_deleteANI</code></td>
+<td>DELETE the &lt;ANI&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>test_createANDI</code></td>
+<td>CREATE a &lt;ANDI&gt; (areaNwkDeviceInfo) with <code>dc</code>, <code>dvd</code>, <code>dvt</code>, <code>awi</code>, <code>sli</code>, <code>sld</code>, <code>lnh</code> (list) -&gt; expects CREATED; checks <code>ri</code>.</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>test_retrieveANDI</code></td>
+<td>RETRIEVE the &lt;ANDI&gt; -&gt; expects OK; checks <code>mgd=ANDI</code>.</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>test_attributesANDI</code></td>
+<td>RETRIEVE the &lt;ANDI&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, <code>dc</code>, <code>dvd</code>, <code>dvt</code>, <code>awi</code>, <code>sli</code>, <code>sld</code>, <code>lnh</code> (2-item list).</td>
+</tr>
+<tr>
+<td>20</td>
+<td><code>test_deleteANDI</code></td>
+<td>DELETE the &lt;ANDI&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>21</td>
+<td><code>test_createBATWrong</code></td>
+<td>CREATE a &lt;BAT&gt; (battery) with an out-of-range <code>bts</code> (battery status, <code>99</code>) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>22</td>
+<td><code>test_createBAT</code></td>
+<td>CREATE a &lt;BAT&gt; with valid <code>dc</code>, <code>btl</code>, <code>bts</code> -&gt; expects CREATED; checks <code>ri</code>/<code>ty=MGMTOBJ</code>.</td>
+</tr>
+<tr>
+<td>23</td>
+<td><code>test_retrieveBAT</code></td>
+<td>RETRIEVE the &lt;BAT&gt; -&gt; expects OK; checks <code>mgd=BAT</code>.</td>
+</tr>
+<tr>
+<td>24</td>
+<td><code>test_attributesBAT</code></td>
+<td>RETRIEVE the &lt;BAT&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, <code>dc</code>, <code>btl</code>, <code>bts</code>.</td>
+</tr>
+<tr>
+<td>25</td>
+<td><code>test_deleteBAT</code></td>
+<td>DELETE the &lt;BAT&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>26</td>
+<td><code>test_createDVI</code></td>
+<td>CREATE a &lt;DVI&gt; (deviceInfo) with a full set of device-description attributes (<code>dlb</code>, <code>man</code>, <code>mfdl</code>, <code>mfd</code>, <code>mod</code>, <code>smod</code>, <code>dty</code>, <code>dvnm</code>, <code>fwv</code>, <code>swv</code>, <code>hwv</code>, <code>osv</code>, <code>cnty</code>, <code>loc</code>, <code>syst</code>, <code>spur</code>, <code>purl</code>, <code>ptl</code>) -&gt; expects CREATED; checks <code>ri</code>.</td>
+</tr>
+<tr>
+<td>27</td>
+<td><code>test_retrieveDVI</code></td>
+<td>RETRIEVE the &lt;DVI&gt; -&gt; expects OK; checks <code>mgd=DVI</code>.</td>
+</tr>
+<tr>
+<td>28</td>
+<td><code>test_attributesDVI</code></td>
+<td>RETRIEVE the &lt;DVI&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, and all the device-description attributes match what was created.</td>
+</tr>
+<tr>
+<td>29</td>
+<td><code>test_deleteDVI</code></td>
+<td>DELETE the &lt;DVI&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>30</td>
+<td><code>test_createDVC</code></td>
+<td>CREATE a &lt;DVC&gt; (deviceCapability) with <code>can</code>, <code>att</code>, <code>cas</code> (action/status dict), <code>cus</code> -&gt; expects CREATED; checks <code>ri</code>.</td>
+</tr>
+<tr>
+<td>31</td>
+<td><code>test_retrieveDVC</code></td>
+<td>RETRIEVE the &lt;DVC&gt; -&gt; expects OK; checks <code>mgd=DVC</code>.</td>
+</tr>
+<tr>
+<td>32</td>
+<td><code>test_attributesDVC</code></td>
+<td>RETRIEVE the &lt;DVC&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, <code>dc</code>, <code>can</code>, <code>att</code>, <code>cas.acn</code>/<code>cas.sus</code>, <code>cus</code>, and that <code>ena</code>/<code>dis</code> are both true.</td>
+</tr>
+<tr>
+<td>33</td>
+<td><code>test_updateDVCEnaTrue</code></td>
+<td>UPDATE the &lt;DVC&gt; setting <code>ena=True</code> -&gt; expects UPDATED; checks <code>ena</code>/<code>dis</code> both still true.</td>
+</tr>
+<tr>
+<td>34</td>
+<td><code>test_updateDVCEnaFalse</code></td>
+<td>UPDATE the &lt;DVC&gt; setting <code>ena=False</code> -&gt; expects UPDATED; checks <code>ena</code>/<code>dis</code> both true (CSE resets them).</td>
+</tr>
+<tr>
+<td>35</td>
+<td><code>test_updateDVCDisTrue</code></td>
+<td>UPDATE the &lt;DVC&gt; setting <code>dis=True</code> -&gt; expects UPDATED; checks <code>ena</code>/<code>dis</code> both true.</td>
+</tr>
+<tr>
+<td>36</td>
+<td><code>test_updateDVCDisFalse</code></td>
+<td>UPDATE the &lt;DVC&gt; setting <code>dis=False</code> -&gt; expects UPDATED; checks <code>ena</code>/<code>dis</code> both true.</td>
+</tr>
+<tr>
+<td>37</td>
+<td><code>test_updateDVCEnaDisTrue</code></td>
+<td>UPDATE the &lt;DVC&gt; setting both <code>ena=True</code> and <code>dis=True</code> simultaneously -&gt; expects BAD_REQUEST (mutually exclusive).</td>
+</tr>
+<tr>
+<td>38</td>
+<td><code>test_updateDVCEnaDisFalse</code></td>
+<td>UPDATE the &lt;DVC&gt; setting both <code>ena=False</code> and <code>dis=False</code> -&gt; expects UPDATED; checks <code>ena</code>/<code>dis</code> both reset to true.</td>
+</tr>
+<tr>
+<td>39</td>
+<td><code>test_deleteDVC</code></td>
+<td>DELETE the &lt;DVC&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>40</td>
+<td><code>test_createRBO</code></td>
+<td>CREATE a &lt;RBO&gt; (reboot) with <code>rbo=False</code>, <code>far=False</code> -&gt; expects CREATED; checks <code>ri</code>.</td>
+</tr>
+<tr>
+<td>41</td>
+<td><code>test_retrieveRBO</code></td>
+<td>RETRIEVE the &lt;RBO&gt; -&gt; expects OK; checks <code>mgd=RBO</code>.</td>
+</tr>
+<tr>
+<td>42</td>
+<td><code>test_attributesRBO</code></td>
+<td>RETRIEVE the &lt;RBO&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, <code>dc</code>, <code>rbo=False</code>, <code>far=False</code>.</td>
+</tr>
+<tr>
+<td>43</td>
+<td><code>test_updateRBORboTrue</code></td>
+<td>UPDATE the &lt;RBO&gt; setting <code>rbo=True</code> (trigger reboot) -&gt; expects UPDATED; checks <code>rbo</code>/<code>far</code> both reset to false (action consumed).</td>
+</tr>
+<tr>
+<td>44</td>
+<td><code>test_updateRBORboFalse</code></td>
+<td>UPDATE the &lt;RBO&gt; setting <code>rbo=False</code> -&gt; expects UPDATED; checks <code>rbo</code>/<code>far</code> both false.</td>
+</tr>
+<tr>
+<td>45</td>
+<td><code>test_updateRBOFarTrue</code></td>
+<td>UPDATE the &lt;RBO&gt; setting <code>far=True</code> (factory reset) -&gt; expects UPDATED; checks <code>rbo</code>/<code>far</code> both reset to false.</td>
+</tr>
+<tr>
+<td>46</td>
+<td><code>test_updateRBOFarFalse</code></td>
+<td>UPDATE the &lt;RBO&gt; setting <code>far=False</code> -&gt; expects UPDATED; checks <code>rbo</code>/<code>far</code> both false.</td>
+</tr>
+<tr>
+<td>47</td>
+<td><code>test_updateRBORboFarTrue</code></td>
+<td>UPDATE the &lt;RBO&gt; setting both <code>rbo=True</code> and <code>far=True</code> simultaneously -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>48</td>
+<td><code>test_updateRBORboFarFalse</code></td>
+<td>UPDATE the &lt;RBO&gt; setting both <code>rbo=False</code> and <code>far=False</code> -&gt; expects UPDATED; checks both false.</td>
+</tr>
+<tr>
+<td>49</td>
+<td><code>test_deleteRBO</code></td>
+<td>DELETE the &lt;RBO&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>50</td>
+<td><code>test_createNYCFCwrongSUID</code></td>
+<td>CREATE a &lt;NYCFC&gt; (myCertFileCred) with an invalid <code>suids</code> entry (<code>99</code>) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>51</td>
+<td><code>test_createNYCFC</code></td>
+<td>CREATE a &lt;NYCFC&gt; with valid <code>suids</code>, <code>mcff</code>, <code>mcfc</code> -&gt; expects CREATED; checks <code>ri</code>.</td>
+</tr>
+<tr>
+<td>52</td>
+<td><code>test_retrieveNYCFC</code></td>
+<td>RETRIEVE the &lt;NYCFC&gt; -&gt; expects OK; checks <code>mgd=NYCFC</code>.</td>
+</tr>
+<tr>
+<td>53</td>
+<td><code>test_attributesNYCFC</code></td>
+<td>RETRIEVE the &lt;NYCFC&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, <code>dc</code>, <code>suids</code>, <code>mcff</code>, <code>mcfc</code>.</td>
+</tr>
+<tr>
+<td>54</td>
+<td><code>test_deleteNYCFC</code></td>
+<td>DELETE the &lt;NYCFC&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>55</td>
+<td><code>test_createEVL</code></td>
+<td>CREATE a &lt;EVL&gt; (EventLog) with <code>lgt</code>, <code>lgd</code>, <code>lgst</code> -&gt; expects CREATED; checks <code>ri</code>.</td>
+</tr>
+<tr>
+<td>56</td>
+<td><code>test_retrieveEVL</code></td>
+<td>RETRIEVE the &lt;EVL&gt; -&gt; expects OK; checks <code>mgd=EVL</code>.</td>
+</tr>
+<tr>
+<td>57</td>
+<td><code>test_attributesEVL</code></td>
+<td>RETRIEVE the &lt;EVL&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, <code>dc</code>, <code>lgt</code>, <code>lgd</code>, <code>lgst</code>, and <code>lga</code>/<code>lgo</code> (action flags) both true.</td>
+</tr>
+<tr>
+<td>58</td>
+<td><code>test_deleteEVL</code></td>
+<td>DELETE the &lt;EVL&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>59</td>
+<td><code>test_createWIFIC</code></td>
+<td>CREATE a &lt;WIFIC&gt; (wificlient) with <code>ssid</code>, <code>wcrds</code> (credentials dict: <code>enct</code>/<code>unm</code>/<code>pwd</code>), <code>scan=False</code> -&gt; expects CREATED; checks <code>ri</code>.</td>
+</tr>
+<tr>
+<td>60</td>
+<td><code>test_retrieveWIFIC</code></td>
+<td>RETRIEVE the &lt;WIFIC&gt; -&gt; expects OK; checks <code>mgd=WIFIC</code>.</td>
+</tr>
+<tr>
+<td>61</td>
+<td><code>test_attributesWIFIC</code></td>
+<td>RETRIEVE the &lt;WIFIC&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, <code>ssid</code>, <code>wcrds.enct</code>/<code>unm</code>/<code>pwd</code>, <code>scan</code>, <code>scanr</code> (empty list), <code>ud</code>, <code>trdst</code>, <code>rdst</code> (all false defaults).</td>
+</tr>
+<tr>
+<td>62</td>
+<td><code>test_deleteWIFIC</code></td>
+<td>DELETE the &lt;WIFIC&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>63</td>
+<td><code>test_createWIFICCred1Fail</code></td>
+<td>CREATE a &lt;WIFIC&gt; with <code>wcrds.enct=2</code> combined with <code>unm</code>/<code>pwd</code> (invalid credential-type/field combination) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>64</td>
+<td><code>test_createWIFICCred2Fail</code></td>
+<td>CREATE a &lt;WIFIC&gt; with <code>wcrds.enct=4</code> combined with <code>wepk</code> (invalid combination) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>65</td>
+<td><code>test_createWIFICCred3Fail</code></td>
+<td>CREATE a &lt;WIFIC&gt; with <code>wcrds.enct=8</code> combined with <code>wpap</code> (invalid combination) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>66</td>
+<td><code>test_createDATC</code></td>
+<td>CREATE a &lt;DATC&gt; (dataCollection) with <code>cntp</code> (target container path) -&gt; expects CREATED; checks <code>ri</code>.</td>
+</tr>
+<tr>
+<td>67</td>
+<td><code>test_updateDATCrpscIntegerFail</code></td>
+<td>UPDATE the &lt;DATC&gt; setting <code>rpsc</code> (report schedule) to a plain integer instead of a schedule-entry list -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>68</td>
+<td><code>test_updateDATCmescIntegerFail</code></td>
+<td>UPDATE the &lt;DATC&gt; setting <code>mesc</code> (measurement schedule) to a plain integer -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>69</td>
+<td><code>test_updateDATCrpscInvalidSchedule1Fail</code></td>
+<td>UPDATE <code>rpsc</code> with a malformed schedule entry (not a dict with <code>sce</code>) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>70</td>
+<td><code>test_updateDATCrpscInvalidSchedule2Fail</code></td>
+<td>UPDATE <code>rpsc</code> with a <code>sce</code> cron string that has the wrong number of fields (5 instead of 7) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>71</td>
+<td><code>test_updateDATCrpscValidSchedule</code></td>
+<td>UPDATE <code>rpsc</code> with a valid 7-field cron schedule -&gt; expects UPDATED; checks <code>rpsc</code> is a list.</td>
+</tr>
+<tr>
+<td>72</td>
+<td><code>test_updateDATCmescInvalidSchedule1Fail</code></td>
+<td>UPDATE <code>mesc</code> with a malformed schedule entry -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>73</td>
+<td><code>test_updateDATCmescInvalidSchedule2Fail</code></td>
+<td>UPDATE <code>mesc</code> with a wrongly-formatted cron string -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>74</td>
+<td><code>test_updateDATCmescValidSchedule</code></td>
+<td>UPDATE <code>mesc</code> with a valid cron schedule -&gt; expects UPDATED; checks <code>mesc</code> is a list.</td>
+</tr>
+<tr>
+<td>75</td>
+<td><code>test_updateDATCmeilWhileMescFail</code></td>
+<td>UPDATE the &lt;DATC&gt; setting <code>meil</code> (measurement interval) while <code>mesc</code> is already set (mutually exclusive) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>76</td>
+<td><code>test_updateDATCmescMeilFail</code></td>
+<td>UPDATE the &lt;DATC&gt; setting both <code>mesc</code> and <code>meil</code> together in one request -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>77</td>
+<td><code>test_updateDATCremoveMescAddMeil</code></td>
+<td>UPDATE the &lt;DATC&gt; setting <code>mesc=None</code> and <code>meil=10000</code> together -&gt; expects UPDATED; checks <code>mesc</code> absent and <code>meil</code> set.</td>
+</tr>
+<tr>
+<td>78</td>
+<td><code>test_attributesDATC</code></td>
+<td>RETRIEVE the &lt;DATC&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, <code>cntp</code>, <code>mesc</code> absent, <code>meil=10000</code>, and <code>rpsc</code> has 1 entry with the expected <code>sce</code>.</td>
+</tr>
+<tr>
+<td>79</td>
+<td><code>test_deleteDATC</code></td>
+<td>DELETE the &lt;DATC&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>80</td>
+<td><code>test_createSIM</code></td>
+<td>CREATE a &lt;SIM&gt; with <code>imsi</code>, <code>icid</code>, <code>sist</code>, <code>sity</code>, <code>spn</code> -&gt; expects CREATED; checks <code>mgd=SIM</code>.</td>
+</tr>
+<tr>
+<td>81</td>
+<td><code>test_retrieveSIM</code></td>
+<td>RETRIEVE the &lt;SIM&gt; -&gt; expects OK; checks <code>mgd=SIM</code>.</td>
+</tr>
+<tr>
+<td>82</td>
+<td><code>test_attributesSIM</code></td>
+<td>RETRIEVE the &lt;SIM&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, <code>dc</code>, <code>imsi</code>, <code>icid</code>, <code>sist</code>, <code>sity</code>, <code>spn</code>.</td>
+</tr>
+<tr>
+<td>83</td>
+<td><code>test_deleteSIM</code></td>
+<td>DELETE the &lt;SIM&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>84</td>
+<td><code>test_createMNWK</code></td>
+<td>CREATE a &lt;MNWK&gt; (mobile network info) with <code>cnb</code>, <code>rss</code>, <code>liqu</code>, <code>ipad</code>/<code>ripa</code> (IP address lists), <code>apna</code>, <code>ceid</code>, <code>smnc</code>, <code>smcc</code>, <code>lac</code>, <code>coel</code> -&gt; expects CREATED; checks <code>mgd=MNWK</code>.</td>
+</tr>
+<tr>
+<td>85</td>
+<td><code>test_retrieveMNWK</code></td>
+<td>RETRIEVE the &lt;MNWK&gt; -&gt; expects OK; checks <code>mgd=MNWK</code>.</td>
+</tr>
+<tr>
+<td>86</td>
+<td><code>test_attributesMNWK</code></td>
+<td>RETRIEVE the &lt;MNWK&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, <code>dc</code>, and all the network attributes (<code>cnb</code>, <code>rss</code>, <code>liqu</code>, <code>ipad</code>/<code>ripa</code> contents, <code>apna</code>, <code>ceid</code>, <code>smnc</code>, <code>smcc</code>, <code>lac</code>, <code>coel</code>).</td>
+</tr>
+<tr>
+<td>87</td>
+<td><code>test_deleteMNWK</code></td>
+<td>DELETE the &lt;MNWK&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>88</td>
+<td><code>test_createCRDS</code></td>
+<td>CREATE a &lt;CRDS&gt; (credentials) with <code>pur</code>, <code>crid</code>, <code>crse</code>, <code>crtk</code> -&gt; expects CREATED; checks <code>mgd=CRDS</code>.</td>
+</tr>
+<tr>
+<td>89</td>
+<td><code>test_retrieveCRDS</code></td>
+<td>RETRIEVE the &lt;CRDS&gt; -&gt; expects OK; checks <code>mgd=CRDS</code>.</td>
+</tr>
+<tr>
+<td>90</td>
+<td><code>test_attributesCRDS</code></td>
+<td>RETRIEVE the &lt;CRDS&gt; -&gt; expects OK; checks <code>ty</code>, <code>pi</code>, <code>rn</code>, timestamps, <code>dc</code>, <code>pur</code>, <code>crid</code>, <code>crse</code>, <code>crtk</code>.</td>
+</tr>
+<tr>
+<td>91</td>
+<td><code>test_deleteCRDS</code></td>
+<td>DELETE the &lt;CRDS&gt; -&gt; expects DELETED.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary><code>testLocation.py</code> — Geo-query functionality and location-based queries (73 tests)</summary>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Test Method</th>
+<th>Requests Performed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_createContainerWrongLocFail</code></td>
+<td>CREATE a &lt;CNT&gt; with <code>loc</code> set to a malformed (non-dict) value -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_createContainerLocWrongAttributesFail</code></td>
+<td>CREATE a &lt;CNT&gt; with <code>loc</code> containing an unknown sub-attribute (<code>wrong</code>) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_createContainerLocPointIntCoordinatesFail</code></td>
+<td>CREATE a &lt;CNT&gt; with <code>loc.typ=1</code> (Point) and integer (not float) coordinates -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_createContainerLocPointWrongCountFail</code></td>
+<td>CREATE a &lt;CNT&gt; with <code>loc.typ=1</code> but multiple coordinate pairs (Point must have exactly one) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_createContainerLocPoint</code></td>
+<td>CREATE a &lt;CNT&gt; with a valid <code>loc.typ=1</code> Point -&gt; expects CREATED, checks <code>loc.typ</code>/<code>crd</code>; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_createContainerLocLineStringWrongCountFail</code></td>
+<td>CREATE a &lt;CNT&gt; with <code>loc.typ=2</code> (LineString) but only 1 coordinate pair (needs &gt;=2) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_createContainerLocLineString</code></td>
+<td>CREATE a &lt;CNT&gt; with a valid <code>loc.typ=2</code> LineString (2 points) -&gt; expects CREATED, checks <code>loc.typ</code>/<code>crd</code>; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_createContainerLocPolygonWrongCountFail</code></td>
+<td>CREATE a &lt;CNT&gt; with <code>loc.typ=3</code> (Polygon) but only 1 coordinate -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>test_createContainerLocPolygonWrongFirstLastCoordinateFail</code></td>
+<td>CREATE a &lt;CNT&gt; with <code>loc.typ=3</code> whose first and last coordinates don't match (polygon must be closed) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>test_createContainerLocPolygon</code></td>
+<td>CREATE a &lt;CNT&gt; with a valid closed <code>loc.typ=3</code> Polygon -&gt; expects CREATED, checks <code>loc.typ</code>/<code>crd</code>; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>test_createContainerLocMultiPointWrongFail</code></td>
+<td>CREATE a &lt;CNT&gt; with <code>loc.typ=4</code> (MultiPoint) and a malformed <code>crd</code> -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>test_createContainerLocMultiPointWrongCountFail</code></td>
+<td>CREATE a &lt;CNT&gt; with <code>loc.typ=4</code> and an incorrectly-nested coordinate structure -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>test_createContainerLocMultiPoint</code></td>
+<td>CREATE a &lt;CNT&gt; with a valid <code>loc.typ=4</code> MultiPoint -&gt; expects CREATED, checks <code>loc.typ</code>/<code>crd</code>; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>test_createContainerLocMultiLineStringWrongFail</code></td>
+<td>CREATE a &lt;CNT&gt; with <code>loc.typ=5</code> (MultiLineString) and a malformed <code>crd</code> -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>test_createContainerLocMultiLineString2WrongFail</code></td>
+<td>CREATE a &lt;CNT&gt; with <code>loc.typ=5</code> and an incorrectly-nested <code>crd</code> -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>test_createContainerLocMultiLineString</code></td>
+<td>CREATE a &lt;CNT&gt; with a valid <code>loc.typ=5</code> MultiLineString (2 lines) -&gt; expects CREATED, checks <code>loc.typ</code>/<code>crd</code>; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>test_createContainerLocMultiPolygonWrongFail</code></td>
+<td>CREATE a &lt;CNT&gt; with <code>loc.typ=6</code> (MultiPolygon) and a malformed <code>crd</code> -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>test_createContainerLocMultiPolygonWrongFirstLastCoordinateFail</code></td>
+<td>CREATE a &lt;CNT&gt; with <code>loc.typ=6</code> whose ring isn't closed -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>test_createContainerLocMultiPolygon</code></td>
+<td>CREATE a &lt;CNT&gt; with a valid closed <code>loc.typ=6</code> MultiPolygon -&gt; expects CREATED, checks <code>loc.typ</code>/<code>crd</code>; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>20</td>
+<td><code>test_geoQueryGmtyOnlyFail</code></td>
+<td>RETRIEVE the &lt;AE&gt; with <code>rcn=4</code> and only <code>gmty</code> (missing <code>gsf</code>/<code>geom</code>) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>21</td>
+<td><code>test_geoQueryGeomOnlyFail</code></td>
+<td>RETRIEVE with <code>rcn=4</code> and only <code>geom</code> -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>22</td>
+<td><code>test_geoQueryGsfOnlyFail</code></td>
+<td>RETRIEVE with <code>rcn=4</code> and only <code>gsf</code> -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>23</td>
+<td><code>test_geoQueryGeomWrongFail</code></td>
+<td>RETRIEVE with <code>rcn=4</code>, <code>gmty=1</code>, <code>gsf=1</code>, and a malformed <code>geom</code> value -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>24</td>
+<td><code>test_geoQueryPointWithinPolygon</code></td>
+<td>CREATE a &lt;CNT&gt; with a Polygon <code>loc</code>; RETRIEVE with a Point geo-query (<code>gsf=1</code> within) inside the polygon -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>25</td>
+<td><code>test_geoQueryPointOutsidePolygon</code></td>
+<td>Same Polygon &lt;CNT&gt;; geo-query Point outside it (<code>gsf=1</code>) -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>26</td>
+<td><code>test_geoQueryPointWithinPoint</code></td>
+<td>CREATE a &lt;CNT&gt; with a Point <code>loc</code>; geo-query the same Point (<code>gsf=1</code>) -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>27</td>
+<td><code>test_geoQueryPointContainsPoint</code></td>
+<td>Same Point &lt;CNT&gt;; geo-query the same Point with <code>gsf=2</code> (contains) -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>28</td>
+<td><code>test_geoQueryPointContainsPolygonFail</code></td>
+<td>CREATE a &lt;CNT&gt; with a Polygon <code>loc</code>; geo-query with <code>gsf=2</code> (contains) against a Point shape -&gt; expects OK with no match (a polygon resource can't be 'contained' the wrong way round); DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>29</td>
+<td><code>test_geoQueryPointIntersectsPoint</code></td>
+<td>CREATE a Point &lt;CNT&gt;; geo-query the same Point with <code>gsf=3</code> (intersects) -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>30</td>
+<td><code>test_geoQueryPointIntersectsPointFail</code></td>
+<td>Same Point &lt;CNT&gt;; geo-query a different, non-intersecting Point (<code>gsf=3</code>) -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>31</td>
+<td><code>test_geoQueryPointIntersectsPolygon</code></td>
+<td>CREATE a Polygon &lt;CNT&gt;; geo-query with a Point inside it (<code>gsf=3</code>) -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>32</td>
+<td><code>test_geoQueryPointIntersectsPolygonFail</code></td>
+<td>Same Polygon &lt;CNT&gt;; geo-query with a Point outside it (<code>gsf=3</code>) -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>33</td>
+<td><code>test_geoQueryLineStringWithinPolygon</code></td>
+<td>CREATE a Polygon &lt;CNT&gt;; geo-query with a LineString fully inside it (<code>gsf=1</code>) -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>34</td>
+<td><code>test_geoQueryLineStringOutsidePolygon</code></td>
+<td>Same Polygon &lt;CNT&gt;; geo-query with a LineString fully outside it (<code>gsf=1</code>) -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>35</td>
+<td><code>test_geoQueryPointWithinLineString1</code></td>
+<td>CREATE a LineString &lt;CNT&gt;; geo-query with a Point on the line (<code>gsf=1</code>) -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>36</td>
+<td><code>test_geoQueryPointWithinLineString2</code></td>
+<td>Same LineString &lt;CNT&gt;; geo-query with a different on-line Point (<code>gsf=1</code>) -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>37</td>
+<td><code>test_geoQueryLineStringContainsLineString</code></td>
+<td>CREATE a LineString &lt;CNT&gt;; geo-query with <code>gsf=2</code> against a LineString that the resource's geometry contains -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>38</td>
+<td><code>test_geoQueryLineStringContainsPolygonFail</code></td>
+<td>CREATE a Polygon &lt;CNT&gt;; geo-query with <code>gsf=2</code> against a LineString shape -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>39</td>
+<td><code>test_geoQueryPointIntersectsLineString</code></td>
+<td>CREATE a LineString &lt;CNT&gt;; geo-query with <code>gsf=3</code> against a Point lying on the line -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>40</td>
+<td><code>test_geoQueryLineStringIntersectsLineString</code></td>
+<td>CREATE a LineString &lt;CNT&gt;; geo-query with <code>gsf=3</code> against an intersecting LineString -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>41</td>
+<td><code>test_geoQueryLineStringIntersectsLineStringFail</code></td>
+<td>Same LineString &lt;CNT&gt;; geo-query with <code>gsf=3</code> against a non-intersecting LineString -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>42</td>
+<td><code>test_geoQueryPolygonWithinPolygon</code></td>
+<td>CREATE a Polygon &lt;CNT&gt;; geo-query with <code>gsf=1</code> against a larger enclosing Polygon -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>43</td>
+<td><code>test_geoQueryPolygonOutsidePolygon</code></td>
+<td>Same Polygon &lt;CNT&gt;; geo-query with <code>gsf=1</code> against a non-overlapping Polygon -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>44</td>
+<td><code>test_geoQueryPolygonPartlyWithinPolygonFail</code></td>
+<td>CREATE a Polygon &lt;CNT&gt;; geo-query with <code>gsf=1</code> against a Polygon that only partially overlaps (not fully within) -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>45</td>
+<td><code>test_geoQueryPolygonContainsPolygon</code></td>
+<td>CREATE a larger Polygon &lt;CNT&gt;; geo-query with <code>gsf=2</code> against a smaller Polygon fully inside it -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>46</td>
+<td><code>test_geoQueryPolygonContainsPolygonFail</code></td>
+<td>Same Polygon &lt;CNT&gt;; geo-query with <code>gsf=2</code> against a Polygon outside it -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>47</td>
+<td><code>test_geoQueryPolygonIntersectsPolygon</code></td>
+<td>CREATE a Polygon &lt;CNT&gt;; geo-query with <code>gsf=3</code> against an overlapping Polygon -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>48</td>
+<td><code>test_geoQueryPolygonIntersectsPolygonFail</code></td>
+<td>Same Polygon &lt;CNT&gt;; geo-query with <code>gsf=3</code> against a non-overlapping Polygon -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>49</td>
+<td><code>test_geoQueryMultiPointWithinPolygon</code></td>
+<td>CREATE a MultiPoint &lt;CNT&gt;; geo-query with <code>gsf=1</code> against an enclosing Polygon shape -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>50</td>
+<td><code>test_geoQueryMultiPointOutsidePolygon</code></td>
+<td>Same MultiPoint &lt;CNT&gt;; geo-query with <code>gsf=1</code> against a non-enclosing Polygon -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>51</td>
+<td><code>test_geoQueryMultiPointOutsidePolygonWrongGmtyFail</code></td>
+<td>Same MultiPoint &lt;CNT&gt;; geo-query using a mismatched <code>gmty</code> (Polygon shape type) against an out-of-range query polygon -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>52</td>
+<td><code>test_geoQueryMultiPointContainsPoint</code></td>
+<td>CREATE a MultiPoint &lt;CNT&gt;; geo-query with <code>gsf=2</code> against one of its own points -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>53</td>
+<td><code>test_geoQueryMultiPointContainsPointFail</code></td>
+<td>Same MultiPoint &lt;CNT&gt;; geo-query with <code>gsf=2</code> against a Point not in the set -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>54</td>
+<td><code>test_geoQueryPointIntersectsMultiPoint</code></td>
+<td>CREATE a Point &lt;CNT&gt;; geo-query with <code>gsf=3</code> against a MultiPoint query shape that includes that point -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>55</td>
+<td><code>test_geoQueryPointIntersectsMultiPointFail</code></td>
+<td>Same Point &lt;CNT&gt;; geo-query with <code>gsf=3</code> against a MultiPoint shape that doesn't include it -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>56</td>
+<td><code>test_geoQueryMultiPointIntersectsMultiPoint</code></td>
+<td>CREATE a MultiPoint &lt;CNT&gt;; geo-query with <code>gsf=3</code> against an overlapping MultiPoint shape -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>57</td>
+<td><code>test_geoQueryMultiPointIntersectsMultiPointFail</code></td>
+<td>Same MultiPoint &lt;CNT&gt;; geo-query with <code>gsf=3</code> against a non-overlapping MultiPoint shape -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>58</td>
+<td><code>test_geoQueryMultiLinestringWithinPolygon</code></td>
+<td>CREATE a MultiLineString &lt;CNT&gt;; geo-query with <code>gsf=1</code> against an enclosing Polygon -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>59</td>
+<td><code>test_geoQueryMultiLinestringOutsidePolygon</code></td>
+<td>Same MultiLineString &lt;CNT&gt;; geo-query with <code>gsf=1</code> against a non-enclosing Polygon -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>60</td>
+<td><code>test_geoQueryMultiLineContainsPoint</code></td>
+<td>CREATE a MultiLineString &lt;CNT&gt;; geo-query with <code>gsf=2</code> against a Point on one of its lines -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>61</td>
+<td><code>test_geoQueryMultiLineContainsPointFail</code></td>
+<td>Same MultiLineString &lt;CNT&gt;; geo-query with <code>gsf=2</code> against a Point not on any line -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>62</td>
+<td><code>test_geoQueryPointIntersectsMultiLine</code></td>
+<td>CREATE a Point &lt;CNT&gt;; geo-query with <code>gsf=3</code> against a MultiLineString shape it lies on -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>63</td>
+<td><code>test_geoQueryPointIntersectsMultiLineFail</code></td>
+<td>Same Point &lt;CNT&gt;; geo-query with <code>gsf=3</code> against a MultiLineString it doesn't intersect -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>64</td>
+<td><code>test_geoQueryLineStringIntersectsMultiLine</code></td>
+<td>CREATE a LineString &lt;CNT&gt;; geo-query with <code>gsf=3</code> against an overlapping MultiLineString -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>65</td>
+<td><code>test_geoQueryLineStringIntersectsMultiLineFail</code></td>
+<td>Same LineString &lt;CNT&gt;; geo-query with <code>gsf=3</code> against a non-overlapping MultiLineString -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>66</td>
+<td><code>test_geoQueryMultiPolygonWithinPolygon</code></td>
+<td>CREATE a MultiPolygon &lt;CNT&gt;; geo-query with <code>gsf=1</code> against an enclosing Polygon -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>67</td>
+<td><code>test_geoQueryMultiPolygonOutsidePolygon</code></td>
+<td>Same MultiPolygon &lt;CNT&gt;; geo-query with <code>gsf=1</code> against a non-enclosing Polygon -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>68</td>
+<td><code>test_geoQueryMultiPolygonContainsPoint</code></td>
+<td>CREATE a MultiPolygon &lt;CNT&gt;; geo-query with <code>gsf=2</code> against a Point inside one of its polygons -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>69</td>
+<td><code>test_geoQueryMultiPolygonContainsPointFail</code></td>
+<td>Same MultiPolygon &lt;CNT&gt;; geo-query with <code>gsf=2</code> against a Point outside all polygons -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>70</td>
+<td><code>test_geoQueryPointIntersectsMultiPolygon</code></td>
+<td>CREATE a Point &lt;CNT&gt;; geo-query with <code>gsf=3</code> against a MultiPolygon shape containing that point -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>71</td>
+<td><code>test_geoQueryPointIntersectsMultiPolygonFail</code></td>
+<td>Same Point &lt;CNT&gt;; geo-query with <code>gsf=3</code> against a MultiPolygon that doesn't contain it -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>72</td>
+<td><code>test_geoQueryPolygonIntersectsMultiPolygon</code></td>
+<td>CREATE a MultiPolygon &lt;CNT&gt;; geo-query with <code>gsf=3</code> against an overlapping Polygon -&gt; expects OK with a match; DELETE -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>73</td>
+<td><code>test_geoQueryPolygonIntersectsMultiPolygonFail</code></td>
+<td>Same MultiPolygon &lt;CNT&gt;; geo-query with <code>gsf=3</code> against a non-overlapping Polygon -&gt; expects OK with no match; DELETE -&gt; expects DELETED.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary><code>testLCP.py</code> — LocationPolicy (&lt;LCP&gt;) resource functionality (17 tests)</summary>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Test Method</th>
+<th>Requests Performed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_createLCPMissingLosFail</code></td>
+<td>CREATE an &lt;LCP&gt; under the &lt;AE&gt; without the mandatory <code>los</code> (location source) attribute -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_createMinimalLCP</code></td>
+<td>CREATE a minimal &lt;LCP&gt; with only <code>los=2</code> (device based) -&gt; expects CREATED, checks <code>lost</code> (location status) is empty; DELETE the &lt;LCP&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_createLCPWithSameCNTRnFail</code></td>
+<td>CREATE an &lt;LCP&gt; whose <code>lon</code> (location container name) equals its own resource name -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_createLCPWithLOS2LotFail</code></td>
+<td>CREATE an &lt;LCP&gt; with <code>los=2</code> (device based) together with <code>lot</code> (locationTargetID, invalid for that source) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_createLCPWithLOS2AidFail</code></td>
+<td>CREATE an &lt;LCP&gt; with <code>los=2</code> together with <code>aid</code> (authID, invalid for that source) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_createLCPWithLOS2LorFail</code></td>
+<td>CREATE an &lt;LCP&gt; with <code>los=2</code> together with <code>lor</code> (locationServer, invalid for that source) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_createLCPWithLOS2RlklFail</code></td>
+<td>CREATE an &lt;LCP&gt; with <code>los=2</code> together with <code>rlkl=True</code> (retrieveLastKnownLocation, invalid for that source) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_createLCPWithLOS2LuecFail</code></td>
+<td>CREATE an &lt;LCP&gt; with <code>los=2</code> together with <code>luec</code> (locationUpdateEventCriteria, invalid for that source) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>test_createLCPWithWrongGtaFail</code></td>
+<td>CREATE an &lt;LCP&gt; with an invalid <code>gta</code> (geoTargetArea) value -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>test_createLCPWithGta</code></td>
+<td>CREATE an &lt;LCP&gt; with a valid GeoJSON polygon as <code>gta</code> -&gt; expects CREATED, checks <code>gta</code> is present; DELETE the &lt;LCP&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>test_createLCPWithLit2Lou0</code></td>
+<td>CREATE an &lt;LCP&gt; with <code>lit=2</code> (geo-fence) and <code>lou=['PT0S']</code> (zero update period) -&gt; expects CREATED, checks <code>lost</code> is empty; DELETE the &lt;LCP&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>test_testPeriodicUpdates</code></td>
+<td>CREATE an &lt;LCP&gt; geo-fence policy with <code>lou=PT1S</code> (periodic 1s updates), linked container, target polygon, and <code>gec=2</code> (leaving) -&gt; expects CREATED; CREATE a &lt;CIN&gt; with an outside-the-polygon location -&gt; expects CREATED; sleep; RETRIEVE the linked container's latest &lt;CIN&gt; -&gt; expects OK, checks the geo-fence event code equals 2 (leaving); DELETE the &lt;LCP&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>test_testManualUpdates</code></td>
+<td>CREATE an &lt;LCP&gt; geo-fence policy with no <code>lou</code> (manual updates) and <code>gec=2</code> -&gt; expects CREATED; CREATE a &lt;CIN&gt; with an outside location -&gt; expects CREATED; RETRIEVE the latest &lt;CIN&gt; -&gt; expects OK, checks the geo-fence event equals 2 (leaving); DELETE the &lt;LCP&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>test_testManualInsideEvent</code></td>
+<td>CREATE an &lt;LCP&gt; with <code>gec=3</code> (inside); feed a sequence of inside/outside &lt;CIN&gt; location updates (inside, inside, outside, outside, inside again) -&gt; each CREATE expects CREATED; after each, RETRIEVE the latest &lt;CIN&gt; -&gt; expects OK and checks the geo-fence event code matches the expected inside/non-inside transitions for each step; DELETE the &lt;LCP&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>test_testManualOutsideEvent</code></td>
+<td>Same sequence of location updates as the inside-event test but with <code>gec=4</code> (outside) -&gt; each CREATE/RETRIEVE checks the geo-fence event reflects outside/non-outside transitions correctly at each step; DELETE the &lt;LCP&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>test_testManualLeavingEvent</code></td>
+<td>Same location-update sequence with <code>gec=2</code> (leaving) -&gt; checks the leaving event fires only on the inside-&gt;outside transition and not otherwise; DELETE the &lt;LCP&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>test_testManualEnteringEvent</code></td>
+<td>Same location-update sequence with <code>gec=1</code> (entering) -&gt; checks the entering event fires only on the outside-&gt;inside transition and not otherwise; DELETE the &lt;LCP&gt; -&gt; expects DELETED.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary><code>testSCH.py</code> — Schedule (&lt;SCH&gt;) resource functionality (22 tests)</summary>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Test Method</th>
+<th>Requests Performed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_createSCHunderCBwithNOCFail</code></td>
+<td>CREATE a &lt;SCH&gt; under &lt;CSEBase&gt; with <code>nco=True</code> (notification congestion, unsupported there) -&gt; expects CONTENTS_UNACCEPTABLE.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_createSCHunderNODwithNOCUnsupportedFail</code></td>
+<td>CREATE a &lt;SCH&gt; under &lt;NOD&gt; with <code>nco=True</code> (unsupported parent type for that feature) -&gt; expects NOT_IMPLEMENTED.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_createSCHunderCBwithoutNCO</code></td>
+<td>CREATE a &lt;SCH&gt; under &lt;CSEBase&gt; without <code>nco</code>, with a schedule expression -&gt; expects CREATED; DELETE it -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_updateSCHunderCBwithNCOFail</code></td>
+<td>CREATE a &lt;SCH&gt; under &lt;CSEBase&gt; -&gt; expects CREATED; UPDATE it adding <code>nco=True</code> -&gt; expects CONTENTS_UNACCEPTABLE; DELETE it -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_updateSCHunderNODwithNOCUnsupportedFail</code></td>
+<td>CREATE a &lt;SCH&gt; under &lt;NOD&gt; -&gt; expects CREATED; UPDATE it adding <code>nco=True</code> -&gt; expects NOT_IMPLEMENTED; DELETE it -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_createSCHunderSUBwrongRn</code></td>
+<td>CREATE a &lt;SUB&gt; -&gt; expects CREATED; CREATE a &lt;SCH&gt; under it with an incorrect, non-standard resource name -&gt; expects BAD_REQUEST; DELETE the &lt;SUB&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_createSCHunderSUBemptyRn</code></td>
+<td>CREATE a &lt;SUB&gt; -&gt; expects CREATED; CREATE a &lt;SCH&gt; under it with no <code>rn</code> -&gt; expects CREATED (default name applied); DELETE the &lt;SUB&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_createSCHunderSUBcorrectRn</code></td>
+<td>CREATE a &lt;SUB&gt; -&gt; expects CREATED; CREATE a &lt;SCH&gt; under it with the correct fixed name <code>notificationSchedule</code> -&gt; expects CREATED; DELETE the &lt;SUB&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>test_createSCHunderCRSwrongRn</code></td>
+<td>CREATE a &lt;SCH&gt; under the pre-existing &lt;CRS&gt; with an incorrect resource name -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>test_createSCHunderCRSemptyRn</code></td>
+<td>CREATE a &lt;SCH&gt; under the &lt;CRS&gt; with no <code>rn</code> -&gt; expects CREATED; DELETE it -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>test_createSCHunderCRScorrectRn</code></td>
+<td>CREATE a &lt;SCH&gt; under the &lt;CRS&gt; with the correct fixed name -&gt; expects CREATED; DELETE it -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>test_createSCHunderCB</code></td>
+<td>CREATE a &lt;SCH&gt; directly under &lt;CSEBase&gt; -&gt; expects CREATED; DELETE it -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>test_createSCHunderCBTwiceFail</code></td>
+<td>CREATE a &lt;SCH&gt; under &lt;CSEBase&gt; -&gt; expects CREATED; CREATE a 2nd one under the same parent -&gt; expects BAD_REQUEST (only one schedule allowed); DELETE the first -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>test_createSCHunderNOD</code></td>
+<td>CREATE a &lt;SCH&gt; under &lt;NOD&gt; -&gt; expects CREATED; DELETE it -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>test_testSCHunderSUBinsideSchedule</code></td>
+<td>CREATE a &lt;SUB&gt; -&gt; expects CREATED; CREATE a &lt;SCH&gt; under it with a schedule window starting soon -&gt; expects CREATED; UPDATE the &lt;AE&gt; to trigger a notification -&gt; expects UPDATED; checks a notification IS received once inside the scheduled window; DELETE the &lt;SUB&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>test_testSCHunderSUBoutsideSchedule</code></td>
+<td>Same setup but the schedule window starts later (outside the immediate check window) -&gt; UPDATE the &lt;AE&gt; -&gt; expects UPDATED; checks NO notification is received yet; DELETE the &lt;SUB&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>test_testSCHunderSUBoutsideScheduleImmediate</code></td>
+<td>Same out-of-window schedule but the &lt;SUB&gt; has <code>nec=2</code> (immediate notification, bypassing schedule) -&gt; UPDATE the &lt;AE&gt; -&gt; expects UPDATED; checks a notification IS received immediately despite being outside the schedule; DELETE the &lt;SUB&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>test_testSCHunderSUBWithOMinsideSchedule</code></td>
+<td>CREATE a &lt;SUB&gt; with an <code>om</code> (operationMonitor) on RETRIEVE -&gt; expects CREATED; CREATE a &lt;SCH&gt; with an immediate window -&gt; expects CREATED; RETRIEVE the &lt;AE&gt; (the monitored operation) -&gt; expects OK; checks a notification is received inside the schedule; DELETE the &lt;SUB&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>test_testSCHunderSUBWithOMoutsideSchedule</code></td>
+<td>Same operationMonitor &lt;SUB&gt; but with a later schedule window -&gt; RETRIEVE the &lt;AE&gt; -&gt; expects OK; checks NO notification yet; DELETE the &lt;SUB&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>20</td>
+<td><code>test_testSCHunderSUBWithOMoutsideScheduleImmediate</code></td>
+<td>Same as above but <code>nec=2</code> (immediate) on the &lt;SUB&gt; -&gt; RETRIEVE the &lt;AE&gt; -&gt; expects OK; checks a notification IS received immediately despite the later schedule; DELETE the &lt;SUB&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>21</td>
+<td><code>test_testSCHunderCRSinsideSchedule</code></td>
+<td>CREATE a &lt;CRS&gt; (cross-resource subscription monitoring the &lt;AE&gt;) -&gt; expects CREATED; CREATE a &lt;SCH&gt; under it with an immediate window -&gt; expects CREATED; UPDATE the &lt;AE&gt; to trigger evaluation -&gt; expects UPDATED; checks a notification IS received inside the window; DELETE the &lt;CRS&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>22</td>
+<td><code>test_testSCHunderCRSoutsideScheduleFail</code></td>
+<td>Same &lt;CRS&gt; setup but the &lt;SCH&gt; window starts later -&gt; UPDATE the &lt;AE&gt; -&gt; expects UPDATED; checks NO notification is received (outside the schedule); DELETE the &lt;CRS&gt; -&gt; expects DELETED.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary><code>testPDR.py</code> — PolicyDeletionRules resource functionality (5 tests)</summary>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Test Method</th>
+<th>Requests Performed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_createPDR</code></td>
+<td>CREATE a &lt;PDR&gt; under the &lt;NTP&gt; (created in setUp) -&gt; expects CREATED.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_retrievePDR</code></td>
+<td>RETRIEVE the &lt;PDR&gt; -&gt; expects OK.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_updatePDR</code></td>
+<td>UPDATE the &lt;PDR&gt; setting <code>lbl</code> -&gt; expects UPDATED; checks the returned <code>lbl</code> matches.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_deletePDR</code></td>
+<td>DELETE the &lt;PDR&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_createTooManyPDRsFail</code></td>
+<td>CREATE 2 additional &lt;PDR&gt;s under the &lt;NTP&gt; in a loop -&gt; each expects CREATED; CREATE a 3rd &lt;PDR&gt; -&gt; expects CONFLICT (exceeds the maximum allowed PDRs per NTP); DELETE the 2 created &lt;PDR&gt;s -&gt; each expects DELETED.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary><code>testSMD.py</code> — Semantic Descriptor (&lt;SMD&gt;) resource functionality (13 tests)</summary>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Test Method</th>
+<th>Requests Performed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_createSMDdcrpIRIFail</code></td>
+<td>CREATE a &lt;SMD&gt; under the &lt;AE&gt; with <code>dcrp</code> (descriptor representation) set to the IRI value -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_createSMDdspNotBase64Fail</code></td>
+<td>CREATE a &lt;SMD&gt; with <code>dsp</code> (descriptor) set to a non-base64 string -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_createSMDdspBase64</code></td>
+<td>CREATE a &lt;SMD&gt; with <code>dcrp=4</code> and a base64-encoded RDF/XML <code>dsp</code> -&gt; expects CREATED.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_deleteSMD</code></td>
+<td>DELETE the &lt;SMD&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_createSMDunderACPFail</code></td>
+<td>CREATE an &lt;ACP&gt; under the &lt;AE&gt; -&gt; expects CREATED; attempt to CREATE a &lt;SMD&gt; under that &lt;ACP&gt; -&gt; expects INVALID_CHILD_RESOURCE_TYPE; DELETE the &lt;ACP&gt; -&gt; expects DELETED.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_updateSMDwithSOEandDSPFail</code></td>
+<td>UPDATE the &lt;SMD&gt; setting both <code>soe</code> and <code>dsp</code> simultaneously -&gt; expects BAD_REQUEST (mutually exclusive attributes).</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_updateSMDwithVLDEtrue</code></td>
+<td>UPDATE the &lt;SMD&gt; setting <code>vlde=True</code> (validation enable) -&gt; expects UPDATED; checks the returned <code>vlde</code> is <code>True</code>.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_updateSMDwithVLDEfalse</code></td>
+<td>UPDATE the &lt;SMD&gt; setting <code>vlde=False</code> -&gt; expects UPDATED; checks <code>vlde</code> is <code>False</code> and <code>svd</code> (semantic validation descriptor result) is also falsy.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>test_semanticQueryOnlyRCNFail</code></td>
+<td>RETRIEVE the &lt;AE&gt; with only <code>rcn=semanticContent</code> (no semantic query format) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>test_semanticQueryOnlySQIFail</code></td>
+<td>RETRIEVE the &lt;AE&gt; with only <code>sqi=true</code> (no query content) -&gt; expects BAD_REQUEST.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>test_semanticQueryOnlySMF</code></td>
+<td>RETRIEVE the &lt;AE&gt; with only <code>smf</code> (semantic filter/query) set, a SPARQL query -&gt; expects OK.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>test_semanticQueryAsDiscoveryFail</code></td>
+<td>RETRIEVE combining <code>fu=1</code> (discovery), <code>sqi=true</code>, <code>rcn=semanticContent</code>, and <code>smf</code> together -&gt; expects BAD_REQUEST (semantic query cannot be combined with discovery).</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>test_semanticQuery</code></td>
+<td>RETRIEVE the &lt;AE&gt; with <code>sqi=true</code>, <code>rcn=semanticContent</code>, and a SPARQL <code>smf</code> query -&gt; expects OK; checks the <code>m2m:qres</code> result is well-formed XML/SPARQL-results or JSON output.</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="/home/License" rel="license noopener noreferrer" style="display:inline-block;">© 2025 by Andreas Kraft</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/home/Imprint/" target="_blank" rel="noopener" title="Imprint · Impressum" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M110 0C49.2 0 0 49.2 0 110c0 23.7 7.6 45.8 20.5 64C7.6 192 0 214.1 0 238c0 53.7 38.9 99.6 91.9 108.4l61.7 10.3c22.2 3.7 38.4 22.9 38.4 45.3 0 25.4-20.6 46-46 46H48c-17.7 0-32 14.3-32 32s14.3 32 32 32h98c60.7 0 110-49.2 110-110 0-23.7-7.6-45.9-20.5-64 12.9-18 20.5-40.1 20.5-64 0-53.8-38.9-99.6-91.9-108.5l-61.7-10.3C80.2 151.6 64 132.4 64 110c0-25.4 20.6-46 46-46h98c17.7 0 32-14.3 32-32S225.7 0 208 0zm74.7 299.1c-6.5-2.4-13.4-4.3-20.5-5.5l-61.7-10.3c-22.2-3.7-38.4-22.9-38.4-45.3 0-9.2 2.7-17.8 7.4-25 6.5 2.4 13.4 4.3 20.5 5.5l61.7 10.3c22.2 3.7 38.4 22.9 38.4 45.3 0 9.2-2.7 17.8-7.4 25"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/ankraft/ACME-oneM2M-CSE" target="_blank" rel="noopener" title="ACME Git Repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+    <a href="https://mstdn.social/@acmeCSE" target="_blank" rel="noopener me" title="ACME CSE @ Mastodon" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://discord.gg/6ryMHQC2Uj" target="_blank" rel="noopener" title="ACME Discord Server" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.footnote.tooltips", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

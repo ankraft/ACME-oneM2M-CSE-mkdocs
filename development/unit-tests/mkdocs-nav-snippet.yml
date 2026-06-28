@@ -1,0 +1,40 @@
+# Drop-in nav snippet: nests the new Test Reference catalog as children of
+# the EXISTING "Unit Tests" entry (development/UnitTests.md), so the how-to-
+# run-the-tests page and the per-test-case catalog live together in the nav.
+#
+# Replace the existing "Unit Tests" line in your current nav (wherever it
+# sits under Development) with this block. The path/filename casing below
+# (development/UnitTests.md) matches your live site; adjust if your source
+# file is actually named differently on disk.
+#
+# Place the 11 new files in docs/development/unit-tests/ (the folder name
+# does not need to match the existing page's filename casing).
+
+nav:
+  - Development:
+      - Overview: development/Overview.md
+      - API Docs: development/APIDocs.md
+      - Event System: development/EventSystem.md
+      - Unit Tests:
+          - development/UnitTests.md          # existing page: configuration & running tests
+          - Test Reference:
+              - Overview: development/unit-tests/index.md
+              - Core CSE & Registration: development/unit-tests/core-cse.md
+              - Containers & Data: development/unit-tests/containers-data.md
+              - Access Control & Security: development/unit-tests/access-control.md
+              - Subscriptions & Notifications: development/unit-tests/subscriptions.md
+              - Groups & Actions: development/unit-tests/groups-actions.md
+              - Discovery, Requests & Expiration: development/unit-tests/discovery-requests.md
+              - Management, Location & Policies: development/unit-tests/management-location.md
+              - Polling Channels: development/unit-tests/polling-channels.md
+              - Remote CSE / Inter-CSE: development/unit-tests/remote-cse.md
+              - Load & Miscellaneous: development/unit-tests/load-misc.md
+      - Start-Up and Policies: ...              # unchanged, abbreviated here
+      - Tools: ...                              # unchanged, abbreviated here
+      - ACMEScript: ...                         # unchanged, abbreviated here
+
+# Note: MkDocs nav entries that are themselves pages with children (like
+# "Unit Tests" above) render the parent page's own content when clicked,
+# and Material shows the children as an expandable sub-list beneath it in
+# the left sidebar -- matching the pattern your site already uses for
+# "Start-Up and Policies", "Tools", and "ACMEScript".
