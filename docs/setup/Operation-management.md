@@ -19,20 +19,40 @@ enableManagementEndpoint = true
 
 The CSE management interface provides several commands that can be used to manage the CSE and retrieve information about its operation. The commands are sent as HTTP requests to the management endpoint, which is  located at `/__mgmt__` of the CSE's HTTP server.
 
-| Command                                                                                                               | Description                                                                                                                                                                                                                                                                               |
-|:----------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| help                                                                                                                  | Show a list of available management commands.                                                                                                                                                                                                                                             |
-| creds<br>creds/reload<br>                                                                                             | ==development feature==<br>Managing credentials. For example, reloading the credentials for HTTP and WebSocket authentication.                                                                                                                                                            |
-| config                                                                                                                | Get the current configuration of the CSE in JSON format.                                                                                                                                                                                                                                  |
-| log                                                                                                                   | Stream the live log output of the CSE. The log will continue to stream until the connection is closed.                                                                                                                                                                                    |
-| loglevel<br>loglevel/&lt;level>                                                                                       | Get or set the log level of the CSE. The log level can be set to `info`, `debug`, `warn`, `error`, or `off`.                                                                                                                                                                              |
-| policies/attributes\[/&lt;filter>]<br>policies/flexcontainers\[/&lt;filter>]<br>policies/resourcetypes\[/&lt;filter>] | ==development feature==<br>Get the current policies of the CSE in JSON format. This includes the attribute policies, flexcontainer policies, and resource type policies.<br>A simple filter can be applied to each policy type. Only items containing the filter string will be returned. |
-| registrations<br>registrations/refresh                                                                                | Get the current registrations of the CSE in JSON format. This includes the registrations to remote CSEs, service providers and the registrations of local AEs.<br>Also, initiate a manual registration refresh.                                                                           |
-| requests<br>requests/enable<br>requests/disable<br>requests/status<br>requests/puml                                   | Stream a live output of the current requests of the CSE in JSON format as well as enable, disable and get the status of request recording.                                                                                                                                                |
-| reset                                                                                                                 | Reset the CSE to its initial state. This will clear all resources from the CSE.                                                                                                                                                                                                           |
-| restart                                                                                                               | Shutdown the CSE to restart it. The CSE will **not** restart internally, but it will exit with an exit code 82. See also the example below.                                                                                                                                               |
-| shutdown                                                                                                              | Shutdown the CSE normally. The CSE will exit with an exit code 0.                                                                                                                                                                                                                         |
-| status<br>status/interceptors<br>status/modules<br>status/plugins<br>status/services                                  | Get the current status of the CSE in JSON format. This includes information about the CSE resources, operational parameters, modules, plugins, interceptors, and services.                                                                                                                |
+=== "GET Operations"
+
+	| Command                                                                                                               | Description                                                                                                                                                                                                                                                                               |
+	|:----------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+	| help                                                                                                                  | Show a list of available management commands.                                                                                                                                                                                                                                             |
+	| creds<br>creds/reload<br>                                                                                             | ==development feature==<br>Managing credentials. For example, reloading the credentials for HTTP and WebSocket authentication.                                                                                                                                                            |
+	| config                                                                                                                | Get the current configuration of the CSE in JSON format.                                                                                                                                                                                                                                  |
+	| log                                                                                                                   | Stream the live log output of the CSE. The log will continue to stream until the connection is closed.                                                                                                                                                                                    |
+	| loglevel<br>loglevel/&lt;level>                                                                                       | Get or set the log level of the CSE. The log level can be set to `info`, `debug`, `warn`, `error`, or `off`.                                                                                                                                                                              |
+	| policies/attributes\[/&lt;filter>]<br>policies/flexcontainers\[/&lt;filter>]<br>policies/resourcetypes\[/&lt;filter>] | ==development feature==<br>Get the current policies of the CSE in JSON format. This includes the attribute policies, flexcontainer policies, and resource type policies.<br>A simple filter can be applied to each policy type. Only items containing the filter string will be returned. |
+	| registrations<br>registrations/refresh                                                                                | Get the current registrations of the CSE in JSON format. This includes the registrations to remote CSEs, service providers and the registrations of local AEs.<br>Also, initiate a manual registration refresh.                                                                           |
+	| requests<br>requests/enable<br>requests/disable<br>requests/status<br>requests/puml                                   | Stream a live output of the current requests of the CSE in JSON format as well as enable, disable and get the status of request recording.                                                                                                                                                |
+	| reset                                                                                                                 | Reset the CSE to its initial state. This will clear all resources from the CSE.                                                                                                                                                                                                           |
+	| restart                                                                                                               | Shutdown the CSE to restart it. The CSE will **not** restart internally, but it will exit with an exit code 82. See also the example below.                                                                                                                                               |
+	| shutdown                                                                                                              | Shutdown the CSE normally. The CSE will exit with an exit code 0.                                                                                                                                                                                                                         |
+	| status<br>status/interceptors<br>status/modules<br>status/plugins<br>status/services                                  | Get the current status of the CSE in JSON format. This includes information about the CSE resources, operational parameters, modules, plugins, interceptors, and services.                                                                                                                |
+
+=== "POST Operations"
+
+	| Command                                                              | Description                                                                                                                                                  |
+	|:---------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+	| creds/httpbasic<br>creds/httptoken<br>creds/wsbasic<br>creds/wstoken | ==development feature==<br>Adding credentials for HTTP and WebSocket authentication.<br>These commands expect a JSON payload with the necessary credentials. |
+
+=== "PUT Operations"
+
+	| Command                                                              | Description                                                                                                                                                    |
+	|:---------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+	| creds/httpbasic<br>creds/httptoken<br>creds/wsbasic<br>creds/wstoken | ==development feature==<br>Updating credentials for HTTP and WebSocket authentication.<br>These commands expect a JSON payload with the necessary credentials. |	
+
+=== "DELETE Operations"
+
+	| Command                                                                                                                | Description                                                                            |
+	|:-----------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------|
+	| creds/httpbasic/&lt;username><br>creds/httptoken/&lt;token><br>creds/wsbasic/&lt;username><br>creds/wstoken/&lt;token> | ==development feature==<br>Deleting credentials for HTTP and WebSocket authentication. |
 
 All commands with subcommands (e.g., `status` and `requests`) also have a *help* subcommand that provides more detailed information about the available subcommands and their usage. For example, to get more information about the `status` command, you can send the following request:
 
@@ -160,4 +180,28 @@ curl -X GET http://localhost:8080/__mgmt__/status/plugins
 
 # Get Registered Services
 curl -X GET http://localhost:8080/__mgmt__/status/services
+```
+
+### Managing Credentials
+
+```bash title="Managing Credentials"
+
+# Add a new HTTP Basic credential
+curl -X POST http://localhost:8080/__mgmt__/creds/httpbasic -d '{"username": "user1", "password": "pass1"}'
+
+# Update an existing HTTP Basic credential
+curl -X PUT http://localhost:8080/__mgmt__/creds/httpbasic -d '{"username": "user1", "password": "newpass1"}'
+
+# Delete an existing HTTP Basic credential
+curl -X DELETE http://localhost:8080/__mgmt__/creds/httpbasic/user1
+
+# Add a new WebSocket Token credential
+curl -X POST http://localhost:8080/__mgmt__/creds/wstoken -d '{"token": "token1"}'
+
+# Update an existing WebSocket Token credential
+curl -X PUT http://localhost:8080/__mgmt__/creds/wstoken -d '{"token": "token1", "new": "newtoken1"}'
+
+# Delete an existing WebSocket Token credential
+curl -X DELETE http://localhost:8080/__mgmt__/creds/wstoken/token1
+
 ```
