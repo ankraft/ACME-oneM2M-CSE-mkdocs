@@ -55,10 +55,10 @@ To get a list of all registered Services, you can use the [services()](https://a
 from acmecse.runtime.PluginSupport import pluginManager
 
 services = pluginManager.services()
-print(services) # ->  [('plugins.MyService', ['example'], {})]
-``` 
+print(services) # ->  [ServiceDefinition(pluginName='plugins.MyService', tags=['example'], metadata={}, priority=10)]
+```
 
-The returned list contains tuples with the name of the Service, its tags, and any additional metadata provided by the Service. In this example, there is one Service registered with the name `plugins.MyService`, the tag `example`, and no additional metadata.
+The returned list of [ServiceDefinition ](){target="_new"} ==development feature TBD== objects contains information about each discovered service, ie. the name of the Service, its tags, any additional metadata, and the service priority provided by the Service instance. In this example, there is one Service registered with the name `plugins.MyService`, the tag `example`, no additional metadata, and a priority of 10.
 
 To get a specific Service you can add a tag or list of tags to filter the Services by. For example, to get the Service with the tag `example`, you can use the following code:
 
@@ -66,7 +66,7 @@ To get a specific Service you can add a tag or list of tags to filter the Servic
 from acmecse.runtime.PluginSupport import pluginManager
 
 service = pluginManager.service('example')
-print(service) # ->  [('plugins.MyService', ['example'], {})]
+print(service) # ->   [ServiceDefinition(pluginName='plugins.MyService', ... )]
 ```
 
 To get the endpoints provided by a Service, you can use the [endpoints()](https://api.acmecse.net/acmecse.helpers.PluginManager.PluginManager.html#endpoints){target="_new"} method of the [PluginManager](https://api.acmecse.net/acmecse.helpers.PluginManager.PluginManager.html){target="_new"} class. For example, to get the endpoints provided by the `MyService` Service, you can use the following code:
@@ -75,17 +75,16 @@ To get the endpoints provided by a Service, you can use the [endpoints()](https:
 from acmecse.runtime.PluginSupport import pluginManager
 
 endpoints = pluginManager.endpoints('plugins.MyService')
-print(endpoints) # ->   [('service_endpoint', <Signature (arg1: str, arg2: int) -> str>)]
+print(endpoints) # -> [[EndpointDefinition(pluginName='plugins.MyService', endpointName='service_endpoint', signature=<Signature (arg1: str, arg2: int) -> str>)], ...]
 ```
 
-This will return a list of tuples with the name of the endpoint and its signature. In this example, there is one endpoint provided by the `MyService` Service with the name `service_endpoint` and the signature `(arg1: str, arg2: int) -> str`. The signature is provided as a `Signature` object from the `inspect` module, which allows you to easily get information about the endpoint's parameters and return type.
+This will return a list of [EndpointDefinition](){target="_new"} ==development feature: TBD== objects with the service and endpoint names and the signature of the endpoint. In this example, there is one endpoint provided by the `MyService` Service with the name `service_endpoint` and the signature `(arg1: str, arg2: int) -> str`. The signature is provided as a `Signature` object from the `inspect` module, which allows you to easily get information about the endpoint's parameters and return type.
 
 
 ## Calling Service Endpoints
 
 To call the endpoint defined in the previous section, you can use the 
 [PluginManager.callEndpoints()](https://api.acmecse.net/acmecse.helpers.PluginManager.PluginManager.html#callEndpoints){target="_new"} method. This method takes the endpoint name as the first argument, followed by one or more tags (or `None` to not filter) to optionally filter on the Service that provides the endpoint, and then any arguments that need to be passed to the endpoint.
-
 
 The [callEndpoints()](https://api.acmecse.net/acmecse.helpers.PluginManager.PluginManager.html#callEndpoints){target="_new"} method will return the result(s) returned by the endpoint implementation(s) in a list of tuples. Each tuple contains the result returned by the endpoint, the *name* of the Service that provided the endpoint, and any additional servie metadata.  
 If there are multiple Services that provide the same endpoint, all matching endpoints will be called and their results will be returned in the list. 
@@ -106,20 +105,41 @@ If there are multiple Services that provide the same endpoint, all matching endp
 			return f'You called service_endpoint with arg1={arg1} and arg2={arg2}'
 	```
 
-=== "Calling the Service Endpoint"
+=== "Calling all Service Endpoints"
 	```python 
-
 	# Somewhere else in the code, we can call the service endpoint like this:
+
 	from acmecse.runtime.PluginSupport import pluginManager
 
 	result = pluginManager.callEndpoints('service_endpoint', tags='example', arg1='value1', arg2=42)
-	print(result) # -> [('You called service_endpoint with arg1=value1 and arg2=42', 'plugins.my_service', {})]
+	print(result) # -> [('You called service_endpoint with arg1=value1 and arg2=42', 'plugins.MyService', {})]
 	```
 
 !!! Note
 	If there are multiple Services that provide the same endpoint, you can use the `tags` parameter to specify which Service to call. If there are multiple Services that match the specified tags, all matching Services will be called. If no Service matches the specified endpoint and tags, a [PluginNotFoundError](https://api.acmecse.net/acmecse.helpers.PluginManager.PluginNotFoundError.html){target="_new"} exception will be raised.
 
-TODO call a single endpoint
+
+To call a single endpoint, you can use the [PluginManager.callEndpoint()](https://api.acmecse.net/acmecse.helpers.PluginManager.PluginManager.html#callEndpoint){target="_new"} method. This method takes the service plugin's name and the endpoint name as the first two arguments, followed by any arguments that need to be passed to the endpoint. The [PluginManager.callEndpoint()](https://api.acmecse.net/acmecse.helpers.PluginManager.PluginManager.html#callEndpoint){target="_new"} method will return the result returned by the endpoint implementation.
+
+```python title="Calling a Single Service Endpoint"
+from acmecse.runtime.PluginSupport import pluginManager
+
+result = pluginManager.callEndpoint('plugins.MyService', 'service_endpoint', arg1='value1', arg2=42)
+print(result) # -> 'You called service_endpoint with arg1=value1 and arg2=42'
+```
+
+You can also provide a timeout for the endpoint call by using the `timeout` parameter. If the endpoint does not return a result within the specified timeout, an [EndpointTimeoutError](https://api.acmecse.net/acmecse.helpers.PluginManager.EndpointTimeoutError.html){target="_new"} exception will be raised.
+
+```python title="Calling a Service Endpoint with Timeout"
+# Somewhere else in the code, we can call the service endpoint like this:
+from acmecse.runtime.PluginSupport import pluginManager, EndpointTimeoutError
+
+try:
+	result = pluginManager.callEndpoint('plugins.MyService', 'service_endpoint', timeout=5, arg1='value1', arg2=42)
+	print(result) # -> 'You called service_endpoint with arg1=value1 and arg2=42'
+except EndpointTimeoutError:
+	print('The endpoint call timed out.')
+```
 
 
 ## Service Metadata
@@ -142,10 +162,7 @@ class MyService(Service):
 
 The content of the `_service_metadata_` dictionary is entirely up to the plugin developer. It can contain any information that might be useful for other plugins or for the users of the Service. For example, it could contain a description of the Service, its version, the author, or any other relevant information.	
 
-
-TODO get metadata when call services
-
-
+The metadata is provided as a dictionary when discovering the Service and when calling its endpoints.
 
 
 ## Event Handling

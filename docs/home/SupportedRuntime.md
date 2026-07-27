@@ -72,8 +72,11 @@ The ACME CSE provides the following additional features:
 	Plugins can be used to implement additional protocol bindings, management commands, and more.
 	In addition, ACME's core plugins are only loaded when their functionalities are enabled, 
 	which helps to keep the resource usage of the CSE low. It also increases portability,
-	as plugins that use platform-specific dependencies are only loaded on platforms that support them.    
-	See [Plugin Overview](../plugins/PluginsOverview.md) for more information about developing plugins for the ACME CSE.
+	as plugins that use platform-specific dependencies are only loaded on platforms that support them.  
+
+	See [Plugin Overview](../plugins/PluginsOverview.md) for more information about developing plugins for the ACME CSE.  
+
+	A special type of plugins called *Interceptors* can be used to hook into the CSE's request processing and to, for example, modify requests and responses before they are processed by the CSE or sent to the client. See [Plugin Interceptors](../plugins/PluginInterceptors.md) for more information about Interceptors.
 
 **Recording Requests**
 
@@ -127,4 +130,3 @@ The ACME CSE runs at least on the following runtime environments:
 	ACME CSE can be run headless inside a [Jupyter Notebook](../development/Embedding_ACME.md#jupyter-notebooks).
 - Docker  
 	ACME CSE can be run in a [Docker container](../howtos/Docker.md).
-
