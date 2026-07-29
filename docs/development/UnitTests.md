@@ -95,10 +95,11 @@ options:
   --run-count NUMBEROFRUNS
                         run each test suite n times (default: 1)
   --run-tests TESTCASENAME [TESTCASENAME ...], -run TESTCASENAME [TESTCASENAME ...]
-                        run only the specified test cases from the set of test suites
+                        run only the specified test cases from the set of test suites. Test case names
+                        may contain wildcards to run all matching test cases.
   --show-skipped        show skipped test cases in summary
   --no-failfast         continue running test cases after a failure
-   --local-notification-server, -lns
+  --local-notification-server, -lns
                         use a local notification server address
   --list-tests, -ls     list the test cases of the specified test suites in the order they are defined and exit
   --list-tests-sorted, -lss
@@ -178,7 +179,7 @@ The *runTest.py* script by default will run all test suites, **except** scripts 
 
 ### Running Individual Test Cases
 
-It is also possible to run individual test cases from test suites. This is done by optionally specify the test suites and then with the `--run-tests` or `-run`option a list of test case names to run:
+It is also possible to run individual test cases from test suites. This is done by optionally specify the test suites and then with the `--run-tests` or `-run` option a list of test case names to run:
 
 ```bash title="Run Single Test Case"
 $ python runTests.py testSUB --run-tests test_createCNTforEXC
@@ -188,6 +189,8 @@ The test cases can be specified in any order, and may appear more than once.
 
 !!! Note
 	Most unit tests in a test suite depend on each other (created resources, subscriptions, etc). Just running a single test case may fail. 
+
+#### Running Test Cases Without Tear-Down
 
 The most interesting use of this functionionality is to run a whole test suite together with the `--disable-teardown` option up to the point of a failure, and then run the failed test case again:
 
@@ -201,6 +204,13 @@ This disables the clean-up of the CSE after the test suite has run, so that the 
 
 To list the available test cases one can use the `--list-tests` (list in the order the test cases have been defined in the test suite) and the `--list-tests-sorted` (list alphabetically) options.
 
+#### Using Wildcards to Run Test Cases
+
+The test case names can also contain wildcards to run all matching test cases. For example, the following command runs all test cases in the *testSUB* test suite that start with *test_createCNT*:
+
+```bash title="Run Test Cases with Wildcard"
+$ python runTests.py testSUB --run-tests "test_createCNT*"
+```
 
 ### Excluding Test Cases
 
@@ -229,4 +239,3 @@ However, sometimes it would be useful to keep the resources created by the tests
 Some test cases in each test suite build on each other (such as adding a resource that is updated by further test cases). This means that the order of the test cases in each test suite is important. Individual test suites, however, can work independent from each other.
 
 Some test suites (for example *testRemote*) need in addition to a running IN- or MN-CSE another MN-CSE that registers to the "main" CSE (the system-under-test) in order to run registration and announcement tests.
-
