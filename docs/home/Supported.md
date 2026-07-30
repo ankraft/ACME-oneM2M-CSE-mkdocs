@@ -299,6 +299,8 @@ The following oneM2M service functionalities are supported.
 
 :	The ACME CSE supports normal retrieval and discovery of resources via the filterCriteria 
 	and discoveryResultType parameters.
+	
+	Content-based discovery for &lt;contentInstance> resources is supported.
 
 
 **Geo-Query**
@@ -535,4 +537,3 @@ discussed oneM2M functionalities. They are not yet part of the oneM2M standard.
 **Support for DELETE requests for http/1.0**
 
 :	Using [PATCH requests](../setup/Configuration-http.md#general-settings) to emulate DELETE requests for http/1.0 clients.
-
