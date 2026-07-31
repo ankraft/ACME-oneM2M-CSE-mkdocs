@@ -208,6 +208,11 @@ class MyPlugin:
 
 The plugin is loaded and initialized when the CSE starts. The [@init](https://api.acmecse.net/acmecse.helpers.PluginManager.html#init){target="_new"} decorated method is called during this phase.
 
+!!! warning "Access to  CSE components during the initialization phase"
+	The [@init](https://api.acmecse.net/acmecse.helpers.PluginManager.html#init){target="_new"} method is called during the startup of the CSE. One must not rely on any other plugin or CSE components or data structures being available during this phase. Only the plugin's own initialization should be performed in this method.
+
+	To perform initialization that depends on other plugins or CSE components, use the [@start](#start---running) method, which for user-provided plugins is called after all plugins and the CSE are fully initialized. One can also [subscribe](../development/EventSystem.md#defining-an-event-handler-with-decorators) to the [cseStartup](../development/EventSystem.md#cse-related-events) event to perform initialization after the CSE is fully started.
+	
 The signature of the decorated method is as follows:
 
 ```python title="Example: Plugin Initialization Decorator"
@@ -370,4 +375,3 @@ The signature of the decorated method is as follows:
 def provided_function(self, arg1, arg2) -> ReturnType:
 	...
 ```
-
