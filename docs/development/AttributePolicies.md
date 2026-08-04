@@ -149,6 +149,12 @@ Some of the fields are not yet used, but will supported by a future version of t
 	// - 1   : The attribute is mandatory
 	// - 1L  : The attribute is a mandatory list
 	"car" : "01|01L|1|1L",
+
+	// The releases that this attribute is valid for.
+	// Optional, and a list of one or two releases.
+	// If only one release is specified, then it is valid from that release onwards.
+	// If two releases are specified, then it is valid from the first release until the second release, inclusive.
+	"releases" : [ "minimum release"] | ["minimum release", "maximum release" ],
 }
 ```
 
