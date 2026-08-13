@@ -34,12 +34,11 @@ can be set by using the [interactive procedure](../setup/Installation.md#guided-
 | registrarCsePort  | The port of the registrar CSE.<br/>This setting is mandatory for *cseType* = *MN* and *ASN*.                                                                                                                | No[^2]   |                                                                              |
 | databaseType      | The type of database to use.<br/>Allowed values: `memory`, `tinydb`, `postgresql`                                                                                                                           | No       |                                                                              |
 | logLevel          | The log level for the CSE.<br/>Allowed values: `debug`, `info`, `warning`, `error`, `off`                                                                                                                   | Yes      | debug                                                                        |
-| consoleType       | The [type of console](../setup/Console.md) to use.<br/>Allowed values: `rich`, `simple`                                                                                                           | Yes      | rich                                                                         |
+| consoleType       | The [type of console](../setup/Console.md) to use.<br/>Allowed values: `rich`, `simple`                                                                                                                     | Yes      | rich                                                                         |
 | consoleTheme      | The theme for the console and text UI.<br/>Allowed values: `light`, `dark`                                                                                                                                  | Yes      | dark                                                                         |
-| secret            | The secret for the CSE.<br/>This is used for seeding hash functions and encryption.                                                                                        | Yes      | acme                                                                         |
+| secret            | The secret for the CSE.<br/>This is used for seeding hash functions and encryption.                                                                                                                         | Yes      | acme                                                                         |
 
 [^2]: This setting is mandatory for *cseType* = *MN* and *ASN*, and it is not required for *cseType* = *IN*.
 
 In addition to the settings in this table, the [built-in configuration settings](../setup/Configuration-introduction.md#built-in-settings) 
 and [environment variables](../setup/Configuration-introduction.md#environment-variables) can be used in the configuration.
-
