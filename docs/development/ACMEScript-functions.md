@@ -1738,12 +1738,7 @@ This function is primarily used when importing initial resources, and when resto
 
 `resource` is a valid oneM2M resource. All necessary attributes must be present in that resource, including the *parentID* (*pi*) attribute that determines the location in the resource tree.
 
-The function returns a list:
-
-`(<response status:number> <resource:JSON>)`
-
-- *response status* is the oneM2M Response Status Code (*RSC*) for the request
-- *resource* is the response content (usually *nil* if successful)
+The function returns the created resource as a JSON structure.
 
 ```lisp title="Example"
 ;; Add an AE resource under the CSEBase
@@ -1759,6 +1754,9 @@ The function returns a list:
 		"csz": [ "application/json", "application/cbor" ]
 	}})
 ```
+
+!!! see-also "See also"
+	[update-raw](#update-raw), [create-resource](#create-resource)
 
 ---
 
@@ -1855,6 +1853,38 @@ The function returns a list:
 
 ---
 
+### update-raw
+
+`(update-raw <originator:string> <address:string> <resource:JSON>)`
+
+The `update-raw` function updates a resource in the CSE without using the normal procedures when handling an [UPDATE request](#update-resource). The resource is updated in the resource tree without much validation.
+
+This function is primarily used when updating initial resources, and when restoring resources during the [startup](ACMEScript-metatags.md#onstartup) of the CSE.
+
+`resource` is a valid oneM2M resource. All necessary attributes must be present in that resource, including the *parentID* (*pi*) attribute that determines the location in the resource tree.
+
+`address` is the address of the resource to update. It must be a valid oneM2M resource ID or a valid oneM2M resource path.
+
+`resource` is a list of key-value pairs that represent the attributes to update in the resource. There is no check whether the attributes are valid for the resource type
+
+The function returns a list the updated resource as a JSON structure.
+
+- *resource* is the response content (usually *nil* if successful)
+
+```lisp title="Example"
+;; Add an AE resource under the CSEBase
+(update-raw 
+	"CmyAE"                                      ;; Originator
+	{ "m2m:ae": {
+		"lbl":  ["myLabel"]
+	}})
+```
+
+!!! see-also "See also"
+	[import-raw](#import-raw), [update-resource](#update-resource)
+
+---
+
 ### update-resource
 
 `(update-resource <originator:string> <resource-id:string> <resource:JSON> [request arguments:JSON])`
@@ -1878,7 +1908,7 @@ The function returns a list:
 - *resource* is the response content
 
 !!! see-also "See also"
-	[create-resource](#create-resource), [delete-resource](#delete-resource), [retrieve-resource](#retrieve-resource), [send-notification](#send-notification)
+	[create-resource](#create-resource), [delete-resource](#delete-resource), [retrieve-resource](#retrieve-resource), [send-notification](#send-notification), [update-raw](#update-raw)
 
 ```lisp title="Example"
 (update-resource "CAdmin" "cse-in"  { "m2m:cnt" : { "mni": 10 }})                ;; Returns ( 2004 { "m2m:cnt" ... } )
@@ -2234,4 +2264,3 @@ The function returns the result of the evaluated command.
 						 (print "Resource exists") 
 						 (print "Resource does not exist"))  ;; Evaluates the command
 ```
-
