@@ -1,8 +1,8 @@
 # Discovery, Requests & Expiration
 
-*4 test modules, 100 test cases. [&larr; Back to overview](index.md)*
+*4 test modules, 108 test cases. [&larr; Back to overview](index.md)*
 
-??? note "`testDiscovery.py` — Resource discovery requests (filter criteria, result content, etc.) (59 tests)"
+??? note "`testDiscovery.py` — Resource discovery requests (filter criteria, result content, etc.) (67 tests)"
 
     | # | Test Method | Requests Performed |
     |---|---|---|
@@ -65,6 +65,14 @@
     | 57 | `test_retrieveUnderCNTRCN5` | CREATE a fresh empty &lt;CNT&gt; -> expects CREATED; RETRIEVE it with `rcn=attributesAndChildResourceReferences` -> expects OK, checks `ch` is empty; DELETE it -> expects DELETED. |
     | 58 | `test_updateCNTwithRCN12Fail` | CREATE a &lt;CNT&gt; -> expects CREATED; UPDATE it using `rcn=permissions` (rcn=12, not valid for UPDATE) -> expects BAD_REQUEST; DELETE it -> expects DELETED. |
     | 59 | `test_retrieveCNTwithRCN12` | CREATE a &lt;CNT&gt; and a nested child &lt;CNT&gt; -> expects CREATED; RETRIEVE the parent with `rcn=permissions` -> expects OK; DELETE the parent -> expects DELETED. |
+    | 60 | `test_retrieveCINwithCFQWrongCFSFail` | Create test &lt;CIN&gt;s with JSON `con`; RETRIEVE with `cfq=$.temperature GT 23&cfs=2` (invalid `cfs` value) -> expects BAD_REQUEST; several additional RETRIEVEs with malformed `cfq` expressions (incomplete operand, trailing AND, unknown operator, non-path subject) -> each expects BAD_REQUEST; cleanup. |
+    | 61 | `test_retrieveCINwithCFQOnlyCFSFail` | Create test &lt;CIN&gt;s; RETRIEVE with only `cfs=1` (no `cfq` provided) -> expects BAD_REQUEST; cleanup. |
+    | 62 | `test_retrieveCINwithCFQWrongCFQFail` | Create test &lt;CIN&gt;s; RETRIEVE with a syntactically wrong `cfq` expression (`'wrong query'`) -> expects BAD_REQUEST; cleanup. |
+    | 63 | `test_retrieveCINwithCFQUnknownKeyFail` | Create test &lt;CIN&gt;s; RETRIEVE with `cfq=$.unknownKey GT 23` (valid syntax, non-existent JSON path) -> expects OK but checks no &lt;CIN&gt;s matched; cleanup. |
+    | 64 | `test_retrieveCINwithCFQsimple` | Create test &lt;CIN&gt;s (JSON `con` with `temperature` field); RETRIEVE with `cfq=$.temperature GT 23` -> expects OK; checks exactly 1 matching &lt;CIN&gt; returned with the expected `rn`; cleanup. |
+    | 65 | `test_retrieveCINwithCFQsingleClauseKeyword` | Create test &lt;CIN&gt;s; RETRIEVE with a battery of single-clause CFQ expressions testing EQ/NE/GT/LT/GTE/LTE operators on string and numeric JSON fields (including type-mismatch cases) -> each expects OK; checks match count and returned `rn` for positive cases; cleanup. |
+    | 66 | `test_retrieveCINwithCFQpathClause` | Create test &lt;CIN&gt;s; RETRIEVE with CFQ expressions using nested paths (`$.meta.id`), array indexing (`$.tags[0]`), and quoted keys (`$.meta.'device.id'`) -> each expects OK; checks match count (1 for valid paths, 0 for out-of-bound/non-existing paths); cleanup. |
+    | 67 | `test_retrieveCINwithCFQcombinedClause` | Create test &lt;CIN&gt;s; RETRIEVE with combined AND/OR CFQ expressions across multiple JSON fields -> each expects OK; checks match count reflects AND/OR semantics and precedence correctly; cleanup. |
 
 ??? note "`testREQ.py` — Request (&lt;REQ&gt;) resource functionality (async/non-blocking requests) (26 tests)"
 

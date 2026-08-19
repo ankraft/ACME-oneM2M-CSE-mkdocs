@@ -1,6 +1,6 @@
 # Load & Miscellaneous
 
-*3 test modules, 51 test cases. [&larr; Back to overview](index.md)*
+*3 test modules, 57 test cases. [&larr; Back to overview](index.md)*
 
 ??? note "`testLoad.py` — Load/stress testing of the CSE (12 tests)"
 
@@ -19,7 +19,7 @@
     | 11 | `test_storeSimpleCIN` | CREATE 1 &lt;AE&gt; and 1 &lt;CNT&gt; -> each expects CREATED; CREATE `count` &lt;CIN&gt;s with a small numeric string `con` ('23.5') -> each expects CREATED; DELETE the &lt;AE&gt;; measures elapsed time. |
     | 12 | `test_storeSimpleCINNoResponse` | Same as `test_storeSimpleCIN` but using the "no response" response type for each CREATE -> each expects NO_CONTENT; DELETE the &lt;AE&gt;; measures elapsed time. |
 
-??? note "`testMisc.py` — Miscellaneous CSE functionality not covered by a dedicated resource-type test file (37 tests)"
+??? note "`testMisc.py` — Miscellaneous CSE functionality not covered by a dedicated resource-type test file (43 tests)"
 
     | # | Test Method | Requests Performed |
     |---|---|---|
@@ -43,23 +43,29 @@
     | 18 | `test_validateListFail` | CREATE an &lt;AE&gt; with a `lbl` list containing a mixed-type element (a string and an integer) -> expects BAD_REQUEST. |
     | 19 | `test_resourceWithoutRN` | CREATE a &lt;CNT&gt; with no `rn` -> expects CREATED (CSE auto-generates a name); RETRIEVE it by the generated `rn` -> expects OK; DELETE it -> expects DELETED. |
     | 20 | `test_subWithoutRN` | CREATE a &lt;SUB&gt; with no `rn` -> expects CREATED; RETRIEVE it by the generated `rn` -> expects OK; DELETE it -> expects DELETED. |
-    | 21 | `test_createAEContentTypeWithSpacesHeader` | CREATE an &lt;AE&gt; (HTTP only) with a `Content-Type` header containing extra spaces around the `ty` parameter -> expects CREATED; DELETE it -> expects DELETED. |
-    | 22 | `test_retrieveCSEwithResourceTypeFail` | RETRIEVE the &lt;CSEBase&gt; with a `Content-Type` header that includes a `ty` parameter (not allowed on RETRIEVE) -> expects BAD_REQUEST. |
-    | 23 | `test_tokenValidationFail` | CREATE a &lt;CNT&gt; -> expects CREATED; UPDATE its `lbl` with invalid token values in sequence (double space, tab, newline, carriage return, empty string) -> each expects BAD_REQUEST; cleanup DELETE (result not checked). |
-    | 24 | `test_wrongRCNinUpdateFail` | CREATE a &lt;CNT&gt; -> expects CREATED; UPDATE it with `rcn=2` (an RCN not valid for UPDATE) -> expects BAD_REQUEST; DELETE the &lt;CNT&gt; -> expects DELETED. |
-    | 25 | `test_partialRetrieveCSEBaseSingle` | RETRIEVE the &lt;CSEBase&gt; with `atrl=rn` (partial attribute retrieve) -> expects OK; checks only `rn` is present and `ri` is absent. |
-    | 26 | `test_partialRetrieveCSEBaseMultiple` | RETRIEVE the &lt;CSEBase&gt; with `atrl=rn+ty` -> expects OK; checks `rn`/`ty` present and `ri` absent. |
-    | 27 | `test_partialDeleteCSEBaseFail` | DELETE the &lt;CSEBase&gt; with an `atrl` query parameter (partial delete not supported) -> expects BAD_REQUEST. |
-    | 28 | `test_partialRetrieveCSEBaseWrongRcnFail` | RETRIEVE the &lt;CSEBase&gt; with `atrl=rn` combined with an incompatible `rcn=2` -> expects BAD_REQUEST. |
-    | 29 | `test_partialRetrieveCSEBaseWrongAttributeFail` | RETRIEVE the &lt;CSEBase&gt; with `atrl=mni` (an attribute that doesn't exist on CSEBase) -> expects BAD_REQUEST. |
-    | 30 | `test_partialRetrieveCSEBaseROAttribute` | RETRIEVE the &lt;CSEBase&gt; with `atrl=ctm` (a valid read-only attribute) -> expects OK; checks `ri` is absent (only requested attribute returned). |
-    | 31 | `test_partialRetrieveCSingleOptionalAttribute` | CREATE a &lt;CNT&gt; -> expects CREATED; RETRIEVE it with `atrl=mni` -> expects OK, checks `ri` absent; DELETE the &lt;CNT&gt; -> expects DELETED. |
-    | 32 | `test_partialRetrieveFCNT` | CREATE a &lt;FCNT&gt; (`cod:lock`) -> expects CREATED; RETRIEVE it with `atrl=lock` -> expects OK, checks `ri` absent but `lock` present; DELETE the &lt;FCNT&gt; -> expects DELETED. |
-    | 33 | `test_notifyAE` | CREATE an &lt;AE&gt; with a notification `poa` -> expects CREATED; NOTIFY the &lt;AE&gt; with a generic `m2m:sgn` body (testing that extra query arguments aren't required) -> expects OK; checks a notification and its headers were received and no extraneous arguments were parsed; DELETE the &lt;AE&gt; -> expects DELETED. |
-    | 34 | `test_noResponseRetrieve` | CREATE a &lt;CNT&gt; -> expects CREATED; RETRIEVE it with `rt=noResponse` -> expects NO_CONTENT with an empty body; DELETE the &lt;CNT&gt; -> expects DELETED. |
-    | 35 | `test_noResponseCreate` | CREATE a &lt;CNT&gt; with `rt=noResponse` -> expects NO_CONTENT with an empty body; DELETE the &lt;CNT&gt; -> expects DELETED. |
-    | 36 | `test_noResponseUpdate` | CREATE a &lt;CNT&gt; -> expects CREATED; UPDATE it with `rt=noResponse` -> expects NO_CONTENT with an empty body; DELETE the &lt;CNT&gt; -> expects DELETED. |
-    | 37 | `test_noResponseDelete` | CREATE a &lt;CNT&gt; -> expects CREATED; DELETE it with `rt=noResponse` -> expects NO_CONTENT with an empty body. |
+    | 21 | `test_createAEContentTypeWithSpacesHeader` | HTTP only: CREATE an &lt;AE&gt; with a `Content-Type` header containing many extra spaces around the `ty` parameter (`'application/json;       ty=2'`) -> expects CREATED; DELETE -> expects DELETED. |
+    | 22 | `test_createAEContentTypeUnknownFail` | HTTP only: CREATE an &lt;AE&gt; with a `Content-Type` header using an unknown subtype (`'application/vnd.onem2m-res+;ty=2'`) -> expects something other than CREATED. |
+    | 23 | `test_createAEContentTypeNoneFail` | HTTP only: CREATE an &lt;AE&gt; with a `Content-Type` header set to an empty string -> expects something other than CREATED. |
+    | 24 | `test_createAEAcceptGeneric` | HTTP only: CREATE an &lt;AE&gt; with an `Accept: */*` header (generic wildcard accept) -> expects CREATED; DELETE -> expects DELETED. |
+    | 25 | `test_createAEAcceptWrongFail` | HTTP only: CREATE an &lt;AE&gt; with a malformed `Accept` header (`'application/vnd.onem2m-res+'`, missing subtype) -> expects something other than CREATED. |
+    | 26 | `test_retrieveCSEwithResourceTypeFail` | RETRIEVE the &lt;CSEBase&gt; with a `Content-Type` header that includes a `ty` parameter (not allowed on RETRIEVE) -> expects BAD_REQUEST. |
+    | 27 | `test_tokenValidationFail` | CREATE a &lt;CNT&gt; -> expects CREATED; UPDATE its `lbl` with invalid token values in sequence (double space, tab, newline, carriage return, empty string) -> each expects BAD_REQUEST; cleanup DELETE (result not checked). |
+    | 28 | `test_wrongRCNinUpdateFail` | CREATE a &lt;CNT&gt; -> expects CREATED; UPDATE it with `rcn=2` (an RCN not valid for UPDATE) -> expects BAD_REQUEST; DELETE the &lt;CNT&gt; -> expects DELETED. |
+    | 29 | `test_partialRetrieveCSEBaseSingle` | RETRIEVE the &lt;CSEBase&gt; with `atrl=rn` (partial attribute retrieve) -> expects OK; checks only `rn` is present and `ri` is absent. |
+    | 30 | `test_partialRetrieveCSEBaseMultiple` | RETRIEVE the &lt;CSEBase&gt; with `atrl=rn+ty` -> expects OK; checks `rn`/`ty` present and `ri` absent. |
+    | 31 | `test_partialDeleteCSEBaseFail` | DELETE the &lt;CSEBase&gt; with an `atrl` query parameter (partial delete not supported) -> expects BAD_REQUEST. |
+    | 32 | `test_partialRetrieveCSEBaseWrongRcnFail` | RETRIEVE the &lt;CSEBase&gt; with `atrl=rn` combined with an incompatible `rcn=2` -> expects BAD_REQUEST. |
+    | 33 | `test_partialRetrieveCSEBaseWrongAttributeFail` | RETRIEVE the &lt;CSEBase&gt; with `atrl=mni` (an attribute that doesn't exist on CSEBase) -> expects BAD_REQUEST. |
+    | 34 | `test_partialRetrieveCSEBaseROAttribute` | RETRIEVE the &lt;CSEBase&gt; with `atrl=ctm` (a valid read-only attribute) -> expects OK; checks `ri` is absent (only requested attribute returned). |
+    | 35 | `test_partialRetrieveCSingleOptionalAttribute` | CREATE a &lt;CNT&gt; -> expects CREATED; RETRIEVE it with `atrl=mni` -> expects OK, checks `ri` absent; DELETE the &lt;CNT&gt; -> expects DELETED. |
+    | 36 | `test_partialRetrieveFCNT` | CREATE a &lt;FCNT&gt; (`cod:lock`) -> expects CREATED; RETRIEVE it with `atrl=lock` -> expects OK, checks `ri` absent but `lock` present; DELETE the &lt;FCNT&gt; -> expects DELETED. |
+    | 37 | `test_notifyAE` | CREATE an &lt;AE&gt; with a notification `poa` -> expects CREATED; NOTIFY the &lt;AE&gt; with a generic `m2m:sgn` body (testing that extra query arguments aren't required) -> expects OK; checks a notification and its headers were received and no extraneous arguments were parsed; DELETE the &lt;AE&gt; -> expects DELETED. |
+    | 38 | `test_noResponseRetrieve` | CREATE a &lt;CNT&gt; -> expects CREATED; RETRIEVE it with `rt=noResponse` -> expects NO_CONTENT with an empty body; DELETE the &lt;CNT&gt; -> expects DELETED. |
+    | 39 | `test_noResponseCreate` | CREATE a &lt;CNT&gt; with `rt=noResponse` -> expects NO_CONTENT with an empty body; DELETE the &lt;CNT&gt; -> expects DELETED. |
+    | 40 | `test_noResponseUpdate` | CREATE a &lt;CNT&gt; -> expects CREATED; UPDATE it with `rt=noResponse` -> expects NO_CONTENT with an empty body; DELETE the &lt;CNT&gt; -> expects DELETED. |
+    | 41 | `test_noResponseDelete` | CREATE a &lt;CNT&gt; -> expects CREATED; DELETE it with `rt=noResponse` -> expects NO_CONTENT with an empty body. |
+    | 42 | `test_resourceNameTypeMismatchFail` | CREATE a resource using `m2m:ae` as the JSON key but `T.CNT` as the declared type -> expects BAD_REQUEST. |
+    | 43 | `test_fcntResourceNameTypeMismatchFail` | CREATE a resource using an arbitrary `m2m:foo` key with `T.FCNT` as the declared type -> expects BAD_REQUEST. |
 
 ??? note "`testALST.py` — AE Contact List (ALST) resource type handling (2 tests)"
 

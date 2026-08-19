@@ -1,8 +1,8 @@
 # Resource Tree: Containers & Data
 
-*8 test modules, 190 test cases. [&larr; Back to overview](index.md)*
+*9 test modules, 211 test cases. [&larr; Back to overview](index.md)*
 
-??? note "`testCNT.py` — Container (&lt;CNT&gt;) resource lifecycle and attribute handling (22 tests)"
+??? note "`testCNT.py` — Container (&lt;CNT&gt;) resource lifecycle and attribute handling (27 tests)"
 
     | # | Test Method | Requests Performed |
     |---|---|---|
@@ -28,6 +28,11 @@
     | 20 | `test_deleteCNTUnderCSE` | DELETE the &lt;CNT&gt; under &lt;CSEBase&gt; -> expects DELETED. |
     | 21 | `test_createCNTWithoutOriginator` | CREATE a &lt;CNT&gt; under &lt;CSEBase&gt; with no originator at all (HTTP binding only) -> expects something other than CREATED. |
     | 22 | `test_createCNTwithWrongTypeShortname` | CREATE a &lt;CNT&gt; whose JSON body uses an incorrect type short-name key (`'wrong'` instead of `'m2m:cnt'`) -> expects something other than CREATED. |
+    | 23 | `test_createCNTwithLaOlResourcenameFail` | CREATE a &lt;CNT&gt; under &lt;CSEBase&gt; -> expects CREATED; CREATE a child &lt;CNT&gt; with `rn='la'` -> expects CONFLICT (reserved name); CREATE another child with `rn='ol'` -> expects CONFLICT; DELETE the parent &lt;CNT&gt; -> expects DELETED. |
+    | 24 | `test_createCNTWithMBISGreaterThanMBSFail` | CREATE a &lt;CNT&gt; with `mbs=100` and `mbis=101` (max byte item size exceeds max byte size) -> expects BAD_REQUEST. |
+    | 25 | `test_updateCNTWithMBISGreaterThanMBSinOneUpdateFail` | CREATE a &lt;CNT&gt; with `mbs=100`, `mbis=50` -> expects CREATED; UPDATE setting `mbs=100`, `mbis=101` simultaneously -> expects BAD_REQUEST; DELETE -> expects DELETED. |
+    | 26 | `test_updateCNTWithMBISGreaterThanMBSinWithoutMBSFail` | CREATE a &lt;CNT&gt; with `mbs=100`, `mbis=50` -> expects CREATED; UPDATE setting only `mbis=101` (exceeds existing `mbs`) -> expects BAD_REQUEST; DELETE -> expects DELETED. |
+    | 27 | `test_updateCNTWithMBISGreaterThanMBSinWithoutMBISFail` | CREATE a &lt;CNT&gt; with `mbs=100`, `mbis=50` -> expects CREATED; UPDATE setting only `mbs=25` (now less than existing `mbis`) -> expects BAD_REQUEST; DELETE -> expects DELETED. |
 
 ??? note "`testCIN.py` — ContentInstance (&lt;CIN&gt;) creation, retrieval, and constraints (22 tests)"
 
@@ -56,7 +61,7 @@
     | 21 | `test_createCINwithAcpi` | CREATE a &lt;CIN&gt; with an `acpi` attribute set -> expects BAD_REQUEST (CIN doesn't support direct ACP assignment). |
     | 22 | `test_createCINwithDgt` | CREATE a &lt;CIN&gt; with a `dgt` (data generation time) attribute -> expects CREATED; RETRIEVE it -> expects OK, checks `dgt` matches. |
 
-??? note "`testCNT_CIN.py` — Combined Container/ContentInstance (&lt;CNT&gt;/&lt;CIN&gt;) interaction behavior (26 tests)"
+??? note "`testCNT_CIN.py` — Combined Container/ContentInstance (&lt;CNT&gt;/&lt;CIN&gt;) interaction behavior (29 tests)"
 
     | # | Test Method | Requests Performed |
     |---|---|---|
@@ -86,6 +91,9 @@
     | 24 | `test_createCNT5CIN` | CREATE a &lt;CNT&gt; with `mni=10`; CREATE 5 &lt;CIN&gt;s under it -> all expect CREATED. |
     | 25 | `test_deleteCNTOl` | RETRIEVE the &lt;CNT&gt; to record `cni`/`cbs`; RETRIEVE its `ol` -> expects OK; DELETE the `ol` -> expects DELETED; RETRIEVE the new `ol` -> expects OK, checks it's a different `ri`; RETRIEVE the &lt;CNT&gt; again -> expects OK, checks `cni`/`cbs` decreased accordingly. |
     | 26 | `test_deleteCNTLA` | Same pattern as `test_deleteCNTOl` but for `la` (latest) -> RETRIEVE, DELETE `la` -> expects DELETED, checks the new `la` differs and `cni`/`cbs` decreased. |
+    | 27 | `test_createCINWithMBISAndSmallSize` | UPDATE the &lt;CNT&gt; setting `mbis=10` -> expects UPDATED; CREATE a &lt;CIN&gt; whose `con` is smaller than `mbis` -> expects CREATED; UPDATE the &lt;CNT&gt; removing `mbis` (`None`) -> expects UPDATED, checks `mbis` absent. |
+    | 28 | `test_createCINWithMBISAndExactSize` | UPDATE the &lt;CNT&gt; setting `mbis=maxBS` -> expects UPDATED; CREATE a &lt;CIN&gt; whose `con` is exactly `maxBS` bytes -> expects CREATED, checks `con`; UPDATE the &lt;CNT&gt; removing `mbis` -> expects UPDATED. |
+    | 29 | `test_createCINWithMBISAndTooBig` | UPDATE the &lt;CNT&gt; setting `mbis=maxBS` -> expects UPDATED; CREATE a &lt;CIN&gt; whose `con` is `maxBS+1` bytes -> expects NOT_ACCEPTABLE; UPDATE the &lt;CNT&gt; removing `mbis` -> expects UPDATED. |
 
 ??? note "`testFCNT.py` — FlexContainer (&lt;FCNT&gt;) resource lifecycle and notifications (24 tests)"
 
@@ -231,3 +239,21 @@
     | 6 | `test_createTSBBcniDefault` | CREATE a &lt;TSB&gt; with `bcnc=PERIODIC` and no explicit `bcni` -> expects CREATED; checks `bcnt` is absent and a default `bcni` string is assigned; DELETE the &lt;TSB&gt; -> expects DELETED. |
     | 7 | `test_createTSBBcntDefault` | CREATE a &lt;TSB&gt; with `bcnc=LOSS_OF_SYNCHRONIZATION` and `bcnr` set but no explicit `bcnt` -> expects CREATED; checks `bcni` is absent and a default `bcnt` > 0 is assigned; DELETE the &lt;TSB&gt; -> expects DELETED. |
     | 8 | `test_createTSBPeriodic` | CREATE a &lt;TSB&gt; with `bcnc=PERIODIC` and an explicit `bcni` interval -> expects CREATED; checks `bcni`/`bcnc` in the response; waits for the periodic interval and checks a `m2m:tsbn` beacon notification was actually received with matching `tbr` (beacon resource) and a valid `ctm` timestamp; DELETE the &lt;TSB&gt; -> expects DELETED. |
+
+??? note "`testSMD.py` — Semantic Descriptor (&lt;SMD&gt;) resource functionality (13 tests)"
+
+    | # | Test Method | Requests Performed |
+    |---|---|---|
+    | 1 | `test_createSMDdcrpIRIFail` | CREATE a &lt;SMD&gt; under the &lt;AE&gt; with `dcrp` (descriptor representation) set to the IRI value -> expects BAD_REQUEST. |
+    | 2 | `test_createSMDdspNotBase64Fail` | CREATE a &lt;SMD&gt; with `dsp` (descriptor) set to a non-base64 string -> expects BAD_REQUEST. |
+    | 3 | `test_createSMDdspBase64` | CREATE a &lt;SMD&gt; with `dcrp=4` and a base64-encoded RDF/XML `dsp` -> expects CREATED. |
+    | 4 | `test_deleteSMD` | DELETE the &lt;SMD&gt; -> expects DELETED. |
+    | 5 | `test_createSMDunderACPFail` | CREATE an &lt;ACP&gt; under the &lt;AE&gt; -> expects CREATED; attempt to CREATE a &lt;SMD&gt; under that &lt;ACP&gt; -> expects INVALID_CHILD_RESOURCE_TYPE; DELETE the &lt;ACP&gt; -> expects DELETED. |
+    | 6 | `test_updateSMDwithSOEandDSPFail` | UPDATE the &lt;SMD&gt; setting both `soe` and `dsp` simultaneously -> expects BAD_REQUEST (mutually exclusive attributes). |
+    | 7 | `test_updateSMDwithVLDEtrue` | UPDATE the &lt;SMD&gt; setting `vlde=True` (validation enable) -> expects UPDATED; checks the returned `vlde` is `True`. |
+    | 8 | `test_updateSMDwithVLDEfalse` | UPDATE the &lt;SMD&gt; setting `vlde=False` -> expects UPDATED; checks `vlde` is `False` and `svd` (semantic validation descriptor result) is also falsy. |
+    | 9 | `test_semanticQueryOnlyRCNFail` | RETRIEVE the &lt;AE&gt; with only `rcn=semanticContent` (no semantic query format) -> expects BAD_REQUEST. |
+    | 10 | `test_semanticQueryOnlySQIFail` | RETRIEVE the &lt;AE&gt; with only `sqi=true` (no query content) -> expects BAD_REQUEST. |
+    | 11 | `test_semanticQueryOnlySMF` | RETRIEVE the &lt;AE&gt; with only `smf` (semantic filter/query) set, a SPARQL query -> expects OK. |
+    | 12 | `test_semanticQueryAsDiscoveryFail` | RETRIEVE combining `fu=1` (discovery), `sqi=true`, `rcn=semanticContent`, and `smf` together -> expects BAD_REQUEST (semantic query cannot be combined with discovery). |
+    | 13 | `test_semanticQuery` | RETRIEVE the &lt;AE&gt; with `sqi=true`, `rcn=semanticContent`, and a SPARQL `smf` query -> expects OK; checks the `m2m:qres` result is well-formed XML/SPARQL-results or JSON output. |

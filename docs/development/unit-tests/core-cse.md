@@ -1,6 +1,6 @@
 # Core CSE & Registration
 
-*5 test modules, 81 test cases. [&larr; Back to overview](index.md)*
+*4 test modules, 70 test cases. [&larr; Back to overview](index.md)*
 
 ??? note "`testCSE.py` — CSEBase (&lt;CSE&gt;) resource functionality (8 tests)"
 
@@ -15,7 +15,7 @@
     | 7 | `test_deleteCSEFail` | DELETE the &lt;CSEBase&gt; -> expects OPERATION_NOT_ALLOWED. |
     | 8 | `test_updateCSEFail` | UPDATE the &lt;CSEBase&gt; setting `lbl` -> expects OPERATION_NOT_ALLOWED. |
 
-??? note "`testAE.py` — Application Entity (&lt;AE&gt;) registration, update, deletion, and attribute handling (27 tests)"
+??? note "`testAE.py` — Application Entity (&lt;AE&gt;) registration, update, deletion, and attribute handling (29 tests)"
 
     | # | Test Method | Requests Performed |
     |---|---|---|
@@ -46,24 +46,8 @@
     | 25 | `test_createAEEmptyOriginator` | CREATE an &lt;AE&gt; with an explicitly empty-string originator -> expects CREATED; checks `aei`; DELETE it -> expects DELETED. |
     | 26 | `test_createAEInvalidRNFail` | CREATE an &lt;AE&gt; with an `rn` containing a disallowed character (`?`) -> expects BAD_REQUEST; CREATE another with a space in `rn` -> expects BAD_REQUEST. |
     | 27 | `test_createAEWithCreatorFail` | CREATE an &lt;AE&gt; with `cr` explicitly set to `None` -> expects BAD_REQUEST (creator attribute not permitted for AE self-registration). |
-
-??? note "`testNOD.py` — Node (&lt;NOD&gt;) resource lifecycle and notifications (13 tests)"
-
-    | # | Test Method | Requests Performed |
-    |---|---|---|
-    | 1 | `test_createNOD` | CREATE a &lt;NOD&gt; under the &lt;CSEBase&gt; with a node-ID (`ni`) -> expects CREATED; checks `ri` is present. |
-    | 2 | `test_retrieveNOD` | RETRIEVE the &lt;NOD&gt; -> expects OK. |
-    | 3 | `test_retrieveNODWithWrongOriginator` | RETRIEVE the &lt;NOD&gt; with an unauthorized originator -> expects ORIGINATOR_HAS_NO_PRIVILEGE. |
-    | 4 | `test_attributesNOD` | RETRIEVE the &lt;NOD&gt; -> expects OK; checks `ty`, `pi` (matches the CSEBase's `ri`), `rn`, `ct`, `lt`, `et`, and `ni`. |
-    | 5 | `test_updateNODLbl` | UPDATE the &lt;NOD&gt; setting `lbl` -> expects UPDATED; RETRIEVE it again -> expects OK, checks `lbl` contains the new tag. |
-    | 6 | `test_updateNODUnknownAttribute` | UPDATE the &lt;NOD&gt; with an unknown attribute -> expects BAD_REQUEST. |
-    | 7 | `test_createAEForNOD` | CREATE an &lt;AE&gt; with its `nl` (node link) pointing to the &lt;NOD&gt; -> expects CREATED, checks `nl`/`ri`/`aei`; RETRIEVE the &lt;NOD&gt; -> expects OK, checks the AE's `ri` is listed in the node's `hael` (hosted AE list). |
-    | 8 | `test_deleteAEForNOD` | DELETE the &lt;AE&gt; -> expects DELETED; RETRIEVE the &lt;NOD&gt; -> expects OK, checks `hael` is now absent (no more hosted AEs). |
-    | 9 | `test_moveAEToNOD2` | Re-create the &lt;AE&gt; linked to the first &lt;NOD&gt; (calls test_createAEForNOD); CREATE a 2nd &lt;NOD&gt; -> expects CREATED; UPDATE the &lt;AE&gt; to set `nl` to the 2nd node -> expects UPDATED, checks `nl`; RETRIEVE the 1st &lt;NOD&gt; -> expects OK, checks `hael` is now absent; RETRIEVE the 2nd &lt;NOD&gt; -> expects OK, checks `hael` now contains the AE's `ri`. |
-    | 10 | `test_deleteNOD2` | DELETE the 2nd &lt;NOD&gt; -> expects DELETED; RETRIEVE the &lt;AE&gt; -> expects OK, checks `nl` is now absent (link removed when its target node was deleted). |
-    | 11 | `test_deleteNOD` | DELETE the (first) &lt;NOD&gt; -> expects DELETED. |
-    | 12 | `test_createNODEmptyHael` | CREATE a &lt;NOD&gt; with an explicit empty `hael` list -> expects BAD_REQUEST. |
-    | 13 | `test_createNODDoubleHael` | CREATE a &lt;NOD&gt; with a pre-set `hael` list containing one entry -> expects CREATED, checks `hael` has length 1; CREATE an &lt;AE&gt; whose `nl` points to that node -> expects CREATED; RETRIEVE the &lt;NOD&gt; -> expects OK, checks `hael` still has exactly 1 entry containing the AE's `ri` (no duplicate); DELETE the &lt;AE&gt; and the &lt;NOD&gt; -> each expects DELETED. |
+    | 28 | `test_createAEwithWrongM2MExtIDFail` | CREATE an &lt;AE&gt; with `mei` (M2M-EXT-ID) set to `'wrong'` (not in the required `id@domain` format) -> expects BAD_REQUEST. |
+    | 29 | `test_createAEwithM2MExtID` | CREATE an &lt;AE&gt; with a valid `mei='id@example.com'` -> expects CREATED; checks `aei` assigned and `mei` matches; DELETE the &lt;AE&gt; -> expects DELETED. |
 
 ??? note "`testRequests.py` — General request handling, headers, and response codes (17 tests)"
 

@@ -1,8 +1,8 @@
 # Polling Channels
 
-*2 test modules, 26 test cases. [&larr; Back to overview](index.md)*
+*2 test modules, 30 test cases. [&larr; Back to overview](index.md)*
 
-??? note "`testPCH.py` — PollingChannel (&lt;PCH&gt;) resource functionality (13 tests)"
+??? note "`testPCH.py` — PollingChannel (&lt;PCH&gt;) resource functionality (16 tests)"
 
     | # | Test Method | Requests Performed |
     |---|---|---|
@@ -16,11 +16,14 @@
     | 8 | `test_attributesPCH` | RETRIEVE the &lt;PCH&gt; -> expects OK; checks `ty`, `ct`, `lt`, `et`, and that `ct` &lt;= `lt` &lt; `et`. |
     | 9 | `test_setAggreagstionState` | UPDATE the &lt;PCH&gt; setting `rqag=True` (request aggregation) -> expects UPDATED; checks the returned `rqag`. |
     | 10 | `test_getAggreagstionState` | RETRIEVE the &lt;PCH&gt; -> expects OK; checks `rqag` is `True`. |
-    | 11 | `test_deletePCHwrongOriginatorFail` | DELETE the &lt;PCH&gt; with an unauthorized originator -> expects ORIGINATOR_HAS_NO_PRIVILEGE. |
-    | 12 | `test_deletePCH` | DELETE the &lt;PCH&gt; with the correct originator -> expects DELETED. |
-    | 13 | `test_retrievePCUAfterDeleteFail` | RETRIEVE the &lt;PCH&gt;'s `pcu` (pollingChannelURI) after the &lt;PCH&gt; was deleted -> expects NOT_FOUND. |
+    | 11 | `test_retrievePCHforR3` | RETRIEVE the &lt;PCH&gt; with `X-M2M-RVI: 3` header -> expects OK; checks `rqag` is absent in the response (not exposed pre-RVI4). |
+    | 12 | `test_createPCHforR3WithRQAGFail` | CREATE a &lt;PCH&gt; under the 2nd &lt;AE&gt; with `rqag=True` and `X-M2M-RVI: 3` -> expects BAD_REQUEST (`rqag` not allowed pre-RVI4). |
+    | 13 | `test_updatePCHforR3WithRQAGFail` | CREATE a &lt;PCH&gt; for the 2nd &lt;AE&gt; without `rqag` using `X-M2M-RVI: 3` -> expects CREATED; UPDATE it setting `rqag=True` with `X-M2M-RVI: 3` -> expects BAD_REQUEST; DELETE -> expects DELETED. |
+    | 14 | `test_deletePCHwrongOriginatorFail` | DELETE the &lt;PCH&gt; with an unauthorized originator -> expects ORIGINATOR_HAS_NO_PRIVILEGE. |
+    | 15 | `test_deletePCH` | DELETE the &lt;PCH&gt; with the correct originator -> expects DELETED. |
+    | 16 | `test_retrievePCUAfterDeleteFail` | RETRIEVE the &lt;PCH&gt;'s `pcu` (pollingChannelURI) after the &lt;PCH&gt; was deleted -> expects NOT_FOUND. |
 
-??? note "`testPCH_PCU.py` — PollingChannelURI (&lt;PCU&gt;) functionality (13 tests)"
+??? note "`testPCH_PCU.py` — PollingChannelURI (&lt;PCU&gt;) functionality (14 tests)"
 
     | # | Test Method | Requests Performed |
     |---|---|---|
@@ -36,4 +39,5 @@
     | 10 | `test_accessPCUwithshortExpiration` | RETRIEVE the 2nd AE's `pcu` with a short request-expiration header (half the normal delay) and nothing pending -> expects REQUEST_TIMEOUT. |
     | 11 | `test_updatePCHaggregate` | UPDATE the 2nd AE's &lt;PCH&gt; setting `rqag=True` -> expects UPDATED; checks the returned `rqag`. |
     | 12 | `test_aggregation` | Poll and answer a &lt;SUB&gt; verification request while CREATEing a &lt;SUB&gt; under &lt;CNT&gt; -> expects CREATED; UPDATE the &lt;PCH&gt; to enable aggregation (`rqag=True`) -> expects UPDATED; CREATE 5 &lt;CIN&gt;s concurrently in separate threads (each triggers a notification) -> each expects CREATED; poll the `pcu` once more with `aggregated=True` -> expects OK, and the response is validated as an `m2m:agrp` list containing all the aggregated notification requests, each individually answered OK. |
-    | 13 | `test_createNotificationDoPolling` | CREATE a &lt;CIN&gt; under &lt;CNT&gt; (intended to trigger a notification for later polling, marked TODO/incomplete in the source) -> expects CREATED. |
+    | 13 | `test_aggregationR3` | CREATE 5 &lt;CIN&gt;s concurrently in threads (each triggering a notification) -> each expects CREATED; poll the 2nd AE's `pcu` with `release='3'` and `aggregated=False` -> expects OK, checks the response is a single non-aggregated request (not an `m2m:agrp` list), as per RVI3 behaviour. |
+    | 14 | `test_createNotificationDoPolling` | CREATE a &lt;CIN&gt; under &lt;CNT&gt; (intended to trigger a notification for later polling, marked TODO/incomplete in the source) -> expects CREATED. |
