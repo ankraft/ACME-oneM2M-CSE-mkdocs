@@ -194,6 +194,17 @@ The following settings are used to configure, and enable or disable the CSE's se
 | enable  | Enable the timeSeries service. | True    |
 
 
+### TriggerRequest Service
+
+**Section: `[cse.service.triggerRequest]`**
+
+| Setting              | Description                                                                                                                                                                                                                                                 | Default     |
+|:---------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------|
+| enable               | Enable the triggerRequest service.<br>This setting also enables or disables the default TriggerRequestHandler plugin.                                                                                                                                       | True        |
+| initialTriggerDelay  | The delay in seconds before the TriggerRequestManager starts handling a trigger request after it has been created. This delay is used to give the assigned NSE service handler plugin time to prepare for the trigger request.<br>Must be greater than 0.0. | 1.0 seconds |
+| triggerCheckInterval | The interval in seconds to check for results of trigger requests that are still in the "processing" state.<br>Must be greater than 0.0.                                                                                                                     | 1.0 seconds |
+
+
 
 ## Statistics
 

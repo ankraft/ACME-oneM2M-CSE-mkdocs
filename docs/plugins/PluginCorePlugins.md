@@ -42,16 +42,17 @@
 The service plugins implement oneM2M's *Common Service Functions* They run together with the CSE core.
 
 
-| Plugin Name                                  | Functionality                                                                                                                         | Responsible Configuration Setting                                                         |
-|:---------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------|
-| acmecse.plugins.services.ActionManager       | Provides the action management services.                                                                                              | [\[cse.service.action\]:enable](../setup/Configuration-cse.md#action-service)             |
-| acmecse.plugins.services.AnnouncementManager | Provides the announcement management services.<br>The *acmecse.plugins.services.RemoteCSEManager* plugin is required for this plugin. | [\[cse.service.announcement\]:enable](../setup/Configuration-cse.md#announcement-service) |
-| acmecse.plugins.services.GroupManager        | Provides the group management services.                                                                                               | [\[cse.service.group\]:enable](../setup/Configuration-cse.md#group-service)               |
-| acmecse.plugins.services.LocationManager     | Provides the location management services.                                                                                            | [\[cse.service.location\]:enable](../setup/Configuration-cse.md#location-service)         |
-| acmecse.plugins.services.RemoteCSEManager    | Provides the remote CSE management services.                                                                                          | [\[cse.service.remoteCSE\]:enable](../setup/Configuration-cse.md#remote-cse-service)      |
-| acmecse.plugins.services.SemanticManager     | Provides the semantic management services.                                                                                            | [\[cse.service.semantic\]:enable](../setup/Configuration-cse.md#semantic-service)         |
-| acmecse.plugins.services.TimeManager         | Provides general time management services.                                                                                            | [\[cse.service.time\]:enable](../setup/Configuration-cse.md#time-service)                 |
-| acmecse.plugins.services.TimeSeriesManager   | Provides the timeSeries management services.                                                                                          | [\[cse.service.timeSeries\]:enable](../setup/Configuration-cse.md#timeseries-service)     |
+| Plugin Name                                    | Functionality                                                                                                                         | Responsible Configuration Setting                                                             |
+|:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------|
+| acmecse.plugins.services.ActionManager         | Provides the action management services.                                                                                              | [\[cse.service.action\]:enable](../setup/Configuration-cse.md#action-service)                 |
+| acmecse.plugins.services.AnnouncementManager   | Provides the announcement management services.<br>The *acmecse.plugins.services.RemoteCSEManager* plugin is required for this plugin. | [\[cse.service.announcement\]:enable](../setup/Configuration-cse.md#announcement-service)     |
+| acmecse.plugins.services.GroupManager          | Provides the group management services.                                                                                               | [\[cse.service.group\]:enable](../setup/Configuration-cse.md#group-service)                   |
+| acmecse.plugins.services.LocationManager       | Provides the location management services.                                                                                            | [\[cse.service.location\]:enable](../setup/Configuration-cse.md#location-service)             |
+| acmecse.plugins.services.RemoteCSEManager      | Provides the remote CSE management services.                                                                                          | [\[cse.service.remoteCSE\]:enable](../setup/Configuration-cse.md#remote-cse-service)          |
+| acmecse.plugins.services.SemanticManager       | Provides the semantic management services.                                                                                            | [\[cse.service.semantic\]:enable](../setup/Configuration-cse.md#semantic-service)             |
+| acmecse.plugins.services.TimeManager           | Provides general time management services.                                                                                            | [\[cse.service.time\]:enable](../setup/Configuration-cse.md#time-service)                     |
+| acmecse.plugins.services.TimeSeriesManager     | Provides the timeSeries management services.                                                                                          | [\[cse.service.timeSeries\]:enable](../setup/Configuration-cse.md#timeseries-service)         |
+| acmecse.plugins.services.TriggerRequestManager | Provides the trigger request management services.                                                                                     | [\[cse.service.triggerRequest\]:enable](../setup/Configuration-cse.md#triggerrequest-service) |
 
 !!! Note
 	By disabling a service plugin, the corresponding oneM2M service will not be available in the CSE.
@@ -87,4 +88,19 @@ The service plugins implement oneM2M's *Common Service Functions* They run toget
 
 !!! Note
 	The HTTP management API, structure API and upper tester functionalities are only available
-	if the HTTP Server plugin is enabled, as they rely on the HTTP protocol to provide their functionalities.	
+	if the HTTP Server plugin is enabled, as they rely on the HTTP protocol to provide their functionalities.
+
+
+## Default Handlers
+
+Some services rely on handlers to provide their functionalities. These handlers are implemented as plugins
+and are loaded by the CSE core when the corresponding service is enabled.
+
+One example is the *TriggerRequestManager* service, which relies on one or more *TriggerRequestHandler* plugins
+to handle trigger requests. The *DefaultTriggerRequestHandler* plugin is providing a default implementation
+that handles trigger requests in a most simple way, which is sufficient for testing purposes. But more
+complex trigger request handling can be implemented by creating a custom *TriggerRequestHandler* plugin.
+
+| Plugin Name                                           | Functionality                                                                                                                               |
+|:------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| acmecse.plugins.defaults.DefaultTriggerRequestHandler | Provides a default implementation of the *TriggerRequestHandler* interface for handling trigger requests to a Network Service Entity (NSE). |

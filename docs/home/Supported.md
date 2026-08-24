@@ -186,14 +186,20 @@ are not yet fully implemented, and some features are experimental.
 | AreaNwkDeviceInfo (ANDI) | DeviceInfo (DVI)       | Reboot (REB)       |
 | AreaNwkInfo (ANI)        | EventLog (EVL)         | SIM (SIM)          |
 | Battery (BAT)            | Firmware (FWR)         | Software (SWR)     |
-| Credentials (CRDS)       | Memory (MEM)           | WifiClient (WIFIC) |
-| DataCollect (DATC)       | MobileNetwork (MNWK)   |                    |
+| Credentials (CRDS)       | Memory (MEM)           | Storage (STOR)     |
+| DataCollect (DATC)       | MobileNetwork (MNWK)   | WifiClient (WIFIC) |
 | DeviceCapability (DVC)   | MyCertFileCred (NYCFC) |                    |
 
 
 **Node (NOD)**
 
 :	The Node resource type is fully supported.
+
+**TriggerRequest (TGR)**
+
+:	The TriggerRequest resource type is fully supported.
+
+	This resource type is used to trigger certain actions on remote nodes, such as the request to register or unregister a remote node to the CSE.
 
 
 ### Communication

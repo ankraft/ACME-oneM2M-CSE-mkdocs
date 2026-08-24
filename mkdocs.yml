@@ -230,6 +230,7 @@ nav:
       - 'Service Plugins': 'plugins/PluginServicePlugins.md'
       - 'Developing an Example Plugin': 'plugins/PluginExample.md'
       - 'CSE Core Plugins': 'plugins/PluginCorePlugins.md'
+      - 'Community-Contributed Plugins': 'plugins/PluginCommunityContributed.md'
   - 'HowTos':
       - 'Overview': 'howtos/HowTos.md'
       - 'Authentication between CSEs': 'howtos/AuthenticationBetweenCSEs.md'
