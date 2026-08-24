@@ -1,8 +1,8 @@
 # Subscriptions & Notifications
 
-*5 test modules, 202 test cases. [&larr; Back to overview](index.md)*
+*5 test modules, 203 test cases. [&larr; Back to overview](index.md)*
 
-??? note "`testSUB.py` — Subscription (&lt;SUB&gt;) resource lifecycle and notification behavior (94 tests)"
+??? note "`testSUB.py` — Subscription (&lt;SUB&gt;) resource lifecycle and notification behavior (95 tests)"
 
     | # | Test Method | Requests Performed |
     |---|---|---|
@@ -98,8 +98,9 @@
     | 90 | `test_OperationMonitorOtherOriginatorFail` | CREATE a &lt;SUB&gt; with `enc.om.org` set to a different originator than the one performing the operation -> expects CREATED; UPDATE the &lt;AE&gt; with the actual (non-matching) originator -> expects UPDATED; checks NO notification is sent (originator mismatch); DELETE the &lt;SUB&gt; -> expects DELETED. |
     | 91 | `test_testSUBwithEnableEventNotificationOriginator` | CREATE a &lt;SUB&gt; with `eeno=True` (notify with the event's actual originator, not the sub's) -> expects CREATED, checks `eeno`; UPDATE the &lt;AE&gt; using the CSE admin originator -> expects UPDATED; checks the notification's `cr` matches the admin originator (not the SUB's creator); DELETE the &lt;SUB&gt; -> expects DELETED. |
     | 92 | `test_testSUBwithEnableEventNotificationOriginatorAndCreator` | CREATE a &lt;SUB&gt; with `eeno=True` and `cr=None` -> expects CREATED, checks `eeno`/`cr`; UPDATE the &lt;AE&gt; using the CSE admin originator -> expects UPDATED; checks the notification's `cr` is the SUB's own creator (since `eeno` falls back when a creator is explicitly recorded) -- DELETE the &lt;SUB&gt; -> expects DELETED. |
-    | 93 | `test_createSUBnoNCTwrongNETFail` | CREATE a &lt;SUB&gt; with `enc.net` containing `resourceUpdate` and `blockingUpdate` together (conflicting NET values) and `nse=True` -> expects BAD_REQUEST. |
-    | 94 | `test_deleteNuAttributeFail` | CREATE a &lt;SUB&gt; with `nu` set -> expects CREATED; UPDATE it setting `nu=None` (removing the mandatory attribute) -> expects BAD_REQUEST; DELETE the &lt;SUB&gt; -> expects DELETED. |
+    | 93 | `test_createSubWithNoParentRetrieveAccessFail` | CREATE an &lt;AE&gt; -> expects CREATED; CREATE an &lt;ACP&gt; granting the AE's originator CREATE/UPDATE/DELETE but NOT RETRIEVE -> expects CREATED; UPDATE the &lt;AE&gt; to reference the &lt;ACP&gt; -> expects UPDATED; CREATE a &lt;SUB&gt; under the &lt;AE&gt; (subscription verification requires RETRIEVE access) -> expects ORIGINATOR_HAS_NO_PRIVILEGE; DELETE the &lt;AE&gt; -> expects DELETED. |
+    | 94 | `test_createSUBnoNCTwrongNETFail` | CREATE a &lt;SUB&gt; with `enc.net` containing `resourceUpdate` and `blockingUpdate` together (conflicting NET values) and `nse=True` -> expects BAD_REQUEST. |
+    | 95 | `test_deleteNuAttributeFail` | CREATE a &lt;SUB&gt; with `nu` set -> expects CREATED; UPDATE it setting `nu=None` (removing the mandatory attribute) -> expects BAD_REQUEST; DELETE the &lt;SUB&gt; -> expects DELETED. |
 
 ??? note "`testCRS.py` — CrossResourceSubscription (&lt;CRS&gt;) functionality and notifications (71 tests)"
 

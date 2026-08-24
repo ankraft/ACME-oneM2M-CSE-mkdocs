@@ -1,102 +1,153 @@
 # Management, Location, Scheduling & Policies
 
-*6 test modules, 221 test cases. [&larr; Back to overview](index.md)*
+*7 test modules, 249 test cases. [&larr; Back to overview](index.md)*
 
-??? note "`testMgmtObj.py` — All &lt;mgmtObj&gt; specializations (FWR, SWR, MEM, ANI, ANDI, BAT, DVI, DVC, RBO, EVL, NYCFC, etc.) (91 tests)"
+??? note "`testMgmtObj.py` — All &lt;mgmtObj&gt; specializations (FWR, SWR, MEM, ANI, ANDI, BAT, DVI, DVC, RBO, EVL, NYCFC, etc.) (102 tests)"
 
     | # | Test Method | Requests Performed |
     |---|---|---|
-    | 1 | `test_createFWR` | CREATE a &lt;FWR&gt; (Firmware mgmtObj) under the &lt;NOD&gt; with `dc`, `vr`, `fwn`, `url`, `ud` -> expects CREATED; checks `ri`. |
-    | 2 | `test_retrieveFWR` | RETRIEVE the &lt;FWR&gt; -> expects OK; checks `mgd=FWR`. |
-    | 3 | `test_attributesFWR` | RETRIEVE the &lt;FWR&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `vr`, `fwn`, `url`, `ud`, and `uds` (update status, a dict). |
-    | 4 | `test_deleteFWR` | DELETE the &lt;FWR&gt; -> expects DELETED. |
-    | 5 | `test_createSWR` | CREATE a &lt;SWR&gt; (Software) with `dc`, `vr`, `swn`, `url` -> expects CREATED; checks `ri`. |
-    | 6 | `test_retrieveSWR` | RETRIEVE the &lt;SWR&gt; -> expects OK; checks `mgd=SWR`. |
-    | 7 | `test_attributesSWR` | RETRIEVE the &lt;SWR&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `vr`, `swn`, `url`, and presence of `in`/`un`/`ins` (install/uninstall status fields). |
-    | 8 | `test_deleteSWR` | DELETE the &lt;SWR&gt; -> expects DELETED. |
-    | 9 | `test_createMEM` | CREATE a &lt;MEM&gt; (Memory) with `dc`, `mma`, `mmt` -> expects CREATED; checks `ri`. |
-    | 10 | `test_retrieveMEM` | RETRIEVE the &lt;MEM&gt; -> expects OK; checks `mgd=MEM`. |
-    | 11 | `test_attributesMEM` | RETRIEVE the &lt;MEM&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `mma`, `mmt`. |
-    | 12 | `test_deleteMEM` | DELETE the &lt;MEM&gt; -> expects DELETED. |
-    | 13 | `test_createANI` | CREATE a &lt;ANI&gt; (areaNwkInfo) with `dc`, `ant`, `ldv` (list) -> expects CREATED; checks `ri`. |
-    | 14 | `test_retrieveANI` | RETRIEVE the &lt;ANI&gt; -> expects OK; checks `mgd=ANI`. |
-    | 15 | `test_attributesANI` | RETRIEVE the &lt;ANI&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `ant`, and `ldv` (2-item list). |
-    | 16 | `test_deleteANI` | DELETE the &lt;ANI&gt; -> expects DELETED. |
-    | 17 | `test_createANDI` | CREATE a &lt;ANDI&gt; (areaNwkDeviceInfo) with `dc`, `dvd`, `dvt`, `awi`, `sli`, `sld`, `lnh` (list) -> expects CREATED; checks `ri`. |
-    | 18 | `test_retrieveANDI` | RETRIEVE the &lt;ANDI&gt; -> expects OK; checks `mgd=ANDI`. |
-    | 19 | `test_attributesANDI` | RETRIEVE the &lt;ANDI&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `dvd`, `dvt`, `awi`, `sli`, `sld`, `lnh` (2-item list). |
-    | 20 | `test_deleteANDI` | DELETE the &lt;ANDI&gt; -> expects DELETED. |
-    | 21 | `test_createBATWrong` | CREATE a &lt;BAT&gt; (battery) with an out-of-range `bts` (battery status, `99`) -> expects BAD_REQUEST. |
-    | 22 | `test_createBAT` | CREATE a &lt;BAT&gt; with valid `dc`, `btl`, `bts` -> expects CREATED; checks `ri`/`ty=MGMTOBJ`. |
-    | 23 | `test_retrieveBAT` | RETRIEVE the &lt;BAT&gt; -> expects OK; checks `mgd=BAT`. |
-    | 24 | `test_attributesBAT` | RETRIEVE the &lt;BAT&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `btl`, `bts`. |
-    | 25 | `test_deleteBAT` | DELETE the &lt;BAT&gt; -> expects DELETED. |
-    | 26 | `test_createDVI` | CREATE a &lt;DVI&gt; (deviceInfo) with a full set of device-description attributes (`dlb`, `man`, `mfdl`, `mfd`, `mod`, `smod`, `dty`, `dvnm`, `fwv`, `swv`, `hwv`, `osv`, `cnty`, `loc`, `syst`, `spur`, `purl`, `ptl`) -> expects CREATED; checks `ri`. |
-    | 27 | `test_retrieveDVI` | RETRIEVE the &lt;DVI&gt; -> expects OK; checks `mgd=DVI`. |
-    | 28 | `test_attributesDVI` | RETRIEVE the &lt;DVI&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, and all the device-description attributes match what was created. |
-    | 29 | `test_deleteDVI` | DELETE the &lt;DVI&gt; -> expects DELETED. |
-    | 30 | `test_createDVC` | CREATE a &lt;DVC&gt; (deviceCapability) with `can`, `att`, `cas` (action/status dict), `cus` -> expects CREATED; checks `ri`. |
-    | 31 | `test_retrieveDVC` | RETRIEVE the &lt;DVC&gt; -> expects OK; checks `mgd=DVC`. |
-    | 32 | `test_attributesDVC` | RETRIEVE the &lt;DVC&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `can`, `att`, `cas.acn`/`cas.sus`, `cus`, and that `ena`/`dis` are both true. |
-    | 33 | `test_updateDVCEnaTrue` | UPDATE the &lt;DVC&gt; setting `ena=True` -> expects UPDATED; checks `ena`/`dis` both still true. |
-    | 34 | `test_updateDVCEnaFalse` | UPDATE the &lt;DVC&gt; setting `ena=False` -> expects UPDATED; checks `ena`/`dis` both true (CSE resets them). |
-    | 35 | `test_updateDVCDisTrue` | UPDATE the &lt;DVC&gt; setting `dis=True` -> expects UPDATED; checks `ena`/`dis` both true. |
-    | 36 | `test_updateDVCDisFalse` | UPDATE the &lt;DVC&gt; setting `dis=False` -> expects UPDATED; checks `ena`/`dis` both true. |
-    | 37 | `test_updateDVCEnaDisTrue` | UPDATE the &lt;DVC&gt; setting both `ena=True` and `dis=True` simultaneously -> expects BAD_REQUEST (mutually exclusive). |
-    | 38 | `test_updateDVCEnaDisFalse` | UPDATE the &lt;DVC&gt; setting both `ena=False` and `dis=False` -> expects UPDATED; checks `ena`/`dis` both reset to true. |
-    | 39 | `test_deleteDVC` | DELETE the &lt;DVC&gt; -> expects DELETED. |
-    | 40 | `test_createRBO` | CREATE a &lt;RBO&gt; (reboot) with `rbo=False`, `far=False` -> expects CREATED; checks `ri`. |
-    | 41 | `test_retrieveRBO` | RETRIEVE the &lt;RBO&gt; -> expects OK; checks `mgd=RBO`. |
-    | 42 | `test_attributesRBO` | RETRIEVE the &lt;RBO&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `rbo=False`, `far=False`. |
-    | 43 | `test_updateRBORboTrue` | UPDATE the &lt;RBO&gt; setting `rbo=True` (trigger reboot) -> expects UPDATED; checks `rbo`/`far` both reset to false (action consumed). |
-    | 44 | `test_updateRBORboFalse` | UPDATE the &lt;RBO&gt; setting `rbo=False` -> expects UPDATED; checks `rbo`/`far` both false. |
-    | 45 | `test_updateRBOFarTrue` | UPDATE the &lt;RBO&gt; setting `far=True` (factory reset) -> expects UPDATED; checks `rbo`/`far` both reset to false. |
-    | 46 | `test_updateRBOFarFalse` | UPDATE the &lt;RBO&gt; setting `far=False` -> expects UPDATED; checks `rbo`/`far` both false. |
-    | 47 | `test_updateRBORboFarTrue` | UPDATE the &lt;RBO&gt; setting both `rbo=True` and `far=True` simultaneously -> expects BAD_REQUEST. |
-    | 48 | `test_updateRBORboFarFalse` | UPDATE the &lt;RBO&gt; setting both `rbo=False` and `far=False` -> expects UPDATED; checks both false. |
-    | 49 | `test_deleteRBO` | DELETE the &lt;RBO&gt; -> expects DELETED. |
-    | 50 | `test_createNYCFCwrongSUID` | CREATE a &lt;NYCFC&gt; (myCertFileCred) with an invalid `suids` entry (`99`) -> expects BAD_REQUEST. |
-    | 51 | `test_createNYCFC` | CREATE a &lt;NYCFC&gt; with valid `suids`, `mcff`, `mcfc` -> expects CREATED; checks `ri`. |
-    | 52 | `test_retrieveNYCFC` | RETRIEVE the &lt;NYCFC&gt; -> expects OK; checks `mgd=NYCFC`. |
-    | 53 | `test_attributesNYCFC` | RETRIEVE the &lt;NYCFC&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `suids`, `mcff`, `mcfc`. |
-    | 54 | `test_deleteNYCFC` | DELETE the &lt;NYCFC&gt; -> expects DELETED. |
-    | 55 | `test_createEVL` | CREATE a &lt;EVL&gt; (EventLog) with `lgt`, `lgd`, `lgst` -> expects CREATED; checks `ri`. |
-    | 56 | `test_retrieveEVL` | RETRIEVE the &lt;EVL&gt; -> expects OK; checks `mgd=EVL`. |
-    | 57 | `test_attributesEVL` | RETRIEVE the &lt;EVL&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `lgt`, `lgd`, `lgst`, and `lga`/`lgo` (action flags) both true. |
-    | 58 | `test_deleteEVL` | DELETE the &lt;EVL&gt; -> expects DELETED. |
-    | 59 | `test_createWIFIC` | CREATE a &lt;WIFIC&gt; (wificlient) with `ssid`, `wcrds` (credentials dict: `enct`/`unm`/`pwd`), `scan=False` -> expects CREATED; checks `ri`. |
-    | 60 | `test_retrieveWIFIC` | RETRIEVE the &lt;WIFIC&gt; -> expects OK; checks `mgd=WIFIC`. |
-    | 61 | `test_attributesWIFIC` | RETRIEVE the &lt;WIFIC&gt; -> expects OK; checks `ty`, `pi`, `rn`, `ssid`, `wcrds.enct`/`unm`/`pwd`, `scan`, `scanr` (empty list), `ud`, `trdst`, `rdst` (all false defaults). |
-    | 62 | `test_deleteWIFIC` | DELETE the &lt;WIFIC&gt; -> expects DELETED. |
-    | 63 | `test_createWIFICCred1Fail` | CREATE a &lt;WIFIC&gt; with `wcrds.enct=2` combined with `unm`/`pwd` (invalid credential-type/field combination) -> expects BAD_REQUEST. |
-    | 64 | `test_createWIFICCred2Fail` | CREATE a &lt;WIFIC&gt; with `wcrds.enct=4` combined with `wepk` (invalid combination) -> expects BAD_REQUEST. |
-    | 65 | `test_createWIFICCred3Fail` | CREATE a &lt;WIFIC&gt; with `wcrds.enct=8` combined with `wpap` (invalid combination) -> expects BAD_REQUEST. |
-    | 66 | `test_createDATC` | CREATE a &lt;DATC&gt; (dataCollection) with `cntp` (target container path) -> expects CREATED; checks `ri`. |
-    | 67 | `test_updateDATCrpscIntegerFail` | UPDATE the &lt;DATC&gt; setting `rpsc` (report schedule) to a plain integer instead of a schedule-entry list -> expects BAD_REQUEST. |
-    | 68 | `test_updateDATCmescIntegerFail` | UPDATE the &lt;DATC&gt; setting `mesc` (measurement schedule) to a plain integer -> expects BAD_REQUEST. |
-    | 69 | `test_updateDATCrpscInvalidSchedule1Fail` | UPDATE `rpsc` with a malformed schedule entry (not a dict with `sce`) -> expects BAD_REQUEST. |
-    | 70 | `test_updateDATCrpscInvalidSchedule2Fail` | UPDATE `rpsc` with a `sce` cron string that has the wrong number of fields (5 instead of 7) -> expects BAD_REQUEST. |
-    | 71 | `test_updateDATCrpscValidSchedule` | UPDATE `rpsc` with a valid 7-field cron schedule -> expects UPDATED; checks `rpsc` is a list. |
-    | 72 | `test_updateDATCmescInvalidSchedule1Fail` | UPDATE `mesc` with a malformed schedule entry -> expects BAD_REQUEST. |
-    | 73 | `test_updateDATCmescInvalidSchedule2Fail` | UPDATE `mesc` with a wrongly-formatted cron string -> expects BAD_REQUEST. |
-    | 74 | `test_updateDATCmescValidSchedule` | UPDATE `mesc` with a valid cron schedule -> expects UPDATED; checks `mesc` is a list. |
-    | 75 | `test_updateDATCmeilWhileMescFail` | UPDATE the &lt;DATC&gt; setting `meil` (measurement interval) while `mesc` is already set (mutually exclusive) -> expects BAD_REQUEST. |
-    | 76 | `test_updateDATCmescMeilFail` | UPDATE the &lt;DATC&gt; setting both `mesc` and `meil` together in one request -> expects BAD_REQUEST. |
-    | 77 | `test_updateDATCremoveMescAddMeil` | UPDATE the &lt;DATC&gt; setting `mesc=None` and `meil=10000` together -> expects UPDATED; checks `mesc` absent and `meil` set. |
-    | 78 | `test_attributesDATC` | RETRIEVE the &lt;DATC&gt; -> expects OK; checks `ty`, `pi`, `rn`, `cntp`, `mesc` absent, `meil=10000`, and `rpsc` has 1 entry with the expected `sce`. |
-    | 79 | `test_deleteDATC` | DELETE the &lt;DATC&gt; -> expects DELETED. |
-    | 80 | `test_createSIM` | CREATE a &lt;SIM&gt; with `imsi`, `icid`, `sist`, `sity`, `spn` -> expects CREATED; checks `mgd=SIM`. |
-    | 81 | `test_retrieveSIM` | RETRIEVE the &lt;SIM&gt; -> expects OK; checks `mgd=SIM`. |
-    | 82 | `test_attributesSIM` | RETRIEVE the &lt;SIM&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `imsi`, `icid`, `sist`, `sity`, `spn`. |
-    | 83 | `test_deleteSIM` | DELETE the &lt;SIM&gt; -> expects DELETED. |
-    | 84 | `test_createMNWK` | CREATE a &lt;MNWK&gt; (mobile network info) with `cnb`, `rss`, `liqu`, `ipad`/`ripa` (IP address lists), `apna`, `ceid`, `smnc`, `smcc`, `lac`, `coel` -> expects CREATED; checks `mgd=MNWK`. |
-    | 85 | `test_retrieveMNWK` | RETRIEVE the &lt;MNWK&gt; -> expects OK; checks `mgd=MNWK`. |
-    | 86 | `test_attributesMNWK` | RETRIEVE the &lt;MNWK&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, and all the network attributes (`cnb`, `rss`, `liqu`, `ipad`/`ripa` contents, `apna`, `ceid`, `smnc`, `smcc`, `lac`, `coel`). |
-    | 87 | `test_deleteMNWK` | DELETE the &lt;MNWK&gt; -> expects DELETED. |
-    | 88 | `test_createCRDS` | CREATE a &lt;CRDS&gt; (credentials) with `pur`, `crid`, `crse`, `crtk` -> expects CREATED; checks `mgd=CRDS`. |
-    | 89 | `test_retrieveCRDS` | RETRIEVE the &lt;CRDS&gt; -> expects OK; checks `mgd=CRDS`. |
-    | 90 | `test_attributesCRDS` | RETRIEVE the &lt;CRDS&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `pur`, `crid`, `crse`, `crtk`. |
-    | 91 | `test_deleteCRDS` | DELETE the &lt;CRDS&gt; -> expects DELETED. |
+    | 1 | `test_mgmtObjResourceNameTypeMismatchFail` | CREATE a resource using `m2m:ae` as the JSON key but `T.MGMTOBJ` as the declared type -> expects BAD_REQUEST. |
+    | 2 | `test_mgmtObjResourceNameDefinitionMismatchFail` | CREATE a resource using `m2m:stor` as the JSON key with `mgd=23` (wrong `mgd` for STOR) -> expects BAD_REQUEST. |
+    | 3 | `test_mgmtObjMissingMgdFail` | CREATE a `m2m:stor` body under &lt;NOD&gt; with no `mgd` attribute -> expects BAD_REQUEST. |
+    | 4 | `test_mgmtObjWrongMgdFail` | CREATE a `m2m:stor` body with `mgd=ANDI` (valid but wrong specialization) -> expects BAD_REQUEST. |
+    | 5 | `test_createFWR` | CREATE a &lt;FWR&gt; (Firmware mgmtObj) under the &lt;NOD&gt; with `dc`, `vr`, `fwn`, `url`, `ud` -> expects CREATED; checks `ri`. |
+    | 6 | `test_retrieveFWR` | RETRIEVE the &lt;FWR&gt; -> expects OK; checks `mgd=FWR`. |
+    | 7 | `test_attributesFWR` | RETRIEVE the &lt;FWR&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `vr`, `fwn`, `url`, `ud`, and `uds` (update status, a dict). |
+    | 8 | `test_deleteFWR` | DELETE the &lt;FWR&gt; -> expects DELETED. |
+    | 9 | `test_createSWR` | CREATE a &lt;SWR&gt; (Software) with `dc`, `vr`, `swn`, `url` -> expects CREATED; checks `ri`. |
+    | 10 | `test_retrieveSWR` | RETRIEVE the &lt;SWR&gt; -> expects OK; checks `mgd=SWR`. |
+    | 11 | `test_attributesSWR` | RETRIEVE the &lt;SWR&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `vr`, `swn`, `url`, and presence of `in`/`un`/`ins` (install/uninstall status fields). |
+    | 12 | `test_deleteSWR` | DELETE the &lt;SWR&gt; -> expects DELETED. |
+    | 13 | `test_createMEM` | CREATE a &lt;MEM&gt; (Memory) with `dc`, `mma`, `mmt` -> expects CREATED; checks `ri`. |
+    | 14 | `test_retrieveMEM` | RETRIEVE the &lt;MEM&gt; -> expects OK; checks `mgd=MEM`. |
+    | 15 | `test_attributesMEM` | RETRIEVE the &lt;MEM&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `mma`, `mmt`. |
+    | 16 | `test_deleteMEM` | DELETE the &lt;MEM&gt; -> expects DELETED. |
+    | 17 | `test_createANI` | CREATE a &lt;ANI&gt; (areaNwkInfo) with `dc`, `ant`, `ldv` (list) -> expects CREATED; checks `ri`. |
+    | 18 | `test_retrieveANI` | RETRIEVE the &lt;ANI&gt; -> expects OK; checks `mgd=ANI`. |
+    | 19 | `test_attributesANI` | RETRIEVE the &lt;ANI&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `ant`, and `ldv` (2-item list). |
+    | 20 | `test_deleteANI` | DELETE the &lt;ANI&gt; -> expects DELETED. |
+    | 21 | `test_createANDI` | CREATE a &lt;ANDI&gt; (areaNwkDeviceInfo) with `dc`, `dvd`, `dvt`, `awi`, `sli`, `sld`, `lnh` (list) -> expects CREATED; checks `ri`. |
+    | 22 | `test_retrieveANDI` | RETRIEVE the &lt;ANDI&gt; -> expects OK; checks `mgd=ANDI`. |
+    | 23 | `test_attributesANDI` | RETRIEVE the &lt;ANDI&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `dvd`, `dvt`, `awi`, `sli`, `sld`, `lnh` (2-item list). |
+    | 24 | `test_deleteANDI` | DELETE the &lt;ANDI&gt; -> expects DELETED. |
+    | 25 | `test_createBATWrong` | CREATE a &lt;BAT&gt; (battery) with an out-of-range `bts` (battery status, `99`) -> expects BAD_REQUEST. |
+    | 26 | `test_createBAT` | CREATE a &lt;BAT&gt; with valid `dc`, `btl`, `bts` -> expects CREATED; checks `ri`/`ty=MGMTOBJ`. |
+    | 27 | `test_retrieveBAT` | RETRIEVE the &lt;BAT&gt; -> expects OK; checks `mgd=BAT`. |
+    | 28 | `test_attributesBAT` | RETRIEVE the &lt;BAT&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `btl`, `bts`. |
+    | 29 | `test_deleteBAT` | DELETE the &lt;BAT&gt; -> expects DELETED. |
+    | 30 | `test_createDVI` | CREATE a &lt;DVI&gt; (deviceInfo) with a full set of device-description attributes (`dlb`, `man`, `mfdl`, `mfd`, `mod`, `smod`, `dty`, `dvnm`, `fwv`, `swv`, `hwv`, `osv`, `cnty`, `loc`, `syst`, `spur`, `purl`, `ptl`) -> expects CREATED; checks `ri`. |
+    | 31 | `test_retrieveDVI` | RETRIEVE the &lt;DVI&gt; -> expects OK; checks `mgd=DVI`. |
+    | 32 | `test_attributesDVI` | RETRIEVE the &lt;DVI&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, and all the device-description attributes match what was created. |
+    | 33 | `test_deleteDVI` | DELETE the &lt;DVI&gt; -> expects DELETED. |
+    | 34 | `test_createDVC` | CREATE a &lt;DVC&gt; (deviceCapability) with `can`, `att`, `cas` (action/status dict), `cus` -> expects CREATED; checks `ri`. |
+    | 35 | `test_retrieveDVC` | RETRIEVE the &lt;DVC&gt; -> expects OK; checks `mgd=DVC`. |
+    | 36 | `test_attributesDVC` | RETRIEVE the &lt;DVC&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `can`, `att`, `cas.acn`/`cas.sus`, `cus`, and that `ena`/`dis` are both true. |
+    | 37 | `test_updateDVCEnaTrue` | UPDATE the &lt;DVC&gt; setting `ena=True` -> expects UPDATED; checks `ena`/`dis` both still true. |
+    | 38 | `test_updateDVCEnaFalse` | UPDATE the &lt;DVC&gt; setting `ena=False` -> expects UPDATED; checks `ena`/`dis` both true (CSE resets them). |
+    | 39 | `test_updateDVCDisTrue` | UPDATE the &lt;DVC&gt; setting `dis=True` -> expects UPDATED; checks `ena`/`dis` both true. |
+    | 40 | `test_updateDVCDisFalse` | UPDATE the &lt;DVC&gt; setting `dis=False` -> expects UPDATED; checks `ena`/`dis` both true. |
+    | 41 | `test_updateDVCEnaDisTrue` | UPDATE the &lt;DVC&gt; setting both `ena=True` and `dis=True` simultaneously -> expects BAD_REQUEST (mutually exclusive). |
+    | 42 | `test_updateDVCEnaDisFalse` | UPDATE the &lt;DVC&gt; setting both `ena=False` and `dis=False` -> expects UPDATED; checks `ena`/`dis` both reset to true. |
+    | 43 | `test_deleteDVC` | DELETE the &lt;DVC&gt; -> expects DELETED. |
+    | 44 | `test_createRBO` | CREATE a &lt;RBO&gt; (reboot) with `rbo=False`, `far=False` -> expects CREATED; checks `ri`. |
+    | 45 | `test_retrieveRBO` | RETRIEVE the &lt;RBO&gt; -> expects OK; checks `mgd=RBO`. |
+    | 46 | `test_attributesRBO` | RETRIEVE the &lt;RBO&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `rbo=False`, `far=False`. |
+    | 47 | `test_updateRBORboTrue` | UPDATE the &lt;RBO&gt; setting `rbo=True` (trigger reboot) -> expects UPDATED; checks `rbo`/`far` both reset to false (action consumed). |
+    | 48 | `test_updateRBORboFalse` | UPDATE the &lt;RBO&gt; setting `rbo=False` -> expects UPDATED; checks `rbo`/`far` both false. |
+    | 49 | `test_updateRBOFarTrue` | UPDATE the &lt;RBO&gt; setting `far=True` (factory reset) -> expects UPDATED; checks `rbo`/`far` both reset to false. |
+    | 50 | `test_updateRBOFarFalse` | UPDATE the &lt;RBO&gt; setting `far=False` -> expects UPDATED; checks `rbo`/`far` both false. |
+    | 51 | `test_updateRBORboFarTrue` | UPDATE the &lt;RBO&gt; setting both `rbo=True` and `far=True` simultaneously -> expects BAD_REQUEST. |
+    | 52 | `test_updateRBORboFarFalse` | UPDATE the &lt;RBO&gt; setting both `rbo=False` and `far=False` -> expects UPDATED; checks both false. |
+    | 53 | `test_deleteRBO` | DELETE the &lt;RBO&gt; -> expects DELETED. |
+    | 54 | `test_createNYCFCwrongSUID` | CREATE a &lt;NYCFC&gt; (myCertFileCred) with an invalid `suids` entry (`99`) -> expects BAD_REQUEST. |
+    | 55 | `test_createNYCFC` | CREATE a &lt;NYCFC&gt; with valid `suids`, `mcff`, `mcfc` -> expects CREATED; checks `ri`. |
+    | 56 | `test_retrieveNYCFC` | RETRIEVE the &lt;NYCFC&gt; -> expects OK; checks `mgd=NYCFC`. |
+    | 57 | `test_attributesNYCFC` | RETRIEVE the &lt;NYCFC&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `suids`, `mcff`, `mcfc`. |
+    | 58 | `test_deleteNYCFC` | DELETE the &lt;NYCFC&gt; -> expects DELETED. |
+    | 59 | `test_createEVL` | CREATE a &lt;EVL&gt; (EventLog) with `lgt`, `lgd`, `lgst` -> expects CREATED; checks `ri`. |
+    | 60 | `test_retrieveEVL` | RETRIEVE the &lt;EVL&gt; -> expects OK; checks `mgd=EVL`. |
+    | 61 | `test_attributesEVL` | RETRIEVE the &lt;EVL&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `lgt`, `lgd`, `lgst`, and `lga`/`lgo` (action flags) both true. |
+    | 62 | `test_deleteEVL` | DELETE the &lt;EVL&gt; -> expects DELETED. |
+    | 63 | `test_createWIFIC` | CREATE a &lt;WIFIC&gt; (wificlient) with `ssid`, `wcrds` (credentials dict: `enct`/`unm`/`pwd`), `scan=False` -> expects CREATED; checks `ri`. |
+    | 64 | `test_retrieveWIFIC` | RETRIEVE the &lt;WIFIC&gt; -> expects OK; checks `mgd=WIFIC`. |
+    | 65 | `test_attributesWIFIC` | RETRIEVE the &lt;WIFIC&gt; -> expects OK; checks `ty`, `pi`, `rn`, `ssid`, `wcrds.enct`/`unm`/`pwd`, `scan`, `scanr` (empty list), `ud`, `trdst`, `rdst` (all false defaults). |
+    | 66 | `test_deleteWIFIC` | DELETE the &lt;WIFIC&gt; -> expects DELETED. |
+    | 67 | `test_createWIFICCred1Fail` | CREATE a &lt;WIFIC&gt; with `wcrds.enct=2` combined with `unm`/`pwd` (invalid credential-type/field combination) -> expects BAD_REQUEST. |
+    | 68 | `test_createWIFICCred2Fail` | CREATE a &lt;WIFIC&gt; with `wcrds.enct=4` combined with `wepk` (invalid combination) -> expects BAD_REQUEST. |
+    | 69 | `test_createWIFICCred3Fail` | CREATE a &lt;WIFIC&gt; with `wcrds.enct=8` combined with `wpap` (invalid combination) -> expects BAD_REQUEST. |
+    | 70 | `test_createDATC` | CREATE a &lt;DATC&gt; (dataCollection) with `cntp` (target container path) -> expects CREATED; checks `ri`. |
+    | 71 | `test_updateDATCrpscIntegerFail` | UPDATE the &lt;DATC&gt; setting `rpsc` (report schedule) to a plain integer instead of a schedule-entry list -> expects BAD_REQUEST. |
+    | 72 | `test_updateDATCmescIntegerFail` | UPDATE the &lt;DATC&gt; setting `mesc` (measurement schedule) to a plain integer -> expects BAD_REQUEST. |
+    | 73 | `test_updateDATCrpscInvalidSchedule1Fail` | UPDATE `rpsc` with a malformed schedule entry (not a dict with `sce`) -> expects BAD_REQUEST. |
+    | 74 | `test_updateDATCrpscInvalidSchedule2Fail` | UPDATE `rpsc` with a `sce` cron string that has the wrong number of fields (5 instead of 7) -> expects BAD_REQUEST. |
+    | 75 | `test_updateDATCrpscValidSchedule` | UPDATE `rpsc` with a valid 7-field cron schedule -> expects UPDATED; checks `rpsc` is a list. |
+    | 76 | `test_updateDATCmescInvalidSchedule1Fail` | UPDATE `mesc` with a malformed schedule entry -> expects BAD_REQUEST. |
+    | 77 | `test_updateDATCmescInvalidSchedule2Fail` | UPDATE `mesc` with a wrongly-formatted cron string -> expects BAD_REQUEST. |
+    | 78 | `test_updateDATCmescValidSchedule` | UPDATE `mesc` with a valid cron schedule -> expects UPDATED; checks `mesc` is a list. |
+    | 79 | `test_updateDATCmeilWhileMescFail` | UPDATE the &lt;DATC&gt; setting `meil` (measurement interval) while `mesc` is already set (mutually exclusive) -> expects BAD_REQUEST. |
+    | 80 | `test_updateDATCmescMeilFail` | UPDATE the &lt;DATC&gt; setting both `mesc` and `meil` together in one request -> expects BAD_REQUEST. |
+    | 81 | `test_updateDATCremoveMescAddMeil` | UPDATE the &lt;DATC&gt; setting `mesc=None` and `meil=10000` together -> expects UPDATED; checks `mesc` absent and `meil` set. |
+    | 82 | `test_attributesDATC` | RETRIEVE the &lt;DATC&gt; -> expects OK; checks `ty`, `pi`, `rn`, `cntp`, `mesc` absent, `meil=10000`, and `rpsc` has 1 entry with the expected `sce`. |
+    | 83 | `test_deleteDATC` | DELETE the &lt;DATC&gt; -> expects DELETED. |
+    | 84 | `test_createSIM` | CREATE a &lt;SIM&gt; with `imsi`, `icid`, `sist`, `sity`, `spn` -> expects CREATED; checks `mgd=SIM`. |
+    | 85 | `test_retrieveSIM` | RETRIEVE the &lt;SIM&gt; -> expects OK; checks `mgd=SIM`. |
+    | 86 | `test_attributesSIM` | RETRIEVE the &lt;SIM&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `imsi`, `icid`, `sist`, `sity`, `spn`. |
+    | 87 | `test_deleteSIM` | DELETE the &lt;SIM&gt; -> expects DELETED. |
+    | 88 | `test_createMNWK` | CREATE a &lt;MNWK&gt; (mobile network info) with `cnb`, `rss`, `liqu`, `ipad`/`ripa` (IP address lists), `apna`, `ceid`, `smnc`, `smcc`, `lac`, `coel` -> expects CREATED; checks `mgd=MNWK`. |
+    | 89 | `test_retrieveMNWK` | RETRIEVE the &lt;MNWK&gt; -> expects OK; checks `mgd=MNWK`. |
+    | 90 | `test_attributesMNWK` | RETRIEVE the &lt;MNWK&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, and all the network attributes (`cnb`, `rss`, `liqu`, `ipad`/`ripa` contents, `apna`, `ceid`, `smnc`, `smcc`, `lac`, `coel`). |
+    | 91 | `test_deleteMNWK` | DELETE the &lt;MNWK&gt; -> expects DELETED. |
+    | 92 | `test_createCRDS` | CREATE a &lt;CRDS&gt; (credentials) with `pur`, `crid`, `crse`, `crtk` -> expects CREATED; checks `mgd=CRDS`. |
+    | 93 | `test_retrieveCRDS` | RETRIEVE the &lt;CRDS&gt; -> expects OK; checks `mgd=CRDS`. |
+    | 94 | `test_attributesCRDS` | RETRIEVE the &lt;CRDS&gt; -> expects OK; checks `ty`, `pi`, `rn`, timestamps, `dc`, `pur`, `crid`, `crse`, `crtk`. |
+    | 95 | `test_deleteCRDS` | DELETE the &lt;CRDS&gt; -> expects DELETED. |
+    | 96 | `test_createSTOR` | CREATE a &lt;STOR&gt; (Storage mgmtObj) under &lt;NOD&gt; with a full set of storage attributes (`uuid`, `stoTe`, `wriSd`, `reaSd`, `avaSe`, `totSe`, `stoPe`, `sus`, `nuOMs`, `nOFUs`, `filSm`, `stoNe`, `mouPt`, `mouOs`, `write`) -> expects CREATED; checks `mgd=STOR` and all provided attribute values. |
+    | 97 | `test_createSTORWithWrongStoTeFail` | CREATE a &lt;STOR&gt; with an out-of-range `stoTe=23` -> expects BAD_REQUEST. |
+    | 98 | `test_createSTORWithWrongStoPeFail` | CREATE a &lt;STOR&gt; with an out-of-range `stoPe=23` -> expects BAD_REQUEST. |
+    | 99 | `test_createSTORWithWrongSusFail` | CREATE a &lt;STOR&gt; with an out-of-range `sus=23` -> expects BAD_REQUEST. |
+    | 100 | `test_updateSTORformat` | CREATE a minimal &lt;STOR&gt; -> expects CREATED; UPDATE setting `formt=True` (format action) -> expects UPDATED, checks `formt=True`; DELETE -> expects DELETED. |
+    | 101 | `test_updateSTORunmount` | CREATE a minimal &lt;STOR&gt; -> expects CREATED; UPDATE setting `unmot=True` (unmount action) -> expects UPDATED, checks `unmot=True`; DELETE -> expects DELETED. |
+    | 102 | `test_updateSTORformatUnmountFail` | CREATE a minimal &lt;STOR&gt; -> expects CREATED; UPDATE setting both `formt=True` and `unmot=True` simultaneously (mutually exclusive) -> expects BAD_REQUEST; DELETE -> expects DELETED. |
+
+??? note "`testNOD.py` — Node (&lt;NOD&gt;) resource lifecycle and notifications (13 tests)"
+
+    | # | Test Method | Requests Performed |
+    |---|---|---|
+    | 1 | `test_createNOD` | CREATE a &lt;NOD&gt; under the &lt;CSEBase&gt; with a node-ID (`ni`) -> expects CREATED; checks `ri` is present. |
+    | 2 | `test_retrieveNOD` | RETRIEVE the &lt;NOD&gt; -> expects OK. |
+    | 3 | `test_retrieveNODWithWrongOriginator` | RETRIEVE the &lt;NOD&gt; with an unauthorized originator -> expects ORIGINATOR_HAS_NO_PRIVILEGE. |
+    | 4 | `test_attributesNOD` | RETRIEVE the &lt;NOD&gt; -> expects OK; checks `ty`, `pi` (matches the CSEBase's `ri`), `rn`, `ct`, `lt`, `et`, and `ni`. |
+    | 5 | `test_updateNODLbl` | UPDATE the &lt;NOD&gt; setting `lbl` -> expects UPDATED; RETRIEVE it again -> expects OK, checks `lbl` contains the new tag. |
+    | 6 | `test_updateNODUnknownAttribute` | UPDATE the &lt;NOD&gt; with an unknown attribute -> expects BAD_REQUEST. |
+    | 7 | `test_createAEForNOD` | CREATE an &lt;AE&gt; with its `nl` (node link) pointing to the &lt;NOD&gt; -> expects CREATED, checks `nl`/`ri`/`aei`; RETRIEVE the &lt;NOD&gt; -> expects OK, checks the AE's `ri` is listed in the node's `hael` (hosted AE list). |
+    | 8 | `test_deleteAEForNOD` | DELETE the &lt;AE&gt; -> expects DELETED; RETRIEVE the &lt;NOD&gt; -> expects OK, checks `hael` is now absent (no more hosted AEs). |
+    | 9 | `test_moveAEToNOD2` | Re-create the &lt;AE&gt; linked to the first &lt;NOD&gt; (calls test_createAEForNOD); CREATE a 2nd &lt;NOD&gt; -> expects CREATED; UPDATE the &lt;AE&gt; to set `nl` to the 2nd node -> expects UPDATED, checks `nl`; RETRIEVE the 1st &lt;NOD&gt; -> expects OK, checks `hael` is now absent; RETRIEVE the 2nd &lt;NOD&gt; -> expects OK, checks `hael` now contains the AE's `ri`. |
+    | 10 | `test_deleteNOD2` | DELETE the 2nd &lt;NOD&gt; -> expects DELETED; RETRIEVE the &lt;AE&gt; -> expects OK, checks `nl` is now absent (link removed when its target node was deleted). |
+    | 11 | `test_deleteNOD` | DELETE the (first) &lt;NOD&gt; -> expects DELETED. |
+    | 12 | `test_createNODEmptyHael` | CREATE a &lt;NOD&gt; with an explicit empty `hael` list -> expects BAD_REQUEST. |
+    | 13 | `test_createNODDoubleHael` | CREATE a &lt;NOD&gt; with a pre-set `hael` list containing one entry -> expects CREATED, checks `hael` has length 1; CREATE an &lt;AE&gt; whose `nl` points to that node -> expects CREATED; RETRIEVE the &lt;NOD&gt; -> expects OK, checks `hael` still has exactly 1 entry containing the AE's `ri` (no duplicate); DELETE the &lt;AE&gt; and the &lt;NOD&gt; -> each expects DELETED. |
+
+??? note "`testTGR.py` — TriggerRequest (&lt;TGR&gt;) resource functionality (IN-CSE only) (17 tests)"
+
+    | # | Test Method | Requests Performed |
+    |---|---|---|
+    | 1 | `test_createTGRnoTargetFail` | CREATE a &lt;TGR&gt; under the &lt;AE&gt; with `tri=42` (no matching &lt;AE&gt; with that `tri` value exists) -> expects BAD_REQUEST. (IN-CSE only) |
+    | 2 | `test_createTGR` | CREATE a &lt;TGR&gt; with `mei`, `tri=23` (matching the setUp &lt;AE&gt;), `tvt=PT30S` -> expects CREATED; checks `tst=PROCESSING`; DELETE the &lt;TGR&gt; -> expects DELETED. (IN-CSE only) |
+    | 3 | `test_createTGRforCRUD` | CREATE a &lt;TGR&gt; with `tpe=executeCRUD`, `tiae`, `tia`, `tio=CREATE`, `tirt=AE` (a full CRUD-trigger payload) -> expects CREATED; DELETE -> expects DELETED. (IN-CSE only) |
+    | 4 | `test_createTGRWithUnknownDomainFail` | UPDATE the &lt;AE&gt; setting `mei` to an unknown domain (`42@unknown.domain`) -> expects UPDATED; CREATE a &lt;TGR&gt; referencing that `mei` -> expects CREATED but checks `tst=ERROR_NSE_NOT_FOUND` (no handler found for that domain); DELETE -> expects DELETED. (IN-CSE only) |
+    | 5 | `test_createTGRWithTriggerDelivered` | UPDATE the &lt;AE&gt;'s `mei` to encode the `TRIGGER_DELIVERED` target status; CREATE a &lt;TGR&gt; -> expects CREATED; sleep; RETRIEVE the &lt;TGR&gt; -> expects OK, checks `tst=TRIGGER_DELIVERED`; DELETE -> expects DELETED. (IN-CSE only) |
+    | 6 | `test_createTGRWithTriggerFailed` | Same flow as `test_createTGRWithTriggerDelivered` but `mei` encodes `TRIGGER_FAILED` -> checks `tst=TRIGGER_FAILED`. (IN-CSE only) |
+    | 7 | `test_createTGRWithTriggerReplaced` | Same flow but `mei` encodes `TRIGGER_REPLACED` -> checks `tst=TRIGGER_REPLACED`. (IN-CSE only) |
+    | 8 | `test_createTGRWithTriggerUnconfirmed` | Same flow but `mei` encodes `TRIGGER_UNCONFIRMED` -> checks `tst=TRIGGER_UNCONFIRMED`. (IN-CSE only) |
+    | 9 | `test_createTGRWithTriggerExpired` | Same flow but `mei` encodes `TRIGGER_EXPIRED` and `tvt=PT1S` (very short timeout) -> checks `tst=TRIGGER_EXPIRED`. (IN-CSE only) |
+    | 10 | `test_updateTGRWithTriggerDelivered` | CREATE a &lt;TGR&gt; and wait for `TRIGGER_DELIVERED`; UPDATE the &lt;TGR&gt; with `tpe=registrationRequest` (re-trigger) -> expects UPDATED, checks `tst=PROCESSING`; sleep; RETRIEVE -> checks `tst=TRIGGER_DELIVERED`; DELETE -> expects DELETED. (IN-CSE only) |
+    | 11 | `test_updateTGRWithTriggerFailed` | Same CREATE+UPDATE flow but final `tst` checks `TRIGGER_FAILED`. (IN-CSE only) |
+    | 12 | `test_updateTGRWithTriggerReplaced` | Same CREATE+UPDATE flow but final `tst` checks `TRIGGER_REPLACED`. (IN-CSE only) |
+    | 13 | `test_updateTGRWithTriggerUnconfirmed` | Same CREATE+UPDATE flow but final `tst` checks `TRIGGER_UNCONFIRMED`. (IN-CSE only) |
+    | 14 | `test_updateTGRWithTriggerExpired` | Same CREATE+UPDATE flow (with `tvt=PT1S`) but final `tst` checks `TRIGGER_EXPIRED`. (IN-CSE only) |
+    | 15 | `test_updateTGRWhileProcessingFail` | UPDATE the &lt;AE&gt;'s `mei` to `TRIGGER_DELIVERED`; CREATE a &lt;TGR&gt; -> expects CREATED; immediately (without sleeping) UPDATE the &lt;TGR&gt; with a new `tpe` -> expects UNABLE_TO_REPLACE_REQUEST (still in PROCESSING state); DELETE -> expects DELETED. (IN-CSE only) |
+    | 16 | `test_retrieveTGRWhileProcessing` | UPDATE the &lt;AE&gt;'s `mei` to `TRIGGER_DELIVERED`; CREATE a &lt;TGR&gt; -> expects CREATED; immediately RETRIEVE it -> expects OK, checks `tst=PROCESSING`; DELETE -> expects DELETED. (IN-CSE only) |
+    | 17 | `test_deleteTGRWhileProcessing` | UPDATE the &lt;AE&gt;'s `mei` to `TRIGGER_DELIVERED`; CREATE a &lt;TGR&gt; -> expects CREATED; immediately DELETE it -> expects DELETED. (IN-CSE only) |
 
 ??? note "`testLocation.py` — Geo-query functionality and location-based queries (73 tests)"
 
@@ -234,21 +285,3 @@
     | 3 | `test_updatePDR` | UPDATE the &lt;PDR&gt; setting `lbl` -> expects UPDATED; checks the returned `lbl` matches. |
     | 4 | `test_deletePDR` | DELETE the &lt;PDR&gt; -> expects DELETED. |
     | 5 | `test_createTooManyPDRsFail` | CREATE 2 additional &lt;PDR&gt;s under the &lt;NTP&gt; in a loop -> each expects CREATED; CREATE a 3rd &lt;PDR&gt; -> expects CONFLICT (exceeds the maximum allowed PDRs per NTP); DELETE the 2 created &lt;PDR&gt;s -> each expects DELETED. |
-
-??? note "`testSMD.py` — Semantic Descriptor (&lt;SMD&gt;) resource functionality (13 tests)"
-
-    | # | Test Method | Requests Performed |
-    |---|---|---|
-    | 1 | `test_createSMDdcrpIRIFail` | CREATE a &lt;SMD&gt; under the &lt;AE&gt; with `dcrp` (descriptor representation) set to the IRI value -> expects BAD_REQUEST. |
-    | 2 | `test_createSMDdspNotBase64Fail` | CREATE a &lt;SMD&gt; with `dsp` (descriptor) set to a non-base64 string -> expects BAD_REQUEST. |
-    | 3 | `test_createSMDdspBase64` | CREATE a &lt;SMD&gt; with `dcrp=4` and a base64-encoded RDF/XML `dsp` -> expects CREATED. |
-    | 4 | `test_deleteSMD` | DELETE the &lt;SMD&gt; -> expects DELETED. |
-    | 5 | `test_createSMDunderACPFail` | CREATE an &lt;ACP&gt; under the &lt;AE&gt; -> expects CREATED; attempt to CREATE a &lt;SMD&gt; under that &lt;ACP&gt; -> expects INVALID_CHILD_RESOURCE_TYPE; DELETE the &lt;ACP&gt; -> expects DELETED. |
-    | 6 | `test_updateSMDwithSOEandDSPFail` | UPDATE the &lt;SMD&gt; setting both `soe` and `dsp` simultaneously -> expects BAD_REQUEST (mutually exclusive attributes). |
-    | 7 | `test_updateSMDwithVLDEtrue` | UPDATE the &lt;SMD&gt; setting `vlde=True` (validation enable) -> expects UPDATED; checks the returned `vlde` is `True`. |
-    | 8 | `test_updateSMDwithVLDEfalse` | UPDATE the &lt;SMD&gt; setting `vlde=False` -> expects UPDATED; checks `vlde` is `False` and `svd` (semantic validation descriptor result) is also falsy. |
-    | 9 | `test_semanticQueryOnlyRCNFail` | RETRIEVE the &lt;AE&gt; with only `rcn=semanticContent` (no semantic query format) -> expects BAD_REQUEST. |
-    | 10 | `test_semanticQueryOnlySQIFail` | RETRIEVE the &lt;AE&gt; with only `sqi=true` (no query content) -> expects BAD_REQUEST. |
-    | 11 | `test_semanticQueryOnlySMF` | RETRIEVE the &lt;AE&gt; with only `smf` (semantic filter/query) set, a SPARQL query -> expects OK. |
-    | 12 | `test_semanticQueryAsDiscoveryFail` | RETRIEVE combining `fu=1` (discovery), `sqi=true`, `rcn=semanticContent`, and `smf` together -> expects BAD_REQUEST (semantic query cannot be combined with discovery). |
-    | 13 | `test_semanticQuery` | RETRIEVE the &lt;AE&gt; with `sqi=true`, `rcn=semanticContent`, and a SPARQL `smf` query -> expects OK; checks the `m2m:qres` result is well-formed XML/SPARQL-results or JSON output. |
