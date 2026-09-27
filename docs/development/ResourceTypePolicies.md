@@ -4,9 +4,12 @@ This article describes the policies that are defined for resource types in the A
 
 Instead of defining the atrributes and child resource types for each resource type in the code, they are defined in an external JSON file that is loaded during CSE initialization. This allows to easily change the resource type definitions without changing the code. All the definitions are in one place and can be easily accessed and modified.
 
-Resource type policy files have the extension `.rtp` and are automatically imported only[^1] from the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} directory.
+Resource type policy files have the extension `.rtp` and are automatically imported from the [init](https://github.com/ankraft/ACME-oneM2M-CSE/blob/master/acme/init){target=_new} and [user-provided *init* directory](../setup/Running.md#user-provided-init-directory).
 
-[^1]: Different from flex container policies, resource type policies are only imported from the primary init directory, not from the user-provided init directory. This is because resource type policies are fundamental for the CSE and should not be changed after the CSE has been started. 
+!!! note "Overwriting Existing Resource Type Policies"
+	If a resource type definition in the user-provided *init* directory uses the same resource type name as one already defined in the primary *init* directory, the user-provided definition replaces the existing one. This allows adjusting or extending the built-in resource type policies without modifying the shipped files.
+
+	Resource type policies are only read once, during CSE startup - changes made while the CSE is running have no effect until it is restarted.
 
 ## File Format
 

@@ -210,6 +210,7 @@ nav:
         - 'Onboarding Tool': 'development/tools/OnboardingTool.md'
         - 'Hashing Credentials': 'development/tools/HashCredentials.md'
         - 'Zookeeper Tool': 'development/tools/ZookeeperTool.md'
+        - 'DAS Server': 'development/tools/DASServer.md'
       - 'ACMEScript':
         - 'Introduction': 'development/ACMEScript.md'
         - 'Loading & Running Scripts': 'development/ACMEScript-loading.md'
