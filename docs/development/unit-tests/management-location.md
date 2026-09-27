@@ -1,6 +1,6 @@
 # Management, Location, Scheduling & Policies
 
-*7 test modules, 249 test cases. [&larr; Back to overview](index.md)*
+*10 test modules, 266 test cases. [&larr; Back to overview](index.md)*
 
 ??? note "`testMgmtObj.py` — All &lt;mgmtObj&gt; specializations (FWR, SWR, MEM, ANI, ANDI, BAT, DVI, DVC, RBO, EVL, NYCFC, etc.) (102 tests)"
 
@@ -285,3 +285,35 @@
     | 3 | `test_updatePDR` | UPDATE the &lt;PDR&gt; setting `lbl` -> expects UPDATED; checks the returned `lbl` matches. |
     | 4 | `test_deletePDR` | DELETE the &lt;PDR&gt; -> expects DELETED. |
     | 5 | `test_createTooManyPDRsFail` | CREATE 2 additional &lt;PDR&gt;s under the &lt;NTP&gt; in a loop -> each expects CREATED; CREATE a 3rd &lt;PDR&gt; -> expects CONFLICT (exceeds the maximum allowed PDRs per NTP); DELETE the 2 created &lt;PDR&gt;s -> each expects DELETED. |
+
+??? note "`testPRMR_STTE.py` — ProcessManagement (&lt;PRMR&gt;) resource lifecycle (5 tests)"
+
+    | # | Test Method | Requests Performed |
+    |---|---|---|
+    | 1 | `test_createPRMR` | CREATE a &lt;PRMR&gt; under the &lt;AE&gt; -> expects CREATED; checks default `prst=Disabled`, `prct=Disable`, and `cust`/`atcos`/`encos`/`inst` all absent. |
+    | 2 | `test_retrievePRMR` | RETRIEVE the &lt;PRMR&gt; -> expects OK; checks the same default `prst`/`prct` and absent attributes as on creation. |
+    | 3 | `test_deletePRMR` | DELETE the &lt;PRMR&gt; -> expects DELETED. |
+    | 4 | `test_updatePRMRInstUnknownResourceFail` | CREATE a &lt;PRMR&gt;; UPDATE it setting `inst` to a reference to an unknown resource -> expects INVALID_PROCESS_CONFIGURATION; DELETE the &lt;PRMR&gt; -> expects DELETED. |
+    | 5 | `test_PRMRdisableDisabledFail` | UPDATE an already-disabled &lt;PRMR&gt; setting `prct=Disable` again -> expects OPERATION_NOT_ALLOWED. |
+
+??? note "`testSTTE.py` — State (&lt;STTE&gt;) resource lifecycle under a &lt;PRMR&gt; (4 tests)"
+
+    | # | Test Method | Requests Performed |
+    |---|---|---|
+    | 1 | `test_createSTTE` | CREATE a &lt;STTE&gt; under a &lt;PRMR&gt; -> expects CREATED. |
+    | 2 | `test_retrieveSTTE` | RETRIEVE the &lt;STTE&gt; -> expects OK. |
+    | 3 | `test_deleteSTTE` | DELETE the &lt;STTE&gt; -> expects DELETED. |
+    | 4 | `test_updateSTTEParentNotDisabledFail` | CREATE a &lt;STTE&gt; under the &lt;PRMR&gt;; UPDATE the parent &lt;PRMR&gt; setting `prct=Enable` -> expects UPDATED; UPDATE the &lt;STTE&gt;'s `lbl` while its parent &lt;PRMR&gt; is enabled (not disabled) -> expects OPERATION_NOT_ALLOWED; DELETE the &lt;STTE&gt; -> expects DELETED. |
+
+??? note "`testPRP.py` — PrimitiveProfile (&lt;PRP&gt;) validation (8 tests)"
+
+    | # | Test Method | Requests Performed |
+    |---|---|---|
+    | 1 | `test_createPRPmissingIDLFail` | CREATE a &lt;PRP&gt; under &lt;CSEBase&gt; with `adds`/`dels` but missing the mandatory `idl` attribute -> expects BAD_REQUEST. |
+    | 2 | `test_createPRPwithOverlappingAddsDelsFail` | CREATE a &lt;PRP&gt; whose `adds` and `dels` both reference the same attribute (`lbl`) -> expects BAD_REQUEST. |
+    | 3 | `test_createPRPwithNotAllowedAttributesInAddsFail` | CREATE a &lt;PRP&gt; for each of a list of request-only attributes (`op`, `to`, `fr`, `rqi`, `rvi`, `rsc`, `fc`, `ot`, `gid`, `tkns`, `ati`) used as an `adds` attribute name -> each expects BAD_REQUEST. |
+    | 4 | `test_createPRPwithNotAllowedAttributesInDelsFail` | Same list of request-only attributes but used in `dels` instead -> each expects BAD_REQUEST. |
+    | 5 | `test_createPRPwithNotAllowedResourceAttributeFail` | CREATE a &lt;PRP&gt; with `rtys=[AE]` and an `adds` entry naming an attribute (`mid`) that isn't valid for that resource type -> expects BAD_REQUEST. |
+    | 6 | `test_createPRPwithInvalidValueResourceAttributeFail` | CREATE a &lt;PRP&gt; with `rtys=[AE]` and an `adds` entry for `aei` with an invalid (non-string) value -> expects BAD_REQUEST. |
+    | 7 | `test_createPRPwithInvalidValueRequestParameterFail` | CREATE a &lt;PRP&gt; with an `adds` entry for `oet` with an invalid (boolean) value -> expects BAD_REQUEST. |
+    | 8 | `test_createPRPwithComplexResourceAttributeFail` | CREATE a &lt;PRP&gt; with `rtys=[ACP]` and an `adds` entry naming a complex/structured attribute (`pv`) -> expects BAD_REQUEST. |

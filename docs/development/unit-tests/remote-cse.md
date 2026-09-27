@@ -1,6 +1,6 @@
 # Remote CSE / Inter-CSE
 
-*4 test modules, 54 test cases. [&larr; Back to overview](index.md)*
+*5 test modules, 58 test cases. [&larr; Back to overview](index.md)*
 
 ??? note "`testRemote.py` — Remote CSE registration functionality (skipped if no remote CSE configured) (8 tests)"
 
@@ -14,6 +14,15 @@
     | 6 | `test_createCSRsameAsAE` | CREATE an &lt;AE&gt; with originator `Ctest` -> expects CREATED; CREATE a &lt;CSR&gt; with `cb` pointing to the same originator (`/Ctest`) -> expects CONFLICT (originator already used by an AE); DELETE the &lt;AE&gt; -> expects DELETED. |
     | 7 | `test_transferDiscoverOnRemoteCSE` | RETRIEVE a discovery query (`fu`/`drt` query params) on the remote CSE via the transfer (`~`) addressing scheme, using the remote CSE's own originator -> expects OK; checks the returned `uril` is a non-empty list whose entries are all prefixed with the remote CSE-ID. |
     | 8 | `test_transferDiscoverOnRemoteCSEWithLocalOriginatorFail` | RETRIEVE the same discovery query via the transfer addressing scheme but with the local originator -> expects OK, but checks the returned `uril` list is empty (no matching/authorized results). |
+
+??? note "`testRemote_AE.py` — Registration of S-type (globally unique) &lt;AE&gt;-IDs across CSEs (4 tests)"
+
+    | # | Test Method | Requests Performed |
+    |---|---|---|
+    | 1 | `test_registerAEwithSonRemote` | CREATE an &lt;AE&gt; on the remote CSE using `S` as the originator (CSE-assigned globally unique AE-ID) -> expects CREATED; checks the assigned `aei` starts with `S`; RETRIEVE the corresponding announced &lt;AEAnnc&gt; on the local (IN-)CSE -> expects OK, checks `aei` and `lnk` point back to the remote &lt;AE&gt;. |
+    | 2 | `test_reregisterAEwithSonRemote` | CREATE (re-register) the &lt;AE&gt; on the remote CSE again, this time using its previously assigned `S...` AE-ID as originator -> expects CREATED; checks the AE-ID is unchanged and starts with `S`; RETRIEVE the announced &lt;AEAnnc&gt; on the local CSE -> expects OK, checks `aei`/`lnk`. |
+    | 3 | `test_reregisterAEwithSonCSE` | CREATE (register) an &lt;AE&gt; on the local CSE using the same `S...` AE-ID (originally assigned by the remote CSE) as originator -> expects CREATED; checks the AE-ID is unchanged; RETRIEVE the announced &lt;AEAnnc&gt; on the local CSE -> expects OK, checks `aei`/`lnk`. |
+    | 4 | `test_unregisterAEwithSonRemote` | DELETE the &lt;AE&gt; on the remote CSE using its `S...` originator -> expects DELETED; RETRIEVE the announced &lt;AEAnnc&gt; on the local CSE -> expects OK, checks `lnk` is now `INACTIVE`. |
 
 ??? note "`testRemote_Annc.py` — Resource announcement to a remote CSE (43 tests)"
 
