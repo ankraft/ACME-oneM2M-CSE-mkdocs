@@ -31,13 +31,13 @@ The default values for Action resources.
 
 The default values for Container resources.
 
-| Setting                       | Description                                                                                                  | Default                                                                          |
-|:------------------------------|:-------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|
-| enableLimits                  | Enable/disable the default limits.                                                                           | False                                                                            |
-| mbis  ==development feature== | CSE default for maxByteSizePerInstance. A negative value means no limit. Must not exceed the value of *mbs*. | -1                                                                               |
-| mbs                           | CSE default for maxByteSize.                                                                                 | 10.000 bytes                                                                     |
-| mia                           | CSE default for maxInstanceAge.                                                                              | [cse.maxExpirationDelta](../setup/Configuration-cse.md#general-settings) seconds |
-| mni                           | CSE default for maxNrOfInstances.                                                                            | 10                                                                               |
+| Setting      | Description                                                                                                  | Default                                                                          |
+|:-------------|:-------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|
+| enableLimits | Enable/disable the default limits.                                                                           | False                                                                            |
+| mbis         | CSE default for maxByteSizePerInstance. A negative value means no limit. Must not exceed the value of *mbs*. | -1                                                                               |
+| mbs          | CSE default for maxByteSize.                                                                                 | 10.000 bytes                                                                     |
+| mia          | CSE default for maxInstanceAge.                                                                              | [cse.maxExpirationDelta](../setup/Configuration-cse.md#general-settings) seconds |
+| mni          | CSE default for maxNrOfInstances.                                                                            | 10                                                                               |
 
 
 ## FlexContainer
@@ -123,4 +123,3 @@ The default values for TimeSyncBeacon resources.
 |:--------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------|
 | bcni    | Default timeSyncBeacon interval. This is the duration between to beacon notifications sent by the CSE to an AE or CSE.T he format must be an ISO8601 duration. | "PT1H" = 1 hour |
 | bcnt    | Default timeSyncBeacon threshold. When this time threshold is passed then a beacon notifications is sent to an AE or CSE.                                      | 10 seconds      |
-

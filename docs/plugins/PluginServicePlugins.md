@@ -58,7 +58,7 @@ services = pluginManager.services()
 print(services) # ->  [ServiceDefinition(pluginName='plugins.MyService', tags=['example'], metadata={}, priority=10)]
 ```
 
-The returned list of [ServiceDefinition ](){target="_new"} ==development feature TBD== objects contains information about each discovered service, ie. the name of the Service, its tags, any additional metadata, and the service priority provided by the Service instance. In this example, there is one Service registered with the name `plugins.MyService`, the tag `example`, no additional metadata, and a priority of 10.
+The returned list of [ServiceDefinition](https://api.acmecse.net/acmecse.helpers.PluginManager.ServiceDefinition.html){target="_new"}  objects contains information about each discovered service, ie. the name of the Service, its tags, any additional metadata, and the service priority provided by the Service instance. In this example, there is one Service registered with the name `plugins.MyService`, the tag `example`, no additional metadata, and a priority of 10.
 
 To get a specific Service you can add a tag or list of tags to filter the Services by. For example, to get the Service with the tag `example`, you can use the following code:
 
@@ -78,7 +78,7 @@ endpoints = pluginManager.endpoints('plugins.MyService')
 print(endpoints) # -> [[EndpointDefinition(pluginName='plugins.MyService', endpointName='service_endpoint', signature=<Signature (arg1: str, arg2: int) -> str>)], ...]
 ```
 
-This will return a list of [EndpointDefinition](){target="_new"} ==development feature: TBD== objects with the service and endpoint names and the signature of the endpoint. In this example, there is one endpoint provided by the `MyService` Service with the name `service_endpoint` and the signature `(arg1: str, arg2: int) -> str`. The signature is provided as a `Signature` object from the `inspect` module, which allows you to easily get information about the endpoint's parameters and return type.
+This will return a list of [EndpointDefinition](https://api.acmecse.net/acmecse.helpers.PluginManager.EndpointDefinition.html){target="_new"} objects with the service and endpoint names and the signature of the endpoint. In this example, there is one endpoint provided by the `MyService` Service with the name `service_endpoint` and the signature `(arg1: str, arg2: int) -> str`. The signature is provided as a `Signature` object from the `inspect` module, which allows you to easily get information about the endpoint's parameters and return type.
 
 
 ## Calling Service Endpoints

@@ -85,8 +85,8 @@ These settings are used to configure the CSE's startup behavior.
 
 | Setting      | Description                                                                                                                                                            | Default      |
 |:-------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|
-| startupDelay | ==development feature== Startup delay in seconds. This is the time the CSE waits before setting itself to the RUNNING state.                                           | 2.0 seconds  |
-| guardDelay   | ==development feature== Startup guard: If the CSE is not in the RUNNING state after this time, then a shutdown is forced.<br>A value of 0 means that no guard is used. | 60.0 seconds |
+| startupDelay | Startup delay in seconds. This is the time the CSE waits before setting itself to the RUNNING state.                                           | 2.0 seconds  |
+| guardDelay   | Startup guard: If the CSE is not in the RUNNING state after this time, then a shutdown is forced.<br>A value of 0 means that no guard is used. | 60.0 seconds |
 
 
 ## General Security

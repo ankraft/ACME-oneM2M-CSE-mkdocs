@@ -95,8 +95,6 @@ For example, the protocol binding plugins are all tagged with the keyword 'bindi
 
 ## Long-Running Plugins
 
-==development feature== 
-
 Plugin functions may be long-running, e.g. they may contain an infinite loop that performs some task periodically. In this case, the plugin function must run this long-running code in a separate thread, so that it does not block the CSE's main thread and other plugins from running. The plugin function can use the `threading` module from the Python standard library to create and manage threads, or it can use the ACME CSE's [BackgroundWorkerPool](https://api.acmecse.net/acmecse.helpers.BackgroundWorker.BackgroundWorkerPool.html){target="_new"} to run background tasks. The `BackgroundWorkerPool` provides a convenient way to run background tasks and ensures that they are properly managed by the CSE.
 
 ### Controlling Plugin Execution Time

@@ -1,7 +1,5 @@
 # Interceptors
 
-==development feature== 
-
 In addition to the standard plugins described in the [Plugins Overview](PluginsOverview.md) and the [Plugin Example](PluginExample.md) documentation, the CSE also supports a special type of Plugins called *Interceptors*.
 
 Interceptors can be used to hook into the CSE's request processing and to, for example, modify requests and responses before they are processed by the CSE or sent to the client. This allows to implement custom behavior that is triggered, for example, when certain requests are received by the CSE or when certain responses are sent by the CSE.
