@@ -116,7 +116,7 @@ The following example code shows how to restart the CSE automatically using a sh
 === "Bash Shell"
 	```bash title="Restart CSE with Bash Shell"
 	while true; do
-		python -m acme
+		python -m acmecse
 		if [ $? -ne 82 ]; then
 			break
 		fi
@@ -127,7 +127,7 @@ The following example code shows how to restart the CSE automatically using a sh
 === "Fish Shell"
 	```fish title="Restart CSE with Fish Shell"
 	while true
-		python -m acme
+		python -m acmecse
 		if test $status -ne 82
 			break
 		end

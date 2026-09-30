@@ -36,7 +36,7 @@ display(HTML("<style>.container { width:100% !important; }</style>"))
 # Change to the CSE's directory and start the CSE
 # Ignore the error from the %cd command
 %cd -q tools/ACME   # adopt this to the location of the ACME CSE
-%run -m acme -- --headless
+%run -m acmecse -- --headless
 ```
 
 Note the following:
