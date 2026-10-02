@@ -20,5 +20,4 @@ The salt value is used to make the hash unique and to prevent dictionary attacks
 	3fadece711de4314f183fc475b0b6831f4fea0541cf91e7076a1f932073cf0e4
 
 
-This will create a hashed version of the password `myPassword` and print it to the console. This hash can then be copied to the password or token file in the *certs* directory.
-
+This will create a hashed version of the password or token `myPassword` and print it to the console. This hash can then be copied to the respective password or token file in the *certs* directory.
