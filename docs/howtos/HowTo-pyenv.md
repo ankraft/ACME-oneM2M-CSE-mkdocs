@@ -53,7 +53,7 @@ The following command installs *Python 3.11.7* in *pyenv*:
 pyenv install 3.11.7
 ```
 
-Since we want to keep the installed base Python version "clean2, we will create a new virtual environment, e.g. taking version *3.11.7* as a base version. The following command will create a virtual environment *acme-3.11* that can be used later on:
+Since we want to keep the installed base Python version "clean", we will create a new virtual environment from that base version. The following command will create a virtual environment *acme-3.11* that can be used later on:
 
 ```sh title="Create a Virtual Environment"
 pyenv virtualenv 3.11.7 acme-3.11
