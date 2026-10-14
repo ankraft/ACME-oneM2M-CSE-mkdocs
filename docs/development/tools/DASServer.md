@@ -60,12 +60,13 @@ rules:
       originator: "Csensor*"      # optional, glob pattern, default: matches any
       resourceID: "id-in/cnt-*"    # optional, glob pattern, default: matches any
       resourceType: [cnt, 4]       # optional, name and/or number, default: matches any
-      operation: [R, U]            # optional, C/R/U/D/N/F, default: matches any
+      operation: [R, U]            # optional, C/R/U/D/N/F, 1/2/4/8/16/32, or a combined
+                                   # bitmask (eg. 6 for R+U); default: matches any
     grant:
       acor: ["Csensor*"]
       acop: [R, U]                 # optional, defaults to match.operation
 ```
 
-`operation`/`acop` use single, case-insensitive letters for the oneM2M permissions: `C`reate, `R`etrieve, `U`pdate, `D`elete, `N`otify, `F` (discovery/"find"). `resourceType` accepts either the numeric resource type or its short name (also case-insensitive), for a small set of the most commonly used base resource types.
+`operation`/`acop` accept a list, or a single bare entry, of case-insensitive letters and/or numeric oneM2M permission values: `C`reate (1), `R`etrieve (2), `U`pdate (4), `D`elete (8), `N`otify (16), `F` (discovery/"find", 32). A single bare number may also be a combined bitmask (eg. `acop: 6` for RETRIEVE + UPDATE), the usual oneM2M convention for `accessControlOperations`. `resourceType` accepts either the numeric resource type or its short name (also case-insensitive), for a small set of the most commonly used base resource types.
 
 See the `rules/_common.yaml` and `rules/id-in.yaml` files in the tool's directory for further, complete examples.
