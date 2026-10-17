@@ -173,8 +173,8 @@ nav:
       - 'User Interfaces': 'setup/Configuration-uis.md'
       - 'oneM2M Resources': 'setup/Configuration-resources.md'
     - 'Operation':
-      - 'Infrastructure Diagrams': 'setup/Operation-diagrams.md'
       - 'CSE Management API': 'setup/Operation-management.md'
+      - 'Infrastructure Diagrams': 'setup/Operation-diagrams.md'
       - 'MQTT Broker': 'setup/Operation-mqtt.md'
       - 'Upper Tester': 'setup/Operation-uppertester.md'
     - 'User Interfaces':

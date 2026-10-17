@@ -3,10 +3,38 @@
 The CSE has limited support for the *Upper Tester* (UT) test protocol. This protocol is used to trigger a System Under 
 Test (SUT), ie. a CSE, to perform certain oneM2M operations and other actions. See oneM2M's [TS-0019 "Abstract Test Suite and Implementation eXtra Information for Test"](https://specifications.onem2m.org/ts-0019){target=_new} specification for further details.
 
+
+## Enabling the Upper Tester Endpoint
+
 To support this feature an additional endpoint `__UT__` is available under the HTTP server's root path. It can be enabled by setting the configuration [`[http].enenableUpperTesterEndpoint`](../setup/Configuration-http.md#general-settings) in the configuration file to `True`.
 
 !!! Warning
 	Only use this feature in a controlled environment. Enabling it may lead to a total loss of data because several internal functions and resources are exposed or can be managed without added security.
+
+### Authentication
+
+By default, authentication is **not** enabled for accessing the Upper Tester endpoint. To enable authentication, you need to configure the appropriate credentials and authentication mechanisms in the CSE configuration file. This is done by adding the a username or token with the following setting to the `[http.security]` section:
+
+```ini title="Enable Authentication for Upper Tester Endpoint"
+[http.security]
+enableUpperTesterEndpoint=username-or-token
+```
+
+In addition you must also add a corresponding entry for the username/password to the [http authentication file](../setup/Certificates.md#http-authentication) or a token to the [http token file](../setup/Certificates.md#bearer-token-authentication).
+
+Also, the appropriate authentication method must be enabled for the HTTP binding in order for the Upper Tester endpoint authentication to take effect.
+
+```ini title="Enable Authentication for HTTP Binding" 
+[http.security]
+enableBasicAuth=true
+enableTokenAuth=true
+``` 
+
+The following example shows how to use the Upper Tester endpoint with basic authentication enabled.
+
+```bash title="Using Upper Tester Endpoint with Basic Authentication"
+curl -u <username>:<password> http://localhost:8080/__UT__/
+```
 
 ## Supported Functions
 
@@ -82,4 +110,4 @@ $ curl -v -X POST -H "X-M2M-UTCMD:Status" http://localhost:8080/__ut__
 < Content-Length: 0
 < Connection: close
 ...
-``` 
+```

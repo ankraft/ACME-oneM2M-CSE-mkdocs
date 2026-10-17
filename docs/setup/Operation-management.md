@@ -12,7 +12,32 @@ The CSE management API is disabled by default. To enable it, set the [*enableMan
 
 ```ini title="Enable CSE Management"
 [http]
-enableManagementEndpoint = true
+enableManagementEndpoint=true
+```
+
+### Authentication
+
+By default, authentication is **not** enabled for accessing the CSE management API. To enable authentication, you need to configure the appropriate credentials and authentication mechanisms in the CSE configuration file. This is done by adding the a username or token with the following setting to the `[http.security]` section:
+
+```ini title="Enable Authentication for CSE Management API"
+[http.security]
+managementEndpointUser=username-or-token
+```
+
+In addition you must also add a corresponding entry for the username/password to the [http authentication file](../setup/Certificates.md#http-authentication) or a token to the [http token file](../setup/Certificates.md#bearer-token-authentication).
+
+Also, the appropriate authentication method must be enabled for the HTTP binding in order for the management API authentication to take effect.
+
+```ini title="Enable Authentication for HTTP Binding"
+[http.security]
+enableBasicAuth=true
+enableTokenAuth=true
+```
+
+The following example shows how to use the management API with basic authentication enabled.
+
+```bash title="Using Management API with Basic Authentication"
+curl -u <username>:<password> http://localhost:8080/__mgmt__/
 ```
 
 ## Management Commands

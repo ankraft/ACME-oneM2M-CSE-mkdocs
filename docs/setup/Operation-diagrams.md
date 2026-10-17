@@ -1,8 +1,6 @@
 # Operation - Infrastructure Diagrams
 
 
-## Resource Tree and Deployment Infrastructure Diagram
-
 The CSE can generate a diagram with an overview about the hosted resource tree and the current deployment infrastructure of remote CSEs.
 This is available by sending a GET request as follows:
 
@@ -41,3 +39,35 @@ cse-in -> m2m:cb (csi=/id-in) | ri=id-in
 ...
 ``` 
 
+## Enabling the Structure Endpoint
+
+The CSE structure endpoint is disabled by default. To enable it, set the [*enableStructureEndpoint*](../setup/Configuration-http.md#general-settings) setting in the configuration file to `true`:
+
+```ini title="Enable CSE Structure Endpoint"
+[http]
+enableStructureEndpoint=true
+```
+## Authentication
+
+By default, authentication is **not** enabled for accessing the CSE structure endpoint. To enable authentication, you need to configure the appropriate credentials and authentication mechanisms in the CSE configuration file. This is done by adding the a username or token with the following setting to the `[http.security]` section:
+
+```ini title="Enable Authentication for CSE Structure Endpoint"
+[http.security]
+enableStructureEndpoint=username-or-token
+```
+
+In addition you must also add a corresponding entry for the username/password to the [http authentication file](../setup/Certificates.md#http-authentication) or a token to the [http token file](../setup/Certificates.md#bearer-token-authentication).
+
+Also, the appropriate authentication method must be enabled for the HTTP binding in order for the structure endpoint authentication to take effect.
+
+```ini title="Enable Authentication for HTTP Binding"
+[http.security]
+enableBasicAuth=true
+enableTokenAuth=true
+```
+
+The following example shows how to use the structure endpoint with basic authentication enabled.
+
+```bash title="Using Structure Endpoint with Basic Authentication"
+curl -u <username>:<password> http://localhost:8080/__structure__/
+```
