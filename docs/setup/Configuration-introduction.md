@@ -184,3 +184,19 @@ For example:
 
 - The *cseID* setting in the *[cse]* section may be accessed by the name `cse.cseID`
 - The *host* setting in the *[database.postgresql]* section may be accessed by the name `database.postgresql.host`
+
+
+## Updating &lt;CSEBase> Attributes
+
+Some configuration settings are directly relevant to attributes of the &lt;CSEBase> resource and need to be updated in the resource after a startup. 
+This ensures that the CSE reflects any changes made to its configuration, such as enabled bindings, point-of-access, or other attributes that are critical for its proper functioning.
+
+The following list includes attributes that will be updated in the &lt;CSEBase> resource after a startup:
+
+
+| &lt;CSEBase> Attribute | Longname                   | Description                                                                                                             |
+|------------------------|----------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| csz                    | Content Serialization      | Supported content serializations.                                                                                       |
+| poa                    | Points of Access           | Points of access for the CSE. This changes when bindings are enabled or disabled, or the network configuration changes. |
+| srt                    | SupportedResource Types    | The resource types supported by the CSE.                                                                                |
+| srv                    | Supported Release Versions | The oneM2M release versions supported by the CSE.                                                                       |
