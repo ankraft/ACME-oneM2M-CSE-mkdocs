@@ -25,6 +25,10 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
+
+      # If figures lose their images: mkdocs-glightbox wraps images via selectolax,
+      # and selectolax 1.0.1 (Oct 2026) broke that. Fixed in 1.0.2. If it recurs,
+      # exclude the bad release here, e.g.: pip install ... "selectolax!=<bad version>"
       - run: pip install mkdocs-material mkdocs-glightbox
       - working-directory: .
         run: mkdocs gh-deploy --force
