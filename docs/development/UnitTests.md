@@ -67,12 +67,12 @@ The `--help` or `-h` command line argument provides a usage overview for the *ru
 ```text title="Test Runner Overview"
 $ python runTests.py -h
 
-usage: runTests.py [-h] [--all] [--load-only] [--verbose-requests] [--disable-teardown]
-                   [--exclude-tests EXCLUDETESTS [EXCLUDETESTS ...]] [--run-teardown]
-				   [--run-count NUMBEROFRUNS] [--disable-uppertester]
-				   [--run-tests TESTCASENAME [TESTCASENAME ...]] 
-				   [--show-skipped] [--no-failfast]
-                   [--local-notification-server] [--list-tests | --list-tests-sorted]
+usage: runTests.py [-h] [--all] [--load-only] [--verbose-requests] [--disable-teardown] 
+                   [--disable-uppertester] [--exclude-tests EXCLUDETESTS [EXCLUDETESTS ...]] 
+                   [--run-teardown] [--run-count NUMBEROFRUNS]
+                   [--run-tests TESTCASENAME [TESTCASENAME ...]] [--show-skipped] 
+                   [--no-failfast] [--local-notification-server] [--failfast-suite] 
+                   [--list-tests | --list-tests-sorted]
                    [TESTSUITE ...]
 
 positional arguments:
@@ -93,18 +93,20 @@ options:
   --run-teardown, -runtd
                         run the specified test cases' tear-down functions and exit
   --run-count NUMBEROFRUNS
-                        run each test suite n times (default: 1)
+                        run each test suite n times (default: 1). Disables upper tester interface
+                        if n > 1.
   --run-tests TESTCASENAME [TESTCASENAME ...], -run TESTCASENAME [TESTCASENAME ...]
-                        run only the specified test cases from the set of test suites. Test case names
-                        may contain wildcards to run all matching test cases.
+                        run only the specified test cases from the set of test suites. Test case 
+                        names may contain wildcards to run all matching test cases.
   --show-skipped        show skipped test cases in summary
   --no-failfast         continue running test cases after a failure
   --local-notification-server, -lns
                         use a local notification server address
-  --list-tests, -ls     list the test cases of the specified test suites in the order they are defined and exit
+  --failfast-suite      stop running test cases and suites after a failure
+  --list-tests, -ls     list the test cases of the specified test suites in the order they are 
+                        defined and exit
   --list-tests-sorted, -lss
                         alphabetical sorted list the test cases of the specified test suites and exit
-
 ```
 
 ### Running the Tests
